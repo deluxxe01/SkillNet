@@ -11,42 +11,20 @@ SkillNet é uma plataforma online que conecta usuários e freelancers para a con
 [Vithor Lorram Valente](https://github.com/vithorLorramValente7)  
 [Caiolorram Valente](https://github.com/caiolorramvalente)
 
-# Requisitos Funcionais (RF)
-[RF 001] O usuário deve conseguir se cadastrar na plataforma, editar seus dados e excluir sua conta.
+## Funcionalidades
 
-[RF 002] O usuário deve conseguir cadastrar, apagar e editar seus serviços.
+### Requisitos Funcionais (RF)
 
-[RF 003] O usuário consegue fazer contratos com freelancers sobre serviços específicos.
+- **Cadastro e Conta:** O usuário pode se cadastrar, editar seus dados e excluir a conta.
+- **Gerenciamento de Serviços:** O usuário pode cadastrar, editar e excluir serviços.
+- **Contratos e Freelancers:** O usuário pode contratar freelancers para serviços específicos e registrar contratos.
+- **Avaliações:** O sistema permite que usuários e freelancers avaliem serviços e portfólios.
+- **Chat:** Comunicação direta entre usuários e freelancers via chat integrado.
+- **Portfólio:** Os usuários podem criar e gerenciar seu próprio portfólio dentro da plataforma.
 
-[RF 004] O usuário pode cadastrar reviews dos serviços.
+### Requisitos Não Funcionais (RNF)
 
-[RF 005] O sistema deve permitir que o usuário insira seus dados na interface de login, dando acesso à sua conta e ao uso do site.
-
-[RF 006] O usuário deve conseguir ver as avaliações do serviço antes de contratar o freelancer.
-
-[RF 007] O usuário deve conseguir contatar o freelancer dentro do site por meio de um chat.
-
-[RF 008] O usuário deve conseguir montar seu portfólio dentro da aplicação web.
-
-[RF 009] O usuário deve conseguir ver a avaliação do freelancer.
-
-[RF 010] O usuário deve conseguir ver a avaliação dos portfólios.
-
-[RF 011] O usuário deve conseguir ver a avaliação do serviço específico.
-
-[RF 012] O sistema deve registrar todos os contratos entre freelancer e cliente.
-
-# Requisitos Não Funcionais (RNF)
-[RNF 001] O usuário deve criar um perfil profissional para implementar serviços no site.
-
-[RNF 002] O sistema não deve permitir que o usuário logue se as informações não coincidirem com o cadastro.
-
-[RNF 003] O sistema não deve permitir que freelancers apaguem as avaliações de seus serviços.
-
-[RNF 004] O sistema não deve permitir que um usuário veja transações de outros usuários.
-
-[RNF 005] O sistema deve permitir que o usuário recupere a conta.
-
-[RNF 006] O sistema deve alertar o freelancer quando o prazo de entrega de um serviço estiver completo.
-
-[RNF 007] O sistema deve garantir que usuários com leitores de tela possam usufruir da plataforma sem problemas.
+- **Perfil Profissional:** Para implementar serviços, o usuário deve criar um perfil profissional.
+- **Segurança:** O sistema valida as informações de login e não permite acesso com dados incorretos.
+- **Privacidade:** O sistema impede que usuários vejam transações de outros.
+- **Acessibilidade:** A plataforma é compatível com leitores de tela, garantindo acessibilidade para todos os usuários.
