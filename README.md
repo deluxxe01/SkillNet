@@ -1,10 +1,10 @@
-## SkillNet
+# SkillNet
 
-# Descrição
+## Descrição
 
 SkillNet é uma plataforma online que conecta usuários e freelancers para a contratação de serviços específicos. A aplicação permite a criação de portfólios, gerenciamento de serviços, interações entre clientes e freelancers, além de avaliações e contratos. A plataforma visa facilitar a troca de serviços, com funcionalidades de cadastro, chat, e feedback de usuários.
 
-# Integrantes da Equipe
+## Integrantes da Equipe
 
 [Bruno Zarowne](https://github.com/BrunoZarowne)  
 [Deluxxe01](https://github.com/deluxxe01)  
