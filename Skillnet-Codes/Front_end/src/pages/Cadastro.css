@@ -8,6 +8,30 @@
 }
 
 
+@font-face {
+    font-family: NunitoExtrabold;
+    src: url('./font/Nunito/static/Nunito-ExtraBold.ttf');
+}
+
+@font-face {
+    font-family: PoppinsBold;
+    src: url('./font/Poppins/Poppins-Bold.ttf');
+}
+
+@font-face {
+    font-family: PoppinsRegular;
+    src: url('./font/Poppins/Poppins-Regular.ttf');
+}
+
+@font-face {
+    font-family:PoppinsSemiBold;
+    src: url('./font/Poppins/Poppins-SemiBold.ttf');
+}
+@font-face {
+    font-family:PoppinsMedium;
+    src: url('./font/Poppins/Poppins-Medium.ttf');
+}
+
 .container{
 display: flex;
 flex-direction: column;
@@ -16,16 +40,18 @@ flex-direction: column;
     .container{
         display: flex;
         flex-direction: row;
-        font-family: Arial, Helvetica, sans-serif;
         justify-content: space-evenly;
         
 
     }
     .spanH1{
-        color: var(--cor-5);
+        color: var(--cor-4);
+        font-size: 40px;
     }
     .cadatroH1{
         color: var(--cor-3);
+        font-family: NunitoExtrabold;
+        font-size: 40px;
     }
     .imgCadastro{
         width: 45%;       /* Garante que a largura da imagem ocupe 100% da tela */
@@ -52,30 +78,87 @@ flex-direction: column;
     }
     .inpt{
         width: 350px;
-        height: 40px;
+        min-height: 40px;
         border-radius: 100px;
         outline: none;
-        border: 1px solid var(--cor-3);
+        border: 1.8px solid var(--cor-3);
         margin-bottom: 8%;
-        margin-top: 1%;
+        margin-top: 0.5%;
         font-size: medium;
+        font-family: PoppinsRegular;
+        padding-left: 10px;
 
     }
     .btnCadastro{
         width: 400px;
-        height: 40px;
-        font-size: 26px;
+        height: fit-content;
+        font-size: 25px;
         background-color: var(--cor-3);
-        color: #C0EA74;
+        color: var(--cor-6);
         border: none;
         border-radius: 100px;
        padding: 5px;
+       font-family:  PoppinsBold;
     }
     .containerLogin{
       margin-left: 70%;
        
+      
     }
+    .lblCadastro{
+        font-family: PoppinsRegular;
+        font: 24px;
+        margin: 0;
+        padding: 0;
+    }
+    .btnLogin{
+        font-family: PoppinsSemiBold;
+        background-color: var(--cor-3);
+        color: var(--cor-6);
+       padding-left: 25px;
+       padding-right: 25px;
+       padding-top: 5px;
+       padding-bottom: 5px;
+       outline: none;
+       border: 1px solid var(--cor-3);
+       font-size: medium;
+       border-radius: 100px;
 
+    }
+    .inpt:focus{
+    border: 1px solid var(--cor-4);
+    transition: 200ms ease;
+    }
+    .btnLogin:hover{
+        background-color: var(--cor-4);
+        transition: 0.5s ease;
+    }
+    .btnCadastro:hover{
+        background-color: var(--cor-4);
+        transition: 0.5s ease-in-out;
+
+    }
+    .inptCheck{
+        border: 4px solid var(--cor-3);
+        min-width: 20px;
+        height: 20px;
+        border-radius:5px;
+       
+    }
+    .divCheckBox{
+        display: flex;
+        width: fit-content;
+        align-items: center;
+    }
+    .spanCheck{
+        color: #304B00;
+    }
+    .pCheck{
+        color: var(--cor-4);
+        margin-left: 10px;
+        font-family:PoppinsMedium ;
+    }
+   
 
     
 }
