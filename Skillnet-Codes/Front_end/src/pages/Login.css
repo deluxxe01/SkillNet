@@ -3,3 +3,80 @@
     position: relative;
    bottom: 20px;
 }
+ @media (min-width:780px) {
+    .lblLogin{
+        font-family: PoppinsRegular;
+        font-size: x-large;
+       
+    }
+    .btnLogin{
+        font-size: 30px;
+        color: #C0EA74;
+        padding-right: 18%;
+        padding-left:18% ;
+        padding-top: 0.2%;
+        padding-bottom:0.2% ;
+        font-family: PoppinsBold;
+        background-color: #304b00;
+        outline: 0;
+        border: #304b00 1px solid;
+        border-radius: 100px;
+        margin-bottom: 10%;
+
+
+    }
+    .lblLogin2{
+        font-family: PoppinsRegular;
+        font-size:24px ;
+        margin-top: 10%;
+    }
+    .LoginH1{
+        font-family: NunitoExtraBold;
+        font-size: 41px;
+        color: #304b00;
+        
+
+    }
+    .inptLogin{
+        width: 350px;
+        min-height: 40px;
+        border-radius: 100px;
+        outline: none;
+        border: 1.8px solid var(--cor-3);
+        font-size: medium;
+        font-family: PoppinsRegular;
+        padding-left: 10px;
+        margin-bottom: 10%;
+    }
+    .containerTitle{
+        margin-top: 10%;
+        
+
+    }
+    .inptLogin2{
+        width: 350px;
+        min-height: 40px;
+        border-radius: 100px;
+        outline: none;
+        border: 1.8px solid var(--cor-3);
+        font-size: medium;
+        font-family: PoppinsRegular;
+        padding-left: 10px;
+        margin-bottom: 20%;
+
+    }
+    .containerCadastro{
+        position: relative;
+        left: 39%;
+      
+    }
+    .inptLogin:focus,.inptLogin2:focus{
+        border: #C0EA74 1.8px solid;
+
+    }
+    
+    
+
+
+    
+ }

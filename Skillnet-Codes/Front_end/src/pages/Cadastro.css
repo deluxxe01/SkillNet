@@ -111,7 +111,7 @@ flex-direction: column;
         margin: 0;
         padding: 0;
     }
-    .btnLogin{
+    .btnIrLogin{
         font-family: PoppinsSemiBold;
         background-color: var(--cor-3);
         color: var(--cor-6);
@@ -129,7 +129,7 @@ flex-direction: column;
     border: 1px solid var(--cor-4);
     transition: 200ms ease;
     }
-    .btnLogin:hover{
+    .btnIrLogin:hover{
         background-color: var(--cor-4);
         transition: 0.5s ease;
     }
@@ -139,9 +139,9 @@ flex-direction: column;
 
     }
     .inptCheck{
-        border: 4px solid var(--cor-3);
+        border: 3px solid var(--cor-3);
         min-width: 20px;
-        height: 20px;
+        height: 15px;
         border-radius:5px;
        
     }
