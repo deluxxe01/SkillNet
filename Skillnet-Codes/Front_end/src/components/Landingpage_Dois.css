@@ -1,0 +1,67 @@
+.containerLanding2{
+    width: 100%;
+    min-height: 100vh;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+    
+   
+   
+}
+.tituloSkill{
+    font-family: NunitoBold;
+    color:#304B00;
+    font-size: 50px;
+    
+}
+.subTituloSkill{
+    color: #304B00;
+    font-family: PoppinsSemiBold;
+    font-size: 30px;
+    
+
+}
+.imgLogo{
+    position: relative;
+    bottom: 120px;
+    z-index:-10 ;
+    color: #304B00;
+    background-color: #fbfbfb;
+}
+.divTitulos{
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+    margin-top:5%;
+}
+.containerInfo{
+    justify-content: space-evenly;
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+
+.divInfos{
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+}
+.iconVerde{
+    width: 150px;
+}
+.titulo{
+    font-family: PoppinsSemiBold;
+    color: #79BE00;
+    margin-top: 5%;
+    margin-bottom: 5%;
+    font-size: 32px;
+}
+.infos{
+    font-family:PoppinsRegular;
+    color: #304B00;
+    font-size: 19px;
+    margin-bottom: 10%;
+}
