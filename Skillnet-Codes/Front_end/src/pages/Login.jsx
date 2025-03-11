@@ -12,7 +12,7 @@ function Login() {
 <img className='imgCadastro' src="./images/imageLogin.jpg" alt="" />
 
 <div className='container_cadastro'>
-  <div className='containerCadastro'><button className='btnIrLogin' onClick={()=>{Cadastro('/')}}>CADASTRE-SE</button></div>
+  <div className='containerCadastro'><button className='btnIrLogin' onClick={()=>{Cadastro('/Cadastro')}}>CADASTRE-SE</button></div>
   <div className='containerTitle'><h1 className='LoginH1'>Faça seu <span className='spanH1'>Login</span>! </h1></div>
   <div className='divInputs'>
 

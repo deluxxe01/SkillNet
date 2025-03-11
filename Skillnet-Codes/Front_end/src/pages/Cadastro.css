@@ -126,7 +126,7 @@ flex-direction: column;
 
     }
     .inpt:focus{
-    border: 1px solid var(--cor-4);
+    border: 2px solid var(--cor-4);
     transition: 200ms ease;
     }
     .btnIrLogin:hover{

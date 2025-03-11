@@ -10,11 +10,18 @@
 }
 .imgWork{
     width: 50%;
-    height: 50%;
+    height: 53vh;
+    margin: 0;
+    padding: 0;
+    
+    
+    
+    
 }
 .containerLanding3{
     width: 100%;
-    height: 100vh;
+    min-height: 100vh;
+  
 
 }
 .containerH2{
@@ -39,12 +46,18 @@
   background-color: #686868;
   align-items: center;
   justify-content: center;
+  flex-direction: row-reverse;
+  
+  
 }
 .containerH2Titulo{
    width: 50%;
    align-items: center;
    justify-content: center;
    display: flex;
+   min-height: 50.9vh;
+   background-color: #686868;
+   
 }
 .spanH2_2{
  border-left: 8px solid #79BE00;
