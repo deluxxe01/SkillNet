@@ -31,6 +31,10 @@
     font-family:PoppinsMedium;
     src: url('./font/Poppins/Poppins-Medium.ttf');
 }
+@font-face {
+    font-family: NunitoBold ;
+    src: url('./font/Nunito/static/Nunito-Bold.tff');
+}
 
 .container{
 display: flex;

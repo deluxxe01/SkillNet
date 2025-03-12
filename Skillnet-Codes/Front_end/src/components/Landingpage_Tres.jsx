@@ -9,7 +9,7 @@ function Landingpage_Tres() {
                 <div className='containerH2'>
                     <h2 className='tituloH2'><span className='spanH2'>A</span> <span className='spanVerde'>solução ideal</span> <br /> para seu <span className='spanVerde'>Projeto</span><br /> está a apenas <br /> um <span className='spanVerde'>clique de <br /> distância</span></h2>
                 </div>
-                <img className='imgWork' src="https://media.istockphoto.com/id/1389465862/pt/foto/shot-of-a-young-businessman-working-on-his-laptop-at-his-desk.jpg?s=612x612&w=0&k=20&c=ynMLx4n_KDKo7Rw5mCPD9TNp02lp8H0GOWnKtayJ9nk=" alt="" />
+                <img className='imgWork' src="https://projetocolabora.com.br/wp-content/uploads/2016/10/Eduardo_Macarios_270116_nex_IMG_6777-2.jpg" alt="" />
             </div>
             <div className='containerImage2'>
                 <div className='containerH2Titulo'>

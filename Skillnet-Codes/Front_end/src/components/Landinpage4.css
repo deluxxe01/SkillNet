@@ -1,5 +1,16 @@
 .container_landingPage4{
     width: 100%;
     min-height: 100vh;
-   
+   background-color: #fbfbfb;
+   align-items: center;
+   justify-content: center;
+   display: flex;
+}
+.h1Titulo{
+    color: #020014;
+    font-family:NunitoBold ;
+    
+}
+.spanBarraVerde{
+    border-bottom:4px solid #79BE00 ;
 }
