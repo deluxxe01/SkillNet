@@ -5,6 +5,7 @@
    align-items: center;
    justify-content: center;
    display: flex;
+   flex-direction: column;
 }
 .h1Titulo{
     color: #020014;
@@ -13,4 +14,10 @@
 }
 .spanBarraVerde{
     border-bottom:4px solid #79BE00 ;
+}
+.containerMaisCurtidos{
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    margin-top: 10%;
 }

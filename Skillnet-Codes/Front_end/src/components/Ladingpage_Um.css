@@ -63,3 +63,14 @@
 
     margin-bottom: 4%;
 }
+.btnLanding1:hover{
+    background-color: #79BE00;
+    transition: 0.4s ease;
+
+}
+.btnLanding2:hover{
+    background-color:#5E8A00 ;
+    transition: 0.4s ease;
+    border: 2px solid #5E8A00;
+
+}
