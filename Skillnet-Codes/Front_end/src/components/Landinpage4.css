@@ -17,7 +17,8 @@
 }
 .containerMaisCurtidos{
     align-items: center;
-    justify-content: center;
+    justify-content: space-evenly;
     display: flex;
     margin-top: 10%;
+    width: 100%;
 }

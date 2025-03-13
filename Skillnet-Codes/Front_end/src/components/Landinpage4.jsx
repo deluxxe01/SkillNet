@@ -27,7 +27,6 @@ useEffect(()=>{
           </div>          
           <div className='containerMaisCurtidos'>
             {vetorPortifolios.map(portifolio=>(<CardPortifolios key={portifolio.id} infos={portifolio} />))}
-            
           </div>
         </div>
     </div>

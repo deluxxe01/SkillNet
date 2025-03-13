@@ -1,12 +1,13 @@
 import React from 'react'
 import './CardPortifolios.css'
 function CardPortifolios(props) {
-    const {id,nome,curtidas} = props.infos
+    const {id,nome,autor,img} = props.infos
   return (
     <div>
         <div className='containerCard'>
-            <h2>Nome do Trabalhador {nome}</h2>
-            <p>Numero  de avaliações {curtidas}</p>
+            <img src={img} alt="" className='imgCard' />
+            <h2 className='tituloCard'>{nome}</h2>
+            <p className='pAutor'>{autor}</p>
         </div>
     </div>
   )
