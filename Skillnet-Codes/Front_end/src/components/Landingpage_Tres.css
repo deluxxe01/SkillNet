@@ -9,11 +9,12 @@
     background-color: #2E2E2E;
 }
 .imgWork{
-    width: 50%;
-    height: 53vh;
+    width: 50vw ;
+    height: 50vh;
     margin: 0;
     padding: 0;
-    
+    object-fit: cover; /* Faz a imagem cobrir o espaço, mantendo a proporção e sem distorcer */
+    display: block;
     
     
     
@@ -21,15 +22,18 @@
 .containerLanding3{
     width: 100%;
     min-height: 100vh;
+    align-items: center;
+ 
   
 
 }
 .containerH2{
-    width: 50%;
+    width: 50vw;
     align-items: center;
     justify-content: center;
     display: flex;
-    height: 100%;
+   
+    
    
 }
 .spanVerde{
@@ -40,6 +44,9 @@
     font-family: PoppinsBold;
     color: #fbfbfb;
     font-size: 38px;
+    
+    margin-top: 20px;
+   
 }
 .containerImage2{
   display: flex;
@@ -55,7 +62,6 @@
    align-items: center;
    justify-content: center;
    display: flex;
-   min-height: 50.9vh;
    background-color: #686868;
    
 }
@@ -66,3 +72,5 @@
 
 
 }
+
+

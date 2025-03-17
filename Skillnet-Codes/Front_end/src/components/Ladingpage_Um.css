@@ -7,7 +7,7 @@
 .div{
     
     height: 100vh;
-    background-image: url('./images/casa_bg.png');
+    background-image: url('./images/bglanding.jpg');
     background-size: cover;
     background-repeat: no-repeat;
     align-items: center;
@@ -22,7 +22,7 @@
 .h1TitleLanding{
     color: #fbfbfb;
     font-family:NunitoBold ;
-   backdrop-filter: blur(5px);
+   backdrop-filter: blur(2px);
    padding: 10px;
    border-radius: 20px;
    font-size: 50px;
@@ -43,6 +43,7 @@
     border-radius: 40px;
     padding-top: 3px;
     padding-bottom: 3px;
+    outline: 0;
 }
 .btnLanding2{
     
@@ -57,20 +58,26 @@
    margin-left: 10px;
    padding-top: 3px;
    padding-bottom: 3px;
+   outline: 0;
 }
 .containerH3{
     margin-top: 0.5%;
 
     margin-bottom: 4%;
+    backdrop-filter: blur(2px);
+    padding: 20px;
+    border-radius: 12px;
 }
 .btnLanding1:hover{
     background-color: #79BE00;
     transition: 0.4s ease;
+    outline: o;
 
 }
 .btnLanding2:hover{
     background-color:#5E8A00 ;
     transition: 0.4s ease;
     border: 2px solid #5E8A00;
+    outline: 0;
 
 }

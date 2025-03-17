@@ -4,7 +4,7 @@ const cors = require('cors')
 
 let vetorObras=[{
     id:1,
-    img:'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQia3_-bhRut_ajBUbfz9pXyLVGMlt4KPhiMQ&s',
+    img:'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTKrEhtb61lx3JBGlJdHvIgxK1mfcTVP-sedQ&s',
     nome:'Cuidar de cachorros',
     autor:'João '
 }]
@@ -31,7 +31,7 @@ App.post('/postarPortifolio',(req,res)=>{
 
     }catch(err){
         console.log('o erro foi '+ err)
-        res.status(500).json({message:'erro ao inserir obra'})
+        res.status(500).json({message:'erro ao inserir Portifolio'})
     }
 
 })

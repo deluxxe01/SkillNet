@@ -1,8 +1,9 @@
 .containerCard{
-  border: 2px black solid;
+ 
   width: 250px;
   height: 370px;
   border-radius: 10px;
+  box-shadow:  0px 0px 20px 10px rgba(0, 0, 0, 0.233);
   
 }
 .imgCard{
@@ -21,7 +22,13 @@
   margin-left: 11px;
 }
 .containerCard:hover{
-  border: 2px solid yellow;
+  box-shadow:  0px 0px 20px 10px #78be00ad;
   transition: 0.4s ease;
-  transform: scale(1.1);
+  transform: scale(1.05);
+}
+.iconCoracao{
+  position: relative;
+  bottom: 86%;
+  width: 30px;
+  left: 86%;
 }
