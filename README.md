@@ -37,4 +37,10 @@ SkillNet é uma plataforma online que conecta usuários e freelancers para a con
 ### ⭐Prévia das Telas do Figma: Visualize o Design em Detalhes⭐
 ### HOME:
 <img src="https://i.ibb.co/vvCG0GSL/TELA-INICIAL.png">  <br/>
+### Portifolio:
+<img src="https://i.ibb.co/TD0gXwkk/PERFIL-USU-RIO-VIS-O-VERDE.jpg">  <br/>
+
+### Cadastro:
+<img src="https://i.ibb.co/gF9HZ9rk/TELA-CADASTRO.png">  <br/>
+
 
