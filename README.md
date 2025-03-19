@@ -35,5 +35,5 @@ SkillNet é uma plataforma online que conecta usuários e freelancers para a con
 - **[instagram](https://www.instagram.com/skillnet.io?igsh=NnJrb2U1aDl0a3p6)**
 
 ### ⭐**Prototipação das principais telas**⭐
-<img src="/github/TELA INCIAL.png" alt="Descrição da imagem" width="200" />
+<img src="/Skillnet-Codes/Front-end/public/github/TELA INCIAL.png" alt="Descrição da imagem" width="200" />
 
