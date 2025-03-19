@@ -27,6 +27,8 @@ display: flex;
 flex-direction: column;
 justify-content: center;
 align-items: center;
+
+
 }.h1_serviços{
 margin-bottom: 100px;
 color: white;
@@ -38,11 +40,13 @@ height: 60px;
 border-radius: 40px;
 border:none;
 outline: 0;
-padding-left: 10px;
+padding-left: 15px; 
 font-size: 22px;
+
+
 }.inpt_barra_pesquisa::placeholder {
     color: rgb(79, 79, 82); /* Cor desejada */
-   padding-left: 20px;
+   padding-left: opx;
 font-family:nunito-medium ;
   }
   
@@ -58,8 +62,33 @@ font-weight:500;
 }.container_servicos{
 border: solid purple;
 height: 100vh;
-
+display: flex;
+display: flex;
+justify-content: space-evenly;
 }@font-face {
     font-family:nunito-sans;
     src: url(./font/Nunito_Sans/Nunito-sans-italic.ttf);
+}
+
+
+
+.img_card{
+width: 200px;
+height: 300px;
+
+}.sinopse_card{
+
+
+}.card_serviço{
+ width:14%;
+ height: fit-content;
+ display: flex;
+ flex-direction: column;
+ align-items: center;
+ 
+ 
+ border: 1px solid #000;
+  word-wrap: break-word; /* Quebra palavras longas */
+  overflow-wrap: break-word; /* Alternativa moderna */
+
 }
