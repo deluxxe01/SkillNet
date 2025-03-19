@@ -32,9 +32,6 @@ SkillNet é uma plataforma online que conecta usuários e freelancers para a con
 ### Links para Divulgação do projeto e afins
 - **[Figma](https://www.figma.com/design/YTy4JbgmUk9eHSJgHYdDAO/3%C2%B0fase_S.A?node-id=0-1&p=f&t=j7Qqzb3BojkrG2kw-0)**
 - **Divulgação do projeto** [linkedin](https://www.linkedin.com/feed/update/urn:li:activity:7294521192151982081/)
-- **<div style="text-align: center;">
-    <img src="https://upload.wikimedia.org/wikipedia/commons/9/95/Instagram_logo_2022.svg" alt="Ícone do Instagram" width="100" />
-    <p>Ícone do Instagram</p>
-</div>**
+- **<div style="text-align: center;"><img src="https://upload.wikimedia.org/wikipedia/commons/9/95/Instagram_logo_2022.svg" alt="Ícone do Instagram" width="23" /><p>Ícone do Instagram</p></div>**
 
   ### ⭐Prototipação das principais telas⭐
