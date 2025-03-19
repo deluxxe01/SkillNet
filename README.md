@@ -19,7 +19,7 @@ SkillNet é uma plataforma online que conecta usuários e freelancers para a con
 - **Gerenciamento de Serviços:** O usuário pode cadastrar, editar e excluir serviços.
 - **Contratos e Freelancers:** O usuário pode contratar freelancers para serviços específicos e registrar contratos.
 - **Avaliações:** O sistema permite que usuários e freelancers avaliem serviços e portfólios.
-- **Chat:** Comunicação direta entre usuários e freelancers via chat integrado.
+- **Chat:** Comunicação direta entre usuários e freelancers via chat integrado-(Caio)
 - **Portfólio:** Os usuários podem criar e gerenciar seu próprio portfólio dentro da plataforma.
 
 ### Requisitos Não Funcionais (RNF)
