@@ -34,6 +34,7 @@ SkillNet é uma plataforma online que conecta usuários e freelancers para a con
 - **Divulgação do projeto:** [linkedin](https://www.linkedin.com/feed/update/urn:li:activity:7294521192151982081/)
 - **[instagram](https://www.instagram.com/skillnet.io?igsh=NnJrb2U1aDl0a3p6)**
 
-### ⭐**Prototipação das principais telas**⭐
-
+### ⭐Prévia das Telas do Figma: Visualize o Design em Detalhes⭐
+### HOME:
+<img width="500" height="340" src="./images/TELA INICIAL.png">  <br/>
 
