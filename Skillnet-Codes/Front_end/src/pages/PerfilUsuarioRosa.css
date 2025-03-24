@@ -1,0 +1,71 @@
+.Header-InformacoesUsuarioRosa{
+
+    background-color: #FFD9D9;
+    margin-top: 20vh;
+    margin-left: 50vh;
+    width: 100vh;
+    height: 40vh;
+    border-radius: 5vh;
+
+}
+
+.Header1-InformacoesUsuarioRosa{
+
+    /* border: solid black 2px;   */
+    width: 60vh;
+    height: 20vh;
+    background-color: aqua;
+    margin-left: 35vh;
+    margin-top: 5vh;
+}
+
+ .NomeUsuarioRosa{
+   
+    font-family: "Nunito", sans-serif;
+    width: 50vh;
+    background-color: blue;
+    
+}
+
+.Button-CompartilharUsuarioRosa{
+     
+    color: white;
+    font-size: 2vh;
+    border-radius: 1.5vh;
+    height: 4vh;
+    width: 15vh;
+    margin-top: 2vh;
+    margin-left: 16vh;
+    background-color: black;
+} 
+
+.Button-ContratarUsuarioRosa{
+
+    color: rgb(0, 0, 0);
+    font-size: 2vh;
+    border-radius: 1.5vh;
+    height: 4vh;
+    width: 15vh;
+    margin-top: 2vh;
+    margin-left: 1vh;
+    background-color: #FFD9D9;
+}
+
+.Header2-InformacoesUsuarioRosa{
+    border: solid black 2px; 
+    width: 29vh;
+    height: 35vh;
+    margin-top: -20vh;
+    margin-left: 5vh;
+}
+.CirculoImagemPerfil{
+   
+    margin-top: 5vh;
+    width: 20vh;
+    height:  20vh;
+    background-color: red;
+    border-radius: 50%;
+   
+}
+
+
