@@ -1,5 +1,7 @@
 # SkillNet
 
+Colegas de Senai ensinar Dona Maria Eduarda a sair de sua conta do senai depois de ir embora, se alguem de má indule entrar aqui pode acabar com o trabalho de vocês. Bom trabalho pra vocês e olhem a bio dela do github, já fiz mudei aquilo faz umas semanas e ngm viu.
+
 ## Descrição
 
 SkillNet é uma plataforma online que conecta usuários e freelancers para a contratação de serviços específicos. A aplicação permite a criação de portfólios, gerenciamento de serviços, interações entre clientes e freelancers, além de avaliações e contratos. A plataforma visa facilitar a troca de serviços, com funcionalidades de cadastro, chat, e feedback de usuários.
