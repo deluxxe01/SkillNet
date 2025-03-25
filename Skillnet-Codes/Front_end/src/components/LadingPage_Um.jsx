@@ -10,7 +10,8 @@ function LadingPage_Um() {
         <div className='div'>
          <div>
             <h1 className='h1TitleLanding'>
-              <span className='spanTitleLanding'> Conecte-se com os melhores</span><br />freelancers e alcance seus objetivos.
+              {/* <span className='spanTitleLanding'> Conecte-se com os melhores</span><br />freelancers e alcance seus objetivos. */}
+              <span className='spanTitleLanding'> Olha o README de vocês da SA to tetando falar com vocês a dias</span><br />
             </h1>
          </div>
          <div className='containerH3'>
