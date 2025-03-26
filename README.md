@@ -1,6 +1,5 @@
 # SkillNet
 
-Colegas de Senai ensinar Dona Maria Eduarda a sair de sua conta do senai depois de ir embora, se alguem de má indule entrar aqui pode acabar com o trabalho de vocês. Bom trabalho pra vocês e olhem a bio dela do github, já fiz mudei aquilo faz umas semanas e ngm viu.
 
 ## Descrição
 
