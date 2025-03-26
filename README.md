@@ -31,9 +31,9 @@ SkillNet é uma plataforma online que conecta usuários e freelancers para a con
 - **Acessibilidade:** A plataforma é compatível com leitores de tela, garantindo acessibilidade para todos os usuários.
 
 ### Links para Divulgação do projeto e afins
-- **Figma:**[Figma](https://www.figma.com/design/YTy4JbgmUk9eHSJgHYdDAO/3%C2%B0fase_S.A?node-id=0-1&p=f&t=j7Qqzb3BojkrG2kw-0)
-- **LinkedIn:** [linkedin](https://www.linkedin.com/feed/update/urn:li:activity:7294521192151982081/)
-- **Instagram:**[instagram](https://www.instagram.com/skillnet.io?igsh=NnJrb2U1aDl0a3p6)
+- **Figma:** [Figma](https://www.figma.com/design/YTy4JbgmUk9eHSJgHYdDAO/3%C2%B0fase_S.A?node-id=0-1&p=f&t=j7Qqzb3BojkrG2kw-0)
+- **LinkedIn:** [LinkedIn](https://www.linkedin.com/feed/update/urn:li:activity:7294521192151982081/)
+- **Instagram:** [Instagram](https://www.instagram.com/skillnet.io?igsh=NnJrb2U1aDl0a3p6)
 
 ### ⭐Prévia das Telas do Figma: Visualize o Design em Detalhes⭐
 ### HOME:
