@@ -39,10 +39,6 @@ SkillNet é uma plataforma online que conecta usuários e freelancers para a con
 
 ### Tela Inicial:
 [<img src="https://i.ibb.co/vvCG0GSL/TELA-INICIAL.png" width="400px">](https://github.com/deluxxe01/SkillNet/blob/main/Skillnet-Codes/Front_end/public/github/TELA%20INICIAL.png)  <br/>
-## Tela de Login: 
-[<img src="https://ibb.co/0pwVQkmH/telaLogin.png" width="400px">]([https://github.com/deluxxe01/SkillNet/blob/main/Skillnet-Codes/Front_end/public/github/telaLogin.png](https://github.com/deluxxe01/SkillNet/blob/main/Skillnet-Codes/Front_end/public/github/telaLogin.png?raw=true))  <br/>
 
-### Cadastro:
-[<img src="https://i.ibb.co/gF9HZ9rk/TELA-CADASTRO.png"  width="400" >](https://github.com/deluxxe01/SkillNet/blob/main/Skillnet-Codes/Front_end/public/github/TELA%20CADASTRO.png)  <br/>
 
 
