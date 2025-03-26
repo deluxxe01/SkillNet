@@ -37,10 +37,10 @@ SkillNet é uma plataforma online que conecta usuários e freelancers para a con
 
 ## ⭐ Prévia das Telas do Figma: Visualize o Design em Detalhes
 
-### HOME:
+### Tela Inicial:
 [<img src="https://i.ibb.co/vvCG0GSL/TELA-INICIAL.png" width="400px">](https://github.com/deluxxe01/SkillNet/blob/main/Skillnet-Codes/Front_end/public/github/TELA%20INICIAL.png)  <br/>
-### Portifolio:
-[<img src="https://i.ibb.co/TD0gXwkk/PERFIL-USU-RIO-VIS-O-VERDE.jpg" width="400" >](https://github.com/deluxxe01/SkillNet/blob/main/Skillnet-Codes/Front_end/public/github/PERFIL-USU%C3%81RIO-VIS%C3%83O%20VERDE.jpg)  <br/>
+## Tela de Login: 
+[<img src="https://i.ibb.co/vvCG0GSL/telaLogin.png" width="400px">](https://github.com/deluxxe01/SkillNet/blob/main/Skillnet-Codes/Front_end/public/github/telaLogin.png)  <br/>
 
 ### Cadastro:
 [<img src="https://i.ibb.co/gF9HZ9rk/TELA-CADASTRO.png"  width="400" >](https://github.com/deluxxe01/SkillNet/blob/main/Skillnet-Codes/Front_end/public/github/TELA%20CADASTRO.png)  <br/>
