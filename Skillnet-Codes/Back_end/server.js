@@ -6,7 +6,8 @@ let vetorObras=[{
     id:1,
     img:'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTKrEhtb61lx3JBGlJdHvIgxK1mfcTVP-sedQ&s',
     nome:'Cuidar de cachorros',
-    autor:'João '
+    autor:'João ',
+    avaliacao:4.5
 }]
 
 
@@ -15,15 +16,17 @@ App.use(cors())
 
 App.post('/postarPortifolio',(req,res)=>{
 
-    const {nome,autor,img} = req.body
+    const {nome,autor,img,avaliacao} = req.body
     
-
+   
     try{
         const Portifolio={
             id:vetorObras.length+1,
             img:img,
             nome:nome,
-            autor:autor
+            autor:autor,
+            avaliacao:avaliacao,
+            
         }
 
         vetorObras.push(Portifolio)

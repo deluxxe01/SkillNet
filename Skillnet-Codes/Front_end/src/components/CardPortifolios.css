@@ -32,7 +32,11 @@
 }
 .iconCoracao{
   position: relative;
-  bottom: 86%;
+  bottom: 350px;
+  width: 32px;
+  left: 5px;
+  
+}
+.imgEstrela{
   width: 30px;
-  left: 86%;
 }

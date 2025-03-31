@@ -9,7 +9,9 @@ function Landinpage4() {
 
 const melhoresPortifolios = async()=>{
    const resultado =  await axios.get('http://localhost:3000/') 
+   
    setVetorPortifolios(resultado.data)
+   
    console.log(resultado.data)
 }
 useEffect(()=>{
@@ -26,7 +28,10 @@ useEffect(()=>{
             <h1 className='h1Titulo'>PORTIFÓLI<span className='spanBarraVerde'>OS MAIS</span> CURTIDOS</h1>
           </div>          
           <div className='containerMaisCurtidos'>
-            {vetorPortifolios.map(portifolio=>(<CardPortifolios key={portifolio.id} infos={portifolio} />))}
+            {vetorPortifolios.map(portifolio=>(
+              <CardPortifolios key={portifolio.id} infos={portifolio} />
+              
+            ))}
           </div>
         </div>
     </div>
