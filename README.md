@@ -10,7 +10,7 @@ SkillNet é uma plataforma online que conecta usuários e freelancers para a con
 - **Bruno:** [Bruno Zarowne](https://github.com/BrunoZarowne)  
 - **Maria Eduarda:** [Deluxxe01](https://github.com/deluxxe01)  
 - **Vitor:** [Vithor Lorram Valente](https://github.com/vithorLorramValente7)  
-- **Caio:** [Caiolorram Valente](https://github.com/caiolorramvalente)
+- **Caio:** [Caio lorram Valente](https://github.com/caiolorramvalente)
 
 ## 🛠️ Funcionalidades 
 
