@@ -114,6 +114,7 @@ flex-direction: column;
         font: 24px;
         margin: 0;
         padding: 0;
+       
     }
     .btnIrLogin{
         font-family: PoppinsSemiBold;
@@ -145,8 +146,12 @@ flex-direction: column;
     .inptCheck{
         border: 3px solid var(--cor-3);
         min-width: 20px;
-        height: 15px;
+        height: 17px;
         border-radius:5px;
+        background-position: center;
+        background-repeat: 0;
+        background-image: url('./icons/check.svg');
+        
        
     }
     .divCheckBox{
@@ -156,6 +161,7 @@ flex-direction: column;
     }
     .spanCheck{
         color: #304B00;
+        
     }
     .pCheck{
         color: var(--cor-4);
