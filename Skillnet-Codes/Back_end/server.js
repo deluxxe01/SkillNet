@@ -7,8 +7,10 @@ let vetorObras=[{
     img:'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTKrEhtb61lx3JBGlJdHvIgxK1mfcTVP-sedQ&s',
     nome:'Cuidar de cachorros',
     autor:'João ',
-    avaliacao:4.5
+    avaliacao:1.5
 }]
+let usuarioLogado
+
 
 
 App.use(express.json())
@@ -44,6 +46,17 @@ App.get('/',(req,res)=>{
     res.json(vetorObras)
     
 })
+App.post('/UsuarioLogado',(req,res)=>{
+    const resultado =req.body
+    usuarioLogado=resultado
+    
+})
+
+App.get("/UsuarioLogado",(req,res)=>{
+    
+    res.json(usuarioLogado)
+})
+
 
 
 
