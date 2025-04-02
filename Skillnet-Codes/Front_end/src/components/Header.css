@@ -12,7 +12,7 @@
    display: flex;
    justify-content: space-around;
    font-family: PoppinsRegular;
-
+align-items: center;
    button{
     border: none;
     background-color: black;

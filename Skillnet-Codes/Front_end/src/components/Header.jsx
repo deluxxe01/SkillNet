@@ -1,11 +1,16 @@
 import React from 'react'
 import './Header.css'
+import { Link } from "react-router-dom"
+
 
 function Header() {
 
   return (
     <div className='containerHeader'>
-        <button>Serviços</button>
+      <Link to={'/Area_servico_pesquisado'}> 
+        <button link to={'Area_servico_pesquisado'}>Serviços</button>
+        </Link>
+       
         <button>Portifólios</button>
         <button className='logo'>
             <img src="./images/logo_SkillNet.svg" alt="" />

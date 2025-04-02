@@ -1,6 +1,13 @@
 import React from 'react'
 import './Login.css'
 import { useNavigate } from 'react-router-dom'
+import { Swiper, SwiperSlide } from "swiper/react";
+import {Pagination, Autoplay } from "swiper/modules";
+import "swiper/css";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
+
+
 function Login() {
   const Cadastro = useNavigate()
 
@@ -9,7 +16,32 @@ function Login() {
     <div>
 <div className='container'>
 
-<img className='imgCadastro' src="./images/imageLogin.jpg" alt="" />
+<div className="carrossel-container">
+      <Swiper
+        modules={[Pagination, Autoplay]}
+        spaceBetween={20}
+        slidesPerView={1}
+        pagination={{ clickable: true }}
+        autoplay={{ delay: 3000 }}
+        loop={true}
+      className="swiper_cadastro"
+      
+      >
+        <SwiperSlide>
+          <img src="https://ciclovivo.com.br/wp-content/uploads/2018/10/iStock-536613027.jpg" alt="Imagem 1" className="carrossel-img" />
+        </SwiperSlide>
+        <SwiperSlide>
+          <img src="https://ciclovivo.com.br/wp-content/uploads/2018/10/iStock-536613027.jpg" alt="Imagem 2" className="carrossel-img" />
+        </SwiperSlide>
+        <SwiperSlide>
+          <img src="https://ciclovivo.com.br/wp-content/uploads/2018/10/iStock-536613027.jpg" alt="Imagem 3" className="carrossel-img" />
+        </SwiperSlide>
+      </Swiper>
+
+
+
+   
+  </div>
 
 <div className='container_cadastro'>
   <div className='containerCadastro'><button className='btnIrLogin' onClick={()=>{Cadastro('/Cadastro')}}>CADASTRE-SE</button></div>

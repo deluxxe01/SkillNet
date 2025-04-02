@@ -1,3 +1,6 @@
+
+
+
 :root{
     --cor-1: #686868;
     --cor-2: #2E2E2E;
@@ -36,10 +39,7 @@
     src: url('./font/Nunito/static/Nunito-Bold.tff');
 }
 
-.container{
-display: flex;
-flex-direction: column;
-}
+
 @media (min-width: 780px) {
     .container{
         display: flex;
@@ -57,14 +57,7 @@ flex-direction: column;
         font-family: NunitoExtrabold;
         font-size: 40px;
     }
-    .imgCadastro{
-        width: 45%;       /* Garante que a largura da imagem ocupe 100% da tela */
-        height: 100vh;     /* Garante que a altura da imagem ocupe 100% da altura da tela */
-        object-fit: cover; /* Faz a imagem cobrir o espaço, mantendo a proporção e sem distorcer */
-        display: block;    /* Remove possíveis espaçamentos indesejados abaixo da imagem */
-      
-
-    }
+    
     .container_cadastro{
       align-items: center;
       justify-content: space-evenly;
@@ -72,7 +65,8 @@ flex-direction: column;
       flex-direction: column;
       background-color: var(--cor-6);
       width: 55%;
-
+    
+    
     }
     .container_inputs{
         display: flex;
@@ -162,7 +156,48 @@ flex-direction: column;
         margin-left: 10px;
         font-family:PoppinsMedium ;
     }
-   
+ 
 
+   
+  
     
+
+
+
+}
+
+.carrossel-container {
+    width: 50vw;  /* Ocupa 50% da tela */
+    height: 100vh; /* Ocupa toda a altura da tela */
+    left: 0; /* Fixa no lado esquerdo */
+    top: 0;
+
+  }
+  
+  .carrossel-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Mantém proporção sem distorcer */
+  
+  }
+  
+  
+  .swiper_cadastro{
+  height: 100vh;
+  
+  
+  }/* Cor das bolinhas inativas */
+.swiper-pagination-bullet {
+    background-color:#000000 !important; /* Muda para branco */
+    opacity: 0.4; /* Deixa um pouco transparente */
+    width: 10px;  /* Largura */
+    height: 10px; /* Altura */
+}
+  
+  /* Cor da bolinha ativa */
+  .swiper-pagination-bullet-active {
+    background-color:#79BE00 !important; /* Muda para vermelho (ou qualquer outra cor) */
+    opacity: 1; /* Deixa totalmente visível */
+    width: 10px;  /* Largura */
+    height: 10px; /* Altura */
 }
