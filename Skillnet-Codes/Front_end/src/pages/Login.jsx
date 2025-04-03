@@ -28,13 +28,13 @@ function Login() {
       
       >
         <SwiperSlide>
-          <img src="https://ciclovivo.com.br/wp-content/uploads/2018/10/iStock-536613027.jpg" alt="Imagem 1" className="carrossel-img" />
+          <img src="./images/img_carrosel_onça.jpg" alt="Imagem 1" className="carrossel-img" />
         </SwiperSlide>
         <SwiperSlide>
-          <img src="https://ciclovivo.com.br/wp-content/uploads/2018/10/iStock-536613027.jpg" alt="Imagem 2" className="carrossel-img" />
+          <img src="./images/img_carrosel_arara.jpg" alt="Imagem 2" className="carrossel-img" />
         </SwiperSlide>
         <SwiperSlide>
-          <img src="https://ciclovivo.com.br/wp-content/uploads/2018/10/iStock-536613027.jpg" alt="Imagem 3" className="carrossel-img" />
+          <img src="./images/img_carrosel_vaca.jpg" alt="Imagem 3" className="carrossel-img" />
         </SwiperSlide>
       </Swiper>
 
