@@ -35,6 +35,7 @@ function Cadastro() {
       } 
       console.log(usuario)
       const resultado =axios.post('http://localhost:3000/UsuarioLogado',usuario) 
+      login('/Area_servico_pesquisado')
     
     }
     
