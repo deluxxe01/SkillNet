@@ -1,36 +1,62 @@
-import React, { useState } from 'react'
+import React, { useState,useMemo } from 'react'
 import Header from '../components/Header'
 import "./Area_servico_pesquisado.css"
 
 function Area_servico_pesquisado() {
  const[valorInptPesquisa,setValorInptPesquisa] = useState("")
-    let cardTrabalhosRango = 
-    {titulo:'rango',
-    snipose:'Um camaleão que viveu como um animal de estimação se encontra em uma crise de identidade. Rango se questiona',
-    capa:'https://i.scdn.co/image/ab67616d0000b27306ed1d9098d927cd5eabd758'
-    
-    
-    
-    }
-    let cardTrabalhosDuna = 
-    {titulo:'Duna',
-    snipose:'Um camaleão que viveu como um animal de estimação se encontra em uma crise de identidade. Rango se questiona',
-    capa:'https://upload.wikimedia.org/wikipedia/pt/a/a3/Dune_2021.jpeg'
-    
-    
-    
-    }
-    let cardTrabalhosClick = 
-    {titulo:'Click',
-    snipose:'Um camaleão que viveu como um animal de estimação se encontra em uma crise de identidade. Rango se questiona',
-    capa:'https://m.media-amazon.com/images/S/pv-target-images/e4232de175bdb04555da6115c40d948ed477d80cba98ad39185b2534034328f3.jpg'
-    
-    
-    
-    }
 
+ const [filtraServico,setFiltraServico] = useState('')
+ 
+
+
+  
+const servicos = [
+  {
+    titulo: "Homem-Aranha",
+    poster: "https://a-static.mlcdn.com.br/1500x1500/poster-cartaz-homem-aranha-spider-man-2-c-pop-arte-poster/poparteskins2/15938524040/2fd03f73140e1d62809ced7a7822769f.jpeg",
+    sinopse: "Peter Parker ganha superpoderes e precisa equilibrar sua vida de estudante com a de herói."
+  },
+  {
+    titulo: "The Batman",
+    poster: "https://agrafica.com.br/wp-content/uploads/2016/01/resolucao_300dpi.jpg",
+    sinopse: "Bruce Wayne encara seu lado mais sombrio enquanto investiga crimes misteriosos em Gotham."
+  },
+  {
+    titulo: "Clube da Luta",
+    poster: "https://br.web.img3.acsta.net/medias/nmedia/18/90/95/96/20122166.jpg",
+    sinopse: "Um homem forma um clube secreto de luta para lidar com sua vida entediante."
+  },
+  {
+    titulo: "Interestelar",
+    poster: "https://waltermattos.com/site2/wp-content/uploads/2014/11/tut_Analise_Grafica_Cartaz_Interstellar_05_011.png",
+    sinopse: "Astronautas buscam um novo lar para a humanidade viajando por buracos de minhoca."
+  },
+  {
+    titulo: "Wall-e",
+    poster: "https://upload.wikimedia.org/wikipedia/pt/thumb/3/30/WALL-E.jpg/250px-WALL-E.jpg",
+    sinopse: "Um pequeno robô solitário vive em uma Terra abandonada até encontrar o amor em EVA."
+  },
+  {
+    titulo: "Homem-Formiga",
+    poster: "https://upload.wikimedia.org/wikipedia/pt/9/90/Ant_Man-Poster.jpg",
+    sinopse: "Scott Lang se torna o Homem-Formiga, um herói com a habilidade de encolher."
+  },
+  {
+    titulo: "Forest Gump",
+    poster: "https://m.media-amazon.com/images/S/pv-target-images/c13db7cab337d48fbac3715065ef255862e2c7e5fc25d6a262a0cf7c35c29d20.jpg",
+    sinopse: "Forrest, um homem simples, testemunha e influencia grandes momentos da história americana."
+  }
+]
+const ServicosFiltrados = useMemo(() => {
+  const ServicoMinusculo = filtraServico.toLowerCase().trim()
+  return servicos.filter((servico) =>
+    servico.titulo.toLowerCase().includes(ServicoMinusculo)
+  )
+}, [filtraServico])
     return (
-    <div>
+   
+   
+   <div>
    
       <div className='container_img_bg '>
      
@@ -47,35 +73,33 @@ type="text"
  className='inpt_barra_pesquisa' 
   placeholder='Procure a sua área'
   
-  value={valorInptPesquisa}
+  value={filtraServico}
 
-      onChange={(event)=>{setValorInptPesquisa(event.target.value)}}
+  onChange={(e) =>setFiltraServico (e.target.value)}
   />
 </div>
 </div>
      
+<div className="movie-list">
+        {ServicosFiltrados.length > 0 ? (
+          ServicosFiltrados.map((servico, index) => (
+            <div className="movie-item" key={index}>
+              <img src={servico.poster} alt={servico.titulo} className="poster" />
+              <h3>{servico.titulo}</h3>
+              <p>{servico.sinopse}</p>
+            </div>
+          ))
+        ) : (
+          <span>Nenhum filme encontrado!</span>
+        )}
+       
+
+       
+       
+     
+     
+     
       </div>
-   <h1 className='h1_serviços_dois'>{valorInptPesquisa || 'serviço'}</h1>
-     <div className='container_servicos'>
-<div className='card_serviço'>
-<h1>{ cardTrabalhosClick.titulo}</h1>
-<img src={ cardTrabalhosClick.capa} alt=""  className='img_card' />
-<p className='sinopse_card'>{ cardTrabalhosClick.snipose}</p>
-
-</div>
-<div className='card_serviço'>
-<h1>{cardTrabalhosDuna.titulo}</h1>
-<img src={cardTrabalhosDuna.capa} alt=""  className='img_card' />
-<p className='sinopse_card'>{cardTrabalhosDuna.snipose}</p>
-
-</div>
-<div className='card_serviço'>
-<h1>{cardTrabalhosRango.titulo}</h1>
-<img src={cardTrabalhosRango.capa} alt=""  className='img_card' />
-<p className='sinopse_card'>{cardTrabalhosRango.snipose}</p>
-
-</div>
-
 
 
      </div>
