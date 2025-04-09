@@ -12,9 +12,9 @@ function Area_servico_pesquisado() {
   
 const servicos = [
   {
-    titulo: "Homem-Aranha",
+    titulo: "     Lorem ipsum dolor sit amet, consectetur adipisicing elit. ",
     poster: "https://a-static.mlcdn.com.br/1500x1500/poster-cartaz-homem-aranha-spider-man-2-c-pop-arte-poster/poparteskins2/15938524040/2fd03f73140e1d62809ced7a7822769f.jpeg",
-    sinopse: "Peter Parker ganha superpoderes e precisa equilibrar sua vida de estudante com a de herói."
+    sinopse: " Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium odio nulla in minima! Ipsa provident sit quis ab voluptatem, nemo odit, itaque, magnam ducimus numquam quaerat aut atque excepturi ut."
   },
   {
     titulo: "The Batman",
@@ -45,6 +45,11 @@ const servicos = [
     titulo: "Forest Gump",
     poster: "https://m.media-amazon.com/images/S/pv-target-images/c13db7cab337d48fbac3715065ef255862e2c7e5fc25d6a262a0cf7c35c29d20.jpg",
     sinopse: "Forrest, um homem simples, testemunha e influencia grandes momentos da história americana."
+  },
+  {
+titulo:"pitufos",
+poster:"https://play-lh.googleusercontent.com/UQcWIDQ9hKnyvBeDvV2RIgyEnNmTG_NxkzEL37bRs2WkUP5j9-7_k4nepiID5S3xrLxCaw",
+sinopse:"sdsdjsdfsdfjknsjdfjksdfjsjkdfnjksdnfjksdfjksjdfnjksdnfjknvjkbjkcvbcvbcvjkbncvjkbkcjvnbjkcvbcvbcvbcvb"
   }
 ]
 const ServicosFiltrados = useMemo(() => {
@@ -56,10 +61,10 @@ const ServicosFiltrados = useMemo(() => {
     return (
    
    
-   <div>
-   
+   <div className='container_pagina'>
+  
       <div className='container_img_bg '>
-     
+
       <Header/>
      
       <div className='espaço_livre'>
@@ -79,18 +84,18 @@ type="text"
   />
 </div>
 </div>
-     
-<div className="movie-list">
+   <div className='ocupar_espaço'></div>  
+<div className="lista_serviço">
         {ServicosFiltrados.length > 0 ? (
           ServicosFiltrados.map((servico, index) => (
-            <div className="movie-item" key={index}>
+            <div className="card_servico" key={index}>
               <img src={servico.poster} alt={servico.titulo} className="poster" />
               <h3>{servico.titulo}</h3>
               <p>{servico.sinopse}</p>
             </div>
           ))
         ) : (
-          <span>Nenhum filme encontrado!</span>
+          <span className='span_nFilmes'>Nenhum serviço encontrado!</span>
         )}
        
 

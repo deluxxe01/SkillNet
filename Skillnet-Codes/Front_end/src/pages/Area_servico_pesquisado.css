@@ -13,6 +13,8 @@ background-repeat: no-repeat;
 background-size: 100%;
 
 }
+
+
 .h1_serviços{
 width: fit-content;
 border-bottom: solid rgba(121, 190, 0, 1) 5px;
@@ -72,67 +74,61 @@ justify-content: space-evenly;
 
 
 
-.img_card{
-width: 200px;
+
+
+.img-filmes{
 height: 300px;
 
-}.sinopse_card{
+}
 
-
-}.card_serviço{
- width:14%;
- height: fit-content;
- display: flex;
- flex-direction: column;
- align-items: center;
- 
- 
- border: 1px solid #000;
-  word-wrap: break-word; /* Quebra palavras longas */
-  overflow-wrap: break-word; /* Alternativa moderna */
-
-}.card_filme{
-  background-color: rgb(71, 71, 71);
-border: solid red;
-  width: 300px;
-height: 400px;
+.lista_serviço {
   display: flex;
-flex-direction: column;
-align-items: center;
-margin: 30px;
-}.img-filmes{
-height: 300px;
-
-}.lista-filme{
-display: flex;
-justify-content: space-evenly;
-
-
-}.movie-list {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 20px;
+  justify-content: space-evenly;
+  gap: 5px;
+border: solid blue;
+height: fit-content;
+flex-wrap: wrap;
 }
 
-.movie-item {
-  background: #f9f9f9;
-  padding: 15px;
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-  text-align: center;
+.card_servico {
+ 
+ 
+    
+  width: 400px;
+ height: fit-content;
+    display: flex;
+  flex-direction: column;
+  margin: 30px;
+  
+  word-wrap: break-word;
+  white-space: normal;
+
 }
 
-.movie-item img.poster {
-  width: 200px;
+.card_servico img.poster {
+  width: 400px;
   height: 300px;
-  border-radius: 10px;
+  border-top-left-radius: 35px;
+  border-top-right-radius:35px ;
+object-fit: cover;
+
 }
 
-.movie-item h3 {
+.card_servico h3 {
   margin: 10px 0 5px;
   font-size: 18px;
 }
 
-.movie-item p {
+.card_servico p {
   font-size: 14px;
   color: #555;}
+
+ 
+.ocupar_espaço{
+height: 100px;
+
+}.span_nFilmes{
+font-size: x-large;
+
+
+}
