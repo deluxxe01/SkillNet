@@ -60,15 +60,20 @@ function Login() {
    
   </div>
 
-<div className='container_cadastro'>
-  <div className='containerCadastro'><button className='btnIrLogin' onClick={()=>{Cadastro('/Cadastro')}}>CADASTRE-SE</button></div>
-  <div className='containerTitle'><h1 className='LoginH1'>Faça seu <span className='spanH1'>Login</span>! </h1></div>
+<div className='container-login'>
+  <div className='containerCadastro'>
+    <button className='btnIrCadastro' onClick={()=>{Cadastro('/Cadastro')}}>CADASTRE-SE</button>
+  </div>
+  <div className='containerTitle'>
+    <h1 className='LoginH1'>Faça seu <span className='spanLogin'>Login!</span></h1>
+  </div>
   <div className='divInputs'>
 
   
     <div className='container_inputs'>
       <label htmlFor=""className='lblLogin'>Email</label> 
-      <input type="text" className='inptLogin' placeholder='Digite seu email' onChange={(e) => {setInptEmail(e.target.value)}}/>
+      <input type="text" className='inptLogin' placeholder='Digite seu email' 
+      onChange={(e) => {setInptEmail(e.target.value)}}/>
     </div>
 
     <div className='container_inputs'>

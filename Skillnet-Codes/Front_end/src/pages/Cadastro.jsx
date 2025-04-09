@@ -96,7 +96,7 @@ function Cadastro() {
 
             <div className='divCheckBox'>
               <div className='inptCheck' 
-              style={ inptCheck ? {backgroundColor: '#304B00' } : {backgroundColor: '#2f4b0000'}} 
+              style={ inptCheck ? {backgroundColor: '#83CF41' } : {backgroundColor: '#2f4b0000', backgroundImage:"url()"}} 
               onClick={()=>{setInptCheck(!inptCheck)}}>
               </div>
               <p className='pCheck'><span className='spanCheck'>Aceito os</span> termos de serviços</p>

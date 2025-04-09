@@ -1,12 +1,21 @@
-.containerLogin{
-    margin-left: 70%;
-    position: relative;
-   bottom: 20px;
-}
+
  @media (min-width:780px) {
+
+    .container-login{
+        align-items: center;
+      justify-content: space-evenly;
+      display: flex;
+      flex-direction: column;
+      background-color: #fbfbfb;
+      width: 55%;
+    
+    }
     .lblLogin{
-        font-family: PoppinsRegular;
+        font-family: LatoRegular;
         font-size: x-large;
+        margin-bottom: 10px;
+        margin-left: 10px;
+        color: #0E261E;
        
     }
     .btnLogin{
@@ -16,35 +25,44 @@
         padding-left:18% ;
         padding-top: 0.2%;
         padding-bottom:0.2% ;
-        font-family: PoppinsBold;
-        background-color: #304b00;
+        font-family: Mont;
+        background-color: #004B22;
         outline: 0;
         border: #304b00 1px solid;
         border-radius: 100px;
         margin-bottom: 10%;
+        font-weight: 700;
+        min-height: 50px;
 
 
+    }
+    .spanLogin{
+        color: #83CF41;
     }
     .lblLogin2{
-        font-family: PoppinsRegular;
+        font-family: LatoRegular;
         font-size:24px ;
-        margin-top: 10%;
+        margin-top: 20px;
+        color: #0E261E;
+        margin-bottom: 10px;
+        margin-left: 10px;
     }
     .LoginH1{
-        font-family: NunitoExtraBold;
+        font-family: Mont;
         font-size: 41px;
-        color: #304b00;
+        color: #004B22;
+        font-weight: 800;
         
 
     }
     .inptLogin{
         width: 350px;
-        min-height: 40px;
+        min-height: 50px;
         border-radius: 100px;
         outline: none;
         border: 1.8px solid var(--cor-3);
         font-size: medium;
-        font-family: PoppinsRegular;
+        font-family: LatoRegular;
         padding-left: 10px;
         margin-bottom: 10%;
     }
@@ -55,12 +73,12 @@
     }
     .inptLogin2{
         width: 350px;
-        min-height: 40px;
+        min-height: 50px;
         border-radius: 100px;
         outline: none;
         border: 1.8px solid var(--cor-3);
         font-size: medium;
-        font-family: PoppinsRegular;
+        font-family: LatoRegular;
         padding-left: 10px;
         margin-bottom: 20%;
 
@@ -74,6 +92,27 @@
         border: #C0EA74 1.8px solid;
 
     }
+    .containerLogin{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+        background-color: #004B22;
+    }
+    .btnIrCadastro{
+        font-family: LatoBold;
+        background-color: #004B22;
+        color: #ffffff;
+       padding-left: 25px;
+       padding-right: 25px;
+       padding-top: 5px;
+       padding-bottom: 5px;
+       outline: none;
+       border: 1px solid var(--cor-3);
+       font-size: 20px;
+       border-radius: 100px;
+
+    }
+    
     
     
 
@@ -114,4 +153,7 @@
      opacity: 1; /* Deixa totalmente visível */
      width: 10px;  /* Largura */
      height: 10px; /* Altura */
+ }
+ .lblLogin{
+    
  }

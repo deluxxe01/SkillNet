@@ -12,6 +12,7 @@ const router = createBrowserRouter([
     {path:'/Cadastro',element:<Cadastro />},
     {path:'/Area_servico_pesquisado',element:< Area_servico_pesquisado />},
     {path:'/PerfilUsuarioRosa', element: <PerfilUsuarioRosa />}
+    
 
 ]) 
 

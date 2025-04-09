@@ -12,13 +12,13 @@
 
 
 @font-face {
-    font-family: NunitoExtrabold;
+    font-family: MontBold;
     src: url('./font/Nunito/static/Nunito-ExtraBold.ttf');
 }
 
 @font-face {
-    font-family: PoppinsBold;
-    src: url('./font/Poppins/Poppins-Bold.ttf');
+    font-family: LatoBold;
+    src: url('./font/Lato/Lato-Bold.ttf');
 }
 
 @font-face {
@@ -35,8 +35,17 @@
     src: url('./font/Poppins/Poppins-Medium.ttf');
 }
 @font-face {
-    font-family: NunitoBold ;
-    src: url('./font/Nunito/static/Nunito-Bold.tff');
+    font-family: Mont ;
+    src: url('./font/Montserrat/Montserrat-VariableFont_wght.ttf');
+    
+}
+@font-face{
+    font-family: LatoBlack;
+    src:url('./font/Lato/Lato-Black.ttf') ;
+}
+@font-face {
+    font-family: LatoRegular;
+    src: url('./font/Lato/Lato-Regular.ttf');
 }
 
 
@@ -45,6 +54,7 @@
         display: flex;
         flex-direction: row;
         justify-content: space-evenly;
+        background-color: #004B22;
         
 
     }
@@ -53,9 +63,10 @@
         font-size: 40px;
     }
     .cadatroH1{
-        color: var(--cor-3);
-        font-family: NunitoExtrabold;
+        color: #fbfbfb;
+        font-family: Mont;
         font-size: 40px;
+        font-weight: 700;
     }
     
     .container_cadastro{
@@ -63,7 +74,7 @@
       justify-content: space-evenly;
       display: flex;
       flex-direction: column;
-      background-color: var(--cor-6);
+      background-color: e;
       width: 55%;
     
     
@@ -83,20 +94,20 @@
         margin-bottom: 8%;
         margin-top: 0.5%;
         font-size: medium;
-        font-family: PoppinsRegular;
+        font-family: Mont;
         padding-left: 10px;
 
     }
     .btnCadastro{
         width: 400px;
-        height: fit-content;
+        height: 50px;
         font-size: 25px;
-        background-color: var(--cor-3);
-        color: var(--cor-6);
+        background-color: #83CF41;
+        color: #004B22;
         border: none;
         border-radius: 100px;
        padding: 5px;
-       font-family:  PoppinsBold;
+       font-family:  LatoBlack;
     }
     .containerLogin{
       margin-left: 70%;
@@ -104,23 +115,26 @@
       
     }
     .lblCadastro{
-        font-family: PoppinsRegular;
-        font: 24px;
-        margin: 0;
+        font-family: LatoBold;
+        font-size: 21px;
+        margin-bottom: 4px;
+        margin-left: 10px;
         padding: 0;
+        color: #FBFBFB;
+        
        
     }
     .btnIrLogin{
-        font-family: PoppinsSemiBold;
-        background-color: var(--cor-3);
-        color: var(--cor-6);
+        font-family: LatoBold;
+        background-color: #83CF41;
+        color: #004B22;
        padding-left: 25px;
        padding-right: 25px;
        padding-top: 5px;
        padding-bottom: 5px;
        outline: none;
        border: 1px solid var(--cor-3);
-       font-size: medium;
+       font-size: 20px;
        border-radius: 100px;
 
     }
@@ -138,7 +152,7 @@
 
     }
     .inptCheck{
-        border: 3px solid var(--cor-3);
+        border: 3px solid #83CF41;
         min-width: 20px;
         height: 17px;
         border-radius:5px;
@@ -154,13 +168,14 @@
         align-items: center;
     }
     .spanCheck{
-        color: #304B00;
+        color: #fbfbfb;
         
     }
     .pCheck{
         color: var(--cor-4);
         margin-left: 10px;
-        font-family:PoppinsMedium ;
+        font-family:LatoRegular;
+        font-size: 20px;
     }
  
 
@@ -190,6 +205,8 @@
   
   .swiper_cadastro{
   height: 100vh;
+  border-radius: 20px;
+  
   
   
   }/* Cor das bolinhas inativas */
