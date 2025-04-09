@@ -154,6 +154,14 @@
      width: 10px;  /* Largura */
      height: 10px; /* Altura */
  }
- .lblLogin{
-    
+ .btnLogin:hover{
+    background-color: #83CF41;
+    color: #004B22;
+    transition: ease 0.3s;
+ }
+ .btnIrCadastro:hover{
+    background-color: #83CF41;
+    color: #004B22;
+    transition: ease-in-out 0.3s;
+
  }

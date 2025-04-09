@@ -143,12 +143,16 @@
     transition: 200ms ease;
     }
     .btnIrLogin:hover{
-        background-color: var(--cor-4);
-        transition: 0.5s ease;
+        background-color: #0E261E;
+        transition: 0.3s ease-in-out;
+        color: #83CF41;
+        border: 1px solid #83CF41;
     }
     .btnCadastro:hover{
-        background-color: var(--cor-4);
-        transition: 0.5s ease-in-out;
+        background-color: #0E261E;
+        transition: 0.3s ease-in-out;
+        color: #83CF41;
+        border: 1px solid #83CF41;
 
     }
     .inptCheck{
