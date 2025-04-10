@@ -85,7 +85,7 @@ height: 300px;
   display: flex;
   justify-content: space-evenly;
   gap: 5px;
-border: solid blue;
+
 height: fit-content;
 flex-wrap: wrap;
 }
@@ -126,9 +126,14 @@ object-fit: cover;
  
 .ocupar_espaço{
 height: 100px;
+display: flex;
+align-items: center;
 
 }.span_nFilmes{
 font-size: x-large;
 
+
+}.h1_perquisa{
+margin-left: 20px;
 
 }

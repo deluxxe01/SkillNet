@@ -12,50 +12,91 @@ function Area_servico_pesquisado() {
   
 const servicos = [
   {
-    titulo: "     Lorem ipsum dolor sit amet, consectetur adipisicing elit. ",
-    poster: "https://a-static.mlcdn.com.br/1500x1500/poster-cartaz-homem-aranha-spider-man-2-c-pop-arte-poster/poparteskins2/15938524040/2fd03f73140e1d62809ced7a7822769f.jpeg",
-    sinopse: " Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium odio nulla in minima! Ipsa provident sit quis ab voluptatem, nemo odit, itaque, magnam ducimus numquam quaerat aut atque excepturi ut."
+    titulo: "Fotografia Profissional",
+    poster: "https://assets.querobolsa.com.br/assets/covers/courses/fotografia-e598e34a8f3d4ac1d8376da393c6f4f979ea763f8d482af06630713de014434f.webp",
+    sinopse: "Captura momentos inesquecíveis com qualidade e criatividade. Ideal para eventos, ensaios e campanhas.",
+    tipo_servico: "Fotografia"
   },
   {
-    titulo: "The Batman",
-    poster: "https://agrafica.com.br/wp-content/uploads/2016/01/resolucao_300dpi.jpg",
-    sinopse: "Bruce Wayne encara seu lado mais sombrio enquanto investiga crimes misteriosos em Gotham."
+    titulo: "Consultoria de Negócios",
+    poster: "https://plus.unsplash.com/premium_photo-1661772661721-b16346fe5b0f?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    sinopse: "Soluções estratégicas para impulsionar o crescimento e a eficiência da sua empresa.",
+    tipo_servico: "Consultoria"
   },
   {
-    titulo: "Clube da Luta",
-    poster: "https://br.web.img3.acsta.net/medias/nmedia/18/90/95/96/20122166.jpg",
-    sinopse: "Um homem forma um clube secreto de luta para lidar com sua vida entediante."
+    titulo: "Design de Interiores",
+    poster: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRhagREYiuYvqOIEIfeFG58TMSMnMZyFTS-dQ&s",
+    sinopse: "Transforme espaços com elegância e funcionalidade, de acordo com seu estilo e necessidades.",
+    tipo_servico: "Design de Interiores"
   },
   {
-    titulo: "Interestelar",
-    poster: "https://waltermattos.com/site2/wp-content/uploads/2014/11/tut_Analise_Grafica_Cartaz_Interstellar_05_011.png",
-    sinopse: "Astronautas buscam um novo lar para a humanidade viajando por buracos de minhoca."
+    titulo: "Desenvolvimento Web",
+    poster: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQVdnVsZv7of9Wwxn9ovPj1UX-yg5vaQCYcfA&",
+    sinopse: "Criação de sites modernos, responsivos e otimizados para conversão.",
+    tipo_servico: "Desenvolvimento"
   },
   {
-    titulo: "Wall-e",
-    poster: "https://upload.wikimedia.org/wikipedia/pt/thumb/3/30/WALL-E.jpg/250px-WALL-E.jpg",
-    sinopse: "Um pequeno robô solitário vive em uma Terra abandonada até encontrar o amor em EVA."
+    titulo: "Personal Trainer",
+    poster: "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b",
+    sinopse: "Acompanhamento personalizado para atingir seus objetivos de saúde e bem-estar.",
+    tipo_servico: "Fitness"
   },
   {
-    titulo: "Homem-Formiga",
-    poster: "https://upload.wikimedia.org/wikipedia/pt/9/90/Ant_Man-Poster.jpg",
-    sinopse: "Scott Lang se torna o Homem-Formiga, um herói com a habilidade de encolher."
+    titulo: "Maquiagem Profissional",
+    poster: "https://images.unsplash.com/photo-1522337660859-02fbefca4702",
+    sinopse: "Realce sua beleza com técnicas modernas para qualquer ocasião.",
+    tipo_servico: "Beleza"
   },
   {
-    titulo: "Forest Gump",
-    poster: "https://m.media-amazon.com/images/S/pv-target-images/c13db7cab337d48fbac3715065ef255862e2c7e5fc25d6a262a0cf7c35c29d20.jpg",
-    sinopse: "Forrest, um homem simples, testemunha e influencia grandes momentos da história americana."
+    titulo: "Aulas de Música",
+    poster: "https://images.unsplash.com/photo-1470225620780-dba8ba36b745?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    sinopse: "Aprenda a tocar instrumentos ou a cantar com professores experientes.",
+    tipo_servico: "Educação"
   },
   {
-titulo:"pitufos",
-poster:"https://play-lh.googleusercontent.com/UQcWIDQ9hKnyvBeDvV2RIgyEnNmTG_NxkzEL37bRs2WkUP5j9-7_k4nepiID5S3xrLxCaw",
-sinopse:"sdsdjsdfsdfjknsjdfjksdfjsjkdfnjksdnfjksdfjksjdfnjksdnfjknvjkbjkcvbcvbcvjkbncvjkbkcjvnbjkcvbcvbcvbcvb"
+    titulo: "Serviços de Jardinagem",
+    poster: "https://images.unsplash.com/photo-1587300003388-59208cc962cb",
+    sinopse: "Cuidamos do seu jardim com carinho, deixando seu espaço sempre verde e bonito.",
+    tipo_servico: "Jardinagem"
+  },
+  {
+    titulo: "Tradução de Documentos",
+    poster: "https://images.unsplash.com/photo-1519337265831-281ec6cc8514",
+    sinopse: "Traduções precisas e confiáveis para diversas línguas e contextos.",
+    tipo_servico: "Tradução"
+  },
+  {
+    titulo: "Marketing Digital",
+    poster: "https://images.unsplash.com/photo-1556745753-b2904692b3cd",
+    sinopse: "Campanhas estratégicas para aumentar sua presença online e atrair mais clientes.",
+    tipo_servico: "Marketing"
+  },
+  {
+    "titulo": "Serviços Jurídicos",
+    "poster": "https://images.unsplash.com/photo-1676145643363-e195aa2213f7?q=80&w=1931&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    "sinopse": "Assessoria jurídica especializada para atender às suas necessidades legais com profissionalismo e ética.",
+    "tipo_servico": "Advocacia,Mar"
+  },
+  {
+    "titulo": "Consultas Médicas",
+    "poster": "https://images.unsplash.com/photo-1651008376811-b90baee60c1f?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    "sinopse": "Atendimento médico de qualidade, focado no bem-estar e na saúde preventiva dos pacientes.",
+    "tipo_servico": "Medicina"
+  },
+  {
+    "titulo": "Engenharia Civil",
+    "poster": "https://plus.unsplash.com/premium_photo-1663100465979-7d42b0f37bbc?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    "sinopse": "Projetos e execuções de obras com excelência, garantindo segurança e inovação em cada construção.",
+    "tipo_servico": "Engenharia"
   }
+
+
+
 ]
 const ServicosFiltrados = useMemo(() => {
   const ServicoMinusculo = filtraServico.toLowerCase().trim()
   return servicos.filter((servico) =>
-    servico.titulo.toLowerCase().includes(ServicoMinusculo)
+    servico.tipo_servico.toLowerCase().includes(ServicoMinusculo)
   )
 }, [filtraServico])
     return (
@@ -83,8 +124,15 @@ type="text"
   onChange={(e) =>setFiltraServico (e.target.value)}
   />
 </div>
+
+
 </div>
-   <div className='ocupar_espaço'></div>  
+   <div className='ocupar_espaço'>
+    
+    <h1 className='h1_perquisa'>{filtraServico}</h1>
+   
+   
+   </div>  
 <div className="lista_serviço">
         {ServicosFiltrados.length > 0 ? (
           ServicosFiltrados.map((servico, index) => (
