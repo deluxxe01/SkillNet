@@ -203,13 +203,15 @@
     width: 100%;
     height: 100%;
     object-fit: cover; /* Mantém proporção sem distorcer */
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+    }
   
-  }
   
   
   .swiper_cadastro{
   height: 100vh;
-  border-radius: 20px;
+  
   
   
   

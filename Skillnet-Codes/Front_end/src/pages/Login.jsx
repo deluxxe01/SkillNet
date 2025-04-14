@@ -31,9 +31,9 @@ function Login() {
 
   return (
     <div>
-<div className='container'>
+<div className='containerPageLogin'>
 
-<div className="carrossel-container">
+<div className="carrossel-container-Login">
       <Swiper
         modules={[Pagination, Autoplay]}
         spaceBetween={20}
@@ -41,17 +41,17 @@ function Login() {
         pagination={{ clickable: true }}
         autoplay={{ delay: 3000 }}
         loop={true}
-      className="swiper_cadastro"
+      className="swiper_Login"
       
       >
         <SwiperSlide>
-          <img src="./images/img_carrosel_onça.jpg" alt="Imagem 1" className="carrossel-img" />
+          <img src="./images/img_carrosel_onça.jpg" alt="Imagem 1" className="carrossel-img-login" />
         </SwiperSlide>
         <SwiperSlide>
-          <img src="./images/img_carrosel_arara.jpg" alt="Imagem 2" className="carrossel-img" />
+          <img src="./images/img_carrosel_arara.jpg" alt="Imagem 2" className="carrossel-img-login" />
         </SwiperSlide>
         <SwiperSlide>
-          <img src="./images/img_carrosel_vaca.jpg" alt="Imagem 3" className="carrossel-img" />
+          <img src="./images/img_carrosel_vaca.jpg" alt="Imagem 3" className="carrossel-img-login" />
         </SwiperSlide>
       </Swiper>
 
