@@ -2,7 +2,10 @@
   "dependencies": {
     "cors": "^2.8.5",
     "express": "^4.21.2",
-    "init": "^0.1.2"
+    "init": "^0.1.2",
+    "io": "^1.5.3",
+    "socket": "^0.14.57",
+    "socket.io": "^4.8.1"
   },
   "devDependencies": {
     "nodemon": "^3.1.9"

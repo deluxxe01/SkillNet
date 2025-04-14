@@ -1,6 +1,16 @@
 const express = require('express')
 const App = express() 
 const cors = require('cors')
+const { Socket } = require('socket.io')
+const { Server } = require('socket.io')
+
+
+
+App.use(express.json())
+App.use(cors())
+const http = require('http');
+const server = http.createServer(App);
+const io = new Server(server);
 
 let vetorObras=[{
     id:1,
@@ -10,11 +20,10 @@ let vetorObras=[{
     avaliacao:1.5
 }]
 let usuarioLogado
+let messages = []
 
 
 
-App.use(express.json())
-App.use(cors())
 
 App.post('/postarPortifolio',(req,res)=>{
 
@@ -57,9 +66,21 @@ App.get("/UsuarioLogado",(req,res)=>{
     res.json(usuarioLogado)
 })
 
+io.on("connection", socket =>{
+    console.log("conectado com meu amigo: ",socket.id)
+
+    socket.on("mandarMensagem", data =>{
+        messages.push(data)
+        io.emit('mensagemRecebida',data)
+
+    })
+
+})
+
 
 
 
 App.listen(3000,()=>{
     console.log('server Rodando')
 })
+server.listen(3100,()=>{})
