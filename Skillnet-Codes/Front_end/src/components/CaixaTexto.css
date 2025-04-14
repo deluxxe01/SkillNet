@@ -1,0 +1,73 @@
+.caixa_Texto{
+    width: 35%;
+    height: 700px;
+    align-items: center;
+    justify-content: space-between;
+    display: flex;
+    flex-direction: column;
+    background-color: #1E1E1E;
+    border-radius:20px ;
+    margin-left: 100px;
+}
+.submitText{
+    min-width: 330px;
+    min-height: 40px;
+    background-color: #2E2E2E;
+    border-radius:10px ;
+    outline: 0;
+    border: 1px solid #1E1E1E;
+    padding-left: 10px ;
+    color: #fbfbfb;
+    font-family: Mont;
+    font-weight: 500;
+}
+.conteiner_inp_btn{
+    margin-bottom: 50px;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    flex-direction: row;
+
+}
+.btnEnv{
+    background-color: #79BE00;
+    height: 40px;
+    width: 40px;
+    font-size: 20px;
+    border: #79BE00 solid 1px;
+    border-radius: 5px;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    outline: 0;
+    
+}
+.fotoUser{
+    width: 50px;
+    height: 50px;
+    margin-left: 4%;
+   
+    border-radius: 50%;
+}
+.FotosServico{
+    width: 100%;
+    align-items: center;
+    justify-content: left;
+    display: flex;
+    flex-direction: row;
+    font-family: Mont;
+    font-weight: 600;
+    color: #fbfbfb;
+    margin: 10px;
+    border-bottom:1px solid #fbfbfb ;
+    height: 10%;
+}
+.pNomeAutor{
+    margin-left: 20px;
+}
+.btnEnv:hover{
+    border: 1px solid #1E1E1E;
+    background-color: #83CF41;
+    transition: ease-in-out 0.5s;
+    outline: 0;
+}
