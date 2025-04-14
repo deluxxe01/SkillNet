@@ -19,7 +19,8 @@ function Login() {
       alert('porfavor prencha os campos')
 
     }else{
-      Cadastro("/Area_servico_pesquisado")
+      // Cadastro("/Area_servico_pesquisado")
+      Cadastro('/Servico')
     }
   }
   useEffect(()=>{

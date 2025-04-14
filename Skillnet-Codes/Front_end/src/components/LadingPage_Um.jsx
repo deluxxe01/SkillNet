@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import './LadingPage_Um.css'
 import './Header.jsx'
 import Header from './Header.jsx'
@@ -9,42 +9,14 @@ import { io } from 'socket.io-client'
 
 
 
+
+
 function LadingPage_Um() {
   const navigate = useNavigate()
 
-  const {chat,setChat}=useContext(GlobalContext)
 
-  
 
-  const Chat = ()=>{
-    const socket =  io('http://localhost:3100',{ 
-      transports: ['websocket']
-    })
 
-    socket.on('connect', () => {
-      console.log('✅ Conectado ao servidor Socket.io');
-    });
-
-    socket.on( "mensagemRecebida", data => {
-
-      setChat([...chat,data])
-
-      console.log(chat)
-      console.log(data)
-    })
-    let mensagem = {
-      "nome":"caio",
-      "mess":"vai toma no cu "
-
-    }
-
-    socket.emit('mandarMensagem',mensagem)
-  }
-
-  useEffect(()=>{
-    Chat()
-
-  },[])
   return (
     <div>
          <Header />
@@ -61,10 +33,12 @@ function LadingPage_Um() {
          <div>
           <button className='btnLanding1' onClick={()=>{navigate("/Cadastro")}}>Iniciar Sessão</button>
           <button className='btnLanding2' onClick={()=>{
-            navigate('/login')
+             
+              navigate('/login')
           }}>Começar</button>
          </div>
         </div>
+        
     </div>
   )
 }

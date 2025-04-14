@@ -70,8 +70,10 @@ io.on("connection", socket =>{
     console.log("conectado com meu amigo: ",socket.id)
 
     socket.on("mandarMensagem", data =>{
-        messages.push(data)
-        io.emit('mensagemRecebida',data)
+        console.log(data)
+
+            messages.push(data)
+            io.emit('mensagemRecebida',messages)
 
     })
 
