@@ -85,7 +85,8 @@
         
 
     }
-    .inpt{
+    .inpt_nome{
+
         width: 350px;
         min-height: 40px;
         border-radius: 100px;
@@ -96,8 +97,55 @@
         font-size: medium;
         font-family: Mont;
         padding-left: 10px;
+background-image: url(./icons/icon_user.svg);
+ background-repeat: no-repeat;
+background-size: 27px;
+background-position: right 12px center;
 
+}
+    .inpt_email{
+
+        width: 350px;
+        min-height: 40px;
+        border-radius: 100px;
+        outline: none;
+        border: 1.8px solid var(--cor-3);
+        margin-bottom: 8%;
+        margin-top: 0.5%;
+        font-size: medium;
+        font-family: Mont;
+        padding-left: 10px;
+        background-image: url(./icons/icon_email.svg);
+        background-repeat: no-repeat;
+       background-size: 27px;
+       background-position: right 12px center;
+       
     }
+    .inpt_senha{
+
+        width: 350px;
+        min-height: 40px;
+        border-radius: 100px;
+        outline: none;
+        border: 1.8px solid var(--cor-3);
+        margin-bottom: 8%;
+        margin-top: 0.5%;
+        font-size: medium;
+        font-family: Mont;
+        padding-left: 10px;
+        background-image: url(./icons/icon_senha.svg);
+        background-repeat: no-repeat;
+       background-size: 25px;
+       background-position: right 12px center;
+       
+    }
+
+
+
+
+
+
+
     .btnCadastro{
         width: 400px;
         height: 50px;

@@ -1,8 +1,12 @@
-
+@font-face {
+    font-family:mont;
+    src: url(./font/Montserrat/Montserrat-VariableFont_wght.ttf);
+  }
+  
 .containerHeader{
    position: absolute;
-   border: 2px black solid;
-   background-color: black;
+   
+   background-color:#004B22;
    opacity: 85%;
    border-radius: 50px;
    width: 95%;
@@ -15,17 +19,19 @@
 align-items: center;
    button{
     border: none;
-    background-color: black;
+    background-color:#004B22;
     color: white;
     font-size: 20px;
-    font-family: poppins;    
-   }
+    font-family: mont;    
+ font-weight: 600;
+    font-size: 35px;
+
+}
    .logo{
     z-index: 10;
-    border: 2px #79BE00 solid;
-    background-color: #79BE00;
+   
     height: 50px;
-    width: 70px;
+    width: 0px;
     margin-top: 5px;
     border-radius: 40px;
     img{

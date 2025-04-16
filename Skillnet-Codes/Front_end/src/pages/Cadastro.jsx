@@ -81,18 +81,18 @@ function Cadastro() {
 
             <div className='container_inputs'>
               <label htmlFor="" className='lblCadastro'>Nome de Usuario</label>
-              <input type="text" className='inpt' placeholder='digite seu nome de usuario' onChange={(event)=>{setInptNome(event.target.value)}} />
+              <input type="text" className='inpt_nome' placeholder='digite seu nome de usuario' onChange={(event)=>{setInptNome(event.target.value)}} />
             </div>
 
 
             <div className='container_inputs'>
               <label htmlFor="" className='lblCadastro'>Email</label> 
-              <input type="text" className='inpt' placeholder='digite seu Email' onChange={(e)=>{setInptEmail(e.target.value)}} />
+              <input type="text" className='inpt_email' placeholder='digite seu Email' onChange={(e)=>{setInptEmail(e.target.value)}} />
               </div>
 
             <div className='container_inputs'>
               <label htmlFor="" className='lblCadastro'>Senha</label> 
-              <input type="password" className='inpt' placeholder='digite sua senha' onChange={(e)=>{setInptSenha(e.target.value)}}/></div>
+              <input type="password" className='inpt_senha' placeholder='digite sua senha' onChange={(e)=>{setInptSenha(e.target.value)}}/></div>
 
             <div className='divCheckBox'>
               <div className='inptCheck' 

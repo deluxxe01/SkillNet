@@ -6,33 +6,42 @@
     font-family:nunito-medium ;
     src: url(./font/Nunito/static/Nunito-MediumItalic.ttf);
 }
-.container_img_bg{
-height: 70vh;
-background-image: url('./images/ovelha_bg.svg');
-background-repeat: no-repeat;
-background-size: 100%;
-
+@font-face {
+  font-family:mont;
+  src: url(./font/Montserrat/Montserrat-VariableFont_wght.ttf);
 }
 
 
-.h1_serviços{
-width: fit-content;
-border-bottom: solid rgba(121, 190, 0, 1) 5px;
-}.espaço_livre{
 
-height: 30vh;
+.container_img_bg{
+height: 70vh;
+background-color: #004B22;
+background-repeat: no-repeat;
+background-size: 100%;
+border-bottom-left-radius:30px ;
+border-bottom-right-radius:30px ;
+border: solid rebeccapurple;
+}
+
+
+.h1_servicos{
+font-size:80px ;
+color: white;
+font-family: mont;
+
 }
 .container_barra_pesquisa{
 
-height: 56%;
+height: 100%;
+
 display: flex;
 flex-direction: column;
-justify-content: center;
 align-items: center;
-
-
+margin-bottom: 50px;
+border:solid red;
+justify-content: center;
 }.h1_serviços{
-margin-bottom: 100px;
+
 color: white;
 font-size: 50px;
 font-family:nunito-medium;
@@ -44,8 +53,11 @@ border:none;
 outline: 0;
 padding-left: 15px; 
 font-size: 22px;
-
-
+margin: 30px;
+background-image: url(./icons/lupa_pesquisa_verde.svg);
+background-repeat: no-repeat;
+background-size: 55px;
+background-position: right 30px center ;
 }.inpt_barra_pesquisa::placeholder {
     color: rgb(79, 79, 82); /* Cor desejada */
    padding-left: opx;
@@ -136,4 +148,10 @@ font-size: x-large;
 }.h1_perquisa{
 margin-left: 20px;
 
+}.barra_verde{
+border-color: #83CF41;
+  background-color: #83CF41;
+width: 20%;
+height: 6px;
+border-radius: 10px;
 }
