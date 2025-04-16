@@ -78,6 +78,11 @@ io.on("connection", socket =>{
     })
 
 })
+App.get('/Mensagens',(req,res)=>{
+    res.json(messages)
+})
+
+
 
 
 

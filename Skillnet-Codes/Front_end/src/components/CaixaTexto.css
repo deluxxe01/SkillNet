@@ -1,5 +1,5 @@
 .caixa_Texto{
-    width: 35%;
+    width: 30%;
     height: 700px;
     align-items: center;
     justify-content: space-between;
@@ -10,8 +10,8 @@
     margin-left: 100px;
 }
 .submitText{
-    min-width: 330px;
-    min-height: 40px;
+    width: 60%;
+    height: 40px;
     background-color: #2E2E2E;
     border-radius:10px ;
     outline: 0;
@@ -22,17 +22,19 @@
     font-weight: 500;
 }
 .conteiner_inp_btn{
-    margin-bottom: 50px;
     align-items: center;
     justify-content: center;
     display: flex;
     flex-direction: row;
+    margin-top: 30px;
+    width: 100%;
+   
 
 }
 .btnEnv{
     background-color: #79BE00;
     height: 40px;
-    width: 40px;
+    width: 8%;
     font-size: 20px;
     border: #79BE00 solid 1px;
     border-radius: 5px;
@@ -45,8 +47,7 @@
 .fotoUser{
     width: 50px;
     height: 50px;
-    margin-left: 4%;
-   
+    margin-left: 4%;  
     border-radius: 50%;
 }
 .FotosServico{
@@ -71,3 +72,36 @@
     transition: ease-in-out 0.5s;
     outline: 0;
 }
+.CaixaMensagem{
+    background-color: #79BE00;
+    color: white;
+    font-size: 16px;
+    padding: 10px;
+    border-radius: 14px;
+    font-family: Mont;
+    font-weight: 600;
+    margin-top:10px ;
+    width: 60%;
+    word-wrap: break-word;
+    white-space: normal;
+    
+   
+    
+    
+}
+.corpoChat{
+    overflow-y: auto;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+}
+.corpoChat::-webkit-scrollbar{
+
+     width: 8px;
+     color: white;
+ 
+
+}
+
+
