@@ -1,24 +1,56 @@
-import React, { useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import './CaixaTexto.css'
 import { io } from 'socket.io-client'
+import { GlobalContext } from '../context/Globalcontext'
+import  axios from 'axios'
+
 
 function CaixaTexto(props) {
+  const socket = io('http://localhost:3100', { transports: ['websocket'] })
     const [inptMess,setInptMess]=useState('')
+    const {mensagem} = props
+    const {chat,setChat}=useContext(GlobalContext)
+    const[teste,setTeste]=useState([])
+    const [vetorChat,setVetorChat]=useState([])
+    
 
+    
     const MandarMensage = () => {
-        const socket =  io('http://localhost:3100',{ 
-            transports: ['websocket']
-          })
-
-          let mensagem = {
-            nome:"caio",
-            mess:inptMess
+     
+      let mensagem = {
+        nome:"caio",
+        mess:inptMess
+        
+      }
       
-          }
-         
-              socket.emit('mandarMensagem',mensagem)
-
+      
+      socket.emit('mandarMensagem',mensagem)
+      setInptMess("")
+      
+      
     }  
+    // const renderMessage = async() =>{
+    //  const resultado = await axios.get('http://localhost:3000/Mensagens') 
+    //  setChat(resultado.data)
+    // }
+
+    useEffect(()=>{
+      socket.on('mensagemRecebida', (data) => {
+        setChat(data)
+      })
+  
+      // Carregar as mensagens do servidor ao montar o componente
+      const renderMessage = async () => {
+        const resultado = await axios.get('http://localhost:3000/Mensagens')
+        setChat(resultado.data)
+      }
+  
+      renderMessage()
+
+    
+      
+    },[])
+   
   return (
     <div>
         <div className='caixa_Texto'>
@@ -27,13 +59,24 @@ function CaixaTexto(props) {
                <p className='pNomeAutor'>BoraBillson da silva</p>
             </div>
             <div className='corpoChat'>
+               {chat.map((msg ,index)=> (
+                <div key={index} className='CaixaMensagem' 
+                style={
+                  {backgroundColor: msg.nome != "caio" ? '#2E2E2E' : '',
+                  marginRight:msg.nome != "caio" ?"150px" :"",
+                  marginLeft:msg.nome =="caio" ?"100px":""
+                  }}>
+                  <p>{msg.mess}</p> 
+                  </div>
+
+              ))} 
+            </div>
              <div className='conteiner_inp_btn'>
-                <input type="text" className='submitText' onChange={e => {setInptMess(e.target.value)}} />
+                <input type="text" className='submitText' placeholder='insira sua Mensagem para o frelancer 😊' onChange={e => {setInptMess(e.target.value)}} value={inptMess} />
                 <button className='btnEnv' onClick={MandarMensage}>
                     <img src="./icons/seta.svg" alt="" />
                 </button>
              </div>
-            </div>
         </div>
       
     </div>
