@@ -1,6 +1,7 @@
 import React, { useState,useMemo } from 'react'
 import Header from '../components/Header'
 import "./Area_servico_pesquisado.css"
+import { Link } from "react-router-dom"
 
 function Area_servico_pesquisado() {
  const[valorInptPesquisa,setValorInptPesquisa] = useState("")
@@ -203,11 +204,46 @@ type="text"
 
 
 </div>
-   <div className='ocupar_espaço'>
+   <div className='container_categorias_servico'>
     
-    <h1 className='h1_perquisa'>{filtraServico}</h1>
-   
-   
+ <Link>
+ <div className='container_botao'>
+ <img src="./icons/icon_fotografia.svg" alt="" className='icons_categorias_trabalho' />
+ <button>Desenvolvimento web</button>
+ </div>
+ </Link>
+
+  <Link>
+  <div className='container_botao'>
+  <img src="./icons/icon_fotografia.svg" alt="" className='icons_categorias_trabalho' />
+  <button>Marketing</button>
+  </div>
+  </Link>
+ 
+  <Link>
+  <div className='container_botao'>
+  <img src="./icons/icon_fotografia.svg" alt="" className='icons_categorias_trabalho' />
+  <button>design gráfico</button>
+  </div> 
+  </Link>
+  
+  
+  <Link>
+  <div className='container_botao'>
+  <img src="./icons/icon_fotografia.svg" alt="" className='icons_categorias_trabalho' />
+  <button>produção de conteúdos</button>
+  </div>
+  </Link>
+  
+  
+  
+  
+  <Link>
+  <div className='container_botao'>
+   <img src="./icons/icon_fotografia.svg" alt="" className='icons_categorias_trabalho' />
+   <button>fotografia e video</button>
+    </div></Link>
+
    </div>  
 <div className="lista_serviço">
         

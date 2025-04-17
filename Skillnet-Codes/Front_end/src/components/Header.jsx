@@ -13,7 +13,7 @@ function Header() {
        
         <button>Portifólios</button>
         <button className='logo'>
-            <img src="./icons/logo_skill_net_verde.svg" alt=""  />
+            <img src="./icons/logo_skill_net_verde.svg" alt=""   />
         </button>
         <button>Perfil</button>
         <button>Sobre Nós</button>
