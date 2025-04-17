@@ -20,7 +20,7 @@ background-repeat: no-repeat;
 background-size: 100%;
 border-bottom-left-radius:30px ;
 border-bottom-right-radius:30px ;
-border: solid rebeccapurple;
+
 }
 
 
@@ -37,15 +37,19 @@ height: 100%;
 display: flex;
 flex-direction: column;
 align-items: center;
-margin-bottom: 50px;
-border:solid red;
+justify-content: space-between;
 justify-content: center;
 }.h1_serviços{
 
 color: white;
 font-size: 50px;
 font-family:nunito-medium;
-}.inpt_barra_pesquisa{
+
+
+
+}
+
+.inpt_barra_pesquisa{
 width: 500px;
 height: 60px;
 border-radius: 40px;
@@ -74,7 +78,7 @@ margin-top: 20px;
 font-weight:500;
 
 }.container_servicos{
-border: solid purple;
+
 height: 100vh;
 display: flex;
 display: flex;
@@ -136,11 +140,11 @@ object-fit: cover;
   color: #555;}
 
  
-.ocupar_espaço{
+.container_categorias_servico{
 height: 100px;
 display: flex;
+justify-content: space-evenly;
 align-items: center;
-
 }.span_nFilmes{
 font-size: x-large;
 
@@ -154,4 +158,17 @@ border-color: #83CF41;
 width: 20%;
 height: 6px;
 border-radius: 10px;
+}.container_botao{
+display: flex;
+flex-direction: column;
+button{
+  background-color: white;
+border: none;
 }
+
+
+}.icons_categorias_trabalho{
+
+  height: 50px;
+  
+  }
