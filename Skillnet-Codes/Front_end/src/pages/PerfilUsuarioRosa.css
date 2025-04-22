@@ -1,29 +1,44 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.hamburguer{
+    margin-left: 190vh;
+    margin-top: 5vh;
+}
+.menu{
+    margin-left: 190vh;
+}
 .Header-InformacoesUsuarioRosa{
 
     background-color: #FFD9D9;
-    margin-top: 20vh;
+    margin-top: 5vh;
     margin-left: 50vh;
     width: 100vh;
     height: 40vh;
     border-radius: 5vh;
+    position: relative;
+    z-index: 2;
 
 }
 
 .Header1-InformacoesUsuarioRosa{
 
-    /* border: solid black 2px;   */
+    border: solid rgb(3, 184, 255) 2px;   
     width: 60vh;
     height: 20vh;
-    background-color: aqua;
+    /* background-color: aqua; */
     margin-left: 35vh;
-    margin-top: 5vh;
+    
+    
 }
 
  .NomeUsuarioRosa{
-   
+    border: solid black 2px;   
     font-family: "Nunito", sans-serif;
     width: 50vh;
-    background-color: blue;
+    /* background-color: blue; */
     
 }
 
@@ -31,9 +46,13 @@
      
     color: white;
     font-size: 2vh;
+    font-family:"Lato", sans-serif;
+    
     border-radius: 1.5vh;
+    border: none;
+    cursor: pointer;
     height: 4vh;
-    width: 15vh;
+    width: 18vh;
     margin-top: 2vh;
     margin-left: 16vh;
     background-color: black;
@@ -43,29 +62,109 @@
 
     color: rgb(0, 0, 0);
     font-size: 2vh;
+    font-family:"Lato", sans-serif;
     border-radius: 1.5vh;
+    outline: none;
+    cursor: pointer;
     height: 4vh;
     width: 15vh;
     margin-top: 2vh;
     margin-left: 1vh;
+    margin-bottom: 2vh;
     background-color: #FFD9D9;
 }
-
-.Header2-InformacoesUsuarioRosa{
+.Label-ExperienciaUsuarioRosa{
     border: solid black 2px; 
+    font-size: 2vh;
+    font-family:"Lato", sans-serif;
+    margin-top:-1vh;
+}
+.Label-AnoExperiencia{
+    border: solid black 2px; 
+    font-size: 2vh;
+    font-family:"Lato", sans-serif;
+    margin-left: 1vh;
+}
+.Header2-InformacoesUsuarioRosa{
+    border: solid rgb(255, 0, 0) 2px; 
     width: 29vh;
-    height: 35vh;
+    height: 30vh;
     margin-top: -20vh;
     margin-left: 5vh;
 }
 .CirculoImagemPerfil{
    
-    margin-top: 5vh;
+    margin-top: 2vh;
+    margin-bottom: 2vh;
     width: 20vh;
     height:  20vh;
     background-color: red;
     border-radius: 50%;
    
 }
-
-
+.Label-Pais{
+    border: solid black 2px; 
+    font-size: 2vh;
+    margin-left: 6vh
+}
+.Label-Estado{
+    border: solid black 2px; 
+    font-size: 2vh;
+    
+}
+.Header3-InformacoesUsuarioRosa{
+    border: solid rgb(183, 0, 255) 2px; 
+    
+}
+.Button-EditarPerfil{
+    color: #FBFBFB;
+    background-color: #B80093;
+    border-radius: 1.5vh;
+    border: none;
+    cursor: pointer;
+    font-size: 2vh;
+    height: 4vh;
+    width: 15vh;
+    margin-left: 7vh;
+    margin-top: 2vh;
+}
+.CategoriasUsuario{
+    border: solid rgb(77, 0, 107) 2px; 
+    height: 8vh;
+    width: 60vh;
+    margin-left: 35vh;
+    margin-top: -6vh;
+    display: flex;
+    justify-content: space-between; /* Espaço entre logo e menu */
+    align-items: center;
+    
+}
+.Button-CategoriaPerfil{
+    color: #000000;
+    background-color: #FFA3A3;
+    border-radius: 1.5vh;
+    border: none;
+    font-size: 2vh;
+    height: 4vh;
+    width: 18vh;
+    margin-left: 2vh;
+    display: inline-block;
+    /* white-space: nowrap; 
+    overflow: hidden;
+    text-overflow: ellipsis;  */
+}
+/* .ContainerFundoRosa {
+    border: solid rgb(183, 0, 255) 2px; 
+    position: relative;
+    margin-top: -75vh;
+    background-image: url('images/FundoRosa.jpg');
+    background-size: cover; 
+    background-position: center center; 
+    background-repeat: no-repeat;
+    width: 150vh; 
+    height: 80vh; 
+    display: flex; 
+    justify-content: center; 
+    align-items: center;
+    color: white; 
+} */
