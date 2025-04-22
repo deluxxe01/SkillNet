@@ -3,4 +3,7 @@
   padding: 0;
   margin: 0;
 }
+#root::-webkit-scrollbar,body::-webkit-scrollbar,html::-webkit-scrollbar{
+  width: 0;
+}
 

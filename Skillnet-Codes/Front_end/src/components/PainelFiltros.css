@@ -1,0 +1,22 @@
+.conteinerIcons{
+    width: 100%;
+    align-items: center;
+    justify-content: space-evenly;
+    display: flex;
+}
+.pFilter{
+    font-family: LatoBold;
+    
+}
+.conteinerIcon{
+   
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+  
+
+}
+.imgPainelFiltor{
+    width: 5vh;
+}

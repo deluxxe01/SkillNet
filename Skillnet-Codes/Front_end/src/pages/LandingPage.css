@@ -19,13 +19,13 @@
     font-family: Mont;
     font-weight: 700;
     color: #fbfbfb;
-    font-size: 50px;
+    font-size: 6vh;
 }
 .pLanding{
     font-family: LatoRegular;
     color: #fbfbff;
-    font-size: 30px;
-    margin-left: 40px;
+    font-size: 3vh;
+    margin-left: 3vh;
     
 
 }
@@ -33,21 +33,22 @@
     width: 100%;
 }
 .button1{
-    width: fit-content;
-    font-size: 29px;
+    width: 20;
+    font-size: 1.8vw;
     font-family: Mont;
     font-weight: 700;
     color: #fbfbfb;
-    background-color:#0e261e94;
+    background-color:#0e261e73;
     border: solid 2px #83CF41;
-    
     border-radius: 100px;
-    padding-right: 35px;
-    padding-left: 35px;
-    padding-top: 10px;
-    padding-bottom: 10px;
+    padding-right: 2vw;
+    padding-left: 2vw;
+    padding-top: 1vh;
+    padding-bottom: 1vh;
     outline: none;
+    margin-left: 100px;
     z-index: 1;
+  
 }
 .divButton{
     width: 100%;
@@ -58,26 +59,27 @@
     
 }
 .button2{
-    width: fit-content;
-    font-size: 29px;
+    width: 19%;
+    font-size: 1.8vw;
     font-family: Mont;
     font-weight: 700;
     color: #fbfbfb;
     background-color:#0e261e73;
     border: solid 2px #83CF41;
     border-radius: 100px;
-    padding-right: 70px;
-    padding-left: 70px;
-    padding-top: 10px;
-    padding-bottom: 10px;
+    padding-right: 2vw;
+    padding-left: 2vw;
+    padding-top: 1vh;
+    padding-bottom: 1vh;
     outline: none;
-    margin-left: 100px;
+    margin-left: 10vh;
     z-index: 1;
 
 }
 .imgEmpresaria{
     position: absolute;
     margin-bottom: 18%;
+    width: 45vh;
     
     
 }
@@ -96,5 +98,12 @@ display: flex;
 }
 *::-webkit-resizer{
     width: 8px;
+
+}
+.btnLanding{
+    font: Mont;
+    color: #fbfbfb;
+    font-size: 1.5em;
+    background-color: #004B22;
 
 }

@@ -1,11 +1,6 @@
 import React from 'react'
-import LadingPage_Um from '../components/LadingPage_Um'
-import Landingpage_Tres from '../components/Landingpage_Tres'
-import Landingpage_Dois from '../components/Landingpage_Dois'
-import Landinpage4 from '../components/Landinpage4'
-import Footer from '../components/Footer'
 import './LandingPage.css'
-import Header from '../components/Header'
+import PainelFiltros from '../components/PainelFiltros'
 
 
 
@@ -18,11 +13,11 @@ function LandingPage() {
       </div>
       <div className='container1'>
         <div className='header'>
-          <button>SERVIÇOS</button>
-          <button>PORTFÓLIOS</button>
+          <button className='btnLanding'>SERVIÇOS</button>
+          <button className='btnLanding'>PORTFÓLIOS</button>
           <img src="./images/logo_SkillNet.svg" alt="" />
-          <button>SOBRE NÓS</button>
-          <button>PERFIL</button>
+          <button className='btnLanding'>SOBRE NÓS</button>
+          <button className='btnLanding'>PERFIL</button>
 
         </div>
       
@@ -40,7 +35,9 @@ function LandingPage() {
 
       </div>
       <div className='conteiner2'>
-
+        <PainelFiltros />
+       
+        
       </div>
       <div className='conteiner3'>
 
