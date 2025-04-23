@@ -5,7 +5,7 @@
     justify-content: space-between;
     display: flex;
     flex-direction: column;
-    background-color: #1E1E1E;
+    background-color: #E6E6E6;
     border-radius:20px ;
     margin-left: 100px;
 }
@@ -60,11 +60,12 @@
     font-weight: 600;
     color: #fbfbfb;
     margin: 10px;
-    border-bottom:1px solid #fbfbfb ;
+    border-bottom:1px solid #0E261E ;
     height: 10%;
 }
 .pNomeAutor{
     margin-left: 20px;
+    color: #0E261E;
 }
 .btnEnv:hover{
     border: 1px solid #1E1E1E;
@@ -81,9 +82,10 @@
     font-family: Mont;
     font-weight: 600;
     margin-top:10px ;
-    width: 60%;
+    width: fit-content;
     word-wrap: break-word;
     white-space: normal;
+    max-width: 300px ;
     
    
     
@@ -95,6 +97,7 @@
     justify-content: center;
     display: flex;
     flex-direction: column;
+    width: 100%;
 }
 .corpoChat::-webkit-scrollbar{
 

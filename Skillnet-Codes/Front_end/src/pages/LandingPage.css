@@ -95,15 +95,109 @@ display: flex;
     width: 98%;
     z-index: 1;
     border-radius: 10px;
+    align-items: center;
+    justify-content:space-around ;
+    display: flex;
+    flex-direction: column;
 }
-*::-webkit-resizer{
-    width: 8px;
 
-}
 .btnLanding{
     font: Mont;
     color: #fbfbfb;
     font-size: 1.5em;
     background-color: #004B22;
 
+}
+.containerTiposServico{
+    background-color:#E9E9E9;
+    align-items: center;
+    justify-content: space-between;
+    display: flex;
+    flex-direction: column;
+    z-index: -2;
+    height: 50vh;
+    width: 80%;
+    border-radius: 20px;
+}
+.containerCabecalho{
+    color: #004B22;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+}
+.h1Landing{
+    font-family: Mont;
+    font-weight: 800;
+    font-size: 3rem;
+    z-index: 2;
+}
+.h2Landing{
+    font-family: LatoBold ;
+    font-size: 2rem;
+    z-index: 2;
+}
+.logoLanding{
+    position: absolute;
+    width: 180px;
+    z-index:1;
+    left: 45.5%;
+
+}
+.containerConteudos{
+    align-items: center;
+    justify-content: space-evenly;
+    display: flex;
+    width: 100%;
+}
+.h3Cont{
+    font-family:LatoBold;
+    font-size: 1.5em;
+    color: #004B22;
+}
+.pCont{
+    font-family: LatoRegular;
+   font-size: 1em;
+}
+.containerPainel{
+    width: 100%;
+}
+.contaierContEspecifico{
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+}
+.pCont {
+    display: flex;
+    justify-content: space-between; /* distribui com espaçamento igual */
+    text-align: center;
+    padding: 20px; /* espaçamento interno opcional */
+  }
+  
+.pCont > div {
+    flex: 1;
+    margin: 0 10px; /* opcional, adiciona espaço lateral entre blocos */
+}
+.containerNumeros{
+    width: 80%;
+    background-color:#004B22 ;
+    align-items: center;
+    justify-content: space-evenly;
+    display: flex;
+    border-radius: 20px;
+}
+.h1Numeros{
+    font-family: Mont;
+    color: #fbfbfb;
+    font-weight: 400;
+    font-size: 1.5em;
+    margin-top: 20px ;
+    margin-bottom: 20px;
+}
+.spanNumeros{
+    font-family: Mont;
+    color: #fbfbfb;
+    font-weight: 800;
+    font-size: 1.5em;
 }

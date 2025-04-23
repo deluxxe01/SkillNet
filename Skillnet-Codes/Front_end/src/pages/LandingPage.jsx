@@ -7,10 +7,7 @@ import PainelFiltros from '../components/PainelFiltros'
 function LandingPage() {
   return (
     <div className='containerLanding'>
-      <div>
-       
-
-      </div>
+    
       <div className='container1'>
         <div className='header'>
           <button className='btnLanding'>SERVIÇOS</button>
@@ -35,7 +32,45 @@ function LandingPage() {
 
       </div>
       <div className='conteiner2'>
-        <PainelFiltros />
+        <div className='containerPainel'>
+         <PainelFiltros />
+        </div>
+        <div className='containerTiposServico'>
+          <div className='containerCabecalho'>
+            <h1 className='h1Landing'>SKILLNET</h1>
+            <h2 className='h2Landing'>Tudo o que você encontra aqui: </h2>
+            <img src='./icons/logo_skill_net_verde.svg' className='logoLanding'/>
+          </div>
+          <div className='containerConteudos'>
+            <div className='contaierContEspecifico'>
+              <img src="./images/fogoVerde.svg" alt="" />
+              <h3 className='h3Cont'>Portfólios</h3>
+              <p className='pCont'>Crie e poste seu portfólio para mais  <br /> pessoas verem </p>
+            </div>
+            <div className='contaierContEspecifico'>
+              <img src="./images/estrelaVerde.svg" alt="" />
+              <h3 className='h3Cont'>Avaliações</h3>
+              <p className='pCont'>Avalie serviços com sistema de <br /> feedback e adcionar aos <br />  favoritos</p>
+            </div>
+            <div className='contaierContEspecifico'>
+              <img src="./images/raioVerde.svg" alt="" />
+              <h3 className='h3Cont'>Serviços</h3>
+              <p className='pCont'>Sistema para contratar e <br /> procurar serviços de diversas <br/> áreas</p>
+            </div>
+
+          </div>
+        </div>
+        <div className='containerNumeros'>
+          <h1 className='h1Numeros'>
+            <span className='spanNumeros'>2000+</span>
+            <br/>Serviços</h1>
+          <h1 className='h1Numeros'><span className='spanNumeros'>1000+</span> 
+          <br/>portifólios</h1>
+          <h1 className='h1Numeros'><span className='spanNumeros'>5000+</span>
+          <br/>Usuários</h1>
+          <h1 className='h1Numeros'><span className='spanNumeros'>3000+</span>
+          <br/>Avaliações</h1>
+        </div>
        
         
       </div>
