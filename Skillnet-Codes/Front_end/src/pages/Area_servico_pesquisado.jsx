@@ -151,25 +151,12 @@ const servicos = [
     tipo_servico: "Marketing"
   },
   {
-    "titulo": "Serviços Jurídicos",
-    "poster": "https://images.unsplash.com/photo-1676145643363-e195aa2213f7?q=80&w=1931&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    "sinopse": "Assessoria jurídica especializada para atender às suas necessidades legais com profissionalismo e ética.",
-    "tipo_servico": "Advocacia,Mar"
+    titulo: "Serviços Jurídicos",
+    poster: "https://images.unsplash.com/photo-1676145643363-e195aa2213f7?q=80&w=1931&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    sinopse: "Assessoria jurídica especializada para atender às suas necessidades legais com profissionalismo e ética.",
+    tipo_servico: "Advocacia,Mar"
   },
-  {
-    "titulo": "Consultas Médicas",
-    "poster": "https://images.unsplash.com/photo-1651008376811-b90baee60c1f?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    "sinopse": "Atendimento médico de qualidade, focado no bem-estar e na saúde preventiva dos pacientes.",
-    "tipo_servico": "Medicina"
-  },
-  {
-    "titulo": "Engenharia Civil",
-    "poster": "https://plus.unsplash.com/premium_photo-1663100465979-7d42b0f37bbc?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    "sinopse": "Projetos e execuções de obras com excelência, garantindo segurança e inovação em cada construção.",
-    "tipo_servico": "Engenharia"
-  }
-
-
+  
 
 ]
 const ServicosFiltrados = useMemo(() => {
@@ -205,44 +192,12 @@ type="text"
 
 </div>
    <div className='container_categorias_servico'>
-    
- <Link>
- <div className='container_botao'>
- <img src="./icons/icon_fotografia.svg" alt="" className='icons_categorias_trabalho' />
- <button>Desenvolvimento web</button>
- </div>
- </Link>
-
-  <Link>
-  <div className='container_botao'>
-  <img src="./icons/icon_fotografia.svg" alt="" className='icons_categorias_trabalho' />
-  <button>Marketing</button>
-  </div>
-  </Link>
- 
-  <Link>
-  <div className='container_botao'>
-  <img src="./icons/icon_fotografia.svg" alt="" className='icons_categorias_trabalho' />
-  <button>design gráfico</button>
-  </div> 
-  </Link>
-  
-  
-  <Link>
-  <div className='container_botao'>
-  <img src="./icons/icon_fotografia.svg" alt="" className='icons_categorias_trabalho' />
-  <button>produção de conteúdos</button>
-  </div>
-  </Link>
   
   
   
   
-  <Link>
-  <div className='container_botao'>
-   <img src="./icons/icon_fotografia.svg" alt="" className='icons_categorias_trabalho' />
-   <button>fotografia e video</button>
-    </div></Link>
+  
+  
 
    </div>  
 <div className="lista_serviço">
@@ -252,6 +207,7 @@ type="text"
         ServicosFiltrados.map((servico, index) => (
             <div className="card_servico" key={index}>
               <img src={servico.poster} alt={servico.titulo} className="poster" />
+             <p className='categoria_servico'>{servico.tipo_servico}</p>
               <h3>{servico.titulo}</h3>
               <p>{servico.sinopse}</p>
             </div>

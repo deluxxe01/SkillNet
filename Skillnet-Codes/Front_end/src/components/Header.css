@@ -37,10 +37,7 @@ align-items: center;
    display: flex;
     align-items: center;
     
-    img{
-      
    
-      }
    }
 }
 
@@ -51,5 +48,9 @@ align-items: center;
 }.icons_categorias_trabalho{
 
 height: 20px;
+
+}.btServico.ativo{
+background-color: bisque;
+
 
 }

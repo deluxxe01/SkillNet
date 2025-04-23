@@ -1,15 +1,19 @@
 import React from 'react'
 import './Header.css'
 import { Link } from "react-router-dom"
-
+import { useState } from 'react'
 
 function Header() {
 
+
+const [paginaAtiva,setPaginaAtiva] = useState('')
+
+
   return (
     <div className='containerHeader'>
-      <Link to={'/Area_servico_pesquisado'}> 
-        <button link to={'Area_servico_pesquisado'}>Serviços</button>
-        </Link>
+      
+        <button>Serviços</button>
+       
        
         <button>Portifólios</button>
         <button className='logo'>
@@ -17,6 +21,10 @@ function Header() {
         </button>
         <button>Perfil</button>
         <button>Sobre Nós</button>
+   
+       
+    
+    
     </div>
   )
 }

@@ -6,10 +6,6 @@ import {Pagination, Autoplay } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
-
-
-
-
 import { useNavigate } from 'react-router-dom'
 import axios, { Axios } from 'axios'
 

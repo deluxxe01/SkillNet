@@ -25,26 +25,12 @@
         margin-bottom: 10px;
         margin-left: 10px;
         color: #0E261E;
-       
     }
-    .btnLogin{
-        font-size: 30px;
-        color: #fbfbfb;
-        padding-right: 18%;
-        padding-left:18% ;
-        padding-top: 0.2%;
-        padding-bottom:0.2% ;
-        font-family: Mont;
-        background-color: #004B22;
-        outline: 0;
-        border: #304b00 1px solid;
-        border-radius: 100px;
-        margin-bottom: 10%;
-        font-weight: 700;
-        min-height: 50px;
+ 
+    
 
 
-    }
+
     .spanLogin{
         color: #83CF41;
     }
@@ -107,20 +93,7 @@
         justify-content: space-evenly;
         background-color: #004B22;
     }
-    .btnIrCadastro{
-        font-family: LatoBold;
-        background-color: #004B22;
-        color: #ffffff;
-       padding-left: 25px;
-       padding-right: 25px;
-       padding-top: 5px;
-       padding-bottom: 5px;
-       outline: none;
-       border: 1px solid var(--cor-3);
-       font-size: 20px;
-       border-radius: 100px;
-
-    }
+    
     
     
     
@@ -165,14 +138,117 @@
      width: 10px;  /* Largura */
      height: 10px; /* Altura */
  }
- .btnLogin:hover{
-    background-color: #83CF41;
-    color: #004B22;
-    transition: ease 0.3s;
- }
- .btnIrCadastro:hover{
-    background-color: #83CF41;
-    color: #004B22;
-    transition: ease-in-out 0.3s;
 
- }
+
+
+/* --------------------personalizacao do bottoa de ir para cadastro ---------------*/
+
+
+
+
+.btnIrCadastro {
+    
+    background-color:  #004B22;
+    --color: #83CF41;
+    font-family: inherit;
+    display: inline-block;
+    width: 150px;
+        height: 50px;
+    line-height: 50px;
+    margin: 20px;
+    position: relative;
+    cursor: pointer;
+    overflow: hidden;
+    border: 2px solid var(--color);
+    transition: color 0.4s ease-in-out;
+    z-index: 1;
+    font-size: 17px;
+    border-radius: 6px;
+    font-weight: 500;
+    color: var(--color);
+    text-align: center;
+  font-family: Mont;
+  font-weight: 600;
+}
+  
+  .btnIrCadastro:before {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    background: var(--color);
+    width: 200%;
+    height: 500%;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 50%;
+    transition: all 0.6s ease-in-out;
+  }
+  
+  .btnIrCadastro:hover {
+    color: #004B22;
+  
+}
+  
+  .btnIrCadastro:hover:before {
+    top: -150%;
+  }
+  
+  .btnIrCadastro:active:before {
+    background: #0E261E;
+    transition: background 0s;
+  }
+  
+ 
+/* -----------------------persona de botao do login----------------------------- */
+.btnLogin {
+   background-color: #83CF41;
+    --color: #83CF41;
+    font-family: inherit;
+    display: inline-block;
+    width: 400px;
+    height: 50px;
+    line-height: 50px;
+    margin: 20px;
+    position: relative;
+    cursor: pointer;
+    overflow: hidden;
+    border: 2px solid var(--color);
+    transition: color 0.4s ease-in-out;
+    z-index: 1;
+    font-size: 17px;
+    border-radius: 6px;
+    font-weight: 500;
+    color: #004B22;
+    text-align: center;
+  font-family: Mont;
+  font-weight: 600;
+}
+  
+  .btnLogin:before {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    background: #004B22;
+    width: 200%;
+    height: 500%;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 50%;
+    transition: all 0.6s ease-in-out;
+  }
+  
+  .btnLogin:hover {
+    color:var(--color);
+  }
+  
+  .btnLogin:hover:before {
+    top: -150%;
+  }
+  
+  .btnLogin:active:before {
+    background: #0E261E;
+    transition: background 0s;
+  }
+  
