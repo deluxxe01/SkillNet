@@ -3,17 +3,10 @@
     padding: 0;
     box-sizing: border-box;
 }
-.hamburguer{
-    margin-left: 190vh;
-    margin-top: 5vh;
-}
-.menu{
-    margin-left: 190vh;
-}
+
 .Header-InformacoesUsuarioRosa{
 
     background-color: #FFD9D9;
-    margin-top: 5vh;
     margin-left: 50vh;
     width: 100vh;
     height: 40vh;
@@ -24,10 +17,13 @@
 }
 
 .Header1-InformacoesUsuarioRosa{
-
-    border: solid rgb(3, 184, 255) 2px;   
+  
+     /* border: solid rgb(3, 184, 255) 2px;     */
     width: 60vh;
     height: 20vh;
+    top: 5vh;
+    
+   margin-bottom: -5vh;
     /* background-color: aqua; */
     margin-left: 35vh;
     
@@ -35,30 +31,68 @@
 }
 
  .NomeUsuarioRosa{
-    border: solid black 2px;   
+    /* border: solid black 2px;    */
     font-family: "Nunito", sans-serif;
     width: 50vh;
+    top: 5vh;
     /* background-color: blue; */
     
 }
-
-.Button-CompartilharUsuarioRosa{
-     
-    color: white;
-    font-size: 2vh;
-    font-family:"Lato", sans-serif;
-    
-    border-radius: 1.5vh;
-    border: none;
-    cursor: pointer;
+.Button-CompartilharUsuarioRosa {
+   
+    font-family: "Lato", sans-serif;
+    display: inline-block;
+    align-items: center;
+    left: -2vh;
+    width: 15vh;
     height: 4vh;
-    width: 18vh;
-    margin-top: 2vh;
-    margin-left: 16vh;
-    background-color: black;
-} 
+    background-color: #000000;
+    /* line-height: 2.5em; */
+    margin: 20px;
+    position: relative; /* Necessário para o :before */
+    cursor: pointer;
+    overflow: hidden; /* Para esconder o :before quando ele sai do botão */
+    border: 2px solid#000000; /* A borda do botão */
+    transition: color 0.5s; /* Transição suave para a cor do texto */
+    z-index: 1;
+    font-size: 17px;
+    border-radius: 1.5vh;
+    font-weight: 500;
+    color:#ffffff /* Cor do texto do botão */
+}
 
-.Button-ContratarUsuarioRosa{
+/* Estilo do pseudo-elemento :before */
+.Button-CompartilharUsuarioRosa:before {
+    content: "";
+    position: absolute;
+    z-index: -1; /* Para ficar atrás do botão */
+    background: #FFD9D9; /* Cor de fundo do :before */
+    border: #000000;
+    height: 150px;
+    width: 200px;
+    border-radius: 50%;
+    top: 100%; /* Começa fora do botão */
+    left: 100%; /* Começa fora do botão */
+    transition: all 0.7s; /* Transição suave para as mudanças */
+}
+
+/* Estilo quando passar o mouse sobre o botão */
+.Button-CompartilharUsuarioRosa:hover {
+    color: #000000; /* Muda a cor do texto */
+}
+
+.Button-CompartilharUsuarioRosa:hover:before {
+    top: -30px; /* O :before se move para cima */
+    left: -30px; /* O :before se move para a esquerda */
+}
+
+/* Estilo quando o botão for pressionado */
+.Button-CompartilharUsuarioRosa:active:before {
+    border: #000000;
+    background: #FFD9D9; /* Muda a cor de fundo do :before */
+    transition: background 0s; /* A cor muda instantaneamente */
+}
+/* .Button-ContratarUsuarioRosa{
 
     color: rgb(0, 0, 0);
     font-size: 2vh;
@@ -72,21 +106,77 @@
     margin-left: 1vh;
     margin-bottom: 2vh;
     background-color: #FFD9D9;
+} */
+
+.Button-ContratarUsuarioRosa {
+    
+    font-family: "Lato", sans-serif;
+    display: inline-block;
+    align-items: center;
+    width: 15vh;
+    height: 4vh;
+    background-color: #FFD9D9;
+    left: -2vh;
+    /* line-height: 2.5em; */
+    margin: 20px;
+    position: relative; /* Necessário para o :before */
+    cursor: pointer;
+    overflow: hidden; /* Para esconder o :before quando ele sai do botão */
+    border: 2px solid#000000; /* A borda do botão */
+    transition: color 0.5s; /* Transição suave para a cor do texto */
+    z-index: 1;
+    font-size: 17px;
+    border-radius: 1.5vh;
+    font-weight: 500;
+    color:#000000 /* Cor do texto do botão */
 }
+
+/* Estilo do pseudo-elemento :before */
+.Button-ContratarUsuarioRosa:before {
+    content: "";
+    position: absolute;
+    z-index: -1; /* Para ficar atrás do botão */
+    background: #080808; /* Cor de fundo do :before */
+    border: #000000;
+    height: 150px;
+    width: 200px;
+    border-radius: 50%;
+    top: 100%; /* Começa fora do botão */
+    left: 100%; /* Começa fora do botão */
+    transition: all 0.7s; /* Transição suave para as mudanças */
+}
+
+/* Estilo quando passar o mouse sobre o botão */
+.Button-ContratarUsuarioRosa:hover {
+    color: #fff; /* Muda a cor do texto */
+}
+
+.Button-ContratarUsuarioRosa:hover:before {
+    top: -30px; /* O :before se move para cima */
+    left: -30px; /* O :before se move para a esquerda */
+}
+
+/* Estilo quando o botão for pressionado */
+.Button-ContratarUsuarioRosa:active:before {
+    border: #000000;
+    background: #000000; /* Muda a cor de fundo do :before */
+    transition: background 0s; /* A cor muda instantaneamente */
+}
+
 .Label-ExperienciaUsuarioRosa{
-    border: solid black 2px; 
+    /* border: solid black 2px;  */
     font-size: 2vh;
     font-family:"Lato", sans-serif;
     margin-top:-1vh;
 }
 .Label-AnoExperiencia{
-    border: solid black 2px; 
+    /* border: solid black 2px;  */
     font-size: 2vh;
     font-family:"Lato", sans-serif;
     margin-left: 1vh;
 }
 .Header2-InformacoesUsuarioRosa{
-    border: solid rgb(255, 0, 0) 2px; 
+    /* border: solid rgb(255, 0, 0) 2px;  */
     width: 29vh;
     height: 30vh;
     margin-top: -20vh;
@@ -103,20 +193,23 @@
    
 }
 .Label-Pais{
-    border: solid black 2px; 
+    /* border: solid black 2px;  */
     font-size: 2vh;
-    margin-left: 6vh
+    margin-left: 6vh;
+    font-family: "Lato", sans-serif;
 }
 .Label-Estado{
-    border: solid black 2px; 
+    /* border: solid black 2px;  */
     font-size: 2vh;
+    font-family: "Lato", sans-serif;
     
 }
-.Header3-InformacoesUsuarioRosa{
+/* .Header3-InformacoesUsuarioRosa{
     border: solid rgb(183, 0, 255) 2px; 
     
-}
-.Button-EditarPerfil{
+} */
+
+/* .Button-EditarPerfil{
     color: #FBFBFB;
     background-color: #B80093;
     border-radius: 1.5vh;
@@ -127,9 +220,63 @@
     width: 15vh;
     margin-left: 7vh;
     margin-top: 2vh;
+} */
+.Button-EditarPerfil {
+   
+    font-family: "Lato", sans-serif;
+    display: inline-block;
+    align-items: center;
+    left: 7vh;
+    width: 15vh;
+    height: 4vh;
+    background-color: #B80093;
+    /* line-height: 2.5em; */
+      
+    position: relative; /* Necessário para o :before */
+    cursor: pointer;
+    overflow: hidden; /* Para esconder o :before quando ele sai do botão */
+    border: none;
+    transition: color 0.5s; /* Transição suave para a cor do texto */
+    z-index: 1;
+    font-size: 17px;
+    border-radius: 1.5vh;
+    font-weight: 500;
+    color:#ffffff /* Cor do texto do botão */
+}
+
+/* Estilo do pseudo-elemento :before */
+.Button-EditarPerfil:before {
+    content: "";
+    position: absolute;
+    z-index: -1; /* Para ficar atrás do botão */
+    background: #780060; /* Cor de fundo do :before */
+    border: none;
+    height: 150px;
+    width: 200px;
+    border-radius: 50%;
+    top: 100%; /* Começa fora do botão */
+    left: 100%; /* Começa fora do botão */
+    transition: all 0.7s; /* Transição suave para as mudanças */
+}
+
+/* Estilo quando passar o mouse sobre o botão */
+.Button-EditarPerfil:hover {
+    color: #ffffff; /* Muda a cor do texto */
+}
+
+.Button-EditarPerfil:hover:before {
+    top: -30px; /* O :before se move para cima */
+    left: -30px; /* O :before se move para a esquerda */
+}
+
+/* Estilo quando o botão for pressionado */
+.Button-EditarPerfil:active:before {
+    border: #000000;
+    background: #FFD9D9; /* Muda a cor de fundo do :before */
+    transition: background 0s; /* A cor muda instantaneamente */
 }
 .CategoriasUsuario{
-    border: solid rgb(77, 0, 107) 2px; 
+    /* border: solid rgb(77, 0, 107) 2px;  */
     height: 8vh;
     width: 60vh;
     margin-left: 35vh;
@@ -149,22 +296,68 @@
     width: 18vh;
     margin-left: 2vh;
     display: inline-block;
-    /* white-space: nowrap; 
-    overflow: hidden;
-    text-overflow: ellipsis;  */
+  
 }
-/* .ContainerFundoRosa {
-    border: solid rgb(183, 0, 255) 2px; 
+
+.hamburguer{
+    /* border: solid rgb(183, 0, 255) 2px;  */
     position: relative;
-    margin-top: -75vh;
-    background-image: url('images/FundoRosa.jpg');
-    background-size: cover; 
-    background-position: center center; 
-    background-repeat: no-repeat;
-    width: 150vh; 
-    height: 80vh; 
-    display: flex; 
-    justify-content: center; 
+    display: flex;
     align-items: center;
-    color: white; 
-} */
+    justify-content: flex-end;
+    padding: 20px;
+}
+
+.logo-img{
+    width: 10vh;
+    height: auto;
+    cursor: pointer;
+}
+
+.menu {
+    border-radius: 1.5vh;
+    position: fixed;
+    top: 12vh;
+    right: 7vh;
+    width: 18vh;
+    height: 22vh;
+    background-color: #E6E6E6;
+    color: white;
+    transform: translateX(100%); /* Inicialmente o menu está fora da tela */
+    padding: 20px;
+    display: none; /* Menu começa invisível */
+}
+
+/* Quando a classe "active" é adicionada, o menu se torna visível */
+.menu.active {
+    transform: translateX(0); /* Coloca o menu na tela */
+    display: block; /* Torna o menu visível */
+}
+
+/* Remover bolinhas (ícones de lista) */
+.menu ul {
+    list-style-type: none; /* Remove as bolinhas */
+    padding: 0; /* Remove o padding */
+    margin: 0; /* Remove a margem */
+}
+
+/* Estilo do link */
+.menu a {
+    font-size: 2vh;
+    color: rgb(0, 51, 8);
+    text-decoration: none;
+    display: block;
+    margin: 10px 0;
+    margin-left: 2vh;
+    font-family: "Lato", sans-serif;
+}
+
+
+/* CSS DE HOVER: */
+.menu a:hover {
+    color: #83CF41; /* Muda para a cor vermelha (você pode escolher qualquer cor) */
+}
+
+
+
+
