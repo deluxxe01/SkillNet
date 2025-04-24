@@ -38,17 +38,21 @@
     /* background-color: blue; */
     
 }
+.botoes{
+    margin-left: 20vh;
+    margin-top: -4vh;
+}
 .Button-CompartilharUsuarioRosa {
    
     font-family: "Lato", sans-serif;
     display: inline-block;
     align-items: center;
-    left: -2vh;
+    
     width: 15vh;
     height: 4vh;
     background-color: #000000;
     /* line-height: 2.5em; */
-    margin: 20px;
+   
     position: relative; /* Necessário para o :before */
     cursor: pointer;
     overflow: hidden; /* Para esconder o :before quando ele sai do botão */
@@ -92,6 +96,9 @@
     background: #FFD9D9; /* Muda a cor de fundo do :before */
     transition: background 0s; /* A cor muda instantaneamente */
 }
+.imgShare{
+    width: 3vh;
+}
 /* .Button-ContratarUsuarioRosa{
 
     color: rgb(0, 0, 0);
@@ -116,9 +123,9 @@
     width: 15vh;
     height: 4vh;
     background-color: #FFD9D9;
-    left: -2vh;
+    margin-left: 2vh;
     /* line-height: 2.5em; */
-    margin: 20px;
+   
     position: relative; /* Necessário para o :before */
     cursor: pointer;
     overflow: hidden; /* Para esconder o :before quando ele sai do botão */
@@ -162,12 +169,14 @@
     background: #000000; /* Muda a cor de fundo do :before */
     transition: background 0s; /* A cor muda instantaneamente */
 }
-
+.Experiencia{
+    margin-top: 3vh;
+}
 .Label-ExperienciaUsuarioRosa{
     /* border: solid black 2px;  */
     font-size: 2vh;
     font-family:"Lato", sans-serif;
-    margin-top:-1vh;
+    
 }
 .Label-AnoExperiencia{
     /* border: solid black 2px;  */
@@ -285,10 +294,12 @@
     justify-content: space-between; /* Espaço entre logo e menu */
     align-items: center;
     
+    
 }
 .Button-CategoriaPerfil{
     color: #000000;
     background-color: #FFA3A3;
+    font-family: "Lato", sans-serif;
     border-radius: 1.5vh;
     border: none;
     font-size: 2vh;
@@ -296,6 +307,7 @@
     width: 18vh;
     margin-left: 2vh;
     display: inline-block;
+    
   
 }
 
@@ -358,6 +370,98 @@
     color: #83CF41; /* Muda para a cor vermelha (você pode escolher qualquer cor) */
 }
 
+.Container-SobreMim{
+    
+     border: solid rgb(183, 0, 255) 2px; 
+    width: 150vh;
+    height: 30vh;
+    margin-left: 25vh;
+    margin-top: 8vh;
+}
 
+.Sobremim{
+    font-family: "Montserrat", sans-serif;
+    color: #500040;
+}
+.Texto-Sobremim{
+    margin-top: 3vh;
+    color: #500040;
+    font-family: "Lato", sans-serif;
+}
 
+.Container-Projetos{
+    /* border: solid rgb(183, 0, 255) 2px; */
+    width: 150vh;
+    height: 60vh;
+    margin-left: 25vh;
+    margin-top: 8vh;
+}
 
+.Projetos{
+    font-family: "Montserrat", sans-serif;
+    color: #500040;
+}
+
+.Carrossel-Container{
+    margin-top: 3vh;
+    /* border: solid rgb(88, 13, 8) 2px; */
+    display: flex;
+    align-items: center;
+    height: 50vh;
+}
+
+.Carrossel{
+    /* border: solid rgb(255, 111, 243) 2px; */
+    overflow: hidden;
+    width: 150vh; /* Largura do carrossel */
+}
+.imagens{
+ display: flex;
+transition: transform 0.5s ease;
+}  
+
+.imagens img{
+   /* border: solid rgb(80, 153, 196) 2px; */
+  width: 35vh; /* Largura de cada imagem */
+  height: auto;
+  margin: 0 5px;
+}
+.Seta {
+    background: none;
+    width: 5vh;
+    height: 5vh;
+    border: none;
+    border-radius: 2.5vh;
+    font-size: 30px;
+    cursor: pointer;
+    padding: 10px;
+    color: #ffffff;
+    background-color: #f79ceb;
+  }
+
+.Seta:hover {
+    color: #500040;
+}
+
+.zap{
+    margin-top: 3vh;
+    width: 4vh;
+    height: 4vh;
+}
+.insta{
+    width: 4vh;
+    height: 4vh;
+    margin-left: 1vh;
+}
+.email{
+    width: 4vh;
+    height: 4vh;
+    margin-left: 1vh;
+    margin-right: 4vh;
+}
+
+.Container-Avaliacoes{
+    margin-top: 8vh;
+    background-color: #f79ceb;
+    height: 50vh;
+}
