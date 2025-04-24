@@ -1,0 +1,227 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap');
+
+body{
+    background-color: #FBFBFB;
+}
+
+::-webkit-scrollbar {
+    width: 0px;
+}
+
+/* Parte superior da tela portifolio */
+
+.container_telaPortifolio{
+    .infosUsuario{
+        border: 2px #FFD9D9 solid;
+        border-radius: 55px;
+        position: absolute;
+        top: 20%;
+        left: 9%;
+        width: 80%;
+        height: 55%;
+       background-color: #FFD9D9;
+    }
+    .logoSkillNetVerde{
+        position: absolute;
+        top: 2%;
+        right: 2%;
+    }
+    .infosUsuario{
+        /* border: 2px red solid; */
+        display: flex;
+        .img_local{
+            /* border: 2px red solid; */
+            margin-top: 5%;
+            margin-left: 3%;
+            width: 500px;
+            display: flex;
+            flex-direction: column;
+            .imgUsuario{
+                margin-left: 8%;
+                width: 300px;
+                height: 300px;
+                border-radius: 50%;
+            }
+            .iconLocal{
+                margin-top: 1%;
+                margin-left: 10%;
+                width: 45px;
+                height: 45px;
+                display: flex;
+                justify-content: space-around;
+            }
+            .localizacaoUsu{
+                font-size: 25px;
+                font-family: "Poppins", sans-serif;
+                font-weight: 500;
+                position: relative;
+                bottom: 40px;
+                left: 18%;
+            }
+        }
+        .restoInfos{
+            /* border: 2px red solid; */
+            margin-top: 5%;
+            position: relative;
+            right: 5%;
+            width: 60%;
+            height: 80%;
+            .nomeUsu{
+                font-size: 60px;
+                font-family: "Nunito Sans", sans-serif;
+                font-weight: 700;
+            }
+            .iconsContato{
+                /* border: 2px red solid; */
+                width: 60%;
+                display: flex;
+                justify-content: space-around;
+                img{
+                    width: 40px;
+                    height: 40px;
+                }
+                .shareButton{
+                    border: 2.5px black solid;
+                    background-color: black;
+                    border-radius: 30px;
+                    width: 150px;
+                    height: 45px;
+                    font-size: 25px;
+                    color: white;
+                    text-indent: 15%;
+                    font-family: "Poppins", sans-serif;
+                    display: flex;
+                    justify-content: space-around;
+                    img{
+                        position: relative;
+                        right: 5%;
+                        
+                    }
+                
+                }
+                .shareButton:hover{
+                    background-color: transparent;
+                    color: black;
+                    transition-duration: 0.5s;
+                    img{
+                        filter: invert();
+                    }
+                }
+                .icon_share{
+                    width: 25px;
+                    position: relative;
+                    right: 13%;
+                    top: 2px;
+                }
+                .contrateButton{
+                    border: 2.5px black solid;
+                    background-color: transparent;
+                    border-radius: 30px;
+                    width: 150px;
+                    height: 45px;
+                    font-size: 25px;
+                    font-family: "Poppins", sans-serif;
+                    color: black;
+                    position: relative;
+                    right: 2%;
+                }
+                .contrateButton:hover{
+                    background-color: black;
+                    color: white;
+                    transition-duration: 0.5s;
+                }
+            }
+            .experience{
+                font-size: 30px;
+                font-family: "Poppins", sans-serif;
+                margin-top: 5%;
+            }
+            .expecialidadesUsu{
+                margin-top: 5%;
+                width: fit-content;
+                display: flex;
+                font-size: 25px;
+                gap: 20px;
+                font-family: "Poppins", sans-serif;
+                p{
+                    border: 2px #FFAFAF solid;
+                    border-radius: 50px;
+                    background-color: #FFAFAF;
+                    width: 150px;
+                    height: 40px;
+                    text-align: center;
+                }
+            }
+        }
+        .bttcont1{
+            border: none;
+            background-color: transparent;
+        }
+        .bttcont2{
+            border: none;
+            background-color: transparent;
+        }
+        .bttcont3{
+            border: none;
+            background-color: transparent;
+        }
+    }
+
+
+
+    .partePortifolio{
+        /* border: 2px red solid; */
+        position: relative;
+        top: 350px;
+        .txtPortifolio{
+            text-align: center;
+            font-size: 60px;
+            font-family: "Nunito Sans", sans-serif;
+            font-weight: 600;
+        }
+        .barra1{
+            /* border: 2px black solid; */
+            margin-left: auto;
+            margin-right: auto;
+            width: 150px;
+            height: 15px;
+            background-color: #FFAFAF;
+        }
+        
+    }
+
+/* Parte superior da tela portifolio */
+
+    
+
+    .infosPortifolio{
+        /* border: 2px red solid; */
+        margin-top: 5%;
+        margin-left: 4%;
+        width: 100%;
+        height: fit-content;
+        .txtDescPortfolio{
+            /* border: 2px green solid; */
+            position: relative;
+            top: 5%;
+            left: 8%;
+            font-size: 48px;
+            font-family: "Nunito Sans", sans-serif;
+            font-weight: 800;
+            color: #B80093;
+        }
+        .descricaoPortifolio{
+            /* border: 2px red solid; */
+            width: 75%;
+            margin-left: 8%;
+            margin-top: 5%;
+            word-break: break-all;
+            font-size: 32px;
+            font-family: "Poppins", sans-serif;
+            font-weight: 300;
+        }
+    }
+}
+
+*{margin: 0; padding: 0;}

@@ -1,0 +1,237 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+.carouselPort{
+    /* border: 2px red solid; */
+    margin-top: 25%;
+    width: 85%;
+    margin-left: auto;
+    margin-right: auto;
+    filter: drop-shadow(0 0 0.80rem rgb(168, 168, 168));
+}
+.imgsPortifolio{
+    border-radius: 20px;
+    width: 85%;
+    height: 600px;
+    margin-left: 7.5%;
+}
+
+
+.swiper-button-prev::after {
+    border-radius: 50px;
+    margin-left: 0px;
+    color: black;    
+}
+.swiper-button-next::after {
+    margin-right: 0px;
+    color: black;    
+}
+
+.inputImg{
+    border: 2px red solid;
+    height: 500px;
+}
+.editDeleteButton{
+    margin-left: 90%;
+    display: flexbox;
+    justify-content: space-around;
+    .ButtonEditarImgs{
+        border: 2px #B80093 solid;
+        border-radius: 30px;
+        background-color: #B80093;
+        width: 230px;
+        font-size: 20px;
+        color: white;
+        margin-bottom: 5px;
+    }
+    .txtButtonEdtExc{
+        position: relative;
+        bottom: 13px;
+        right: 0px;
+    }
+    .imgButtonEdtExc{
+        position: relative;
+        left: 10px;
+    }
+}
+.containerModalPort{
+    border: 2px black solid;
+    border-radius: 30px;
+    width: 60%;
+    height: 700px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 5%;
+    text-align: center;
+    background-color: #fbfbfb;
+    .txtModalUm{
+        position: relative;
+        top: 20px;
+        font-size: 40px;
+        font-family: "Poppins", sans-serif;
+    }
+    .barra1{
+        border: 2px #FFAFAF solid;
+        background-color: #FFAFAF;
+        height: 15px;
+        width: 500px;
+        margin-top: 2%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .buttonFecharModal{
+        border: 2px black solid;
+        border-radius: 50px;
+        font-size: 40px;
+        height: 50px;
+        width: 50px;
+        background-color: #fbfbfb;
+        position: relative;
+        left: 74%;
+        top: 3%;
+    }
+    .swiperModal{
+        width: 90%;
+    }
+    .imgsPortifolioModal{
+        width: 80%;
+        height: 430px;
+        margin-top: 7%;
+        border-radius: 20px;
+    }
+    .buttonsEdit_Exc{
+        border: 2px #FFD9D9 solid;
+        border-radius: 30px;
+        background-color: #FFD9D9;
+        height: 45px;
+        width: 90px;
+        display: flex;
+        justify-content: space-evenly;
+        position: relative;
+        left: 80%;
+        bottom: 65px;
+        button{
+            border: none;
+            background-color: #FFD9D9;
+            height: fit-content;
+            width: fit-content;
+            margin-top: 8%;
+        }
+    }
+}
+.modalEditImg{
+    border: 2px black solid;
+    border-radius: 10px;
+    background-color: #fbfbfb;
+    width: 35%;
+    height: 55%;
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    .containerModalEdit{
+        /* border: 2px red solid; */
+        width: 100%;
+        height: 100%;
+    }
+    .txtModalEdit{
+        font-size: 40px;
+        padding-top: 3%;
+        font-family: "Poppins", sans-serif;
+        
+    }
+    .preImagen{
+        padding-top: 1%;
+        width: 70%;
+        height: 300px;
+        border-radius: 10px;
+        filter: drop-shadow(0 0 0.80rem rgb(168, 168, 168));
+        
+    }
+    .txtEditImg{
+        border: 2px black solid;
+        border-radius: 30px;
+        padding: 5px;
+        font-size: 20px;
+    }
+    .buttonsModalEdit{
+        padding-top: 3%;
+        display: flex;
+        justify-content: space-around;
+        .buttonSalvar{
+            border: 2px #B80093 solid;
+            border-radius: 20px;
+            background-color: #fbfbfb;
+            width: 150px;
+            height: 40px;
+            font-size: 25px;
+            color: #B80093;
+        }
+        .buttonFechar{
+            border: 2px black solid;
+            border-radius: 20px;
+            background-color: #fbfbfb;
+            width: 150px;
+            height: 40px;
+            font-size: 25px;
+        }
+    }
+
+}
+
+
+
+.modalExclusao{
+    border: 2px black solid;
+    border-radius: 10px;
+    background-color: #fbfbfb;
+    width: 35%;
+    height: 55%;
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+.containerExcImg{
+    /* border: 2px red solid; */
+    padding-top: 5%;
+    img{
+        width: 200px;
+    }
+    .containerTxt{
+        padding-top: 5%;
+        .modalExcTxt1{
+            font-size: 35px;
+        }
+        .modalExcTxt2{
+            font-size: 25px;
+
+        }
+
+    }
+    .containerButtonsExc{
+        /* border: 2px red solid; */
+        padding-top: 5px;
+        display: flex;
+        justify-content: space-around;
+        .buttonExc{
+            border: 2px #FF3131 solid;
+            border-radius: 20px;
+            background-color: #FF3131;
+            width: 160px;
+            height: 60px;
+            font-size: 25px;
+            color: white;
+        }
+        .buttonCancelExc{
+            border: 2px #949494 solid;
+            border-radius: 20px;
+            background-color: #949494;
+            width: 160px;
+            height: 60px;
+            font-size: 25px;
+            color: white;
+        }
+    }
+}
