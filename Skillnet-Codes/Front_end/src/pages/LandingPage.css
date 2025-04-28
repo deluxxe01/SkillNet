@@ -115,7 +115,7 @@ display: flex;
     display: flex;
     flex-direction: column;
     z-index: -2;
-    height: 50vh;
+    height: fit-content;
     width: 80%;
     border-radius: 20px;
 }
@@ -125,6 +125,8 @@ display: flex;
     align-items: center;
     display: flex;
     flex-direction: column;
+    margin: 20px;
+    margin-bottom: 100px;
 }
 .h1Landing{
     font-family: Mont;
@@ -200,4 +202,24 @@ display: flex;
     color: #fbfbfb;
     font-weight: 800;
     font-size: 1.5em;
+}
+.imgMulherldp{
+    width: 25%;
+}
+.h2Landing{
+    font-family: Mont;
+    font-weight: 800;
+    color: #0E261E;
+}
+.spnLanding{
+    border: 5px solid #83CF41;
+    border-radius: 30px;
+    
+}
+.containerMulherLanding{
+    align-items: center;
+    
+}
+.containerPainel{
+    margin-bottom: 5%;
 }

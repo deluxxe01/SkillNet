@@ -67,7 +67,7 @@ App.get("/UsuarioLogado",(req,res)=>{
 })
 
 io.on("connection", socket =>{
-    console.log("conectado com meu amigo: ",socket.id)
+  
 
     socket.on("mandarMensagem", data =>{
         console.log(data)

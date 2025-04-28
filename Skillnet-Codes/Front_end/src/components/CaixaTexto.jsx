@@ -16,16 +16,32 @@ function CaixaTexto(props) {
 
     
     const MandarMensage = () => {
-     
-      let mensagem = {
-        nome:props.autor,
-        mess:inptMess
-        
-      }
+     if(inptMess==""){
+      alert('insira a messagem')
+
+    }else{
+
+        let data = new Date();
+        // Pega as horas e minutos
+        let horas = data.getHours().toString().padStart(2, '0'); // Adiciona zero à esquerda, se necessário
+        let minutos = data.getMinutes().toString().padStart(2, '0'); // Adiciona zero à esquerda, se necessário
+
+        // Exibe no formato HH:mm
+        let horaEminuto = `${horas}:${minutos}`;
+
+       
+       let mensagem = {
+         nome:props.autor,
+         mess:inptMess,
+         horario:horaEminuto
+         
+       }
+       
+       socket.emit('mandarMensagem',mensagem)
+       setInptMess("")
+
+     }
       
-      
-      socket.emit('mandarMensagem',mensagem)
-      setInptMess("")
       
       
     }  
@@ -66,7 +82,7 @@ function CaixaTexto(props) {
                   marginRight:msg.nome != props.autor?"50%" :"-50%",
                   marginLeft:msg.nome !=props.autor ?"10px":"-10px"
                   }}>
-                  <p>{msg.mess}</p> 
+                  <p>{msg.mess} <span className='spamChat' style={{color:msg.nome!=props.autor ?" #46553C":"#9CB988"}}>{msg.horario}</span></p> 
                   </div>
               ))} 
           </div>

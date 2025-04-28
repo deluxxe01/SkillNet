@@ -71,6 +71,14 @@ function LandingPage() {
           <h1 className='h1Numeros'><span className='spanNumeros'>3000+</span>
           <br/>Avaliações</h1>
         </div>
+        <div className='containerMulherLanding'>
+          <h2 className='h2Landing'>Transformando ideais em <br />
+            <span className='spnLanding'> Obras-primas</span></h2>
+            <img src="./images/MulherLanding.jpg" alt="" className='imgMulherldp' />
+        </div>
+        <div>
+
+        </div>
        
         
       </div>
