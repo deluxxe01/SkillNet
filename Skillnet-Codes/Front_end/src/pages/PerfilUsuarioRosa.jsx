@@ -57,6 +57,7 @@ function PerfilUsuarioRosa() {
         };
     }, [index]); // Dependência em "index" para atualizar o carrossel
 
+
     return (
         <div className='PerfilUsuarioRosa-Container'>
             {/* Menu Hamburguer */}
@@ -152,9 +153,31 @@ function PerfilUsuarioRosa() {
                 </div>
              </div>
 
+            
              <div className='Container-Avaliacoes'>
-                 olaaa
-             </div>
+                    <h1 className='Projetos'>Avaliações Recebidas</h1>
+                    
+                   
+                    <div className='CarrosselComentarios-Container'>
+               <div className='Comentarios-Container'>
+                    <div className="comentarios" >
+                            <img src="public/images/Group 64.png" alt="Imagem 1" />
+                            <img src="public/images/Group 65.png" alt="Imagem 2" />
+                            <img src="public/images/Group 65 (1).png" alt="Imagem 3" />
+                            <img src="public/images/Rectangle 193.png" alt="Imagem 4" />
+                            <img src="public/images/Rectangle 194.png" alt="Imagem 5" />
+                            <img src="public/images/Rectangle 193a.png" alt="Imagem 6" />
+                    </div>
+
+               </div>
+                    </div>
+                    <div className='SetasComentarios'>
+
+                    <button className='SetaComentarios-Esquerda' >&lt;</button> 
+                    <button className="SetaComentarios-Direita" >&gt;</button>
+
+                    </div>  
+                </div>
         </div>
     );
 }

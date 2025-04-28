@@ -144,13 +144,13 @@
     position: absolute;
     z-index: -1; /* Para ficar atrás do botão */
     background: #080808; /* Cor de fundo do :before */
+    transition: all 0.7s; /* Transição suave para as mudanças */
     border: #000000;
     height: 150px;
     width: 200px;
     border-radius: 50%;
     top: 100%; /* Começa fora do botão */
     left: 100%; /* Começa fora do botão */
-    transition: all 0.7s; /* Transição suave para as mudanças */
 }
 
 /* Estilo quando passar o mouse sobre o botão */
@@ -332,7 +332,7 @@
     top: 12vh;
     right: 7vh;
     width: 18vh;
-    height: 22vh;
+    height: 25vh;
     background-color: #E6E6E6;
     color: white;
     transform: translateX(100%); /* Inicialmente o menu está fora da tela */
@@ -427,12 +427,12 @@ transition: transform 0.5s ease;
   margin: 0 5px;
 }
 .Seta {
-    background: none;
+    margin: 2vh;
     width: 5vh;
     height: 5vh;
     border: none;
     border-radius: 2.5vh;
-    font-size: 30px;
+    font-size: 3vh;
     cursor: pointer;
     padding: 10px;
     color: #ffffff;
@@ -461,7 +461,86 @@ transition: transform 0.5s ease;
 }
 
 .Container-Avaliacoes{
+    /* border: solid rgb(80, 153, 196) 2px; */
     margin-top: 8vh;
-    background-color: #f79ceb;
+    height: 75vh;
+    width: 150vh;
+    margin-left: 25vh;
+    margin-bottom: 10vh;
+}
+
+.CarrosselComentarios-Container{
+    background-color: #FFD9D9;
+    margin-top: 3vh;
+    border-radius: 4.5vh;
+    /* border: solid rgb(88, 13, 8) 2px; */
+    display: flex;
+    align-items: center;
     height: 50vh;
 }
+
+.Comentarios-Container{
+    /* border: solid rgb(255, 111, 243) 2px; */
+    overflow: hidden;
+    width: 150vh; /* Largura do carrossel */
+}
+
+.comentarios{
+    display: flex;
+    transition: transform 0.5s ease;
+}
+.comentarios img{
+   /* border: solid rgb(80, 153, 196) 2px;  */
+   width: 65vh; /* Largura de cada imagem */
+   height: 25vh;
+   margin: 0 5px;
+ }
+
+ .SetasComentarios{
+    margin-top: 5vh;
+    /* border: solid rgb(80, 153, 196) 2px;  */
+    margin-left: 70vh;
+    width: 15vh;
+
+ }
+.SetaComentarios-Esquerda{
+    position: relative; /* Necessário para o :before */
+    cursor: pointer;
+    overflow: hidden; /* Para esconder o :before quando ele sai do botão */
+    border: 2px solid#B80093; /* A borda do botão */
+    transition: color 0.5s; /* Transição suave para a cor do texto */
+    z-index: 1;
+    width: 5vh;
+    height: 5vh;
+    border-radius: 5vh;
+    color: #B80093;
+    font-size: 3vh;
+      /* Correção: Use 'border' ao invés de 'border-color' */
+    outline: none;
+    transition: all 0.5s ease;
+  
+ }
+ .SetaComentarios-Esquerda:hover{
+    background-color: #B80093;  /* Altera a cor de fundo ao passar o mouse */
+    color: white;  /* Muda a cor do texto */
+    transform: scale(1.1);  /* Aumenta ligeiramente o tamanho do botão */
+ }
+
+.SetaComentarios-Direita{
+    width: 5vh;
+    height: 5vh;
+    border-radius: 5vh;
+    margin-left: 2vh;
+    color: #E6E6E6;
+    background-color: #B80093;
+    border: none;
+    font-size: 3vh;
+    transition: all 0.5s ease;
+}
+
+.SetaComentarios-Direita:hover{
+    background-color: #E6E6E6;  /* Altera a cor de fundo ao passar o mouse */
+    color: #B80093;  /* Muda a cor do texto */
+    border: 2px solid#B80093;
+    transform: scale(1.1);  /* Aumenta ligeiramente o tamanho do botão */
+ }
