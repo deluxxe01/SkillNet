@@ -91,7 +91,7 @@ display: flex;
 }
 .conteiner2{
     background-color: #fbfbfb;
-    height: 100vh;
+    min-height: 100vh;
     width: 98%;
     z-index: 1;
     border-radius: 10px;
@@ -159,7 +159,7 @@ display: flex;
 }
 .pCont{
     font-family: LatoRegular;
-   font-size: 1em;
+   font-size: 1.7em;
 }
 .containerPainel{
     width: 100%;
@@ -188,6 +188,7 @@ display: flex;
     justify-content: space-evenly;
     display: flex;
     border-radius: 20px;
+    margin-top: 5%;
 }
 .h1Numeros{
     font-family: Mont;
@@ -204,7 +205,10 @@ display: flex;
     font-size: 1.5em;
 }
 .imgMulherldp{
-    width: 25%;
+    width: 15%;
+    margin-top: 10px;
+    border-radius: 10px;
+    
 }
 .h2Landing{
     font-family: Mont;
@@ -212,8 +216,8 @@ display: flex;
     color: #0E261E;
 }
 .spnLanding{
-    border: 5px solid #83CF41;
-    border-radius: 30px;
+    border-bottom: 7px solid #83CF41;
+   
     
 }
 .containerMulherLanding{
@@ -222,4 +226,16 @@ display: flex;
 }
 .containerPainel{
     margin-bottom: 5%;
+}
+.containerLanding3{
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+}
+.containerMulherLanding{
+    align-items: center;
+    justify-self:center;
+    display: flex;
+    flex-direction: column;
 }

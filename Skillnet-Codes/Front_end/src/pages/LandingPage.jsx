@@ -1,6 +1,8 @@
 import React from 'react'
 import './LandingPage.css'
 import PainelFiltros from '../components/PainelFiltros'
+import Button from '../components/Button'
+import Header from '../components/Header'
 
 
 
@@ -10,12 +12,7 @@ function LandingPage() {
     
       <div className='container1'>
         <div className='header'>
-          <button className='btnLanding'>SERVIÇOS</button>
-          <button className='btnLanding'>PORTFÓLIOS</button>
-          <img src="./images/logo_SkillNet.svg" alt="" />
-          <button className='btnLanding'>SOBRE NÓS</button>
-          <button className='btnLanding'>PERFIL</button>
-
+         <Header />
         </div>
       
         <div className='conteinerTitulo'>
@@ -25,8 +22,8 @@ function LandingPage() {
           <p className='pLanding'>Encontre o profissional ideal para o <br/> seu projeto ou exiba suas <br/> habilidades e conquiste novos <br/> clientes.</p>
         </div>
         <div className='divButton'>
-          <button className='button1'>INICIAR SESSÃO</button>
-          <button className='button2'>COMEÇAR</button>
+          <Button conteudo="INICIAR SESSÃO" />
+          <Button conteudo="COMEÇAR" />
           <img src="./images/mulher-empresaria.svg" alt="" className='imgEmpresaria' />
         </div>
 
@@ -71,10 +68,12 @@ function LandingPage() {
           <h1 className='h1Numeros'><span className='spanNumeros'>3000+</span>
           <br/>Avaliações</h1>
         </div>
-        <div className='containerMulherLanding'>
-          <h2 className='h2Landing'>Transformando ideais em <br />
-            <span className='spnLanding'> Obras-primas</span></h2>
-            <img src="./images/MulherLanding.jpg" alt="" className='imgMulherldp' />
+        <div className='containerLanding3'>
+          <div className='containerMulherLanding'>
+            <h2 className='h2Landing'>Transformando ideais em <br />
+              <span className='spnLanding'> Obras-primas</span></h2>
+              <img src="./images/MulherLanding.jpg" alt="" className='imgMulherldp' />
+          </div>
         </div>
         <div>
 

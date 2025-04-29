@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from 'react'
+import React, { useContext, useEffect, useRef, useState } from 'react'
 import './CaixaTexto.css'
 import { io } from 'socket.io-client'
 import { GlobalContext } from '../context/Globalcontext'
@@ -6,14 +6,16 @@ import  axios from 'axios'
 
 
 function CaixaTexto(props) {
-  const socket = io('http://localhost:3100', { transports: ['websocket'] })
+  const socket = io('http://localhost:3000', { transports: ['websocket'] })
     const [inptMess,setInptMess]=useState('')
     const {mensagem} = props
     const {chat,setChat}=useContext(GlobalContext)
     const[teste,setTeste]=useState([])
     const [vetorChat,setVetorChat]=useState([])
+    const socketRef=useRef(null)
     
 
+    
     
     const MandarMensage = () => {
      if(inptMess==""){
@@ -49,7 +51,34 @@ function CaixaTexto(props) {
     //  const resultado = await axios.get('http://localhost:3000/Mensagens') 
     //  setChat(resultado.data)
     // }
-
+    useEffect(()=>{
+      if(!socketRef.current){
+        socketRef.current=io('http://localhost:3000', { transports: ['websocket'] })
+        socketRef.current.on('connect', () => {
+          console.log('Conectado ao servidor!');
+        });
+  
+        socketRef.current.on('disconnect', () => {
+          console.log('Desconectado do servidor');
+        });
+  
+        socketRef.current.on('connect_error', (err) => {
+          console.log('Erro na conexão:', err);
+        });
+  
+        socketRef.current.on('reconnect', (attempt) => {
+          console.log('Reconectando, tentativa', attempt);
+        });
+  
+        socketRef.current.on('reconnect_error', (err) => {
+          console.log('Erro ao tentar reconectar:', err);
+        });
+  
+        socketRef.current.on('mensagemRecebida', (data) => {
+          setChat(data);
+        })
+      }
+      })
     useEffect(()=>{
       socket.on('mensagemRecebida', (data) => {
         setChat(data)

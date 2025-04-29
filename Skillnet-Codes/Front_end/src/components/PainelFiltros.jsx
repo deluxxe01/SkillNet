@@ -6,19 +6,19 @@ function PainelFiltros() {
     <div>
          <div className='conteinerIcons'>
           <div className='conteinerIcon'>
-            <img src="./icons/iconPc.svg" alt="" className='imgPainelFiltor' />
+            <img src="./icons/iconPc.png" alt="" className='imgPainelFiltor' />
             <p className='pFilter'>DESENVOLVIMENTO WEB</p>
           </div>
           <div className='conteinerIcon'>
-            <img src="./icons/MegaFone.svg" alt="" className='imgPainelFiltor' />
+            <img src="./icons/megaphone.png" alt="" className='imgPainelFiltor' />
             <p className='pFilter'>MARKETING</p>
           </div>
           <div className='conteinerIcon'>
-            <img src="./icons/iconLampada.svg" alt="" className='imgPainelFiltor' />
+            <img src="./icons/iconLampada.png" alt="" className='imgPainelFiltor' />
             <p className='pFilter'>DESIGN GRÁFICO</p>
           </div>
           <div className='conteinerIcon'>
-            <img src="./icons/iconFolha.svg" alt="" className='imgPainelFiltor' />
+            <img src="./icons/iconFolha.png" alt="" className='imgPainelFiltor' />
             <p className='pFilter'>PRODUÇÃO DE CONTEÚDOS</p>
           </div>
           <div className='conteinerIcon'>

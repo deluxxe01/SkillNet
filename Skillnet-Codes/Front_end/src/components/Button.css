@@ -1,0 +1,57 @@
+.btnComponent{
+    background-color: #0e261e79;
+     --color: #83CF41;
+     font-family: inherit;
+     display: inline-block;
+     width: 400px;
+     height: 50px;
+     line-height: 50px;
+     margin: 20px;
+     position: relative;
+     cursor: pointer;
+     overflow: hidden;
+     border: 2px solid var(--color);
+     transition: color 0.4s ease-in-out;
+     z-index: 1;
+     font-size: 17px;
+     border-radius: 6px;
+     font-weight: 500;
+     color: #fbfbfb;
+     text-align: center;
+   font-family: Mont;
+   font-weight: 600;
+ 
+ 
+ }
+   
+   .btnComponent:before {
+     content: "";
+     position: absolute;
+     z-index: -1;
+     background: #83CF41;
+     width: 200%;
+     height: 500%;
+     top: 100%;
+     left: 50%;
+     transform: translateX(-50%);
+     border-radius: 50%;
+     transition: all 0.7s ease-in-out;
+     
+   }
+   
+   .btnComponent:hover {
+     color:#004B22;
+     background-color: #0e261e79;
+   }
+   
+   .btnComponent:hover:before {
+     top: -150%;
+     
+   }
+   
+   .btnComponent:active:before {
+     background: #004b2200;
+     transition: background 0s;
+ 
+   }
+   
