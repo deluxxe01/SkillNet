@@ -124,6 +124,19 @@ function PerfilUsuarioRosa() {
 </div>
       {/* Informações do usuário */}
       <div className="Header-InformacoesUsuarioRosa">
+
+        <div className="Header2-InformacoesUsuarioRosa">
+          <div className="CirculoImagemPerfil">
+            <img src="public/images/perfilPessoaRosa.png" alt="" />
+          </div>
+          <div className='Localizacao'>
+          <img className='iconLocal'src="public/icons/location.svg" alt="" />
+          <label className="Label-Pais" htmlFor="">Brasil</label>
+          <label className="Label-Estado" htmlFor="">SP</label>
+          </div>
+          <button className="Button-EditarPerfil">Editar Perfil</button>
+        </div>
+        
         <div className="Header1-InformacoesUsuarioRosa">
             <div className='NomeUsuario'>
           <h1>Giovanna da Costa Carvalho</h1>
@@ -151,17 +164,6 @@ function PerfilUsuarioRosa() {
           </div>
         </div>
 
-        <div className="Header2-InformacoesUsuarioRosa">
-          <div className="CirculoImagemPerfil">
-            <img src="public/images/perfilPessoaRosa.png" alt="" />
-          </div>
-          <div className='Localizacao'>
-          <img className='iconLocal'src="public/icons/location.svg" alt="" />
-          <label className="Label-Pais" htmlFor="">Brasil</label>
-          <label className="Label-Estado" htmlFor="">SP</label>
-          </div>
-          <button className="Button-EditarPerfil">Editar Perfil</button>
-        </div>
 
           <div className="CategoriasUsuario">
             <button className="Button-CategoriaPerfil">Design gráfico</button>

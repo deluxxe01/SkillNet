@@ -4,7 +4,7 @@
     box-sizing: border-box;
 }
 .PerfilUsuarioRosa-Container{
-    border: solid rgb(3, 184, 255) 2px; 
+    /* border: solid rgb(3, 184, 255) 2px;  */
 }
 .FundoRosa{
     margin-top: -15vh;
@@ -24,10 +24,10 @@
 }
 
 .Header1-InformacoesUsuarioRosa{
-     border: solid rgb(3, 184, 255) 2px;     
+     /* border: solid rgb(3, 184, 255) 2px;      */
     width: 60vh;
     height: 20vh;
-   
+    margin-top: -35vh;
     margin-left: 35vh;
 }
 
@@ -100,21 +100,22 @@
 .imgShare{
     width: 3vh;
 }
-/* .Button-ContratarUsuarioRosa{
+.Experiencia{
+    margin-top: 3vh;
+}
 
-    color: rgb(0, 0, 0);
+.Label-ExperienciaUsuarioRosa{
     font-size: 2vh;
     font-family:"Lato", sans-serif;
-    border-radius: 1.5vh;
-    outline: none;
-    cursor: pointer;
-    height: 4vh;
-    width: 15vh;
-    margin-top: 2vh;
+    
+}
+
+.Label-AnoExperiencia{
+    font-size: 2vh;
+    font-family:"Lato", sans-serif;
     margin-left: 1vh;
-    margin-bottom: 2vh;
-    background-color: #FFD9D9;
-} */
+}
+
 
 .Button-ContratarUsuarioRosa {
     
@@ -154,90 +155,73 @@
     left: 100%; /* Começa fora do botão */
 }
 
-/* Estilo quando passar o mouse sobre o botão */
+
 .Button-ContratarUsuarioRosa:hover {
-    color: #fff; /* Muda a cor do texto */
+    color: #fff; 
 }
 
 .Button-ContratarUsuarioRosa:hover:before {
-    top: -30px; /* O :before se move para cima */
-    left: -30px; /* O :before se move para a esquerda */
+    top: -30px; 
+    left: -30px; 
 }
 
-/* Estilo quando o botão for pressionado */
 .Button-ContratarUsuarioRosa:active:before {
     border: #000000;
-    background: #000000; /* Muda a cor de fundo do :before */
-    transition: background 0s; /* A cor muda instantaneamente */
+    background: #000000; 
+    transition: background 0s; 
 }
-.Experiencia{
-    margin-top: 3vh;
-}
-.Label-ExperienciaUsuarioRosa{
-    /* border: solid black 2px;  */
-    font-size: 2vh;
-    font-family:"Lato", sans-serif;
-    
-}
-.Label-AnoExperiencia{
-    /* border: solid black 2px;  */
-    font-size: 2vh;
-    font-family:"Lato", sans-serif;
-    margin-left: 1vh;
-}
+
+
+/* ----------------------------------------------
+   1 CONTAINER HEADER 1 
+   ---------------------------------------------- */
+
 .Header2-InformacoesUsuarioRosa{
-     border: solid rgb(255, 0, 0) 2px;  
+     /* border: solid rgb(255, 0, 0) 2px;   */
     width: 29vh;
     height: 35vh;
-    margin-top: -20vh;
+    margin-top: 5vh;
     margin-left: 5vh;
 }
+
 .CirculoImagemPerfil{
     margin-top: 3vh;
     
 }
+
 .CirculoImagemPerfil img{
     width: 20vh;
+    margin-top: 3vh;
 }
+
 .Localizacao{
     margin-top: 2vh;
     margin-left: 2vh;
-    /* border: solid black 2px; */
     display: flex;
     align-items: center;
 }
+
 .iconLocal{
-    
-    /* border: solid black 2px; */
     width: 4vh;
     height: 4vh;
 }
+
 .Label-Pais{
-    /* border: solid black 2px;   */
     font-size: 2vh;
     margin-left: 1vh;
-    
     font-family: "Lato", sans-serif;
 }
+
 .Label-Estado{
-     /* border: solid black 2px;   */
     margin-left: 1vh;
     font-size: 2vh;
     font-family: "Lato", sans-serif; 
 }
 
-/* .Button-EditarPerfil{
-    color: #FBFBFB;
-    background-color: #B80093;
-    border-radius: 1.5vh;
-    border: none;
-    cursor: pointer;
-    font-size: 2vh;
-    height: 4vh;
-    width: 15vh;
-    margin-left: 7vh;
-    margin-top: 2vh;
-} */
+/* ----------------------------------------------
+   1. BUTTON EDITAR DO HEADER 1 
+   ---------------------------------------------- */
+
 .Button-EditarPerfil {
    
     font-family: "Lato", sans-serif;
@@ -246,66 +230,68 @@
     width: 15vh;
     height: 4vh;
     background-color: #B80093;
-    /* line-height: 2.5em; */
     margin-top: 3vh;
     margin-left: 2vh;
-    position: relative; /* Necessário para o :before */
+    position: relative; 
     cursor: pointer;
-    overflow: hidden; /* Para esconder o :before quando ele sai do botão */
+    overflow: hidden; 
     border: none;
-    transition: color 0.5s; /* Transição suave para a cor do texto */
+    transition: color 0.5s; 
     z-index: 1;
     font-size: 17px;
     border-radius: 1.5vh;
     font-weight: 500;
-    color:#ffffff /* Cor do texto do botão */
+    color:#ffffff 
 }
 
 /* Estilo do pseudo-elemento :before */
 .Button-EditarPerfil:before {
     content: "";
     position: absolute;
-    z-index: -1; /* Para ficar atrás do botão */
-    background: #780060; /* Cor de fundo do :before */
+    z-index: -1; 
+    background: #780060; 
     border: none;
     height: 150px;
     width: 200px;
     border-radius: 50%;
-    top: 100%; /* Começa fora do botão */
-    left: 100%; /* Começa fora do botão */
-    transition: all 0.7s; /* Transição suave para as mudanças */
+    top: 100%; 
+    left: 100%; 
+    transition: all 0.7s; 
 }
 
-/* Estilo quando passar o mouse sobre o botão */
 .Button-EditarPerfil:hover {
-    color: #ffffff; /* Muda a cor do texto */
+    color: #ffffff; 
 }
 
 .Button-EditarPerfil:hover:before {
-    top: -30px; /* O :before se move para cima */
-    left: -30px; /* O :before se move para a esquerda */
+    top: -30px; 
+    left: -30px; 
 }
 
 /* Estilo quando o botão for pressionado */
 .Button-EditarPerfil:active:before {
     border: #000000;
-    background: #FFD9D9; /* Muda a cor de fundo do :before */
-    transition: background 0s; /* A cor muda instantaneamente */
+    background: #FFD9D9; 
+    transition: background 0s; 
 }
 
+/* ----------------------------------------------
+   1. SUBHEADER 3 
+   ---------------------------------------------- */
 
 .CategoriasUsuario{
-     border: solid rgb(77, 0, 107) 2px;  
+     /* border: solid rgb(77, 0, 107) 2px;   */
     height: 8vh;
     width: 60vh;
     margin-left: 35vh;
-    margin-top: -7vh;
+    margin-top: 6vh;
     display: flex;
-    justify-content: space-between; /* Espaço entre logo e menu */
+    justify-content: space-between; 
     align-items: center;
     
     
 }
+
 .Button-CategoriaPerfil{
     color: #000000;
     background-color: #FFA3A3;
@@ -320,6 +306,10 @@
     
   
 }
+
+/* ----------------------------------------------
+   1. HAMBURGUER MENU
+   ---------------------------------------------- */
 
 .hamburguer{
     /* border: solid rgb(183, 0, 255) 2px;  */
@@ -345,25 +335,22 @@
     height: 25vh;
     background-color: #E6E6E6;
     color: white;
-    transform: translateX(100%); /* Inicialmente o menu está fora da tela */
+    transform: translateX(100%); 
     padding: 20px;
-    display: none; /* Menu começa invisível */
+    display: none; 
 }
 
-/* Quando a classe "active" é adicionada, o menu se torna visível */
 .menu.active {
-    transform: translateX(0); /* Coloca o menu na tela */
-    display: block; /* Torna o menu visível */
+    transform: translateX(0); 
+    display: block; 
 }
 
-/* Remover bolinhas (ícones de lista) */
 .menu ul {
-    list-style-type: none; /* Remove as bolinhas */
-    padding: 0; /* Remove o padding */
-    margin: 0; /* Remove a margem */
+    list-style-type: none; 
+    padding: 0;
+    margin: 0; 
 }
 
-/* Estilo do link */
 .menu a {
     font-size: 2vh;
     color: rgb(0, 51, 8);
@@ -374,11 +361,13 @@
     font-family: "Lato", sans-serif;
 }
 
-
-/* CSS DE HOVER: */
 .menu a:hover {
-    color: #83CF41; /* Muda para a cor vermelha (você pode escolher qualquer cor) */
+    color: #83CF41; 
 }
+
+/* ----------------------------------------------
+   1. CONTAINER SOBREMIM
+   ---------------------------------------------- */
 
 .Container-SobreMim{
     
@@ -393,6 +382,7 @@
     font-family: "Montserrat", sans-serif;
     color: #500040;
 }
+
 .Texto-Sobremim{
     margin-top: 3vh;
     color: #500040;
@@ -423,41 +413,40 @@
 .Carrossel{
      /* border: solid rgb(255, 111, 243) 2px;  */
     overflow: hidden;
-    width: 135vh; /* Largura do carrossel */
+    width: 135vh; 
 }
 .imagens{
- display: flex;
-transition: transform 0.5s ease;
+    display: flex;
+    transition: transform 0.5s ease;
 }  
 
 .imagens img{
-   /* border: solid rgb(80, 153, 196) 2px; */
-  width: 35vh; /* Largura de cada imagem */
-  height: auto;
-  margin: 0 5px;
+    /* border: solid rgb(80, 153, 196) 2px; */
+    width: 35vh; 
+    height: auto;
+    margin: 0 5px;
 }
 .Seta {
-    position: relative; /* Necessário para o :before */
+    position: relative; 
     cursor: pointer;
     margin: 2vh;
-    overflow: hidden; /* Para esconder o :before quando ele sai do botão */
-    border: 2px solid#B80093; /* A borda do botão */
-    transition: color 0.5s; /* Transição suave para a cor do texto */
+    overflow: hidden; 
+    border: 2px solid#B80093; 
+    transition: color 0.5s; 
     z-index: 1;
     width: 5vh;
     height: 5vh;
     border-radius: 5vh;
     color: #B80093;
     font-size: 3vh;
-      /* Correção: Use 'border' ao invés de 'border-color' */
     outline: none;
     transition: all 0.5s ease;
   }
 
 .Seta:hover {
-    background-color: #B80093;  /* Altera a cor de fundo ao passar o mouse */
-    color: white;  /* Muda a cor do texto */
-    transform: scale(1.1);  /* Aumenta ligeiramente o tamanho do botão */
+    background-color: #B80093;  
+    color: white;  
+    transform: scale(1.1);  
 }
 
 .zap{
@@ -487,10 +476,10 @@ transition: transform 0.5s ease;
 }
 
 .CarrosselComentarios-Container{
+    /* border: solid rgb(88, 13, 8) 2px; */
     background-color: #FFD9D9;
     margin-top: 3vh;
     border-radius: 4.5vh;
-    /* border: solid rgb(88, 13, 8) 2px; */
     display: flex;
     align-items: center;
     height: 50vh;
@@ -499,7 +488,7 @@ transition: transform 0.5s ease;
 .Comentarios-Container{
     /* border: solid rgb(255, 111, 243) 2px; */
     overflow: hidden;
-    width: 150vh; /* Largura do carrossel */
+    width: 150vh; 
 }
 
 .comentarios{
@@ -508,39 +497,38 @@ transition: transform 0.5s ease;
 }
 .comentarios img{
    /* border: solid rgb(80, 153, 196) 2px;  */
-   width: 65vh; /* Largura de cada imagem */
+   width: 65vh; 
    height: 25vh;
    margin: 0 5px;
  }
 
  .SetasComentarios{
+     /* border: solid rgb(80, 153, 196) 2px;  */
     margin-top: 5vh;
-    /* border: solid rgb(80, 153, 196) 2px;  */
     margin-left: 70vh;
     width: 15vh;
 
  }
 .SetaComentarios-Esquerda{
-    position: relative; /* Necessário para o :before */
+    position: relative; 
     cursor: pointer;
-    overflow: hidden; /* Para esconder o :before quando ele sai do botão */
-    border: 2px solid#B80093; /* A borda do botão */
-    transition: color 0.5s; /* Transição suave para a cor do texto */
+    overflow: hidden; 
+    border: 2px solid#B80093; 
+    transition: color 0.5s;
     z-index: 1;
     width: 5vh;
     height: 5vh;
     border-radius: 5vh;
     color: #B80093;
     font-size: 3vh;
-      /* Correção: Use 'border' ao invés de 'border-color' */
     outline: none;
     transition: all 0.5s ease;
   
  }
  .SetaComentarios-Esquerda:hover{
-    background-color: #B80093;  /* Altera a cor de fundo ao passar o mouse */
-    color: white;  /* Muda a cor do texto */
-    transform: scale(1.1);  /* Aumenta ligeiramente o tamanho do botão */
+    background-color: #B80093;  
+    color: white;  
+    transform: scale(1.1);  
  }
 
 .SetaComentarios-Direita{
@@ -556,8 +544,8 @@ transition: transform 0.5s ease;
 }
 
 .SetaComentarios-Direita:hover{
-    background-color: #E6E6E6;  /* Altera a cor de fundo ao passar o mouse */
-    color: #B80093;  /* Muda a cor do texto */
+    background-color: #E6E6E6;  
+    color: #B80093;  
     border: 2px solid#B80093;
-    transform: scale(1.1);  /* Aumenta ligeiramente o tamanho do botão */
+    transform: scale(1.1);  
  }
