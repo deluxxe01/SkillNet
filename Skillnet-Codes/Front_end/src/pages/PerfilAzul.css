@@ -3,180 +3,27 @@
     padding: 0;
     box-sizing: border-box;
 }
-.PerfilUsuarioRosa-Container{
-    /* border: solid rgb(3, 184, 255) 2px;  */
-}
-.FundoRosa{
-    margin-top: -15vh;
-    position: absolute; /* Adiciona a propriedade position */
-    z-index: -1; /* Coloca a div atrás de outros elementos */
-}
-.Header-InformacoesUsuarioRosa{
 
-    background-color: #FFD9D9;
-    margin-left: 50vh;
+.FundoAzul{
+    margin-top: -15vh;
+    position: absolute; 
+    z-index: -1; 
+}
+
+.Header-InformacoesAzul{
+    background-color: #BFE0FF;
+    margin-left: 55vh;
     width: 100vh;
     height: 40vh;
     border-radius: 5vh;
     position: relative;
-    z-index: 2; /* Garante que o header ficará sobre a div FundoRosa */
-
+    z-index: 2; 
 }
-
-.Header1-InformacoesUsuarioRosa{
-     /* border: solid rgb(3, 184, 255) 2px;      */
-    width: 60vh;
-    height: 20vh;
-    margin-top: -35vh;
-    margin-left: 35vh;
-}
-
- .NomeUsuario{
-    /* border: solid black 2px;    */
-    font-family: "Nunito", sans-serif;
-    width: 50vh;
-    margin-top: 3vh;
-    /* background-color: blue; */
-    
-}
-.botoes{
-    margin-left: 20vh;
-    margin-top: -4vh;
-}
-.Button-CompartilharUsuarioRosa {
-   
-    font-family: "Lato", sans-serif;
-    display: inline-block;
-    align-items: center;
-    
-    width: 15vh;
-    height: 4vh;
-    background-color: #000000;
-    /* line-height: 2.5em; */
-   
-    position: relative; /* Necessário para o :before */
-    cursor: pointer;
-    overflow: hidden; /* Para esconder o :before quando ele sai do botão */
-    border: 2px solid#000000; /* A borda do botão */
-    transition: color 0.5s; /* Transição suave para a cor do texto */
-    z-index: 1;
-    font-size: 17px;
-    border-radius: 1.5vh;
-    font-weight: 500;
-    color:#ffffff /* Cor do texto do botão */
-}
-
-/* Estilo do pseudo-elemento :before */
-.Button-CompartilharUsuarioRosa:before {
-    content: "";
-    position: absolute;
-    z-index: -1; /* Para ficar atrás do botão */
-    background: #FFD9D9; /* Cor de fundo do :before */
-    border: #000000;
-    height: 150px;
-    width: 200px;
-    border-radius: 50%;
-    top: 100%; /* Começa fora do botão */
-    left: 100%; /* Começa fora do botão */
-    transition: all 0.7s; /* Transição suave para as mudanças */
-}
-
-/* Estilo quando passar o mouse sobre o botão */
-.Button-CompartilharUsuarioRosa:hover {
-    color: #000000; /* Muda a cor do texto */
-}
-
-.Button-CompartilharUsuarioRosa:hover:before {
-    top: -30px; /* O :before se move para cima */
-    left: -30px; /* O :before se move para a esquerda */
-}
-
-/* Estilo quando o botão for pressionado */
-.Button-CompartilharUsuarioRosa:active:before {
-    border: #000000;
-    background: #FFD9D9; /* Muda a cor de fundo do :before */
-    transition: background 0s; /* A cor muda instantaneamente */
-}
-.imgShare{
-    width: 3vh;
-}
-.Experiencia{
-    margin-top: 3vh;
-}
-
-.Label-ExperienciaUsuarioRosa{
-    font-size: 2vh;
-    font-family:"Lato", sans-serif;
-    
-}
-
-.Label-AnoExperiencia{
-    font-size: 2vh;
-    font-family:"Lato", sans-serif;
-    margin-left: 1vh;
-}
-
-
-.Button-ContratarUsuarioRosa {
-    
-    font-family: "Lato", sans-serif;
-    display: inline-block;
-    align-items: center;
-    width: 15vh;
-    height: 4vh;
-    background-color: #FFD9D9;
-    margin-left: 2vh;
-    /* line-height: 2.5em; */
-   
-    position: relative; /* Necessário para o :before */
-    cursor: pointer;
-    overflow: hidden; /* Para esconder o :before quando ele sai do botão */
-    border: 2px solid#000000; /* A borda do botão */
-    transition: color 0.5s; /* Transição suave para a cor do texto */
-    z-index: 1;
-    font-size: 17px;
-    border-radius: 1.5vh;
-    font-weight: 500;
-    color:#000000 /* Cor do texto do botão */
-}
-
-/* Estilo do pseudo-elemento :before */
-.Button-ContratarUsuarioRosa:before {
-    content: "";
-    position: absolute;
-    z-index: -1; /* Para ficar atrás do botão */
-    background: #080808; /* Cor de fundo do :before */
-    transition: all 0.7s; /* Transição suave para as mudanças */
-    border: #000000;
-    height: 150px;
-    width: 200px;
-    border-radius: 50%;
-    top: 100%; /* Começa fora do botão */
-    left: 100%; /* Começa fora do botão */
-}
-
-
-.Button-ContratarUsuarioRosa:hover {
-    color: #fff; 
-}
-
-.Button-ContratarUsuarioRosa:hover:before {
-    top: -30px; 
-    left: -30px; 
-}
-
-.Button-ContratarUsuarioRosa:active:before {
-    border: #000000;
-    background: #000000; 
-    transition: background 0s; 
-}
-
-
 /* ----------------------------------------------
-   1 CONTAINER HEADER 1 
+   SUBHEADER 1 
    ---------------------------------------------- */
 
-.Header2-InformacoesUsuarioRosa{
+.Header1-InformacoesAzul{
      /* border: solid rgb(255, 0, 0) 2px;   */
     width: 29vh;
     height: 35vh;
@@ -219,23 +66,20 @@
 }
 
 /* ----------------------------------------------
-   1. BUTTON EDITAR DO HEADER 1 
+   BUTTON EDITAR 
    ---------------------------------------------- */
 
-.Button-EditarPerfil {
-   
+.Button-EditarAzul {
+    margin-left: 2vh;
+    margin-top: 3vh;
     font-family: "Lato", sans-serif;
-    display: inline-block;
-    align-items: center;
     width: 15vh;
     height: 4vh;
-    background-color: #B80093;
-    margin-top: 3vh;
-    margin-left: 2vh;
+    background-color: #0024B6;
     position: relative; 
     cursor: pointer;
     overflow: hidden; 
-    border: none;
+    border: 2px solid#0024B6; 
     transition: color 0.5s; 
     z-index: 1;
     font-size: 17px;
@@ -245,12 +89,12 @@
 }
 
 /* Estilo do pseudo-elemento :before */
-.Button-EditarPerfil:before {
+.Button-EditarAzul:before {
     content: "";
     position: absolute;
     z-index: -1; 
-    background: #780060; 
-    border: none;
+    background: #BFE0FF; 
+    border: #0024B6;
     height: 150px;
     width: 200px;
     border-radius: 50%;
@@ -259,27 +103,171 @@
     transition: all 0.7s; 
 }
 
-.Button-EditarPerfil:hover {
-    color: #ffffff; 
+.Button-EditarAzul:hover {
+    color: #0024B6; 
 }
 
-.Button-EditarPerfil:hover:before {
+.Button-EditarAzul:hover:before {
     top: -30px; 
     left: -30px; 
 }
 
 /* Estilo quando o botão for pressionado */
-.Button-EditarPerfil:active:before {
-    border: #000000;
-    background: #FFD9D9; 
+.Button-EditarAzul:active:before {
+    border: #0024B6;
+    background: #BFE0FF; 
     transition: background 0s; 
 }
 
 /* ----------------------------------------------
-   1. SUBHEADER 3 
+    SUBHEADER 2
+   ---------------------------------------------- */
+.Header2-InformacoesAzul{
+    width: 60vh;
+    height: 20vh;
+    margin-top: -35vh;
+    margin-left: 35vh;
+}
+
+.NomeUsuario{
+    font-family: "Nunito", sans-serif;
+    width: 50vh;
+    margin-top: 3vh; 
+}
+.email, .zap, .insta{
+    width: 4vh;
+    height: 4vh;
+    margin-left: 1vh;
+}
+
+.botoes{
+    margin-left: 20vh;
+    margin-top: -4vh;
+}
+
+.Button-CompartilharAzul {
+    font-family: "Lato", sans-serif;
+    display: inline-block;
+    align-items: center;
+    width: 15vh;
+    height: 4vh;
+    background-color: #000000;
+    position: relative; 
+    cursor: pointer;
+    overflow: hidden; 
+    border: 2px solid#000000; 
+    transition: color 0.5s; 
+    z-index: 1;
+    font-size: 17px;
+    border-radius: 1.5vh;
+    font-weight: 500;
+    color:#ffffff 
+}
+
+.Button-CompartilharAzul:before {
+    content: "";
+    position: absolute;
+    z-index: -1; 
+    background: #BFE0FF; 
+    border: #000000;
+    height: 150px;
+    width: 200px;
+    border-radius: 50%;
+    top: 100%; 
+    left: 100%; 
+    transition: all 0.7s; 
+}
+
+.Button-CompartilharAzul:hover {
+    color: #000000; 
+}
+
+.Button-CompartilharAzul:hover:before {
+    top: -30px; 
+    left: -30px; 
+}
+
+.Button-CompartilharAzul:active:before {
+    border: #000000;
+    background: #BFE0FF; 
+    transition: background 0s; 
+}
+.imgShare{
+    width: 3vh;
+}
+.Experiencia{
+    margin-top: 3vh;
+}
+
+.Label-ExperienciaUsuarioRosa{
+    font-size: 2vh;
+    font-family:"Lato", sans-serif;
+    
+}
+
+.Label-AnoExperiencia{
+    font-size: 2vh;
+    font-family:"Lato", sans-serif;
+    margin-left: 1vh;
+}
+
+
+.Button-ContratarAzul{
+    
+    font-family: "Lato", sans-serif;
+    display: inline-block;
+    align-items: center;
+    width: 15vh;
+    height: 4vh;
+    background-color: #BFE0FF;
+    margin-left: 2vh; 
+    position: relative; 
+    cursor: pointer;
+    overflow: hidden; 
+    border: 2px solid#000000; 
+    transition: color 0.5s; 
+    z-index: 1;
+    font-size: 17px;
+    border-radius: 1.5vh;
+    font-weight: 500;
+    color:#000000 
+}
+
+.Button-ContratarAzul:before {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    background: #080808;
+    transition: all 0.7s; 
+    border: #000000;
+    height: 150px;
+    width: 200px;
+    border-radius: 50%;
+    top: 100%; 
+    left: 100%; 
+}
+
+.Button-ContratarAzul:hover {
+    color: #fff; 
+}
+
+.Button-ContratarAzul:hover:before {
+    top: -30px; 
+    left: -30px; 
+}
+
+.Button-ContratarAzul:active:before {
+    border: #000000;
+    background: #000000; 
+    transition: background 0s; 
+}
+
+
+/* ----------------------------------------------
+    SUBHEADER 3 
    ---------------------------------------------- */
 
-.CategoriasUsuario{
+.CategoriasUsuarioAzul{
      /* border: solid rgb(77, 0, 107) 2px;   */
     height: 8vh;
     width: 60vh;
@@ -292,9 +280,9 @@
     
 }
 
-.Button-CategoriaPerfil{
-    color: #000000;
-    background-color: #FFA3A3;
+.Button-CategoriaAzul{
+    color: #ffffff;
+    background-color: #1976D2;
     font-family: "Lato", sans-serif;
     border-radius: 1.5vh;
     border: none;
@@ -308,7 +296,7 @@
 }
 
 /* ----------------------------------------------
-   1. HAMBURGUER MENU
+    HAMBURGUER MENU
    ---------------------------------------------- */
 
 .hamburguer{
@@ -366,7 +354,7 @@
 }
 
 /* ----------------------------------------------
-   1. CONTAINER SOBREMIM
+    CONTAINER SOBREMIM
    ---------------------------------------------- */
 
 .Container-SobreMim{
@@ -374,32 +362,35 @@
      /* border: solid rgb(183, 0, 255) 2px;  */
     width: 150vh;
     height: 30vh;
-    margin-left: 25vh;
+    margin-left: 30vh;
     margin-top: 8vh;
 }
 
-.Sobremim{
+.SobremimAzul{
     font-family: "Montserrat", sans-serif;
-    color: #500040;
+    color: #00104E;
 }
 
-.Texto-Sobremim{
+.Texto-SobremimAzul{
     margin-top: 3vh;
-    color: #500040;
+    color: #00104E;
     font-family: "Lato", sans-serif;
 }
 
+/* ----------------------------------------------
+    CONTAINER PROJETOS
+   ---------------------------------------------- */
 .Container-Projetos{
     /* border: solid rgb(183, 0, 255) 2px; */
     width: 150vh;
     height: 60vh;
-    margin-left: 25vh;
+    margin-left: 30vh;
     margin-top: 8vh;
 }
 
-.Projetos{
+.ProjetosAzul{
     font-family: "Montserrat", sans-serif;
-    color: #500040;
+    color: #00104E;
 }
 
 .Carrossel-Container{
@@ -426,58 +417,44 @@
     height: auto;
     margin: 0 5px;
 }
-.Seta {
+.SetaAzul {
     position: relative; 
     cursor: pointer;
     margin: 2vh;
     overflow: hidden; 
-    border: 2px solid#B80093; 
+    border: 2px solid#0024B6; 
     transition: color 0.5s; 
     z-index: 1;
     width: 5vh;
     height: 5vh;
     border-radius: 5vh;
-    color: #B80093;
+    color: #0024B6;
     font-size: 3vh;
     outline: none;
     transition: all 0.5s ease;
   }
 
-.Seta:hover {
-    background-color: #B80093;  
+.SetaAzul:hover {
+    background-color: #0024B6;  
     color: white;  
     transform: scale(1.1);  
 }
 
-.zap{
-    margin-top: 3vh;
-    width: 4vh;
-    height: 4vh;
-}
-.insta{
-    width: 4vh;
-    height: 4vh;
-    margin-left: 1vh;
-}
-.email{
-    width: 4vh;
-    height: 4vh;
-    margin-left: 1vh;
-    margin-right: 4vh;
-}
-
+/* ----------------------------------------------
+    CONTAINER PROJETOS
+   ---------------------------------------------- */
 .Container-Avaliacoes{
     /* border: solid rgb(80, 153, 196) 2px; */
     margin-top: 8vh;
     height: 75vh;
     width: 150vh;
-    margin-left: 25vh;
+    margin-left: 30vh;
     margin-bottom: 10vh;
 }
 
-.CarrosselComentarios-Container{
+.CarrosselComentariosAzul-Container{
     /* border: solid rgb(88, 13, 8) 2px; */
-    background-color: #FFD9D9;
+    background-color: #BFE0FF;
     margin-top: 3vh;
     border-radius: 4.5vh;
     display: flex;
@@ -509,43 +486,43 @@
     width: 15vh;
 
  }
-.SetaComentarios-Esquerda{
+.SetaComentariosAzul-Esquerda{
     position: relative; 
     cursor: pointer;
     overflow: hidden; 
-    border: 2px solid#B80093; 
+    border: 2px solid#0024B6; 
     transition: color 0.5s;
     z-index: 1;
     width: 5vh;
     height: 5vh;
     border-radius: 5vh;
-    color: #B80093;
+    color: #0024B6;
     font-size: 3vh;
     outline: none;
     transition: all 0.5s ease;
   
  }
- .SetaComentarios-Esquerda:hover{
-    background-color: #B80093;  
+ .SetaComentariosAzul-Esquerda:hover{
+    background-color: #0024B6;  
     color: white;  
     transform: scale(1.1);  
  }
 
-.SetaComentarios-Direita{
+.SetaComentariosAzul-Direita{
     width: 5vh;
     height: 5vh;
     border-radius: 5vh;
     margin-left: 2vh;
     color: #E6E6E6;
-    background-color: #B80093;
+    background-color: #0024B6;
     border: none;
     font-size: 3vh;
     transition: all 0.5s ease;
 }
 
-.SetaComentarios-Direita:hover{
+.SetaComentariosAzul-Direita:hover{
     background-color: #E6E6E6;  
-    color: #B80093;  
-    border: 2px solid#B80093;
+    color: #0024B6;  
+    border: 2px solid#0024B6;
     transform: scale(1.1);  
  }

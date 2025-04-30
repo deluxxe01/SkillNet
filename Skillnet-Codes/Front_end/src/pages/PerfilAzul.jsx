@@ -1,7 +1,8 @@
 import React, { useState, useRef, useEffect } from 'react';
-import './PerfilUsuarioRosa.css';
+import './PerfilAzul.css';
 
-function PerfilUsuarioRosa() {
+function PerfilAzul() {
+
   // Estado para controlar a visibilidade do menu
   const [menuAtivo, setMenuAtivo] = useState(false);
 
@@ -101,10 +102,10 @@ function PerfilUsuarioRosa() {
     };
   }, [comentarioIndex]);
 
-  return (
-    <div className="PerfilUsuarioRosa-Container">
-      {/* Menu Hamburguer */}
-      <div className="hamburguer" id="hamburguer" onClick={toggleMenu}>
+return (
+<div className="PerfilAzul-Container">
+{/* Menu Hamburguer */}
+<div className="hamburguer" id="hamburguer" onClick={toggleMenu}>
         <img src="logoverdeescuro.png" alt="Logo" className="logo-img" />
       </div>
 
@@ -112,34 +113,34 @@ function PerfilUsuarioRosa() {
       <div className={`menu ${menuAtivo ? 'active' : ''}`} id="menu-Side">
         <ul>
           <li><a href="/Servico">Serviços</a></li>
-          <li><a href="/PerfilUsuarioRosa">Portfólios</a></li>
+          <li><a href="/PerfilRosa">Portfólios</a></li>
           <li><a href="/">Home</a></li>
           <li><a href="#">Sobre Nós</a></li>
           <li><a href="#">Perfil</a></li>
         </ul>
       </div>
 
-<div className='FundoRosa'>
-  <img src="public/images/fundoRosa.png" alt="" />  
+<div className='FundoAzul'>
+  <img src="public/images/fundoazul.png" alt="" />  
 </div>
       {/* Informações do usuário */}
-      <div className="Header-InformacoesUsuarioRosa">
+      <div className="Header-InformacoesAzul">
 
-        <div className="Header2-InformacoesUsuarioRosa">
+        <div className="Header1-InformacoesAzul">
           <div className="CirculoImagemPerfil">
-            <img src="public/images/perfilPessoaRosa.png" alt="" />
+            <img src="public/images/perfilazul.png" alt="" />
           </div>
           <div className='Localizacao'>
           <img className='iconLocal'src="public/icons/location.svg" alt="" />
           <label className="Label-Pais" htmlFor="">Brasil</label>
-          <label className="Label-Estado" htmlFor="">SP</label>
+          <label className="Label-Estado" htmlFor="">SC</label>
           </div>
-          <button className="Button-EditarPerfil">Editar Perfil</button>
+          <button className="Button-EditarAzul">Editar Perfil</button>
         </div>
         
-        <div className="Header1-InformacoesUsuarioRosa">
+        <div className="Header2-InformacoesAzul">
             <div className='NomeUsuario'>
-          <h1>Giovanna da Costa Carvalho</h1>
+          <h1>Luiza da Souza Cruz</h1>
           </div>
            <a href="https://web.whatsapp.com/" target="_blank">
             <img className="zap" src="public/icons/whatssap 1.svg" alt="" width="200" />
@@ -154,39 +155,37 @@ function PerfilUsuarioRosa() {
           </a>
 
           <div className="botoes">
-            <button className="Button-CompartilharUsuarioRosa">compartilhar</button>
-            <button className="Button-ContratarUsuarioRosa">contrate</button>
+            <button className="Button-CompartilharAzul">compartilhar</button>
+            <button className="Button-ContratarAzul">contrate</button>
           </div>
 
           <div className="Experiencia">
             <label className="Label-ExperienciaUsuarioRosa" htmlFor="">Experiência: </label>
-            <label className="Label-AnoExperiencia" htmlFor="">3 anos</label>
+            <label className="Label-AnoExperiencia" htmlFor="">1 ano</label>
           </div>
         </div>
 
 
-          <div className="CategoriasUsuario">
-            <button className="Button-CategoriaPerfil">Design gráfico</button>
-            <button className="Button-CategoriaPerfil">Desenvolvedor web</button>
-            <button className="Button-CategoriaPerfil">Marketing</button>
+          <div className="CategoriasUsuarioAzul">
+            <button className="Button-CategoriaAzul">Fotografia e Vídeo</button>
           </div>
         
       </div>
 
       {/* Sobre Mim */}
       <div className="Container-SobreMim">
-        <h1 className="Sobremim">Sobre Mim</h1>
-        <h2 className="Texto-Sobremim">
+        <h1 className="SobremimAzul">Sobre Mim</h1>
+        <h2 className="Texto-SobremimAzul">
           Olá, sou [Seu Nome], [sua profissão] com [x] anos de experiência em [área de atuação]. Sou apaixonado por transformar ideias em soluções criativas e inovadoras. Ao longo da minha carreira, sempre busquei superar expectativas, oferecendo resultados de alta qualidade e personalizados para cada projeto. Fora do trabalho, adoro [hobbies ou interesses]. Se você está procurando uma abordagem única e dedicada para seu projeto, ficarei feliz em conversar e colaborar com você!
         </h2>
       </div>
 
       {/* Projetos */}
       <div className="Container-Projetos">
-        <h1 className="Projetos">Projetos</h1>
+        <h1 className="ProjetosAzul">Projetos</h1>
 
         <div className="Carrossel-Container">
-          <button className="Seta" ref={setaEsquerdaRef}>&lt;</button>
+          <button className="SetaAzul" ref={setaEsquerdaRef}>&lt;</button>
 
           <div className="Carrossel">
             <div className="imagens" ref={imagensRef}>
@@ -198,34 +197,36 @@ function PerfilUsuarioRosa() {
               <img src="public/images/Rectangle 193a.png" alt="Imagem 6" />
             </div>
           </div>
-          <button className="Seta" ref={setaDireitaRef}>&gt;</button>
+          <button className="SetaAzul" ref={setaDireitaRef}>&gt;</button>
         </div>
       </div>
 
       {/* Avaliações Recebidas */}
       <div className="Container-Avaliacoes">
-        <h1 className="Projetos">Avaliações Recebidas</h1>
+        <h1 className="ProjetosAzul">Avaliações Recebidas</h1>
         
-        <div className="CarrosselComentarios-Container">
+        <div className="CarrosselComentariosAzul-Container">
 
           <div className="Comentarios-Container">
             <div className="comentarios" ref={comentariosRef}>
               <img src="public/images/Group 64.png" alt="Imagem 1" />
               <img src="public/images/Group 65.png" alt="Imagem 2" />
-              <img src="public/images/Group 65 (1).png" alt="Imagem 3" />
+              {/* <img src="public/images/Group 65 (1).png" alt="Imagem 3" />
               <img src="public/images/Rectangle 193.png" alt="Imagem 4" />
               <img src="public/images/Rectangle 194.png" alt="Imagem 5" />
-              <img src="public/images/Rectangle 193a.png" alt="Imagem 6" />
+              <img src="public/images/Rectangle 193a.png" alt="Imagem 6" /> */}
             </div>
           </div>
         </div>
           <div className='SetasComentarios'>
-          <button className="SetaComentarios-Esquerda" ref={setaComentariosEsquerdaRef}>&lt;</button>
-          <button className="SetaComentarios-Direita" ref={setaComentariosDireitaRef}>&gt;</button>
+          <button className="SetaComentariosAzul-Esquerda" ref={setaComentariosEsquerdaRef}>&lt;</button>
+          <button className="SetaComentariosAzul-Direita" ref={setaComentariosDireitaRef}>&gt;</button>
           </div>
       </div>
-    </div>
-  );
-}
 
-export default PerfilUsuarioRosa;
+
+</div>
+
+);
+}
+export default PerfilAzul;
