@@ -52,6 +52,7 @@
    .btnComponent:active:before {
      background: #004b2200;
      transition: background 0s;
+     color: #fbfbfb;
  
    }
    

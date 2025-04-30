@@ -6,7 +6,14 @@ import  axios from 'axios'
 
 
 function CaixaTexto(props) {
-  const socket = io('http://localhost:3000', { transports: ['websocket'] })
+  const socket = io('http://localhost:3000', { 
+    transports: ['websocket'],
+    reconnection: true,          // Habilita reconexão automática
+    reconnectionAttempts: 5,     // Número máximo de tentativas de reconexão
+    reconnectionDelay: 1000,     // Tempo de atraso entre as tentativas
+    reconnectionDelayMax: 5000,  // Tempo máximo entre as tentativas
+    timeout: 20000, 
+   })
     const [inptMess,setInptMess]=useState('')
     const {mensagem} = props
     const {chat,setChat}=useContext(GlobalContext)
@@ -52,31 +59,38 @@ function CaixaTexto(props) {
     //  setChat(resultado.data)
     // }
     useEffect(()=>{
-      if(!socketRef.current){
-        socketRef.current=io('http://localhost:3000', { transports: ['websocket'] })
+      if (!socketRef.current) {
+        socketRef.current = io('http://localhost:3000', { transports: ['websocket'] });
+  
+        // Evento de conexão com o servidor
         socketRef.current.on('connect', () => {
           console.log('Conectado ao servidor!');
         });
   
+        // Evento de desconexão do servidor
         socketRef.current.on('disconnect', () => {
           console.log('Desconectado do servidor');
         });
   
+        // Evento de erro de conexão
         socketRef.current.on('connect_error', (err) => {
           console.log('Erro na conexão:', err);
         });
   
+        // Evento de reconexão
         socketRef.current.on('reconnect', (attempt) => {
           console.log('Reconectando, tentativa', attempt);
         });
   
+        // Evento de erro ao tentar reconectar
         socketRef.current.on('reconnect_error', (err) => {
           console.log('Erro ao tentar reconectar:', err);
         });
   
+        // Evento para receber novas mensagens
         socketRef.current.on('mensagemRecebida', (data) => {
           setChat(data);
-        })
+        });
       }
       })
     useEffect(()=>{

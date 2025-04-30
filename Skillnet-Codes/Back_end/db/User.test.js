@@ -1,4 +1,4 @@
- const User = require('./User')
+ const User = require('./db')
 
  describe('Teste dos métodos user', () => {
     let user;

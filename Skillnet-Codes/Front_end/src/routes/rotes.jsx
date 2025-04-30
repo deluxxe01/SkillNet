@@ -10,7 +10,7 @@ import TrabalhoEscolhido from "../pages/TrabalhoEscolhido.jsx";
 const router = createBrowserRouter([
     {path:'/',element:<LandingPage />},
     {path:'/Login',element:<Login />},
-    {path:'/Cadastro',element:<Cadastro />},
+    {path:'/cadastro',element:<Cadastro />},
     {path:'/Area_servico_pesquisado',element:< Area_servico_pesquisado />},
     {path:'/PerfilUsuarioRosa', element: <PerfilUsuarioRosa />},
     {path:'/Servico',element:<TrabalhoEscolhido />}
