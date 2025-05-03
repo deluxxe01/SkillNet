@@ -18,7 +18,8 @@ const io = new Server(server,{
     pingTimeout: 60000,  // espera até 60 segundos antes de desconecta
 })
 
-let messages = []
+let messages 
+let mensagens=[]
 
 App.post('/postarPortifolio',(req,res)=>{
    
@@ -44,8 +45,9 @@ io.on("connection", socket =>{
     socket.on("mandarMensagem", data =>{
         console.log(data)
 
-            messages.push(data)
-            io.emit('mensagemRecebida',messages)
+           
+            mensagens.push(data)
+            io.emit('mensagemRecebida',data)
 
     })
 
@@ -56,8 +58,8 @@ io.on("connection", socket =>{
 })
 
 
-App.get('/Mensagens',(req,res)=>{
-    res.json(messages)
+App.get('/mensagens',(req,res)=>{
+    res.json(mensagens)
 })
 
 App.get('/cadastra_usuario',(req,res)=>{
@@ -70,4 +72,4 @@ App.get('/cadastra_usuario',(req,res)=>{
 
 
 
-server.listen(port,()=>{})
+server.listen(3000,()=>{})

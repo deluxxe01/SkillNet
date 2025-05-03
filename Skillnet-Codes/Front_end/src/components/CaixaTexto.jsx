@@ -15,7 +15,7 @@ function CaixaTexto(props) {
     timeout: 20000, 
    })
     const [inptMess,setInptMess]=useState('')
-    const {mensagem} = props
+   
     const {chat,setChat}=useContext(GlobalContext)
     const[teste,setTeste]=useState([])
     const [vetorChat,setVetorChat]=useState([])
@@ -58,44 +58,10 @@ function CaixaTexto(props) {
     //  const resultado = await axios.get('http://localhost:3000/Mensagens') 
     //  setChat(resultado.data)
     // }
-    useEffect(()=>{
-      if (!socketRef.current) {
-        socketRef.current = io('http://localhost:3000', { transports: ['websocket'] });
   
-        // Evento de conexão com o servidor
-        socketRef.current.on('connect', () => {
-          console.log('Conectado ao servidor!');
-        });
-  
-        // Evento de desconexão do servidor
-        socketRef.current.on('disconnect', () => {
-          console.log('Desconectado do servidor');
-        });
-  
-        // Evento de erro de conexão
-        socketRef.current.on('connect_error', (err) => {
-          console.log('Erro na conexão:', err);
-        });
-  
-        // Evento de reconexão
-        socketRef.current.on('reconnect', (attempt) => {
-          console.log('Reconectando, tentativa', attempt);
-        });
-  
-        // Evento de erro ao tentar reconectar
-        socketRef.current.on('reconnect_error', (err) => {
-          console.log('Erro ao tentar reconectar:', err);
-        });
-  
-        // Evento para receber novas mensagens
-        socketRef.current.on('mensagemRecebida', (data) => {
-          setChat(data);
-        });
-      }
-      })
     useEffect(()=>{
       socket.on('mensagemRecebida', (data) => {
-        setChat(data)
+        setChat(prev => [...prev, data]);
       })
   
       // Carregar as mensagens do servidor ao montar o componente
