@@ -103,6 +103,7 @@ function PerfilRosa() {
 
   return (
     <div className="PerfilUsuarioRosa-Container">
+
       {/* Menu Hamburguer */}
       <div className="hamburguer" id="hamburguer" onClick={toggleMenu}>
         <img src="logoverdeescuro.png" alt="Logo" className="logo-img" />
@@ -122,6 +123,7 @@ function PerfilRosa() {
 <div className='FundoRosa'>
   <img src="public/images/fundoRosa.png" alt="" />  
 </div>
+      <h1 className='PerfilUsuario'>Portfólio</h1>
       {/* Informações do usuário */}
       <div className="Header-InformacoesUsuarioRosa">
 

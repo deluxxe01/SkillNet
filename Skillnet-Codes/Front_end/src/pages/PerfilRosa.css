@@ -10,6 +10,32 @@
     z-index: -1; 
 }
 
+.PerfilUsuario{
+    margin-top: -3vh;
+    font-size: 5vh;
+    font-family: "Montserrat", sans-serif;
+    margin-left: 90vh;
+    color: #fdfdfd;
+    text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.6); /* sombra mais forte */
+    transition: transform 0.3s ease, color 0.3s ease;
+    position: relative; /* Necessário para o ::after funcionar corretamente */
+}
+.PerfilUsuario::after {
+    content: ''; /* Necessário para criar a linha */
+    display: block;
+    width: 0%; /* A linha começa com 0% de largura */
+    height: 2px; /* Espessura da linha */
+    background-color: #FFAFAF; /* Cor da linha */
+    border-radius: 2vh;
+    transition: width 0.3s ease; /* Animação de largura */
+    position: absolute;
+    bottom: 0; /* Coloca a linha embaixo do título */
+    left: 0;
+}
+.PerfilUsuario:hover::after {
+    width: 20vh;
+    height: 0.5vh; /* A linha expande para 100% da largura ao passar o mouse */
+  }
 .Header-InformacoesUsuarioRosa{
     background-color: #FFD9D9;
     margin-left: 50vh;

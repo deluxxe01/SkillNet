@@ -5,6 +5,7 @@ import LandingPage from "../pages/LandingPage.jsx";
 import Area_servico_pesquisado from "../pages/Area_servico_pesquisado.jsx";
 import PerfilRosa from "../pages/PerfilRosa.jsx";
 import PerfilAzul from "../pages/PerfilAzul.jsx";
+// import PortfolioRosa from "../pages/PortfolioRosa.jsx";
 import TrabalhoEscolhido from "../pages/TrabalhoEscolhido.jsx";
 
 
@@ -15,6 +16,7 @@ const router = createBrowserRouter([
     {path:'/area_servico_pesquisado',element:< Area_servico_pesquisado />},
     {path:'/perfilrosa', element: <PerfilRosa />},
     {path:'/perfilazul', element: <PerfilAzul />},
+    // {path:'/portfoliorosa', element: <PortfolioRosa />},
     {path:'/servico',element:<TrabalhoEscolhido />}
 
     
