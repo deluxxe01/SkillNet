@@ -18,7 +18,7 @@ function Cadastro() {
   const [inptEmail,setInptEmail]=useState()
   const [inptSenha,setInptSenha]=useState()
   
-  const cadastroConta = () => {
+  const  cadastroConta = async() => {
     
     if(inptCheck == false|| inptEmail=="" || inptNome =="" || inptSenha==""){
       alert('porfavor prencha os campos e aceite nossos termos')
@@ -29,9 +29,18 @@ function Cadastro() {
         senha:inptSenha
         
       } 
-      console.log(usuario)
-      const resultado =axios.post('http://localhost:3000/cadastra_usuario',usuario) 
-      login('/Area_servico_pesquisado')
+      
+      
+      
+      const resultado = await axios.post('http://localhost:3000/cadastrar_user',usuario) 
+
+      if(resultado.ok){
+        login('/Area_servico_pesquisado')
+
+      }else{
+        alert('erro ao cadastar usuarios',resultado.erro)
+      }
+     
     
     }
     
