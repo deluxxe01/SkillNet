@@ -1,12 +1,17 @@
 @font-face {
-    font-family:mont;
-    src: url(./font/Montserrat/Montserrat-VariableFont_wght.ttf);
-  }
-  
-.containerHeader{
+   font-family: 'mont';
+   src: url(./font/Montserrat/Montserrat-VariableFont_wght.ttf);
+ }
+ 
+ 
+ * {
+   margin: 0;
+   padding: 0;
+ }
+ 
+ .containerHeader {
    position: absolute;
-   
-   background-color:#004B22;
+   background-color: #004B22;
    opacity: 85%;
    border-radius: 50px;
    width: 95%;
@@ -15,42 +20,59 @@
    margin-left: 2.5%;
    display: flex;
    justify-content: space-around;
-   font-family: PoppinsRegular;
-align-items: center;
-   button{
-    border: none;
-    background-color:#004B22;
-    color: white;
-    font-size: 20px;
-    font-family: mont;    
- font-weight: 600;
-    font-size: 33px;
-
+   align-items: center;
+   font-family: 'Poppins', sans-serif;
+ }
+ 
+ .botaoHeader {
+   border: none;
+   background-color: #004B22;
+   color: white;
+   font-size: 33px;
+   font-family: 'mont';
+   font-weight: 600;
+   padding: 12px;
+   border-radius: 30px;
+   transition: all 0.2s ease-in-out;
+ }
+ 
+ .botaoHeader.ativo {
+   background-color:#83CF41;
+   color:#004B22;
+   border-radius: 3px;
+ transition: 1000ms;
 }
-   .logo{
-    z-index: 10;
-
-    height: 50px;
-    width: 100px;
-    margin-top: 5px;
-    border-radius: 40px;
+ 
+ 
+ .logo {
+   z-index: 10;
+   height: 50px;
+   width: 100px;
+   margin-top: 5px;
+   border-radius: 40px;
    display: flex;
-    align-items: center;
-    
-   
-   }
+   align-items: center;
+   justify-content: center;
+   border: none;
+   background-color: #004B22;
+   color: white;
+   font-size: 33px;
+   font-family: 'mont';
+   font-weight: 600;
+   padding: 12px;
+   border-radius: 70%;
+padding: 40px;
 }
-
-
-*{margin: 0; padding: 0;}
-.lblEmail{
-    margin-left: 10%;
-}.icons_categorias_trabalho{
-
-height: 20px;
-
-}.btServico.ativo{
-background-color: bisque;
-
-
+ 
+ .logo.ativo {
+   background-color:#002912;
+   border-radius: 70%;
+ transition: 1000ms;
 }
+ .lblEmail {
+   margin-left: 10%;
+ }
+ 
+ .icons_categorias_trabalho {
+   height: 20px;
+ }
