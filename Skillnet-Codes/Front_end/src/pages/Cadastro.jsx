@@ -8,6 +8,7 @@ import "swiper/css/navigation";
 import "swiper/css/pagination";
 import { useNavigate } from 'react-router-dom'
 import axios, { Axios } from 'axios'
+import { GlobalContext } from '../context/Globalcontext';
 
 function Cadastro() {
   const [checkBox, setCheckBox] = useState()
@@ -23,6 +24,7 @@ function Cadastro() {
     if(inptCheck == false|| inptEmail=="" || inptNome =="" || inptSenha==""){
       alert('porfavor prencha os campos e aceite nossos termos')
     }else{
+      
       let usuario = {
         nome:inptNome,
         email:inptEmail,
@@ -44,10 +46,27 @@ function Cadastro() {
       }
      
     
+
+   
     }
+   
     
+
+
+
+
+
+
+
   }
 
+
+
+
+
+
+
+  
 
   return (
     <div >

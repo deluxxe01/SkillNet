@@ -150,26 +150,109 @@
   margin-top: 5px;
 }
 
-.categoria_servico{
 
-background-color: #83CF41;
-width: fit-content;
-padding: 4px;
-border-radius: 10px;
-color: #004B22;
-
-}
-
-/* ----------------- Outros ------------------ */
 
 .span_nFilmes {
   font-size: x-large;
 }
-
 .barra_verde {
   border-color: #83CF41;
   background-color: #83CF41;
   width: 20%;
   height: 6px;
   border-radius: 10px;
+}
+.painel_filtros{
+
+
+ 
+  margin: 30px;
+  width: 100%;
+
+}.filtrosSelect{
+
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  margin: 25px;
+
+}.select_orcamentoServico{
+  width:150px;
+  height: 40px;
+  border-radius: 20px;
+  border: #004B22 solid;
+  background-color: rgba(0, 0, 255, 0);
+  outline: none ;
+  box-shadow: none;
+  appearance: none;
+  background-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0Ij48cGF0aCBmaWxsPSIjMDA0QjIyIiBkPSJtMTIgMTAuOGwtMy45IDMuOXEtLjI3NS4yNzUtLjcuMjc1dC0uNy0uMjc1dC0uMjc1LS43dC4yNzUtLjdsNC42LTQuNnEuMy0uMy43LS4zdC43LjNsNC42IDQuNnEuMjc1LjI3NS4yNzUuN3QtLjI3NS43dC0uNy4yNzV0LS43LS4yNzV6Ii8+PC9zdmc+");
+  background-repeat: no-repeat;
+background-position: 115px;
+font-size: 15px;
+padding: 5px;
+margin-right: 50px;
+font-family: mont;
+font-weight: 500;
+color: #004B22;
+}
+
+.select_opc_servico{
+  width:200px;
+  height: 40px;
+  border-radius: 20px;
+  border: #004B22 solid;
+  background-color: rgba(0, 0, 255, 0);
+  outline: none ;
+  box-shadow: none;
+  appearance: none;
+  background-image:  url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0Ij48cGF0aCBmaWxsPSIjMDA0QjIyIiBkPSJtMTIgMTAuOGwtMy45IDMuOXEtLjI3NS4yNzUtLjcuMjc1dC0uNy0uMjc1dC0uMjc1LS43dC4yNzUtLjdsNC42LTQuNnEuMy0uMy43LS4zdC43LjNsNC42IDQuNnEuMjc1LjI3NS4yNzUuN3QtLjI3NS43dC0uNy4yNzV0LS43LS4yNzV6Ii8+PC9zdmc+");
+  background-repeat: no-repeat;
+  background-position: 165px;
+  font-size: 15px;
+  padding: 5px;
+  font-family: mont;
+  font-weight: 500;
+  color: #004B22;
+}
+
+.select_prazo_entrega{
+  width:200px;
+  height: 40px;
+  border-radius: 20px;
+  border: #004B22 solid;
+  background-color: rgba(0, 0, 255, 0);
+  outline: none ;
+  box-shadow: none;
+  appearance: none;
+  background-image:  url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0Ij48cGF0aCBmaWxsPSIjMDA0QjIyIiBkPSJtMTIgMTAuOGwtMy45IDMuOXEtLjI3NS4yNzUtLjcuMjc1dC0uNy0uMjc1dC0uMjc1LS43dC4yNzUtLjdsNC42LTQuNnEuMy0uMy43LS4zdC43LjNsNC42IDQuNnEuMjc1LjI3NS4yNzUuN3QtLjI3NS43dC0uNy4yNzV0LS43LS4yNzV6Ii8+PC9zdmc+");
+  background-repeat: no-repeat;
+  background-position:165px;
+  font-size: 15px;
+  padding: 5px;
+margin-left: 50px;
+font-family: mont;
+font-weight: 500;
+color: #004B22;
+}
+
+option {
+  background-color: rgba(255, 255, 255, 0);
+background-color: #004b2200;
+  font-size: 14px;
+  font-family: mont;
+  font-weight: 600;
+}.categoria_servico_especifico{
+ 
+  background-color: #83CF41;
+  width: fit-content;
+  padding: 4px;
+  border-radius: 10px;
+  color: #004B22;
+  margin: 5px;
+
+}.titulo_servico{
+
+  font-family: mont;
+font-weight: 700;
+
 }

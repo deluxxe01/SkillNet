@@ -27,7 +27,9 @@ function Login() {
     console.log(inptEmail)
     console.log(inptSenha)
 
-  },[])
+  },[]
+)
+
 
 
   return (

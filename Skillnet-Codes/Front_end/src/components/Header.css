@@ -42,6 +42,17 @@
    border-radius: 3px;
  transition: 1000ms;
 }
+.botaoHeader:hover {
+   border: none;
+   background-color:#83CF41;
+   color:#004B22;
+   font-size: 33px;
+   font-family: 'mont';
+   font-weight: 600;
+   padding: 12px;
+   border-radius: 3px;
+   transition: all 0.2s ease-in-out;
+ }
  
  
  .logo {
