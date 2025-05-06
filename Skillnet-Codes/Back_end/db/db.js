@@ -37,13 +37,12 @@ async function cadastrarUsuarios(usuario) {
     const client = await connect() 
 
     try{
-        const sql = "insert into usuarios(nome,email,senha)VALUES($1,$2,$3)"
 
-    const values =[usuario.nome,usuario.email,usuario.senha]
-
-    await client.query(sql,values)
-
-    
+     const sql = "insert into usuarios(nome,email,senha)VALUES($1,$2,$3)"
+     
+     const values =[usuario.nome,usuario.email,usuario.senha]
+     
+     await client.query(sql,values)
 
    }catch(erro){
     console.log(erro)
@@ -53,26 +52,62 @@ async function cadastrarUsuarios(usuario) {
    }
     
 } 
-// async function verificarEmail(email) {
-//     const client = await connect()
+ async function verificarEmail(usuario) {
+     const client = await connect()
 
-//     const sql = 'select * from usuarios where email = $1'
+     const sqlEmail ='SELECT email FROM usuarios WHERE email = $1' 
 
-//     const vereficacao = await client.query(sql,[email]) 
+     const email = [usuario.email]
 
-//     if(vereficacao.rows.length){
-//         console.log('email ja cadastrado')
-//         return "erro o email ja esta em uso"
-//     }else{
+     const verrificarEmail = await client.query(sqlEmail,email)   
+     
+    if( verrificarEmail.rows.length > 0){
+        console.log('email ja cadastrado')
+        return true // retorna que o email ja foi cadastrado é avisa no front passado pelo back
+     }else{
 
-//         return "email liberado"
+        return false // retorna que o email não existe e pode ser utilizado
 
-//     }
+    }
     
-// }
+ }
+
+ async function deleteUser(id) { // função para apagar usuarios
+
+    const client = await connect()
+    try{
+
+    const sql = 'DELETE FROM usuarios WHERE id = $1' // variavel que guarda o query da consulta
+    const value = [id] // id do usuario que sera delatado
+
+    await client.query(sql,value)// consulta sendo feita
+
+    }catch(error){
+
+        console.log(error)
+    }
+  
+ }
+
+ async function updateUser(usuario){
+
+    const client = await connect()
+  
+    const sql= ' UPDATE usuarios SET nome = $1, email = $2, senha = $3 WHERE id = $4'
+    
+    const value = [usuario.nome,usuario.email,usuario.senha,usuario.id]
+
+    await client.query(sql,value)
+ 
+
+    
+ }
 
 module.exports = {
-    cadastrarUsuarios
+    cadastrarUsuarios,
+    verificarEmail,
+    deleteUser,
+    updateUser
     
    
 }

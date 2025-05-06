@@ -34,28 +34,45 @@ App.post('/cadastrar_user',async(req,res)=>{
 
     try{
         const client = req.body
-        await db.cadastrarUsuarios(client)
+        const verreficar = await db.verificarEmail(client)
+        if(verreficar==true){
+            res.json({message:true})// retorna que o email ja esta cadastrado no sistema
+
+        }else{
+            res.json({message:false})
+            await db.cadastrarUsuarios(client)
+        }
 
     }catch(erro){
-       
-      
-
-      
+       console.log(erro)
+         
     }
-
-    
-    
-    
 })
 
-App.get("/verrificar/:email",(req,res)=>{
+App.delete('/delete_user/:id', async(req,res)=>{
 
-   
+    const id = req.params.id
+
+    await db.deleteUser(id)
+
+    res.json('sucesso')
+    
 
 
-   
-  
 })
+App.put('/put_user',async(req,res)=>{
+
+    const user = req.body
+
+    await db.updateUser(user)
+
+    res.json("sucesso")
+
+
+
+
+})
+
 
 io.on("connection", socket =>{
   

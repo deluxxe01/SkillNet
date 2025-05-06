@@ -11,7 +11,7 @@ import axios, { Axios } from 'axios'
 
 function Cadastro() {
   const [checkBox, setCheckBox] = useState()
-  const login = useNavigate()
+  const navigate = useNavigate()
   const [inptCheck,setInptCheck]=useState(false)
 
   const [inptNome,setInptNome] = useState()
@@ -34,11 +34,13 @@ function Cadastro() {
       
       const resultado = await axios.post('http://localhost:3000/cadastrar_user',usuario) 
 
-      if(resultado.ok){
-        login('/Area_servico_pesquisado')
+      console.log(resultado)
+      if(resultado.data.message==true){
+        console.log('email ja utilizado')
 
       }else{
-        alert('erro ao cadastar usuarios',resultado.erro)
+        console.log("email unico parabens")
+        navigate('/area_servico_pesquisado')
       }
      
     
