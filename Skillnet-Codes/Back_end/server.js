@@ -5,7 +5,7 @@ const cors = require('cors')
 const { Socket } = require('socket.io')
 const { Server } = require('socket.io')
 const port = process.env.PORT 
-
+const db = require('./db/db.js')
 App.use(express.json({ limit: '50mb' }))
 App.use(cors({
      
@@ -30,12 +30,30 @@ App.get('/',(req,res)=>{
 
    
 })
-App.post('/UsuarioLogado',(req,res)=>{
+App.post('/cadastrar_user',async(req,res)=>{
+
+    try{
+        const client = req.body
+        await db.cadastrarUsuarios(client)
+
+    }catch(erro){
+       
+      
+
+      
+    }
+
+    
     
     
 })
 
-App.get("/UsuarioLogado",(req,res)=>{
+App.get("/verrificar/:email",(req,res)=>{
+
+   
+
+
+   
   
 })
 
