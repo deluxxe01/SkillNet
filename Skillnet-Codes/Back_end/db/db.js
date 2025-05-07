@@ -38,11 +38,18 @@ async function cadastrarUsuarios(usuario) {
 
     try{
 
-     const sql = "insert into usuarios(nome,email,senha)VALUES($1,$2,$3)"
+     const sql = "insert into usuarios(nome,email,senha)VALUES($1,$2,$3)  RETURNING id, nome, email,senha"
      
      const values =[usuario.nome,usuario.email,usuario.senha]
      
-     await client.query(sql,values)
+     const result = await client.query(sql,values)
+     
+     const user = result.rows[0] 
+
+     console.log(user)
+
+     return user
+
 
    }catch(erro){
     console.log(erro)
@@ -103,11 +110,38 @@ async function cadastrarUsuarios(usuario) {
     
  }
 
+ async function loginUser(usuario) {
+
+    const  client = await connect()
+
+    const sql = 'select id,nome,email,senha from usuarios where email = $1 and senha = $2 '
+
+    const values = [usuario.email,usuario.senha]
+
+    const result = await client.query(sql,values)
+   
+
+    if(result.rows==[]){
+        console.log('usuario n equixiste')
+        return false
+
+    }else{
+
+        console.log('usuario equixiste')
+        const user = result.rows[0]
+        
+        return user
+    }
+
+    
+ }
+
 module.exports = {
     cadastrarUsuarios,
     verificarEmail,
     deleteUser,
-    updateUser
+    updateUser,
+    loginUser
     
    
 }

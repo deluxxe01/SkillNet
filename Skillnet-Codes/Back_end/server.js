@@ -34,13 +34,18 @@ App.post('/cadastrar_user',async(req,res)=>{
 
     try{
         const client = req.body
+
         const verreficar = await db.verificarEmail(client)
+
         if(verreficar==true){
             res.json({message:true})// retorna que o email ja esta cadastrado no sistema
 
         }else{
-            res.json({message:false})
-            await db.cadastrarUsuarios(client)
+            
+            const user = await db.cadastrarUsuarios(client)
+            res.json({message:false,usuario:user})
+
+           
         }
 
     }catch(erro){
@@ -68,6 +73,20 @@ App.put('/put_user',async(req,res)=>{
 
     res.json("sucesso")
 
+})
+
+App.post('/login_user',async(req,res)=>{
+
+    const user = req.body
+    
+    const result = await db.loginUser(user)
+
+    if(result==false){
+        res.json(false)
+
+    }else{
+        res.json(result)
+    }
 
 
 

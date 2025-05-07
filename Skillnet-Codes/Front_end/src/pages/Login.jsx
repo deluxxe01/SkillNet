@@ -6,6 +6,7 @@ import {Pagination, Autoplay } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
+import axios from 'axios';
 
 
 function Login() {
@@ -13,14 +14,29 @@ function Login() {
   const [inptEmail,setInptEmail]=useState('')
   const [inptSenha,setInptSenha]=useState('')
 
-  const Logar = ()=>{
+  const Logar = async()=>{
     
     if(inptEmail == "" || inptSenha == ""){
       alert('porfavor prencha os campos')
 
     }else{
-      // Cadastro("/Area_servico_pesquisado")
-      Cadastro('/Servico')
+
+      const infos={
+        email:inptEmail,
+        senha:inptSenha
+      }
+
+      const result = await axios.post('http://localhost:3000/login_user',infos)
+      
+      
+      if(result.data == false){
+        console.log('usuario n exite,ou valores insiridos errodo por favor insira corretamente')
+
+      }else{
+        console.log(result.data)
+        Cadastro('/Servico')
+
+      }
     }
   }
   useEffect(()=>{

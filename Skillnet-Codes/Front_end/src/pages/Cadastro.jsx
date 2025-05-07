@@ -9,11 +9,13 @@ import "swiper/css/pagination";
 import { useNavigate } from 'react-router-dom'
 import axios, { Axios } from 'axios'
 import { GlobalContext } from '../context/Globalcontext';
+import { useContext } from 'react';
 
 function Cadastro() {
   const [checkBox, setCheckBox] = useState()
   const navigate = useNavigate()
   const [inptCheck,setInptCheck]=useState(false)
+  const {userLogado,setUserLogado} = useContext(GlobalContext) 
 
   const [inptNome,setInptNome] = useState()
   const [inptEmail,setInptEmail]=useState()
@@ -41,6 +43,8 @@ function Cadastro() {
         console.log('email ja utilizado')
 
       }else{
+        setUserLogado(resultado.data.usuario)
+        console.log(resultado.data.usuario)
         console.log("email unico parabens")
         navigate('/area_servico_pesquisado')
       }
@@ -50,23 +54,8 @@ function Cadastro() {
    
     }
    
-    
-
-
-
-
-
-
-
-  }
-
-
-
-
-
-
-
   
+  }
 
   return (
     <div >
@@ -101,7 +90,7 @@ function Cadastro() {
       
         
         <div className='container_cadastro'>
-          <div className='containerLogin'><button className='btnIrLogin' onClick={() => { login('/Login') }}>LOGIN</button></div>
+          <div className='containerLogin'><button className='btnIrLogin' onClick={() => { navigate('/Login') }}>LOGIN</button></div>
           <div><h1 className='cadatroH1'><span className='spanH1'>Crie</span> sua conta! </h1></div>
           <div className='divInputs'>
 
