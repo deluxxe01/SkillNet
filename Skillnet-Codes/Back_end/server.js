@@ -38,6 +38,7 @@ App.post('/cadastrar_user',async(req,res)=>{
         const verreficar = await db.verificarEmail(client)
 
         if(verreficar==true){
+            
             res.json({message:true})// retorna que o email ja esta cadastrado no sistema
 
         }else{
