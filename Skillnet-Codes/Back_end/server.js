@@ -70,9 +70,9 @@ App.put('/put_user',async(req,res)=>{
 
     const user = req.body
 
-    await db.updateUser(user)
+    const Usuario =await db.updateUser(user)
 
-    res.json("sucesso")
+    res.json(Usuario)
 
 })
 

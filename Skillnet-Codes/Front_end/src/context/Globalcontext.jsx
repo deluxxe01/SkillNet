@@ -4,11 +4,7 @@ export const GlobalContext = createContext()
 
 export const GlobalContextProvider = ({children}) =>{
     const [chat , setChat]=useState([])
-    const [userLogado,setUserLogado]=useState({
-    nome:"",
-    email:"",
-    senha:""
-    })
+    const [userLogado,setUserLogado]=useState({})
 
 
     return(

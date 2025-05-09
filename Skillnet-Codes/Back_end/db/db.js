@@ -100,11 +100,15 @@ async function cadastrarUsuarios(usuario) {
 
     const client = await connect()
   
-    const sql= ' UPDATE usuarios SET nome = $1, email = $2, senha = $3 WHERE id = $4'
+    const sql= ' UPDATE usuarios SET nome = $1, email = $2, senha = $3 WHERE id = $4 RETURNING id,nome,email,senha'
     
     const value = [usuario.nome,usuario.email,usuario.senha,usuario.id]
+    
+  
 
-    await client.query(sql,value)
+    const result = await client.query(sql,value)
+
+    return result.rows[0]
  
 
     
