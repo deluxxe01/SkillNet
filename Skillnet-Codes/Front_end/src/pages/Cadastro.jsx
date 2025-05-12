@@ -75,7 +75,7 @@ function Cadastro() {
           <img src="./images/img_carrosell_soin.jpg" alt="Imagem 1" className="carrossel-img" />
         </SwiperSlide>
         <SwiperSlide>
-          <img src="/images/favela_verde.jpg" alt="Imagem 2" className="carrossel-img" />
+          <img src="/images/imageLogin.jpg" alt="Imagem 2" className="carrossel-img" />
         </SwiperSlide>
         <SwiperSlide>
           <img src="./images/img_carrosel_prog.jpg" alt="Imagem 3" className="carrossel-img" />

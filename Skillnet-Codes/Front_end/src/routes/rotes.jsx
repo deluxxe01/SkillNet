@@ -7,6 +7,7 @@ import PerfilRosa from "../pages/PerfilRosa.jsx";
 import PerfilAzul from "../pages/PerfilAzul.jsx";
 import TrabalhoEscolhido from "../pages/TrabalhoEscolhido.jsx";
 import PaginaUser from "../pages/PaginaUser.jsx";
+import PageSobreNos from "../pages/PageSobreNos.jsx";
 
 
 
@@ -18,7 +19,8 @@ const router = createBrowserRouter([
     {path:'/perfilrosa', element: <PerfilRosa />},
     {path:'/perfilazul', element: <PerfilAzul />},
     {path:'/servico',element:<TrabalhoEscolhido />},
-    {path:'/user',element:<PaginaUser />}
+    {path:'/user',element:<PaginaUser />},
+    {path:'sobre_nos',element:<PageSobreNos />}
 
     
 
