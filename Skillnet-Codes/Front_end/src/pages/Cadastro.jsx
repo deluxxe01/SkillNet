@@ -8,35 +8,54 @@ import "swiper/css/navigation";
 import "swiper/css/pagination";
 import { useNavigate } from 'react-router-dom'
 import axios, { Axios } from 'axios'
+import { GlobalContext } from '../context/Globalcontext';
+import { useContext } from 'react';
 
 function Cadastro() {
   const [checkBox, setCheckBox] = useState()
-  const login = useNavigate()
+  const navigate = useNavigate()
   const [inptCheck,setInptCheck]=useState(false)
+  const {userLogado,setUserLogado} = useContext(GlobalContext) 
 
   const [inptNome,setInptNome] = useState()
   const [inptEmail,setInptEmail]=useState()
   const [inptSenha,setInptSenha]=useState()
   
-  const cadastroConta = () => {
+  const  cadastroConta = async() => {
     
     if(inptCheck == false|| inptEmail=="" || inptNome =="" || inptSenha==""){
       alert('porfavor prencha os campos e aceite nossos termos')
     }else{
+      
       let usuario = {
         nome:inptNome,
         email:inptEmail,
         senha:inptSenha
         
       } 
-      console.log(usuario)
-      const resultado =axios.post('http://localhost:3000/cadastra_usuario',usuario) 
-      login('/Area_servico_pesquisado')
-    
-    }
-    
-  }
+      
+      
+      
+      const resultado = await axios.post('http://localhost:3000/cadastrar_user',usuario) 
 
+      console.log(resultado)
+      if(resultado.data.message==true){
+        console.log('email ja utilizado')
+
+      }else{
+        setUserLogado(resultado.data.usuario)
+        console.log(resultado.data.usuario)
+        console.log("email unico parabens")
+        navigate('/area_servico_pesquisado')
+      }
+     
+    
+
+   
+    }
+   
+  
+  }
 
   return (
     <div >
@@ -71,7 +90,7 @@ function Cadastro() {
       
         
         <div className='container_cadastro'>
-          <div className='containerLogin'><button className='btnIrLogin' onClick={() => { login('/Login') }}>LOGIN</button></div>
+          <div className='containerLogin'><button className='btnIrLogin' onClick={() => { navigate('/Login') }}>LOGIN</button></div>
           <div><h1 className='cadatroH1'><span className='spanH1'>Crie</span> sua conta! </h1></div>
           <div className='divInputs'>
 

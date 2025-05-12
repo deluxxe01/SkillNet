@@ -42,6 +42,17 @@
    border-radius: 3px;
  transition: 1000ms;
 }
+.botaoHeader:hover {
+   border: none;
+   background-color:#83CF41;
+   color:#004B22;
+   font-size: 33px;
+   font-family: 'mont';
+   font-weight: 600;
+   padding: 12px;
+   border-radius: 3px;
+   transition: all 0.2s ease-in-out;
+ }
  
  
  .logo {
@@ -49,7 +60,6 @@
    height: 50px;
    width: 100px;
    margin-top: 5px;
-   border-radius: 40px;
    display: flex;
    align-items: center;
    justify-content: center;
@@ -59,16 +69,28 @@
    font-size: 33px;
    font-family: 'mont';
    font-weight: 600;
-   padding: 12px;
-   border-radius: 70%;
-padding: 40px;
+   padding: 20px;
+ 
+padding: 50px;
+border-radius:70% 
 }
  
  .logo.ativo {
    background-color:#002912;
-   border-radius: 70%;
- transition: 1000ms;
+   border-radius:20px ;
+ transition: 500ms;
+
 }
+
+.logo:hover {
+  background-color:#002912;
+  border-radius:20px ;
+transition: 500ms;
+ 
+
+}
+
+
  .lblEmail {
    margin-left: 10%;
  }

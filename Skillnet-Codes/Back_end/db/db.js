@@ -1,5 +1,8 @@
 require('dotenv').config({ path: './secrets/.env' })
 
+const fs = require('fs');
+const path = require('path');
+
 async function connect(){
     const {Pool} = require('pg')
     
@@ -21,6 +24,7 @@ async function connect(){
 
     const resdb = await client.query("SELECT now()");
     console.log(resdb.rows[0]); // Tomando a primeira posição do array de onde virá o tempo do banco de dados.
+
     client.release()
 
   // Podemos salvar nosso pool em uma conexão global. Então podemos executar o "if" como no início deste arquivo
@@ -31,6 +35,133 @@ async function connect(){
 
 connect()
 
+
+async function cadastrarUsuarios(usuario) {
+    const client = await connect() 
+
+    try{
+
+     const sqlPath = path.join(__dirname, '../sql/insertUser.sql');
+     
+
+     const sql = fs.readFileSync(sqlPath, 'utf-8');
+     
+     const values =[usuario.nome,usuario.email,usuario.senha]
+     
+     const result = await client.query(sql,values)
+     
+     const user = result.rows[0] 
+
+     console.log(user)
+
+     return user
+
+
+   }catch(erro){
+    console.log(erro)
+   
+    
+
+   }
+    
+} 
+ async function verificarEmail(usuario) {
+     const client = await connect()
+
+     const sqlFilePath = path.join(__dirname,'../sql/verrificarEmail.sql')
+     const sql=fs.readFileSync(sqlFilePath,'utf-8')
+
+
+     const email = [usuario.email]
+
+     const verrificarEmail = await client.query(sql,email)   
+     
+    if( verrificarEmail.rows.length > 0){
+        console.log('email ja cadastrado')
+        return true // retorna que o email ja foi cadastrado é avisa no front passado pelo back
+     }else{
+
+        return false // retorna que o email não existe e pode ser utilizado
+
+    }
+    
+ }
+
+ async function deleteUser(id) { // função para apagar usuarios
+
+    const client = await connect()
+    try{
+
+    const sqlPath = path.join(__dirname,'../sql/deleteUser.sql')// variavel que informa onde esta o arquivo
+
+    const sql = fs.readFileSync(sqlPath,'utf-8')// variavel que guarda o query do arquivo sql
+    const value = [id] // id do usuario que sera delatado
+
+    await client.query(sql,value)// consulta sendo feita
+
+    }catch(error){
+
+        console.log(error)
+    }
+  
+ }
+
+ async function updateUser(usuario){
+
+    const client = await connect()
+    
+
+    const sqlPath = path.join(__dirname,'../sql/updateUser.sql')
+
+    const sql = fs.readFileSync(sqlPath,'utf-8')
+    
+   
+    const value = [usuario.nome,usuario.email,usuario.senha,usuario.id]
+
+    
+
+    const result = await client.query(sql,value)
+
+    return result.rows[0]
+ 
+
+    
+ }
+
+ async function loginUser(usuario) {
+
+    const  client = await connect()
+
+    const sqlPath = path.join(__dirname,'../sql/loginUser.sql')
+
+    const sql = fs.readFileSync(sqlPath,'utf-8')
+
+    const values = [usuario.email,usuario.senha]
+
+    const result = await client.query(sql,values)
+   
+
+    if(result.rows==[]){
+        console.log('usuario n equixiste')
+        return false
+
+    }else{
+
+        console.log('usuario equixiste')
+        const user = result.rows[0]
+        
+        return user
+    }
+
+    
+ }
+
 module.exports = {
+    cadastrarUsuarios,
+    verificarEmail,
+    deleteUser,
+    updateUser,
+    loginUser
+    
    
 }

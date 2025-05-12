@@ -1,0 +1,1 @@
+select id,nome,email,senha from usuarios where email = $1 and senha = $2 

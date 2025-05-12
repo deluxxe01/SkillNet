@@ -2,12 +2,14 @@ import React from 'react'
 import './Header.css'
 import { Link } from "react-router-dom"
 import { useState } from 'react'
+import { useNavigate } from 'react-router-dom'
 function Header() {
 const [paginaAtiva,setPaginaAtiva] = useState(1)
 function ativaPagina (index){
   setPaginaAtiva(index)
   localStorage.setItem('paginaAtiva', index); // Salva o índice no Local Storage
 }
+const navigate=useNavigate()
 console.log(paginaAtiva)
   return (
     <div className='containerHeader'>
@@ -31,7 +33,9 @@ console.log(paginaAtiva)
        
        
         <button className={`botaoHeader ${paginaAtiva===3 ? 'ativo' :'inativo'}`}
-        onClick={()=>ativaPagina(3)}>Perfil</button>
+        onClick={()=>{ativaPagina(3)
+          navigate('/user')
+        }}>Perfil</button>
        
        
         <button className={`botaoHeader ${paginaAtiva===4 ? 'ativo' :'inativo'}`}

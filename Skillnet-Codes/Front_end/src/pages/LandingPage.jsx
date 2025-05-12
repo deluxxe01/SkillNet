@@ -22,8 +22,8 @@ function LandingPage() {
           <p className='pLanding'>Encontre o profissional ideal para o <br/> seu projeto ou exiba suas <br/> habilidades e conquiste novos <br/> clientes.</p>
         </div>
         <div className='divButton'>
-          <Button conteudo="INICIAR SESSÃO" local={'/login'} />
-          <Button conteudo="COMEÇAR" />
+          <Button conteudo="INICIAR SESSÃO" local={'/cadastro'} />
+          <Button conteudo="COMEÇAR" local={'/login'} />
           <img src="./images/mulher-empresaria.svg" alt="" className='imgEmpresaria' />
         </div>
 

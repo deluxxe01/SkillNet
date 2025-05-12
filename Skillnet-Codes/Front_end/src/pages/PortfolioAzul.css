@@ -75,11 +75,11 @@
     font-family: "Lato", sans-serif;
     width: 15vh;
     height: 4vh;
-    background-color: #0024B6;
+    background-color: #0139A6;
     position: relative; 
     cursor: pointer;
     overflow: hidden; 
-    border: 2px solid#0024B6; 
+    border: 2px solid#0139A6; 
     transition: color 0.5s; 
     z-index: 1;
     font-size: 17px;
@@ -94,7 +94,7 @@
     position: absolute;
     z-index: -1; 
     background: #BFE0FF; 
-    border: #0024B6;
+    border: #0139A6;
     height: 150px;
     width: 200px;
     border-radius: 50%;
@@ -104,7 +104,7 @@
 }
 
 .Button-EditarAzul:hover {
-    color: #0024B6; 
+    color: #0139A6; 
 }
 
 .Button-EditarAzul:hover:before {
@@ -114,7 +114,7 @@
 
 /* Estilo quando o botão for pressionado */
 .Button-EditarAzul:active:before {
-    border: #0024B6;
+    border: #0139A6;
     background: #BFE0FF; 
     transition: background 0s; 
 }
@@ -422,20 +422,20 @@
     cursor: pointer;
     margin: 2vh;
     overflow: hidden; 
-    border: 2px solid#0024B6; 
+    border: 2px solid#0139A6; 
     transition: color 0.5s; 
     z-index: 1;
     width: 5vh;
     height: 5vh;
     border-radius: 5vh;
-    color: #0024B6;
+    color: #0139A6;
     font-size: 3vh;
     outline: none;
     transition: all 0.5s ease;
   }
 
 .SetaAzul:hover {
-    background-color: #0024B6;  
+    background-color: #0139A6;  
     color: white;  
     transform: scale(1.1);  
 }
@@ -490,20 +490,20 @@
     position: relative; 
     cursor: pointer;
     overflow: hidden; 
-    border: 2px solid#0024B6; 
+    border: 2px solid#0139A6; 
     transition: color 0.5s;
     z-index: 1;
     width: 5vh;
     height: 5vh;
     border-radius: 5vh;
-    color: #0024B6;
+    color: #0139A6;
     font-size: 3vh;
     outline: none;
     transition: all 0.5s ease;
   
  }
  .SetaComentariosAzul-Esquerda:hover{
-    background-color: #0024B6;  
+    background-color: #0139A6;  
     color: white;  
     transform: scale(1.1);  
  }
@@ -514,7 +514,7 @@
     border-radius: 5vh;
     margin-left: 2vh;
     color: #E6E6E6;
-    background-color: #0024B6;
+    background-color: #0139A6;
     border: none;
     font-size: 3vh;
     transition: all 0.5s ease;
@@ -522,7 +522,7 @@
 
 .SetaComentariosAzul-Direita:hover{
     background-color: #E6E6E6;  
-    color: #0024B6;  
-    border: 2px solid#0024B6;
+    color: #0139A6;  
+    border: 2px solid#0139A6;
     transform: scale(1.1);  
  }

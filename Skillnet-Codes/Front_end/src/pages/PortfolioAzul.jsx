@@ -1,7 +1,7 @@
 import React, { useState, useRef, useEffect } from 'react';
-import './PerfilAzul.css';
+import './PortfolioAzul.css';
 
-function PerfilAzul() {
+function PortfolioAzul() {
 
   // Estado para controlar a visibilidade do menu
   const [menuAtivo, setMenuAtivo] = useState(false);
@@ -165,10 +165,6 @@ return (
           </div>
         </div>
 
-
-          <div className="CategoriasUsuarioAzul">
-            <button className="Button-CategoriaAzul">Fotografia e Vídeo</button>
-          </div>
         
       </div>
 
@@ -211,10 +207,6 @@ return (
             <div className="comentarios" ref={comentariosRef}>
               <img src="public/images/Group 64.png" alt="Imagem 1" />
               <img src="public/images/Group 65.png" alt="Imagem 2" />
-              {/* <img src="public/images/Group 65 (1).png" alt="Imagem 3" />
-              <img src="public/images/Rectangle 193.png" alt="Imagem 4" />
-              <img src="public/images/Rectangle 194.png" alt="Imagem 5" />
-              <img src="public/images/Rectangle 193a.png" alt="Imagem 6" /> */}
             </div>
           </div>
         </div>
@@ -229,4 +221,4 @@ return (
 
 );
 }
-export default PerfilAzul;
+export default PortfolioAzul;

@@ -1,7 +1,7 @@
 import React, { useState, useRef, useEffect } from 'react';
-import './PerfilRosa.css';
+import './PortfolioVerde.css';
 
-function PerfilRosa() {
+function PortfolioVerde() {
   // Estado para controlar a visibilidade do menu
   const [menuAtivo, setMenuAtivo] = useState(false);
 
@@ -121,13 +121,13 @@ function PerfilRosa() {
       </div>
 
 <div className='FundoRosa'>
-  <img src="public/images/fundoRosa.png" alt="" />  
+  {/* <img src="public/images/fundoverde.png" alt="" />   */}
 </div>
-      <h1 className='PerfilUsuario'>Portfólio</h1>
+      <h1 className='PerfilUsuarioVerde'>Portfólio</h1>
       {/* Informações do usuário */}
-      <div className="Header-InformacoesUsuarioRosa">
+      <div className="Header-InformacoesUsuarioVerde">
 
-        <div className="Header2-InformacoesUsuarioRosa">
+        <div className="Header2-InformacoesUsuarioVerde">
           <div className="CirculoImagemPerfil">
             <img src="public/images/perfilPessoaRosa.png" alt="" />
           </div>
@@ -136,7 +136,7 @@ function PerfilRosa() {
           <label className="Label-Pais" htmlFor="">Brasil</label>
           <label className="Label-Estado" htmlFor="">SP</label>
           </div>
-          <button className="Button-EditarPerfil">Editar Perfil</button>
+          <button className="Button-EditarPerfilVerde">Editar Perfil</button> 
         </div>
         
         <div className="Header1-InformacoesUsuarioRosa">
@@ -166,29 +166,23 @@ function PerfilRosa() {
           </div>
         </div>
 
-
-          <div className="CategoriasUsuario">
-            <button className="Button-CategoriaPerfil">Design gráfico</button>
-            <button className="Button-CategoriaPerfil">Desenvolvedor web</button>
-            <button className="Button-CategoriaPerfil">Marketing</button>
-          </div>
         
       </div>
 
       {/* Sobre Mim */}
       <div className="Container-SobreMim">
-        <h1 className="Sobremim">Sobre Mim</h1>
-        <h2 className="Texto-Sobremim">
+        <h1 className="SobremimVerde">Sobre Mim</h1>
+        <h2 className="Texto-SobremimVerde">
           Olá, sou [Seu Nome], [sua profissão] com [x] anos de experiência em [área de atuação]. Sou apaixonado por transformar ideias em soluções criativas e inovadoras. Ao longo da minha carreira, sempre busquei superar expectativas, oferecendo resultados de alta qualidade e personalizados para cada projeto. Fora do trabalho, adoro [hobbies ou interesses]. Se você está procurando uma abordagem única e dedicada para seu projeto, ficarei feliz em conversar e colaborar com você!
         </h2>
       </div>
 
       {/* Projetos */}
       <div className="Container-Projetos">
-        <h1 className="Projetos">Projetos</h1>
+        <h1 className="ProjetosVerde">Projetos</h1>
 
         <div className="Carrossel-Container">
-          <button className="Seta" ref={setaEsquerdaRef}>&lt;</button>
+          <button className="SetaVerde" ref={setaEsquerdaRef}>&lt;</button>
 
           <div className="Carrossel">
             <div className="imagens" ref={imagensRef}>
@@ -200,34 +194,31 @@ function PerfilRosa() {
               <img src="public/images/Rectangle 193a.png" alt="Imagem 6" />
             </div>
           </div>
-          <button className="Seta" ref={setaDireitaRef}>&gt;</button>
+          <button className="SetaVerde" ref={setaDireitaRef}>&gt;</button>
         </div>
       </div>
 
       {/* Avaliações Recebidas */}
       <div className="Container-Avaliacoes">
-        <h1 className="Projetos">Avaliações Recebidas</h1>
+        <h1 className="ProjetosVerde">Avaliações Recebidas</h1>
         
-        <div className="CarrosselComentarios-Container">
+        <div className="CarrosselComentarios-ContainerVerde">
 
           <div className="Comentarios-Container">
             <div className="comentarios" ref={comentariosRef}>
               <img src="public/images/Group 64.png" alt="Imagem 1" />
               <img src="public/images/Group 65.png" alt="Imagem 2" />
-              {/* <img src="public/images/Group 65 (1).png" alt="Imagem 3" />
-              <img src="public/images/Rectangle 193.png" alt="Imagem 4" />
-              <img src="public/images/Rectangle 194.png" alt="Imagem 5" />
-              <img src="public/images/Rectangle 193a.png" alt="Imagem 6" /> */}
+
             </div>
           </div>
         </div>
           <div className='SetasComentarios'>
-          <button className="SetaComentarios-Esquerda" ref={setaComentariosEsquerdaRef}>&lt;</button>
-          <button className="SetaComentarios-Direita" ref={setaComentariosDireitaRef}>&gt;</button>
+          <button className="SetaComentarios-EsquerdaVerde" ref={setaComentariosEsquerdaRef}>&lt;</button>
+          <button className="SetaComentarios-DireitaVerde" ref={setaComentariosDireitaRef}>&gt;</button>
           </div>
       </div>
     </div>
   );
 }
 
-export default PerfilRosa;
+export default PortfolioVerde;

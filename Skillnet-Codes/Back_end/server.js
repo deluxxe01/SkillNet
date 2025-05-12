@@ -5,7 +5,7 @@ const cors = require('cors')
 const { Socket } = require('socket.io')
 const { Server } = require('socket.io')
 const port = process.env.PORT 
-
+const db = require('./db/db.js')
 App.use(express.json({ limit: '50mb' }))
 App.use(cors({
      
@@ -30,14 +30,69 @@ App.get('/',(req,res)=>{
 
    
 })
-App.post('/UsuarioLogado',(req,res)=>{
-    
-    
+App.post('/cadastrar_user',async(req,res)=>{
+
+    try{
+        const client = req.body
+
+        const verreficar = await db.verificarEmail(client)
+
+        if(verreficar==true){
+            
+            res.json({message:true})// retorna que o email ja esta cadastrado no sistema
+
+        }else{
+            
+            const user = await db.cadastrarUsuarios(client)
+            res.json({message:false,usuario:user})
+
+           
+        }
+
+    }catch(erro){
+       console.log(erro)
+         
+    }
 })
 
-App.get("/UsuarioLogado",(req,res)=>{
-  
+App.delete('/delete_user/:id', async(req,res)=>{
+
+    const id = req.params.id
+
+    await db.deleteUser(id)
+
+    res.json('sucesso')
+    
+
+
 })
+App.put('/put_user',async(req,res)=>{
+
+    const user = req.body
+
+    const Usuario =await db.updateUser(user)
+
+    res.json(Usuario)
+
+})
+
+App.post('/login_user',async(req,res)=>{
+
+    const user = req.body
+    
+    const result = await db.loginUser(user)
+
+    if(result==false){
+        res.json(false)
+
+    }else{
+        res.json(result)
+    }
+
+
+
+})
+
 
 io.on("connection", socket =>{
   
