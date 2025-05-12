@@ -1,4 +1,4 @@
-import React, { use, useState } from 'react'
+import React, { useState,useSt } from 'react'
 import './Cadastro.css'
 // importando a bliblioteca de carrosel e alguns de seus modulos
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -13,12 +13,13 @@ import { GlobalContext } from '../context/Globalcontext';
 function Cadastro() {
   const [checkBox, setCheckBox] = useState()
   const navigate = useNavigate()
+
   const [inptCheck,setInptCheck]=useState(false)
 
   const [inptNome,setInptNome] = useState()
   const [inptEmail,setInptEmail]=useState()
   const [inptSenha,setInptSenha]=useState()
-  
+  const [userLogado,setUserLogado]= useState()
   const  cadastroConta = async() => {
     
     if(inptCheck == false|| inptEmail=="" || inptNome =="" || inptSenha==""){
@@ -101,7 +102,7 @@ function Cadastro() {
       
         
         <div className='container_cadastro'>
-          <div className='containerLogin'><button className='btnIrLogin' onClick={() => { login('/Login') }}>LOGIN</button></div>
+          <div className='containerLogin'><button className='btnIrLogin' onClick={() => { navigate ('/login') }}>LOGIN</button></div>
           <div><h1 className='cadatroH1'><span className='spanH1'>Crie</span> sua conta! </h1></div>
           <div className='divInputs'>
 

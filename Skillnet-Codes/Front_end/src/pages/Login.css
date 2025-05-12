@@ -53,10 +53,11 @@
     .inptLogin{
         width: 350px;
         min-height: 50px;
-        border-radius: 100px;
+        border-radius: 10px;
         outline: none;
-        border: 1.8px solid var(--cor-3);
-        font-size: medium;
+      background-color:#D9D9D9;
+       border: none;
+      font-size: medium;
         font-family: LatoRegular;
         padding-left: 10px;
         margin-bottom: 10%;
@@ -69,9 +70,10 @@
     .inptLogin2{
         width: 350px;
         min-height: 50px;
-        border-radius: 100px;
+        border-radius: 10px;
         outline: none;
-        border: 1.8px solid var(--cor-3);
+        border:none;
+        background-color: #D9D9D9;
         font-size: medium;
         font-family: LatoRegular;
         padding-left: 10px;

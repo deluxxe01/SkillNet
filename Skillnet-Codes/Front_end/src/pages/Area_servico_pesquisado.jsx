@@ -163,18 +163,18 @@ function Area_servico_pesquisado() {
                 />
                
                
-                <p className='categoria_servico'>
-                <div >
+               
+                <div className='container_cat_servico' >
   {servico.tipo_servico.map((tipo, index) => (
     <span key={index} className="categoria_servico_especifico">{tipo}</span>
   ))}
 </div>
-                </p>
+                
 
                 
                 
                 <h3 className='titulo_servico'>{servico.titulo}</h3>
-                <p>{servico.sinopse}</p>
+                <p >{servico.sinopse}</p>
               </div>
             ))
           ) : (
