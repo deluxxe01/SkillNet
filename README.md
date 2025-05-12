@@ -16,7 +16,7 @@ SkillNet é uma plataforma online que conecta usuários e freelancers para a con
 
 ### Requisitos Funcionais (RF)
 
-- **Cadastro e Conta:** O usuário pode se cadastrar, editar seus dados e excluir a conta. **Responsavél:** Vitor
+- **Cadastro e Conta:** O usuário pode se cadastrar, editar seus dados e excluir a conta. **Responsavél:** caio
 - **Gerenciamento de Serviços:** O usuário pode cadastrar, editar e excluir serviços. **Responsavél:** Duda
 - **Contratos e Freelancers:** O usuário pode contratar freelancers para serviços específicos e registrar contratos. **Responsavél:** Vitor
 - **Avaliações:** O sistema permite que usuários e freelancers avaliem serviços e portfólios. **Responsavél:** Duda
