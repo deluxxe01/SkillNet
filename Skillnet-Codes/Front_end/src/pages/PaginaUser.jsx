@@ -50,7 +50,7 @@ function PaginaUser() {
         if (window.confirm("Tem certeza que deseja deletar sua conta?")) {
          
           // Aqui você pode adicionar lógica para deletar o usuário
-         let  id =userLogado.id
+         let  id = userLogado.id
           const result =  await axios.delete(`http://localhost:3000/delete_user/${id}`)
 
           setUserLogado('')
