@@ -1,0 +1,1 @@
+ UPDATE usuarios SET nome = $1, email = $2, senha = $3 WHERE id = $4 RETURNING id,nome,email,senha

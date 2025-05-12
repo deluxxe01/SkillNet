@@ -1,0 +1,1 @@
+delete from usuarios where id = $1
