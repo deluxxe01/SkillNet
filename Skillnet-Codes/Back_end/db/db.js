@@ -69,8 +69,8 @@ async function cadastrarUsuarios(usuario) {
      const client = await connect()
 
      const sqlFilePath = path.join(__dirname,'../sql/verrificarEmail.sql')
-     const sql=fs.readFileSync(sqlFilePath,'utf-8')
 
+     const sql = fs.readFileSync(sqlFilePath,'utf-8')
 
      const email = [usuario.email]
 
@@ -79,6 +79,7 @@ async function cadastrarUsuarios(usuario) {
     if( verrificarEmail.rows.length > 0){
         console.log('email ja cadastrado')
         return true // retorna que o email ja foi cadastrado é avisa no front passado pelo back
+
      }else{
 
         return false // retorna que o email não existe e pode ser utilizado
@@ -93,9 +94,11 @@ async function cadastrarUsuarios(usuario) {
     try{
 
     const sqlPath = path.join(__dirname,'../sql/deleteUser.sql')// variavel que informa onde esta o arquivo
-
+    
     const sql = fs.readFileSync(sqlPath,'utf-8')// variavel que guarda o query do arquivo sql
+
     const value = [id] // id do usuario que sera delatado
+
 
     await client.query(sql,value)// consulta sendo feita
 

@@ -1,0 +1,58 @@
+.H1Sobrenos{
+    font-family: Mont;
+    font-size: xx-large;
+    border-bottom: 5px solid #83CF41;
+    width: fit-content;
+    color: #fbfbfb;
+}
+.container_sobreNos{
+    align-items: center;
+    justify-content: space-between;
+    display: flex;
+    flex-direction: column;
+    background-color: #004B22;
+    min-height: 100vh;
+}
+.pSobre,.pSobre2 > div {
+    flex: 1;
+    margin: 0 10px; /* opcional, adiciona espaço lateral entre blocos */
+}
+.pSobre {
+    display: flex;
+    justify-content: space-between; /* distribui com espaçamento igual */
+    text-align: center;
+    padding: 20px; /* espaçamento interno opcional */
+    font-family: LatoRegular;
+    font-size: 22px;
+    color: #fbfbfb;
+    margin-bottom: 100px;
+    margin-right: 20px;
+  
+}
+.contaiener_P{
+    width: 400px;
+
+}
+.conteiner_infos{
+    width: 100%;
+    align-items: center;
+    justify-content: space-between;
+    display: flex;
+}
+
+.pSobre2{
+    display: flex;
+    justify-content: space-between; /* distribui com espaçamento igual */
+    padding: 20px; /* espaçamento interno opcional */
+    font-family: LatoRegular;
+    font-size: 22px;
+    color: #fbfbfb;
+    margin-top: 100px;
+    margin-left: 20px;
+    
+}
+.divSobreNos{
+    background-color: #fbfbfb;
+    width: 95%;
+    border-radius: 5px;
+}

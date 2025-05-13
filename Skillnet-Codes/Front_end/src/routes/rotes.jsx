@@ -8,6 +8,7 @@ import PortfolioAzul from "../pages/PortfolioAzul.jsx";
 import PortfolioVerde from "../pages/PortfolioVerde.jsx";
 import TrabalhoEscolhido from "../pages/TrabalhoEscolhido.jsx";
 import PaginaUser from "../pages/PaginaUser.jsx";
+import PageSobreNos from "../pages/PageSobreNos.jsx";
 
 
 
@@ -21,7 +22,8 @@ const router = createBrowserRouter([
     {path:'/portfolioverde', element: <PortfolioVerde />},
     {path:'/servico',element:<TrabalhoEscolhido />},
     {path:'/servico',element:<TrabalhoEscolhido />},
-    {path:'/user',element:<PaginaUser />}
+    {path:'/user',element:<PaginaUser />},
+    {path:'sobre_nos',element:<PageSobreNos />}
 
 
     

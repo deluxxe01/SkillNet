@@ -89,10 +89,11 @@
     .inpt_nome{
 
         width: 350px;
-        min-height: 40px;
-        border-radius: 100px;
+        min-height: 50px;
         outline: none;
-        border: 1.8px solid var(--cor-3);
+        border: none;
+        background-color:#003C1B ;
+        border-radius: 10px;
         margin-bottom: 8%;
         margin-top: 0.5%;
         font-size: medium;
@@ -107,15 +108,20 @@ background-position: right 12px center;
     .inpt_email{
 
         width: 350px;
-        min-height: 40px;
-        border-radius: 100px;
+        min-height: 50px;
         outline: none;
-        border: 1.8px solid var(--cor-3);
+        border: none;
+        background-color:#003C1B ;
+        border-radius: 10px;
+        
         margin-bottom: 8%;
         margin-top: 0.5%;
         font-size: medium;
         font-family: Mont;
         padding-left: 10px;
+        
+        
+        
         background-image: url(./icons/icon_email.svg);
         background-repeat: no-repeat;
        background-size: 27px;
@@ -125,12 +131,14 @@ background-position: right 12px center;
     .inpt_senha{
 
         width: 350px;
-        min-height: 40px;
-        border-radius: 100px;
-        outline: none;
-        border: 1.8px solid var(--cor-3);
+        min-height: 50px;
+        
+        border: none;
+        background-color:#003C1B ;
+        border-radius: 10px;
         margin-bottom: 8%;
         margin-top: 0.5%;
+        outline: none;
         font-size: medium;
         font-family: Mont;
         padding-left: 10px;
@@ -285,9 +293,9 @@ background-position: right 12px center;
     .inptCheck{
         border: 3px solid #83CF41;
         min-width: 20px;
-        height: 17px;
+        height: 20px;
         border-radius:5px;
-        background-position: center;
+        margin-left: 20px;
         background-repeat: 0;
         background-image: url('./icons/check.svg');
         

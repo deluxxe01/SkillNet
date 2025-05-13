@@ -1,4 +1,4 @@
-import React, { use, useState } from 'react'
+import React, { useState,useSt } from 'react'
 import './Cadastro.css'
 // importando a bliblioteca de carrosel e alguns de seus modulos
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -14,13 +14,14 @@ import { useContext } from 'react';
 function Cadastro() {
   const [checkBox, setCheckBox] = useState()
   const navigate = useNavigate()
+
   const [inptCheck,setInptCheck]=useState(false)
   const {userLogado,setUserLogado} = useContext(GlobalContext) 
 
   const [inptNome,setInptNome] = useState()
   const [inptEmail,setInptEmail]=useState()
   const [inptSenha,setInptSenha]=useState()
-  
+  const [userLogado,setUserLogado]= useState()
   const  cadastroConta = async() => {
     
     if(inptCheck == false|| inptEmail=="" || inptNome =="" || inptSenha==""){
@@ -75,7 +76,7 @@ function Cadastro() {
           <img src="./images/img_carrosell_soin.jpg" alt="Imagem 1" className="carrossel-img" />
         </SwiperSlide>
         <SwiperSlide>
-          <img src="/images/favela_verde.jpg" alt="Imagem 2" className="carrossel-img" />
+          <img src="/images/imageLogin.jpg" alt="Imagem 2" className="carrossel-img" />
         </SwiperSlide>
         <SwiperSlide>
           <img src="./images/img_carrosel_prog.jpg" alt="Imagem 3" className="carrossel-img" />
@@ -90,7 +91,11 @@ function Cadastro() {
       
         
         <div className='container_cadastro'>
+<<<<<<< HEAD
+          <div className='containerLogin'><button className='btnIrLogin' onClick={() => { navigate ('/login') }}>LOGIN</button></div>
+=======
           <div className='containerLogin'><button className='btnIrLogin' onClick={() => { navigate('/Login') }}>LOGIN</button></div>
+>>>>>>> 5901478b42eebeb746b6e6d7c68ecf817ddcd0fa
           <div><h1 className='cadatroH1'><span className='spanH1'>Crie</span> sua conta! </h1></div>
           <div className='divInputs'>
 
