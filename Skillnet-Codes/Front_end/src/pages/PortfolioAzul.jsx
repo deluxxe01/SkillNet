@@ -123,6 +123,8 @@ return (
 <div className='FundoAzul'>
   <img src="public/images/fundoazul.png" alt="" />  
 </div>
+
+<h1 className='PerfilUsuarioAzul'>Portfólio</h1>
       {/* Informações do usuário */}
       <div className="Header-InformacoesAzul">
 

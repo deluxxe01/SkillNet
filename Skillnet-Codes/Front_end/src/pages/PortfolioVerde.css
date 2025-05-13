@@ -70,7 +70,7 @@
     margin-top: -4vh;
 }
 
-.Button-CompartilharUsuarioRosa {
+.Button-CompartilharUsuarioVerde {
     font-family: "Lato", sans-serif;
     display: inline-block;
     align-items: center;
@@ -89,7 +89,7 @@
     color:#ffffff 
 }
 
-.Button-CompartilharUsuarioRosa:before {
+.Button-CompartilharUsuarioVerde:before {
     content: "";
     position: absolute;
     z-index: -1; 
@@ -103,16 +103,16 @@
     transition: all 0.7s; 
 }
 
-.Button-CompartilharUsuarioRosa:hover {
+.Button-CompartilharUsuarioVerde:hover {
     color: #000000; 
 }
 
-.Button-CompartilharUsuarioRosa:hover:before {
+.Button-CompartilharUsuarioVerde:hover:before {
     top: -30px; 
     left: -30px; 
 }
 
-.Button-CompartilharUsuarioRosa:active:before {
+.Button-CompartilharUsuarioVerde:active:before {
     border: #000000;
     background: #E6E6E6; 
     transition: background 0s; 
@@ -137,7 +137,7 @@
 }
 
 
-.Button-ContratarUsuarioRosa {
+.Button-ContratarUsuarioVerde {
     
     font-family: "Lato", sans-serif;
     display: inline-block;
@@ -158,7 +158,7 @@
     color:#000000 
 }
 
-.Button-ContratarUsuarioRosa:before {
+.Button-ContratarUsuarioVerde:before {
     content: "";
     position: absolute;
     z-index: -1;
@@ -172,16 +172,16 @@
     left: 100%; 
 }
 
-.Button-ContratarUsuarioRosa:hover {
+.Button-ContratarUsuarioVerde:hover {
     color: #fff; 
 }
 
-.Button-ContratarUsuarioRosa:hover:before {
+.Button-ContratarUsuarioVerde:hover:before {
     top: -30px; 
     left: -30px; 
 }
 
-.Button-ContratarUsuarioRosa:active:before {
+.Button-ContratarUsuarioVerde:active:before {
     border: #000000;
     background: #000000; 
     transition: background 0s; 

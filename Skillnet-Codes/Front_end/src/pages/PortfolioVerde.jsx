@@ -156,8 +156,8 @@ function PortfolioVerde() {
           </a>
 
           <div className="botoes">
-            <button className="Button-CompartilharUsuarioRosa">compartilhar</button>
-            <button className="Button-ContratarUsuarioRosa">contrate</button>
+            <button className="Button-CompartilharUsuarioVerde">compartilhar</button>
+            <button className="Button-ContratarUsuarioVerde">contrate</button>
           </div>
 
           <div className="Experiencia">
