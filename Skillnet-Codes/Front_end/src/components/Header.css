@@ -66,9 +66,9 @@
    font-family: 'mont';
    font-weight: 600;
    padding: 20px;
- 
-padding: 50px;
-border-radius:70% 
+   padding: 50px;
+   border-radius:70% ;
+   animation: rotate linear infinite 10s ;
 }
  
  .logo.ativo {
@@ -94,3 +94,18 @@ transition: 500ms;
  .icons_categorias_trabalho {
    height: 20px;
  }
+
+
+@keyframes rotate {
+  
+  from{
+    transform: rotate(0deg);
+    
+
+  }
+  to{
+    transform: rotate(360deg);
+
+  }
+  
+}

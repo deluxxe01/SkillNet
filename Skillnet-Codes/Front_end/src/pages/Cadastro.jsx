@@ -1,4 +1,4 @@
-import React, { useState,useSt } from 'react'
+import React, { useState} from 'react'
 import './Cadastro.css'
 // importando a bliblioteca de carrosel e alguns de seus modulos
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -44,6 +44,7 @@ function Cadastro() {
         console.log('email ja utilizado')
 
       }else{
+        localStorage.setItem('token',1)
         setUserLogado(resultado.data.usuario)
         console.log(resultado.data.usuario)
         console.log("email unico parabens")
