@@ -106,7 +106,7 @@ return (
 <div className="PerfilAzul-Container">
 {/* Menu Hamburguer */}
 <div className="hamburguer" id="hamburguer" onClick={toggleMenu}>
-        <img src="logoverdeescuro.png" alt="Logo" className="logo-img" />
+        <img src="public/images/logoweb.png" alt="Logo" className="logo-img" />
       </div>
 
       {/* Menu Lateral - Condicionalmente renderizado */}
@@ -158,7 +158,6 @@ return (
 
           <div className="botoes">
             <button className="Button-CompartilharAzul">compartilhar</button>
-            <button className="Button-ContratarAzul">contrate</button>
           </div>
 
           <div className="Experiencia">
@@ -217,7 +216,32 @@ return (
           <button className="SetaComentariosAzul-Direita" ref={setaComentariosDireitaRef}>&gt;</button>
           </div>
       </div>
+      <div className='ContainerFooterAzul'>
 
+      <div className='ContainerColunas'>
+        <div className='Coluna1'>
+        <h2 className='Blue'>Menu do Site</h2>
+          <p className='azul'>Home</p> 
+          <p className='azul'>Serviços</p>
+          <p className='azul'>Portfólios</p>
+        </div>
+
+        <div className='Coluna2'>
+        <h2 className='Blue'>Endereço</h2> 
+        <p className='azul'>Rua João Gualberto, 289</p> 
+        <p className='azul'>Bairro Rio vermelho</p>
+        <p className='azul'>Florianópolis SC, 88730-201</p>
+        </div>
+
+        <div className='Coluna3'>
+        <h2 className='Blue'>Contatos</h2> 
+        <p className='azul'>skillnet@gmail.com</p> 
+        <p className='azul'>(48) 97621-8562</p>
+  
+        </div>
+
+      </div>
+      </div>
 
 </div>
 

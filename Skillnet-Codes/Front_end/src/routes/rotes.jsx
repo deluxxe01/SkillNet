@@ -9,6 +9,8 @@ import PortfolioVerde from "../pages/PortfolioVerde.jsx";
 import TrabalhoEscolhido from "../pages/TrabalhoEscolhido.jsx";
 import PaginaUser from "../pages/PaginaUser.jsx";
 import PageSobreNos from "../pages/PageSobreNos.jsx";
+import PaginaUsuario from "../pages/PaginaUsuario.jsx";
+import PrivateRoutes from "./PrivateRoutes.jsx"
 
 
 
@@ -22,12 +24,16 @@ const router = createBrowserRouter([
     {path:'/portfolioverde', element: <PortfolioVerde />},
     {path:'/servico',element:<TrabalhoEscolhido />},
     {path:'/servico',element:<TrabalhoEscolhido />},
-    {path:'/user',element:<PaginaUser />},
-    {path:'sobre_nos',element:<PageSobreNos />}
+    {path:'sobre_nos',element:<PageSobreNos />},
+    {path:'user_page',element:<PaginaUsuario />},
+    {element:<PrivateRoutes />,
+        children:[
+            
+            {path:'/user',element:<PaginaUser />}
+        ]
 
-
+    }
     
-
 ]) 
 
 export default router

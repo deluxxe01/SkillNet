@@ -4,19 +4,23 @@
     box-sizing: border-box;
 }
 
-.FundoRosa{
+.FundoVerde{
     margin-top: -15vh;
     position: absolute; 
     z-index: -1; 
 }
 
+/* .FundoVerde img {
+    width: 210vh;  Ajusta a largura para preencher a div 
+    height: 60vh;  Mantém a proporção da imagem 
+} */
 .PerfilUsuarioVerde{
     margin-top: -3vh;
     font-size: 5vh;
     font-family: "Montserrat", sans-serif;
     margin-left: 90vh;
     color: #004B22;
-    text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.6); /* sombra mais forte */
+    /* text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.6); sombra mais forte  */
     transition: transform 0.3s ease, color 0.3s ease;
     position: relative; /* Necessário para o ::after funcionar corretamente */
 }
@@ -51,6 +55,7 @@
     height: 20vh;
     margin-top: -35vh;
     margin-left: 35vh;
+
 }
 
 .NomeUsuario{
@@ -137,63 +142,12 @@
 }
 
 
-.Button-ContratarUsuarioVerde {
-    
-    font-family: "Lato", sans-serif;
-    display: inline-block;
-    align-items: center;
-    width: 15vh;
-    height: 4vh;
-    background-color: #E6E6E6;
-    margin-left: 2vh; 
-    position: relative; 
-    cursor: pointer;
-    overflow: hidden; 
-    border: 2px solid#000000; 
-    transition: color 0.5s; 
-    z-index: 1;
-    font-size: 17px;
-    border-radius: 1.5vh;
-    font-weight: 500;
-    color:#000000 
-}
-
-.Button-ContratarUsuarioVerde:before {
-    content: "";
-    position: absolute;
-    z-index: -1;
-    background: #080808;
-    transition: all 0.7s; 
-    border: #000000;
-    height: 150px;
-    width: 200px;
-    border-radius: 50%;
-    top: 100%; 
-    left: 100%; 
-}
-
-.Button-ContratarUsuarioVerde:hover {
-    color: #fff; 
-}
-
-.Button-ContratarUsuarioVerde:hover:before {
-    top: -30px; 
-    left: -30px; 
-}
-
-.Button-ContratarUsuarioVerde:active:before {
-    border: #000000;
-    background: #000000; 
-    transition: background 0s; 
-}
-
-
 /* ----------------------------------------------
    1 CONTAINER HEADER 1 
    ---------------------------------------------- */
 
-.Header2-InformacoesUsuarioRosa{
-     /* border: solid rgb(255, 0, 0) 2px;   */
+.Header2-InformacoesUsuarioVerde{
+    /* border: solid rgb(255, 0, 0) 2px;    */
     width: 29vh;
     height: 35vh;
     margin-top: 5vh;
@@ -549,3 +503,41 @@
     border: 2px solid#004B22;
     transform: scale(1.1);  
  }
+
+
+.ContainerFooterVerde{
+    background-color: #004B22;
+    height: 50vh;
+}
+
+.Green {
+    margin-top: 10vh;
+}
+
+.ContainerColunas{
+    display:flex ;
+}
+
+.Coluna1, .Coluna2, .Coluna3 {
+    width: 50vh;
+    color: #ffffff;
+    font-family: "Lato", sans-serif;
+    font-size: 2.5vh;
+    margin-top: 3vh;
+    margin-left: 20vh;
+    margin-right: 20vh;
+    display: flex; 
+    flex-direction: column;  /* Organiza os itens em coluna */
+    justify-content: flex-start; /* Alinha os itens no topo */
+    align-items: flex-start;
+}
+
+.verde {
+    margin-top: 1vh;
+}
+.Green:hover{
+color: #83CF41;
+}
+.verde:hover{
+    color: #83CF41;
+}

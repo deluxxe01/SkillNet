@@ -1,0 +1,588 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.FundoRosa{
+    margin-top: -15vh;
+    position: absolute; 
+    z-index: -1; 
+}
+
+.PerfilUsuario{
+    margin-top: -3vh;
+    font-size: 5vh;
+    font-family: "Montserrat", sans-serif;
+    margin-left: 90vh;
+    color: #fdfdfd;
+    text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.6); /* sombra mais forte */
+    transition: transform 0.3s ease, color 0.3s ease;
+    position: relative; /* Necessário para o ::after funcionar corretamente */
+}
+.PerfilUsuario::after {
+    content: ''; /* Necessário para criar a linha */
+    display: block;
+    width: 0%; /* A linha começa com 0% de largura */
+    height: 2px; /* Espessura da linha */
+    background-color: #FFAFAF; /* Cor da linha */
+    border-radius: 2vh;
+    transition: width 0.3s ease; /* Animação de largura */
+    position: absolute;
+    bottom: 0; /* Coloca a linha embaixo do título */
+    left: 0;
+}
+.PerfilUsuario:hover::after {
+    width: 20vh;
+    height: 0.5vh; /* A linha expande para 100% da largura ao passar o mouse */
+  }
+.Header-InformacoesUsuarioRosa{
+    background-color: #FFD9D9;
+    margin-left: 50vh;
+    width: 100vh;
+    height: 40vh;
+    border-radius: 5vh;
+    position: relative;
+    z-index: 2; 
+}
+
+.Header1-InformacoesUsuarioRosa{
+    width: 60vh;
+    height: 20vh;
+    margin-top: -35vh;
+    margin-left: 35vh;
+}
+
+.NomeUsuario{
+    font-family: "Nunito", sans-serif;
+    width: 50vh;
+    margin-top: 3vh; 
+}
+
+.email, .zap, .insta{
+    width: 4vh;
+    height: 4vh;
+    margin-left: 1vh;
+}
+
+.botoes{
+    margin-left: 20vh;
+    margin-top: -4vh;
+}
+
+.Button-CompartilharUsuarioRosa {
+    font-family: "Lato", sans-serif;
+    display: inline-block;
+    align-items: center;
+    width: 15vh;
+    height: 4vh;
+    background-color: #000000;
+    position: relative; 
+    cursor: pointer;
+    overflow: hidden; 
+    border: 2px solid#000000; 
+    transition: color 0.5s; 
+    z-index: 1;
+    font-size: 17px;
+    border-radius: 1.5vh;
+    font-weight: 500;
+    color:#ffffff 
+}
+
+.Button-CompartilharUsuarioRosa:before {
+    content: "";
+    position: absolute;
+    z-index: -1; 
+    background: #FFD9D9; 
+    border: #000000;
+    height: 150px;
+    width: 200px;
+    border-radius: 50%;
+    top: 100%; 
+    left: 100%; 
+    transition: all 0.7s; 
+}
+
+.Button-CompartilharUsuarioRosa:hover {
+    color: #000000; 
+}
+
+.Button-CompartilharUsuarioRosa:hover:before {
+    top: -30px; 
+    left: -30px; 
+}
+
+.Button-CompartilharUsuarioRosa:active:before {
+    border: #000000;
+    background: #FFD9D9; 
+    transition: background 0s; 
+}
+.imgShare{
+    width: 3vh;
+}
+.Experiencia{
+    margin-top: 3vh;
+}
+
+.Label-ExperienciaUsuarioRosa{
+    font-size: 2vh;
+    font-family:"Lato", sans-serif;
+    
+}
+
+.Label-AnoExperiencia{
+    font-size: 2vh;
+    font-family:"Lato", sans-serif;
+    margin-left: 1vh;
+}
+
+
+.Button-ContratarUsuarioRosa {
+    
+    font-family: "Lato", sans-serif;
+    display: inline-block;
+    align-items: center;
+    width: 15vh;
+    height: 4vh;
+    background-color: #FFD9D9;
+    margin-left: 2vh; 
+    position: relative; 
+    cursor: pointer;
+    overflow: hidden; 
+    border: 2px solid#000000; 
+    transition: color 0.5s; 
+    z-index: 1;
+    font-size: 17px;
+    border-radius: 1.5vh;
+    font-weight: 500;
+    color:#000000 
+}
+
+.Button-ContratarUsuarioRosa:before {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    background: #080808;
+    transition: all 0.7s; 
+    border: #000000;
+    height: 150px;
+    width: 200px;
+    border-radius: 50%;
+    top: 100%; 
+    left: 100%; 
+}
+
+.Button-ContratarUsuarioRosa:hover {
+    color: #fff; 
+}
+
+.Button-ContratarUsuarioRosa:hover:before {
+    top: -30px; 
+    left: -30px; 
+}
+
+.Button-ContratarUsuarioRosa:active:before {
+    border: #000000;
+    background: #000000; 
+    transition: background 0s; 
+}
+
+
+/* ----------------------------------------------
+   1 CONTAINER HEADER 1 
+   ---------------------------------------------- */
+
+.Header2-InformacoesUsuarioRosa{
+     /* border: solid rgb(255, 0, 0) 2px;   */
+    width: 29vh;
+    height: 35vh;
+    margin-top: 5vh;
+    margin-left: 5vh;
+}
+
+.CirculoImagemPerfil{
+    margin-top: 3vh;
+    
+}
+
+.CirculoImagemPerfil img{
+    width: 20vh;
+    margin-top: 3vh;
+}
+
+.Localizacao{
+    margin-top: 2vh;
+    margin-left: 2vh;
+    display: flex;
+    align-items: center;
+}
+
+.iconLocal{
+    width: 4vh;
+    height: 4vh;
+}
+
+.Label-Pais{
+    font-size: 2vh;
+    margin-left: 1vh;
+    font-family: "Lato", sans-serif;
+}
+
+.Label-Estado{
+    margin-left: 1vh;
+    font-size: 2vh;
+    font-family: "Lato", sans-serif; 
+}
+
+/* ----------------------------------------------
+   1. BUTTON EDITAR HEADER 1 
+   ---------------------------------------------- */
+
+.Button-EditarPerfil {
+    margin-left: 2vh;
+    margin-top: 3vh;
+    font-family: "Lato", sans-serif;
+    width: 15vh;
+    height: 4vh;
+    background-color: #CE499C;
+    position: relative; 
+    cursor: pointer;
+    overflow: hidden; 
+    border: 2px solid#CE499C; 
+    transition: color 0.5s; 
+    z-index: 1;
+    font-size: 17px;
+    border-radius: 1.5vh;
+    font-weight: 500;
+    color:#ffffff 
+}
+
+/* Estilo do pseudo-elemento :before */
+.Button-EditarPerfil:before {
+    content: "";
+    position: absolute;
+    z-index: -1; 
+    background: #FFD9D9; 
+    border: #CE499C;
+    height: 150px;
+    width: 200px;
+    border-radius: 50%;
+    top: 100%; 
+    left: 100%; 
+    transition: all 0.7s; 
+}
+
+.Button-EditarPerfil:hover {
+    color: #CE499C; 
+}
+
+.Button-EditarPerfil:hover:before {
+    top: -30px; 
+    left: -30px; 
+}
+
+/* Estilo quando o botão for pressionado */
+.Button-EditarPerfil:active:before {
+    border: #CE499C;
+    background: #FFD9D9; 
+    transition: background 0s; 
+}
+
+/* ----------------------------------------------
+    SUBHEADER 3 
+   ---------------------------------------------- */
+
+.CategoriasUsuario{
+     /* border: solid rgb(77, 0, 107) 2px;   */
+    height: 8vh;
+    width: 60vh;
+    margin-left: 35vh;
+    margin-top: 6vh;
+    display: flex;
+    justify-content: space-between; 
+    align-items: center;
+    
+    
+}
+
+.Button-CategoriaPerfil{
+    color: #000000;
+    background-color: #FFA3A3;
+    font-family: "Lato", sans-serif;
+    border-radius: 1.5vh;
+    border: none;
+    font-size: 2vh;
+    height: 4vh;
+    width: 18vh;
+    margin-left: 2vh;
+    display: inline-block;
+    
+  
+}
+
+/* ----------------------------------------------
+    HAMBURGUER MENU
+   ---------------------------------------------- */
+
+.hamburguer{
+    /* border: solid rgb(183, 0, 255) 2px;  */
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding: 20px;
+}
+
+.logo-img{
+    width: 10vh;
+    height: auto;
+    cursor: pointer;
+}
+
+.menu {
+    border-radius: 2.5vh;
+    position: fixed;
+    top: 12vh;
+    right: 7vh;
+    width: 18vh;
+    height: 25vh;
+    background-color: #E6E6E6;
+    color: white;
+    transform: translateX(100%); 
+    padding: 20px;
+    display: none; 
+}
+
+.menu.active {
+    transform: translateX(0); 
+    display: block; 
+}
+
+.menu ul {
+    list-style-type: none; 
+    padding: 0;
+    margin: 0; 
+}
+
+.menu a {
+    font-size: 2vh;
+    color: rgb(0, 51, 8);
+    text-decoration: none;
+    display: block;
+    margin: 10px 0;
+    margin-left: 2vh;
+    font-family: "Lato", sans-serif;
+}
+
+.menu a:hover {
+    color: #83CF41; 
+}
+/* ----------------------------------------------
+   CONTAINER SOBREMIM
+   ---------------------------------------------- */
+.Container-SobreMim{ 
+    /* border: solid rgb(183, 0, 255) 2px;  */
+    width: 150vh;
+    height: 30vh;
+    margin-left: 25vh;
+    margin-top: 8vh;
+}
+
+.Sobremim{
+    font-family: "Montserrat", sans-serif;
+    color: #500040;
+}
+
+.Texto-Sobremim{
+    margin-top: 3vh;
+    color: #500040;
+    font-family: "Lato", sans-serif;
+}
+
+/* ----------------------------------------------
+   CONTAINER PROJETOS
+   ---------------------------------------------- */
+
+.Container-Projetos{
+    /* border: solid rgb(183, 0, 255) 2px; */
+    width: 150vh;
+    height: 60vh;
+    margin-left: 25vh;
+    margin-top: 8vh;
+}
+
+.Projetos{
+    font-family: "Montserrat", sans-serif;
+    color: #500040;
+}
+
+.Carrossel-Container{
+    margin-top: 3vh;
+    /* border: solid rgb(88, 13, 8) 2px;  */
+    display: flex;
+    align-items: center;
+    height: 50vh;
+}
+
+.Carrossel{
+     /* border: solid rgb(255, 111, 243) 2px;  */
+    overflow: hidden;
+    width: 135vh; 
+}
+.imagens{
+    display: flex;
+    transition: transform 0.5s ease;
+}  
+
+.imagens img{
+    /* border: solid rgb(80, 153, 196) 2px; */
+    width: 35vh; 
+    height: auto;
+    margin: 0 5px;
+}
+.Seta {
+    position: relative; 
+    cursor: pointer;
+    margin: 2vh;
+    overflow: hidden; 
+    border: 2px solid#CE499C; 
+    transition: color 0.5s; 
+    z-index: 1;
+    width: 5vh;
+    height: 5vh;
+    border-radius: 5vh;
+    color: #CE499C;
+    font-size: 3vh;
+    outline: none;
+    transition: all 0.5s ease;
+  }
+
+.Seta:hover {
+    background-color: #CE499C;  
+    color: white;  
+    transform: scale(1.1);  
+}
+
+/* ----------------------------------------------
+   CONTAINER AVALIAÇÕES
+   ---------------------------------------------- */
+.Container-Avaliacoes{
+    /* border: solid rgb(80, 153, 196) 2px; */
+    margin-top: 8vh;
+    height: 75vh;
+    width: 150vh;
+    margin-left: 25vh;
+    margin-bottom: 10vh;
+}
+
+.CarrosselComentarios-Container{
+    /* border: solid rgb(88, 13, 8) 2px; */
+    background-color: #FFD9D9;
+    margin-top: 3vh;
+    border-radius: 4.5vh;
+    display: flex;
+    align-items: center;
+    height: 50vh;
+}
+
+.Comentarios-Container{
+    /* border: solid rgb(255, 111, 243) 2px; */
+    overflow: hidden;
+    width: 150vh; 
+}
+
+.comentarios{
+    display: flex;
+    transition: transform 0.5s ease;
+}
+.comentarios img{
+   /* border: solid rgb(80, 153, 196) 2px;  */
+   width: 65vh; 
+   height: 25vh;
+   margin: 0 5px;
+ }
+
+ .SetasComentarios{
+     /* border: solid rgb(80, 153, 196) 2px;  */
+    margin-top: 5vh;
+    margin-left: 70vh;
+    width: 15vh;
+
+ }
+.SetaComentarios-Esquerda{
+    position: relative; 
+    cursor: pointer;
+    overflow: hidden; 
+    border: 2px solid#CE499C; 
+    transition: color 0.5s;
+    z-index: 1;
+    width: 5vh;
+    height: 5vh;
+    border-radius: 5vh;
+    color: #CE499C;
+    font-size: 3vh;
+    outline: none;
+    transition: all 0.5s ease;
+  
+ }
+ .SetaComentarios-Esquerda:hover{
+    background-color: #CE499C;  
+    color: white;  
+    transform: scale(1.1);  
+ }
+
+.SetaComentarios-Direita{
+    width: 5vh;
+    height: 5vh;
+    border-radius: 5vh;
+    margin-left: 2vh;
+    color: #E6E6E6;
+    background-color: #CE499C;
+    border: none;
+    font-size: 3vh;
+    transition: all 0.5s ease;
+}
+
+.SetaComentarios-Direita:hover{
+    background-color: #E6E6E6;  
+    color: #CE499C;  
+    border: 2px solid#CE499C;
+    transform: scale(1.1);  
+ }
+
+ .ContainerFooterRosa {
+    background-color: #CE499C;
+    height: 50vh;
+}
+
+.Pink {
+    margin-top: 10vh;
+}
+
+.ContainerColunas{
+    display:flex ;
+}
+
+.Coluna1, .Coluna2, .Coluna3 {
+    width: 50vh;
+    color: #ffffff;
+    font-family: "Lato", sans-serif;
+    font-size: 2.5vh;
+    margin-top: 3vh;
+    margin-left: 20vh;
+    margin-right: 20vh;
+    display: flex; 
+    flex-direction: column;  /* Organiza os itens em coluna */
+    justify-content: flex-start; /* Alinha os itens no topo */
+    align-items: flex-start;
+}
+
+.Rosa {
+    margin-top: 1vh;
+}
+.Pink:hover{
+color: #500040;
+}
+.Rosa:hover{
+    color: #500040;
+}

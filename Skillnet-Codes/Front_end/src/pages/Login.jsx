@@ -33,6 +33,8 @@ function Login() {
         console.log('usuario n exite,ou valores insiridos errodo por favor insira corretamente')
 
       }else{
+        localStorage.setItem('token',1)
+        
         console.log(result.data)
         Cadastro('/Servico')
 

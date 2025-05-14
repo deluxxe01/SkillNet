@@ -106,7 +106,7 @@ function PortfolioVerde() {
 
       {/* Menu Hamburguer */}
       <div className="hamburguer" id="hamburguer" onClick={toggleMenu}>
-        <img src="logoverdeescuro.png" alt="Logo" className="logo-img" />
+        <img src="public/images/logoBranca.png" alt="Logo" className="logo-img" />
       </div>
 
       {/* Menu Lateral - Condicionalmente renderizado */}
@@ -120,8 +120,8 @@ function PortfolioVerde() {
         </ul>
       </div>
 
-<div className='FundoRosa'>
-  {/* <img src="public/images/fundoverde.png" alt="" />   */}
+<div className='FundoVerde'>
+  <img src="public/images/fundoverde.png" alt="" />   
 </div>
       <h1 className='PerfilUsuarioVerde'>Portfólio</h1>
       {/* Informações do usuário */}
@@ -157,7 +157,7 @@ function PortfolioVerde() {
 
           <div className="botoes">
             <button className="Button-CompartilharUsuarioVerde">compartilhar</button>
-            <button className="Button-ContratarUsuarioVerde">contrate</button>
+    
           </div>
 
           <div className="Experiencia">
@@ -217,6 +217,34 @@ function PortfolioVerde() {
           <button className="SetaComentarios-DireitaVerde" ref={setaComentariosDireitaRef}>&gt;</button>
           </div>
       </div>
+
+      <div className='ContainerFooterVerde'>
+
+<div className='ContainerColunas'>
+  <div className='Coluna1'>
+  <h2 className='Green'>Menu do Site</h2>
+    <p className='verde'>Home</p> 
+    <p className='verde'>Serviços</p>
+    <p className='verde'>Portfólios</p>
+  </div>
+
+  <div className='Coluna2'>
+  <h2 className='Green'>Endereço</h2> 
+  <p className='verde'>Rua João Gualberto, 289</p> 
+  <p className='verde'>Bairro Rio vermelho</p>
+  <p className='verde'>Florianópolis SC, 88730-201</p>
+  </div>
+
+  <div className='Coluna3'>
+  <h2 className='Green'>Contatos</h2> 
+  <p className='verde'>skillnet@gmail.com</p> 
+  <p className='verde'>(48) 97621-8562</p>
+
+  </div>
+
+</div>
+</div>
+
     </div>
   );
 }
