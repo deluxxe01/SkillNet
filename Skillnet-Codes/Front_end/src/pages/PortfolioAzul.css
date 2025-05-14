@@ -210,59 +210,6 @@
     font-family:"Lato", sans-serif;
     margin-left: 1vh;
 }
-
-
-.Button-ContratarAzul{
-    
-    font-family: "Lato", sans-serif;
-    display: inline-block;
-    align-items: center;
-    width: 15vh;
-    height: 4vh;
-    background-color: #BFE0FF;
-    margin-left: 2vh; 
-    position: relative; 
-    cursor: pointer;
-    overflow: hidden; 
-    border: 2px solid#000000; 
-    transition: color 0.5s; 
-    z-index: 1;
-    font-size: 17px;
-    border-radius: 1.5vh;
-    font-weight: 500;
-    color:#000000 
-}
-
-.Button-ContratarAzul:before {
-    content: "";
-    position: absolute;
-    z-index: -1;
-    background: #080808;
-    transition: all 0.7s; 
-    border: #000000;
-    height: 150px;
-    width: 200px;
-    border-radius: 50%;
-    top: 100%; 
-    left: 100%; 
-}
-
-.Button-ContratarAzul:hover {
-    color: #fff; 
-}
-
-.Button-ContratarAzul:hover:before {
-    top: -30px; 
-    left: -30px; 
-}
-
-.Button-ContratarAzul:active:before {
-    border: #000000;
-    background: #000000; 
-    transition: background 0s; 
-}
-
-
 /* ----------------------------------------------
     SUBHEADER 3 
    ---------------------------------------------- */
@@ -553,3 +500,41 @@
     width: 20vh;
     height: 0.5vh; /* A linha expande para 100% da largura ao passar o mouse */
   }
+
+
+  .ContainerFooterAzul {
+    background-color: #0139A6;
+    height: 50vh;
+}
+
+.Blue {
+    margin-top: 10vh;
+}
+
+.ContainerColunas{
+    display:flex ;
+}
+
+.Coluna1, .Coluna2, .Coluna3 {
+    width: 50vh;
+    color: #ffffff;
+    font-family: "Lato", sans-serif;
+    font-size: 2.5vh;
+    margin-top: 3vh;
+    margin-left: 20vh;
+    margin-right: 20vh;
+    display: flex; 
+    flex-direction: column;  /* Organiza os itens em coluna */
+    justify-content: flex-start; /* Alinha os itens no topo */
+    align-items: flex-start;
+}
+
+.azul {
+    margin-top: 1vh;
+}
+.Blue:hover{
+color: #B2D9FF;
+}
+.azul:hover{
+    color: #B2D9FF;
+}
