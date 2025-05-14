@@ -4,18 +4,25 @@ export const GlobalContext = createContext()
 
 export const GlobalContextProvider = ({children}) =>{
     const [chat , setChat]=useState([])
-
-
-
     const [userLogado,setUserLogado]=useState({})
+const [cadastroServico,setCadastroServico]=useState({
+titulo: "jkljkl",
+img:'url',
+descrição:'sfdsdgskdghjksh',
+area:['blob,blib']
+})
+
+
+
 
     return(
         <GlobalContext.Provider value={{
             chat,
             setChat,
             userLogado,
-            setUserLogado
-            
+            setUserLogado,
+            cadastroServico,
+            setCadastroServico
             // aqui vai as variaves pro resto da aplicação
        
        

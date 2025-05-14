@@ -6,7 +6,7 @@ import React, { use } from 'react'
  import axios from 'axios';
 function PaginaUser() {
 
-    const {userLogado,setUserLogado}=useContext(GlobalContext)
+    const {userLogado,setUserLogado,cadastroServico,setCadastroServico}=useContext(GlobalContext)
       // Estado para controlar a exibição do modal
       
       const [isModalOpen, setIsModalOpen] = useState(false);
@@ -15,7 +15,30 @@ function PaginaUser() {
       const [inptEmail,setInptEmail]=useState()
       const [inptSenha,setInptSenha]=useState()
       
-    
+    //info inputs serviços
+const  [inptTituloServico,setInptTituloServico] = useState('blob')
+ 
+const  [inptImageServico,SetInptImageServico] = useState('blab')
+ 
+const [inptDescricaoServico,setInptDescricaoServico] =useState('blub')
+
+const [inptAreaServico,setInptAreaServico] =useState('blib')
+
+console.log(cadastroServico)
+
+function cadastraServico(){
+  setCadastroServico({
+    titulo:{inptTituloServico},
+    img:{inptImageServico},
+    descrição:{inptDescricaoServico},
+    area:[inptAreaServico]
+  })
+
+
+
+
+}
+
       // Função para abrir o modal de edição
       const openModal = () => {
         setIsModalOpen(true);
@@ -126,7 +149,31 @@ function PaginaUser() {
             </form>
             <button className="button" onClick={closeModal} style={{ backgroundColor: "#aaa" }}>Fechar</button>
             </div>
+        
+        
+      
         </div>
+        <div className='container_cadastra_servico'><h1>cadastra Serviços </h1>
+          <label htmlFor="">titulo</label>
+          <input type="text" onChange={(event)=>setInptTituloServico(event.target.value)} />
+          
+          <label htmlFor="">link img</label>
+          <input type="text" onChange={(event)=>SetInptImageServico(event.target.value)}/>
+          
+          <label htmlFor="">descrição</label>
+          <input type="text" onChange={(event)=>setInptDescricaoServico(event.target.value)}/>
+          
+          <label htmlFor="">area do seu serviço</label>
+          <input type="text" onChange={(event)=>setInptAreaServico(event.target.value)} />
+         
+         
+<button onClick={cadastraServico}>cadastra servico</button>
+
+<h1>{}</h1>
+         </div>
+        
+
+
         </div> 
     </div>
   )

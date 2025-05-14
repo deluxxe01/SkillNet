@@ -69,4 +69,12 @@
   
   .danger-button:hover {
     background-color: #da190b;
+  }.container_cadastra_servico{
+display: flex;
+flex-direction: column;
+background-color: #e7b2ae;
+
+
+
+
   }

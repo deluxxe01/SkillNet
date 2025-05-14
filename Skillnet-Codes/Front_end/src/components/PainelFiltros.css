@@ -3,6 +3,8 @@
     align-items: center;
     justify-content: space-evenly;
     display: flex;
+margin: 20PX;
+
 }
 .pFilter{
     font-family: LatoBold;

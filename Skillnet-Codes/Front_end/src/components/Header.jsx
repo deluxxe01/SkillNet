@@ -4,18 +4,29 @@ import { Link } from "react-router-dom"
 import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 function Header() {
-const [paginaAtiva,setPaginaAtiva] = useState(1)
+const [paginaAtiva,setPaginaAtiva] = useState(0)
+
+
 function ativaPagina (index){
   setPaginaAtiva(index)
-  localStorage.setItem('paginaAtiva', index); // Salva o índice no Local Storage
+ 
+  localStorage.setItem('paginaAtiva', paginaAtiva); // Salva o índice no Local Storage
 }
 const navigate=useNavigate()
 console.log(paginaAtiva)
-  return (
+
+
+
+
+return (
     <div className='containerHeader'>
      
         <button className={`botaoHeader ${paginaAtiva===1 ? 'ativo' :'inativo'}`}
-        onClick={()=>ativaPagina(1)}
+        onClick={()=>{ativaPagina(1)
+        navigate("/area_servico_pesquisado")
+          
+        }}
+     
         >Serviços</button>
        
        
@@ -40,7 +51,7 @@ console.log(paginaAtiva)
        
         <button className={`botaoHeader ${paginaAtiva===4 ? 'ativo' :'inativo'}`}
         onClick={()=>ativaPagina(4)}>Sobre Nós</button>
-   
+  
        
    
    
