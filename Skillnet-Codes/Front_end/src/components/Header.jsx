@@ -3,17 +3,30 @@ import './Header.css'
 import { Link } from "react-router-dom"
 import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
+import { useEffect } from 'react'
 function Header() {
-const [paginaAtiva,setPaginaAtiva] = useState(0)
+
+const [paginaAtiva,setPaginaAtiva] = useState(()=>{
+  
+  const salvarPagina = localStorage.getItem('paginaAtiva')
+
+  return salvarPagina ? Number(salvarPagina) : 0 
+
+})
 
 
 function ativaPagina (index){
+
   setPaginaAtiva(index)
  
-  localStorage.setItem('paginaAtiva', paginaAtiva); // Salva o índice no Local Storage
+  localStorage.setItem('paginaAtiva', index); // Salva o índice no Local Storage
+
+  
 }
 const navigate=useNavigate()
-console.log(paginaAtiva)
+
+
+
 
 
 

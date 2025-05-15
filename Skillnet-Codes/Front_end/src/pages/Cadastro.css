@@ -103,6 +103,7 @@ background-image: url(./icons/icon_user.svg);
  background-repeat: no-repeat;
 background-size: 27px;
 background-position: right 12px center;
+color: #fbfbfb;
 
 }
     .inpt_email{
@@ -121,18 +122,18 @@ background-position: right 12px center;
         padding-left: 10px;
         
         
-        
+  
         background-image: url(./icons/icon_email.svg);
         background-repeat: no-repeat;
        background-size: 27px;
        background-position: right 12px center;
+       color: #fbfbfb;
        
     }
     .inpt_senha{
 
         width: 350px;
         min-height: 50px;
-        
         border: none;
         background-color:#003C1B ;
         border-radius: 10px;
@@ -146,6 +147,7 @@ background-position: right 12px center;
         background-repeat: no-repeat;
        background-size: 25px;
        background-position: right 12px center;
+       color: #fbfbfb;
        
     }
 

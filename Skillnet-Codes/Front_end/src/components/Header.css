@@ -68,8 +68,7 @@
    padding: 20px;
    padding: 50px;
    border-radius:70% ;
-   animation: rotate linear infinite 10s ;
-}
+ }
  
  .logo.ativo {
    background-color:#002912;
@@ -96,16 +95,3 @@ transition: 500ms;
  }
 
 
-@keyframes rotate {
-  
-  from{
-    transform: rotate(0deg);
-    
-
-  }
-  to{
-    transform: rotate(360deg);
-
-  }
-  
-}
