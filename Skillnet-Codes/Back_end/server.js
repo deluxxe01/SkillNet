@@ -6,6 +6,7 @@ const { Socket } = require('socket.io')
 const { Server } = require('socket.io')
 const port = process.env.PORT 
 const db = require('./db/db.js')
+const VerrificarEmail = require('./middleware/verficarEmail.js')
 App.use(express.json({ limit: '50mb' }))
 App.use(cors({
      
@@ -17,7 +18,7 @@ const io = new Server(server,{
     pingInterval: 25000, // envia ping a cada 25 segundos
     pingTimeout: 60000,  // espera até 60 segundos antes de desconecta
 })
-
+App.use(express.urlencoded({ extended: true }));
 let messages 
 let mensagens=[]
 
@@ -30,27 +31,20 @@ App.get('/',(req,res)=>{
 
    
 })
-App.post('/cadastrar_user',async(req,res)=>{
+App.post('/cadastrar_user',VerrificarEmail,async(req,res)=>{
 
     try{
-        const client = req.body
-
-        const verreficar = await db.verificarEmail(client)
-
-        if(verreficar==true){
-            
-            res.json({message:true})// retorna que o email ja esta cadastrado no sistema
-
-        }else{
-            
-            const user = await db.cadastrarUsuarios(client)
-            res.json({message:false,usuario:user})
-
+        const client = req.body   
            
-        }
-
+          const user = await db.cadastrarUsuarios(client)
+          res.json({message:false,usuario:user})
+     
+      
     }catch(erro){
-       console.log(erro)
+
+        res.json({message:true,usuario:user})
+        console.log('ta aqui')
+       
          
     }
 })

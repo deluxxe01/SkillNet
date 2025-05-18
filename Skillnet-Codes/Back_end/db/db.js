@@ -65,28 +65,7 @@ async function cadastrarUsuarios(usuario) {
    }
     
 } 
- async function verificarEmail(usuario) {
-     const client = await connect()
 
-     const sqlFilePath = path.join(__dirname,'../sql/verrificarEmail.sql')
-
-     const sql = fs.readFileSync(sqlFilePath,'utf-8')
-
-     const email = [usuario.email]
-
-     const verrificarEmail = await client.query(sql,email)   
-     
-    if( verrificarEmail.rows.length > 0){
-        console.log('email ja cadastrado')
-        return true // retorna que o email ja foi cadastrado é avisa no front passado pelo back
-
-     }else{
-
-        return false // retorna que o email não existe e pode ser utilizado
-
-    }
-    
- }
 
  async function deleteUser(id) { // função para apagar usuarios
 
@@ -161,10 +140,10 @@ async function cadastrarUsuarios(usuario) {
 
 module.exports = {
     cadastrarUsuarios,
-    verificarEmail,
     deleteUser,
     updateUser,
-    loginUser
+    loginUser,
+    connect
     
    
 }
