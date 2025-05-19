@@ -10,6 +10,7 @@ import { useNavigate } from 'react-router-dom'
 import axios, { Axios } from 'axios'
 import { GlobalContext } from '../context/Globalcontext';
 import { useContext } from 'react';
+import ModalError from '../components/ModalError';
 
 function Cadastro() {
   const [checkBox, setCheckBox] = useState()
@@ -21,6 +22,8 @@ function Cadastro() {
   const [inptNome,setInptNome] = useState()
   const [inptEmail,setInptEmail]=useState()
   const [inptSenha,setInptSenha]=useState()
+  const [inptAviso,setInptAviso] = useState(true)
+  const [isOpen,setIsOpen]=useState(false)
  
   const  cadastroConta = async() => {
     
@@ -39,7 +42,13 @@ function Cadastro() {
 
       console.log(resultado)
       if(resultado.data.message==true){
-        console.log('email ja utilizado')
+        setIsOpen(true)
+
+        setTimeout(()=>{
+
+          setIsOpen(false)
+
+        },5000)
 
       }else{
         localStorage.setItem('token',1)
@@ -124,6 +133,7 @@ function Cadastro() {
           <button type='submit' className='btnCadastro' onClick={cadastroConta}>CADASTRAR</button>
         </div>
       </div>
+      {isOpen?<ModalError titulo={'Email invalido ❌'} text={'porfavor insira outro email para seu cadastro'} />:''}
 
 
     </div>

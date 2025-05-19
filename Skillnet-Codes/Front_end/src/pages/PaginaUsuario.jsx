@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { useState } from 'react'
 import './PaginaUsuario.css'
 import { GlobalContext } from '../context/Globalcontext'
@@ -14,6 +14,12 @@ function PaginaUsuario() {
     const {userLogado,setUserLogado} = useContext(GlobalContext)
     const [isModalOpen,setIsModalOpen]=useState(false)
     const navigate = useNavigate()
+    const [inptShow,setInptShow]=useState(true)
+    const [password,setPassword] = useState('password')
+
+    const showPassword = () => {
+    setInptShow(!inptShow)
+    }
 
       const updateUser = async() => {
 
@@ -46,9 +52,9 @@ function PaginaUsuario() {
             setUserLogado('')
             navigate('/')
             localStorage.removeItem(`user${id}`)
-            
-
           }
+
+          
   return (
     <div>
       <Header />
@@ -66,10 +72,12 @@ function PaginaUsuario() {
 
           <label htmlFor="email">Email</label>
           <input type="email" id="email" value={userLogado.email} readOnly />
-
-          <label htmlFor="senha">Senha</label>
-          <input type="password" id="senha" value={userLogado.senha} readOnly />
-
+          <div className='containerInptPass'>
+            <label htmlFor="senha">Senha</label>
+            <div>
+            <input type={inptShow ? "password" :"text"} id="senha" value={userLogado.senha} readOnly /> <button type='button' className='btnShowPasword' onClick={showPassword}><img src={inptShow ? "./icons/ocultPassword.svg" : "./icons/showPassword.svg"} alt="" /></button>
+            </div>
+          </div>
           <button type="button" className="btn salvar" onClick={openModal}>Editar</button>
           <button type="button" className="btn cancelar">Cancelar</button>
         </form>
@@ -126,6 +134,7 @@ function PaginaUsuario() {
             </form>
             <button className="button" onClick={closeModal} style={{ backgroundColor: "#aaa" }}>Fechar</button>
             </div>
+            
         
         
       

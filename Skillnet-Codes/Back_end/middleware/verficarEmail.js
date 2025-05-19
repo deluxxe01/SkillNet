@@ -2,16 +2,13 @@ const db = require('../db/db.js')
 
  async function VerrificarEmail(request,response,next){
 
-    const client =  await db.connect()
+      const client =  await db.connect()
 
       console.log("estou no arquivo ",request.body)
 
       const {email} = request.body
       
-      
-
-   
-   const sql ='SELECT email FROM usuarios WHERE email = $1 '
+      const sql ='SELECT email FROM usuarios WHERE email = $1 '
 
      const verrificarEmail = await client.query(sql,[email])   
      

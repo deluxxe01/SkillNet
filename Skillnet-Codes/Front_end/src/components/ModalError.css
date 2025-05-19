@@ -1,0 +1,102 @@
+.notifications-container {
+    width: 320px;
+    height: auto;
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    border: none;
+    position: absolute;
+    top: 20%;
+    left: 75%;
+    border-radius: 0.375rem;
+    background-color: rgb(254 242 242);
+  }
+  
+  .flex {
+    display: flex;
+  }
+  
+  .flex-shrink-0 {
+    flex-shrink: 0;
+  }
+  
+  .error-alert {
+    border-radius: 0.375rem;
+    padding: 1rem;
+    background-color: rgb(254 242 242);
+  }
+  
+  .error-svg {
+    color: #F87171;
+    width: 1.25rem;
+    height: 1.25rem;
+  }
+  
+  .error-prompt-heading {
+    color: #991B1B;
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+    font-family: Mont;
+    font-weight: 600;
+  }
+  
+  .error-prompt-container {
+    display: flex;
+    flex-direction: column;
+    margin-left: 1.25rem;
+  }
+  
+  .error-prompt-wrap {
+    margin-top: 0.5rem;
+    background-color: rgb(254 242 242);
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+  }
+  
+  .error-prompt-list {
+    padding-left: 1.25rem;
+    margin-top: 0.25rem;
+    list-style-type: disc;
+  }
+  .baraDuraçao{
+    height: 5px;
+    background-color: #ff0000;
+    transform-origin: left; /* muda para 'right' se quiser a barra consumindo da direita */
+    animation: consumir 5s linear  ;
+    padding: 1px;
+    
+  }
+  
+  @keyframes consumir {
+    from {
+        width: 100%;
+       
+    }
+    to {
+        width: 0%;
+       
+    }
+}
+.aberto{
+    animation: aberto 0.5s forwards;
+}
+
+@keyframes aberto {
+    0% {
+        transform: translate(100%, -50%);
+        opacity: 0;
+      }
+      100% {
+        transform: translate(-50%, -50%);
+        opacity: 1;
+        pointer-events: auto;
+      }
+    
+    
+}
+.pError{
+    font-family: Mont;
+    font-weight: 500;
+}
