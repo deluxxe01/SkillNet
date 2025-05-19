@@ -58,7 +58,7 @@ return (
        
         <button className={`botaoHeader ${paginaAtiva===3 ? 'ativo' :'inativo'}`}
         onClick={()=>{ativaPagina(3)
-          navigate('/user')
+          navigate('/user_page')
         }}>Perfil</button>
        
        

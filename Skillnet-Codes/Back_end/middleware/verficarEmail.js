@@ -19,9 +19,7 @@ const db = require('../db/db.js')
         console.log('email ja cadastrado')
         console.log(verrificarEmail)
 
-        return response
-        
-        .json({ message: true })// retorna que o email ja foi cadastrado é avisa no front passado pelo back
+        return response.json({ message: true })// retorna que o email ja foi cadastrado é avisa no front passado pelo back
 
     }
 

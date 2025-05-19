@@ -25,11 +25,10 @@ const router = createBrowserRouter([
     {path:'/servico',element:<TrabalhoEscolhido />},
     {path:'/servico',element:<TrabalhoEscolhido />},
     {path:'sobre_nos',element:<PageSobreNos />},
-    {path:'user_page',element:<PaginaUsuario />},
     {element:<PrivateRoutes />,
         children:[
             
-            {path:'/user',element:<PaginaUser />}
+            {path:'user_page',element:<PaginaUsuario />},
         ]
 
     }

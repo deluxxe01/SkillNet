@@ -34,9 +34,7 @@ function Cadastro() {
         senha:inptSenha
         
       } 
-      
-      
-      
+
       const resultado = await axios.post('http://localhost:3000/cadastrar_user',usuario) 
 
       console.log(resultado)
@@ -46,7 +44,6 @@ function Cadastro() {
       }else{
         localStorage.setItem('token',1)
         setUserLogado(resultado.data.usuario)
-        console.log(resultado.data.usuario)
         console.log("email unico parabens")
         navigate('/area_servico_pesquisado')
       }

@@ -98,61 +98,7 @@ function cadastraServico(){
         </div>
 
         {/* Modal de Edição */}
-        <div className={`modal-overlay ${isModalOpen ? "show" : ""}`}>
-            <div className="modal">
-            <h2>Alterar Informações</h2>
-            <form
-                onSubmit={e => {
-                e.preventDefault();
-                updateUser(e.target.name.value, e.target.email.value, e.target.password.value);
-                }}
-            >
-                <input
-                type="text"
-                name="name"
-                className="input-field"
-                placeholder="Nome"
-                onChange={(e)=>{
-                  setInptNome(e.target.value)
-
-                }}
-                required
-                />
-                <input
-                type="email"
-                name="email"
-                className="input-field"
-                placeholder="Email"
-                onChange={(e)=>{
-                  setInptEmail(e.target.value)
-                }}
-                required
-                />
-                <input
-                type="password"
-                name="password"
-                className="input-field"
-                placeholder="Senha"
-                onChange={(e)=>{
-                  setInptSenha(e.target.value)
-                }}
-                required
-                />
-                <button type="submit" className="button">Alterar Informações</button>
-                <button
-                type="button"
-                className="button danger-button"
-                onClick={deleteUser}
-                >
-                Deletar Conta
-                </button>
-            </form>
-            <button className="button" onClick={closeModal} style={{ backgroundColor: "#aaa" }}>Fechar</button>
-            </div>
-        
-        
-      
-        </div>
+    
         <div className='container_cadastra_servico'><h1>cadastra Serviços </h1>
           <label htmlFor="">titulo</label>
           <input type="text" onChange={(event)=>setInptTituloServico(event.target.value)} />
