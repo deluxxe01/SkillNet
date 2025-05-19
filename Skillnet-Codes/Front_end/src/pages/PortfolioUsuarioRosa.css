@@ -238,55 +238,6 @@
    1. BUTTON EDITAR HEADER 1 
    ---------------------------------------------- */
 
-.Button-EditarPerfil {
-    margin-left: 2vh;
-    margin-top: 3vh;
-    font-family: "Lato", sans-serif;
-    width: 15vh;
-    height: 4vh;
-    background-color: #CE499C;
-    position: relative; 
-    cursor: pointer;
-    overflow: hidden; 
-    border: 2px solid#CE499C; 
-    transition: color 0.5s; 
-    z-index: 1;
-    font-size: 17px;
-    border-radius: 1.5vh;
-    font-weight: 500;
-    color:#ffffff 
-}
-
-/* Estilo do pseudo-elemento :before */
-.Button-EditarPerfil:before {
-    content: "";
-    position: absolute;
-    z-index: -1; 
-    background: #FFD9D9; 
-    border: #CE499C;
-    height: 150px;
-    width: 200px;
-    border-radius: 50%;
-    top: 100%; 
-    left: 100%; 
-    transition: all 0.7s; 
-}
-
-.Button-EditarPerfil:hover {
-    color: #CE499C; 
-}
-
-.Button-EditarPerfil:hover:before {
-    top: -30px; 
-    left: -30px; 
-}
-
-/* Estilo quando o botão for pressionado */
-.Button-EditarPerfil:active:before {
-    border: #CE499C;
-    background: #FFD9D9; 
-    transition: background 0s; 
-}
 
 /* ----------------------------------------------
     SUBHEADER 3 
@@ -484,7 +435,26 @@
     align-items: center;
     height: 50vh;
 }
-
+.DeixarAvaliacao{
+    width: 50vh;
+    margin-left: 100vh;
+    font-family: "Montserrat", sans-serif;
+    color: #500040;
+    font-size: 2.8vh;
+    text-align: right;
+}
+.CliqueiAqui{
+    width: 50vh;
+    margin-left: 100vh;
+    font-family: "Montserrat", sans-serif;
+    color: #ff00cc;
+    font-size: 2.8vh;
+    text-align: right;
+    border: none;
+}
+.CliqueiAqui:hover{
+    color: #500040;
+}
 .Comentarios-Container{
     /* border: solid rgb(255, 111, 243) 2px; */
     overflow: hidden;
@@ -501,6 +471,90 @@
    height: 25vh;
    margin: 0 5px;
  }
+/* Estilos para o Pop-up de comentário */
+.PopupComentario {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 10;
+  }
+  
+  .PopupComentario-Content {
+    background: #fff;
+    padding: 20px;
+    border-radius: 2.5vh;
+    width: 50%;
+    max-width: 500px;
+    text-align: center;
+  }
+  
+  .PopupComentario-Content h2 {
+    margin-bottom: 20px;
+    color: #500040;
+  }
+  
+  .PopupComentario-Content textarea {
+    width: 100%;
+    height: 100px;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1.2em;
+  }
+  
+  .PopupComentario-Content button {
+    background-color: #500040;
+    color: #ffffff;
+    padding: 1vh 2vh;
+    font-size: 1.2em;
+    border:  none;
+    border-radius: 3.5vh;
+    cursor: pointer;
+    margin: 5px;
+    top: 100%; 
+    left: 100%; 
+    transition: all 0.7s; 
+  }
+  
+  .PopupComentario-Content button:hover {
+    background-color: #ffffff;
+    color: #500040;
+    border:  0.2vh solid #500040;
+  }
+  
+  /* Estilo para o carrossel de comentários */
+  .Comentarios-Container {
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: none;
+    width: 100%;
+  }
+  
+  .Comentario {
+    margin-left: 5vh;
+    width: 50vh;
+    height: 20vh;
+    margin-right: 10px;
+    background: #fff;
+    padding: 10px;
+    border-radius: 3.5vh;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  }
+  
+.Comentario p {
+    font-size: 1.2em;
+    color: #500040;
+    margin: 2vh;
+    text-align:left;
+
+}
 
  .SetasComentarios{
      /* border: solid rgb(80, 153, 196) 2px;  */
@@ -550,7 +604,9 @@
     transform: scale(1.1);  
  }
 
- .ContainerFooterRosa {
+
+/* CONATINERRR FOOTERR */
+.ContainerFooterRosa {
     background-color: #CE499C;
     height: 50vh;
 }

@@ -157,7 +157,6 @@ function PortfolioRosa() {
 
           <div className="botoes">
             <button className="Button-CompartilharUsuarioRosa">compartilhar</button>
-            <button className="Button-ContratarUsuarioRosa">contrate</button>
           </div>
 
           <div className="Experiencia">

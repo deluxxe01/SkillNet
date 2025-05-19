@@ -46,7 +46,7 @@
     color: #1b4d2c;
   }
   
-  h1 {
+  /* h1 {
     margin-bottom: 30px;
     color: #1b4d2c;
     font-size: 24px;
@@ -54,7 +54,7 @@
     display: inline-block;
     padding-bottom: 5px;
   }
-  
+   */
   form {
     display: flex;
     flex-direction: column;
