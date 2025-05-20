@@ -9,6 +9,8 @@ import PortfolioVerde from "../pages/PortfolioVerde.jsx";
 import TrabalhoEscolhido from "../pages/TrabalhoEscolhido.jsx";
 // import PaginaUser from "../pages/PaginaUser.jsx";
 import PortfolioUsuarioRosa from "../pages/PortfolioUsuarioRosa.jsx";
+import PortfolioUsuarioAzul from "../pages/PortfolioUsuarioAzul.jsx";
+import PortfolioUsuarioVerde from "../pages/PortfolioUsuarioVerde.jsx";
 import PageSobreNos from "../pages/PageSobreNos.jsx";
 import PaginaUsuario from "../pages/PaginaUsuario.jsx";
 import PrivateRoutes from "./PrivateRoutes.jsx"
@@ -25,6 +27,8 @@ const router = createBrowserRouter([
     {path:'/portfolioverde', element: <PortfolioVerde />},
     {path:'/servico',element: <TrabalhoEscolhido />},
     {path:'/portfoliousuariorosa', element: <PortfolioUsuarioRosa />},
+    {path:'/portfoliousuarioazul', element: <PortfolioUsuarioAzul />},
+    {path:'/portfoliousuarioverde', element: <PortfolioUsuarioVerde />},
     {path:'/servico',element: <TrabalhoEscolhido />},
     {path:'sobre_nos',element: <PageSobreNos />},
     {element: <PrivateRoutes />,

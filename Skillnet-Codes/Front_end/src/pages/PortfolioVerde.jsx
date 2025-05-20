@@ -106,7 +106,7 @@ function PortfolioVerde() {
 
       {/* Menu Hamburguer */}
       <div className="hamburguer" id="hamburguer" onClick={toggleMenu}>
-        <img src="public/images/logoBranca.png" alt="Logo" className="logo-img" />
+        <img src="public/images/logoVerde.jpg" alt="Logo" className="logo-img" />
       </div>
 
       {/* Menu Lateral - Condicionalmente renderizado */}

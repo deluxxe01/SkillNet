@@ -60,13 +60,13 @@
     flex-direction: column;
   }
   
-  label {
+  /* label {
     margin-top: 15px;
     font-weight: bold;
     font-size: 14px;
     color: #333;
   }
-  
+   */
   input {
     margin-top: 5px;
     padding: 10px;

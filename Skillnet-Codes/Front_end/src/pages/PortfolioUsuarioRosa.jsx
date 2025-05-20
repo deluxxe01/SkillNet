@@ -120,7 +120,7 @@ function PortfolioUsuarioRosa() {
 
       {/* Menu Hamburguer */}
       <div className="hamburguer" id="hamburguer" onClick={toggleMenu}>
-        <img src="public/images/logoweb.png" alt="Logo" className="logo-img" />
+        <img src="public/images/logoRosa.jpg" alt="Logo" className="logo-img" />
       </div>
 
       {/* Menu Lateral - Condicionalmente renderizado */}

@@ -496,7 +496,7 @@
   
   .PopupComentario-Content h2 {
     margin-bottom: 20px;
-    color: #500040;
+    color: #004B22;
   }
   
   .PopupComentario-Content textarea {
@@ -510,7 +510,7 @@
   }
   
   .PopupComentario-Content button {
-    background-color: #500040;
+    background-color: #004B22;
     color: #ffffff;
     padding: 1vh 2vh;
     font-size: 1.2em;
@@ -525,8 +525,8 @@
   
   .PopupComentario-Content button:hover {
     background-color: #ffffff;
-    color: #500040;
-    border:  0.2vh solid #500040;
+    color: #004B22;
+    border:  0.2vh solid #004B22;
   }
   
   /* Estilo para o carrossel de comentários */
@@ -553,7 +553,8 @@
     color: #500040;
     margin: 2vh;
     text-align:left;
-
+    border: 0.1vh solid black;
+    
 }
 
  .SetasComentarios{

@@ -19,7 +19,7 @@
     font-size: 5vh;
     font-family: "Montserrat", sans-serif;
     margin-left: 90vh;
-    color: #004B22;
+    color: #ffffff;
     /* text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.6); sombra mais forte  */
     transition: transform 0.3s ease, color 0.3s ease;
     position: relative; /* Necessário para o ::after funcionar corretamente */
@@ -399,20 +399,20 @@
     cursor: pointer;
     margin: 2vh;
     overflow: hidden; 
-    border: 2px solid#004B22; 
+    border: 2px solid#83CF41; 
     transition: color 0.5s; 
     z-index: 1;
     width: 5vh;
     height: 5vh;
     border-radius: 5vh;
-    color: #004B22;
+    color: #83CF41;
     font-size: 3vh;
     outline: none;
     transition: all 0.5s ease;
   }
 
 .SetaVerde:hover {
-    background-color: #004B22;  
+    background-color: #83CF41;  
     color: white;  
     transform: scale(1.1);  
 }
@@ -467,20 +467,20 @@
     position: relative; 
     cursor: pointer;
     overflow: hidden; 
-    border: 2px solid#004B22; 
+    border: 2px solid#83CF41; 
     transition: color 0.5s;
     z-index: 1;
     width: 5vh;
     height: 5vh;
     border-radius: 5vh;
-    color: #004B22;
+    color: #83CF41;
     font-size: 3vh;
     outline: none;
     transition: all 0.5s ease;
   
  }
  .SetaComentarios-EsquerdaVerde:hover{
-    background-color: #004B22;  
+    background-color: #83CF41;  
     color: white;  
     transform: scale(1.1);  
  }
@@ -491,7 +491,7 @@
     border-radius: 5vh;
     margin-left: 2vh;
     color: #E6E6E6;
-    background-color: #004B22;
+    background-color: #83CF41;
     border: none;
     font-size: 3vh;
     transition: all 0.5s ease;
@@ -499,8 +499,8 @@
 
 .SetaComentarios-DireitaVerde:hover{
     background-color: #E6E6E6;  
-    color: #004B22;  
-    border: 2px solid#004B22;
+    color: #83CF41;  
+    border: 2px solid#83CF41;
     transform: scale(1.1);  
  }
 
