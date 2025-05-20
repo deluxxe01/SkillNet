@@ -6,6 +6,7 @@ import { useContext } from 'react'
 import axios from 'axios'
 import Header from '../components/Header'
 import { useNavigate } from 'react-router-dom'
+import ModalTrocaInfos from '../components/ModalTrocaInfos'
 
 function PaginaUsuario() {
     const [inptNome,setInptNome]=useState('')
@@ -78,67 +79,12 @@ function PaginaUsuario() {
             <input type={inptShow ? "password" :"text"} id="senha" value={userLogado.senha} readOnly /> <button type='button' className='btnShowPasword' onClick={showPassword}><img src={inptShow ? "./icons/ocultPassword.svg" : "./icons/showPassword.svg"} alt="" /></button>
             </div>
           </div>
-          <button type="button" className="btn salvar" onClick={openModal}>Editar</button>
+          <button type="button" className="btn salvar" onClick={()=>{setIsModalOpen(!isModalOpen)}}>Editar</button>
           <button type="button" className="btn cancelar">Cancelar</button>
         </form>
       </div>
      </div>
-    <div  className={`modal-overlay ${isModalOpen ? "show" : ""}`}>
-            <div className="modal">
-            <h2>Alterar Informações</h2>
-            <form
-                onSubmit={e => {
-                e.preventDefault();
-                updateUser(e.target.name.value, e.target.email.value, e.target.password.value);
-                }}
-            >
-                <input
-                type="text"
-                name="name"
-                className="input-field"
-                placeholder="Nome"
-                onChange={(e)=>{
-                  setInptNome(e.target.value)
-
-                }}
-                required
-                />
-                <input
-                type="email"
-                name="email"
-                className="input-field"
-                placeholder="Email"
-                onChange={(e)=>{
-                  setInptEmail(e.target.value)
-                }}
-                required
-                />
-                <input
-                type="password"
-                name="password"
-                className="input-field"
-                placeholder="Senha"
-                onChange={(e)=>{
-                  setInptSenha(e.target.value)
-                }}
-                required
-                />
-                <button type="submit" className="button">Alterar Informações</button>
-                <button
-                type="button"
-                className="button danger-button"
-                onClick={deleteUser}
-                >
-                Deletar Conta
-                </button>
-            </form>
-            <button className="button" onClick={closeModal} style={{ backgroundColor: "#aaa" }}>Fechar</button>
-            </div>
-            
-        
-        
-      
-        </div>
+     {isModalOpen ?<ModalTrocaInfos open={isModalOpen} onClose={closeModal}/>:'123'}
     </div>
   )
 }
