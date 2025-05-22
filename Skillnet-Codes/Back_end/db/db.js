@@ -3,6 +3,85 @@ require('dotenv').config({ path: './secrets/.env' })
 const fs = require('fs');
 const path = require('path');
 
+
+
+
+
+
+
+
+
+
+
+async function createDataBase() {
+    const {Pool} = require('pg')
+
+    const defaultPool = new Pool({
+        user:process.env.USER_NAME,
+        host:process.env.HOST,
+        database:'postgres',
+        password:process.env.PASSWORD,
+        port:process.env.PORT_DB
+
+    })
+    const client = await defaultPool.connect()
+
+    const dbName = process.env.DB_NAME
+
+   const result = await client.query("SELECT 1 FROM pg_database WHERE datname = $1", [dbName])
+
+    if(result.rowCount === 0){
+        console.log(`dataBase ${dbName} vou criar`)
+        await client.query(`CREATE DATABASE ${dbName}`)
+        console.log('dataBase criado com sucesso')
+    }else{
+        console.log('data base ja existe')
+    }
+
+    client.release()
+
+    await defaultPool.end()
+
+
+    
+}
+
+async function criarTabelas() { //por enquanto vai ser assim mais vai ser mudada para um rquivo onde rebera as tabelas por paramentros assim criando todo tipo de tabela para não fazer varias funcoes para se criar so um tipo de tabela
+   
+    const {Pool} = require('pg')
+
+    const pool = new Pool({
+        user:process.env.USER_NAME,
+        host:process.env.HOST,
+        database:process.env.DB_NAME,
+        password:process.env.PASSWORD,
+        port:process.env.PORT_DB
+
+
+    })
+
+    const client = await pool.connect()
+
+    const sqlPath = path.join(__dirname,'../sql/tableUsuarios.sql')
+
+    const sql = fs.readFileSync(sqlPath,'utf-8')
+
+    const result = await client.query(sql)
+
+   console.log(`Tabela "usuarios" verificada/criada com sucesso.`);
+  
+   client.release();
+
+   await pool.end();
+
+}
+
+createDataBase()
+criarTabelas()
+
+
+
+
 async function connect(){
     const {Pool} = require('pg')
     
