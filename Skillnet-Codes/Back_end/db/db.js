@@ -4,10 +4,7 @@ const fs = require('fs');
 const path = require('path');
 
 
-
-
-
-
+const createTables = require('../functions/createTables.js')
 
 
 
@@ -46,38 +43,13 @@ async function createDataBase() {
     
 }
 
-async function criarTabelas() { //por enquanto vai ser assim mais vai ser mudada para um rquivo onde rebera as tabelas por paramentros assim criando todo tipo de tabela para não fazer varias funcoes para se criar so um tipo de tabela
-   
-    const {Pool} = require('pg')
 
-    const pool = new Pool({
-        user:process.env.USER_NAME,
-        host:process.env.HOST,
-        database:process.env.DB_NAME,
-        password:process.env.PASSWORD,
-        port:process.env.PORT_DB
-
-
-    })
-
-    const client = await pool.connect()
-
-    const sqlPath = path.join(__dirname,'../sql/tableUsuarios.sql')
-
-    const sql = fs.readFileSync(sqlPath,'utf-8')
-
-    const result = await client.query(sql)
-
-   console.log(`Tabela "usuarios" verificada/criada com sucesso.`);
-  
-   client.release();
-
-   await pool.end();
-
-}
+const sqlPath = path.join(__dirname,'../sql/tableUsuarios.sql')
+const sql = fs.readFileSync(sqlPath,'utf-8')
 
 createDataBase()
-criarTabelas()
+
+createTables(sql)
 
 
 
