@@ -6,6 +6,7 @@ import Area_servico_pesquisado from "../pages/Area_servico_pesquisado.jsx";
 import PortfolioRosa from "../pages/PortfolioRosa.jsx";
 import PortfolioUsuarioRosa from "../pages/PortfolioUsuarioRosa.jsx";
 import TrabalhoEscolhido from "../pages/TrabalhoEscolhido.jsx";
+import EditarPortfolio from "../pages/EditarPortfolio.jsx";
 // import PaginaUser from "../pages/PaginaUser.jsx";
 import PageSobreNos from "../pages/PageSobreNos.jsx";
 import PaginaUsuario from "../pages/PaginaUsuario.jsx";
@@ -21,6 +22,7 @@ const router = createBrowserRouter([
     {path:'/servico',element: <TrabalhoEscolhido />},
     {path:'/portfoliorosa', element: <PortfolioRosa />},
     {path:'/portfoliousuariorosa', element: <PortfolioUsuarioRosa />},
+    {path:'/editarportfolio', element: <EditarPortfolio />},
     {path:'/servico',element: <TrabalhoEscolhido />},
     {path:'sobre_nos',element: <PageSobreNos />},
     {element: <PrivateRoutes />,
