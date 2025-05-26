@@ -50,6 +50,10 @@ function Cadastro() {
 
         },5000)
 
+        setInptNome('')
+        setInptEmail('')
+        setInptSenha('')
+
       }else{
         localStorage.setItem('token',1)
         setUserLogado(resultado.data.usuario)
@@ -101,25 +105,24 @@ function Cadastro() {
 
           <div className='containerLogin'><button className='btnIrLogin' onClick={() => { navigate ('/login') }}>LOGIN</button></div>
 
-          <div className='containerLogin'><button className='btnIrLogin' onClick={() => { navigate('/Login') }}>LOGIN</button></div>
 
           <div><h1 className='cadatroH1'><span className='spanH1'>Crie</span> sua conta! </h1></div>
           <div className='divInputs'>
 
             <div className='container_inputs'>
               <label htmlFor="" className='lblCadastro'>Nome de Usuario</label>
-              <input type="text" className='inpt_nome' placeholder='digite seu nome de usuario' onChange={(event)=>{setInptNome(event.target.value)}} />
+              <input type="text" className='inpt_nome' placeholder='digite seu nome de usuario' value={inptNome} onChange={(event)=>{setInptNome(event.target.value)}} />
             </div>
 
 
             <div className='container_inputs'>
               <label htmlFor="" className='lblCadastro'>Email</label> 
-              <input type="text" className='inpt_email' placeholder='digite seu Email' onChange={(e)=>{setInptEmail(e.target.value)}} />
+              <input type="text" className='inpt_email' placeholder='digite seu Email' value={inptEmail} onChange={(e)=>{setInptEmail(e.target.value)}} />
               </div>
 
             <div className='container_inputs'>
               <label htmlFor="" className='lblCadastro'>Senha</label> 
-              <input type="password" className='inpt_senha' placeholder='digite sua senha' onChange={(e)=>{setInptSenha(e.target.value)}}/></div>
+              <input type="password" className='inpt_senha' placeholder='digite sua senha' value={inptSenha} onChange={(e)=>{setInptSenha(e.target.value)}}/></div>
 
             <div className='divCheckBox'>
               <div className='inptCheck' 

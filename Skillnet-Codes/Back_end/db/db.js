@@ -94,7 +94,6 @@ async function cadastrarUsuarios(usuario) {
 
      const sqlPath = path.join(__dirname, '../sql/insertUser.sql');
      
-
      const sql = fs.readFileSync(sqlPath, 'utf-8');
      
      const values =[usuario.nome,usuario.email,usuario.senha]

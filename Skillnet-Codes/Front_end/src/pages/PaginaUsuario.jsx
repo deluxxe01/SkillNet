@@ -76,7 +76,7 @@ function PaginaUsuario() {
           <div className='containerInptPass'>
             <label htmlFor="senha">Senha</label>
             <div>
-            <input type={inptShow ? "password" :"text"} id="senha" value={userLogado.senha} readOnly /> <button type='button' className='btnShowPasword' onClick={showPassword}><img src={inptShow ? "./icons/ocultPassword.svg" : "./icons/showPassword.svg"} alt="" /></button>
+            <input type={inptShow ? "password" :"text"} id="senha" value={userLogado.senha} readOnly /> <button type='button' className='btnShowPasword' onClick={showPassword}><img className='imgOlhos' src={inptShow ? "./icons/olhoFechado.png" : "./icons/olho_cheio.png"} alt="" /></button>
             </div>
           </div>
           <button type="button" className="btn salvar" onClick={()=>{setIsModalOpen(!isModalOpen)}}>Editar</button>
@@ -84,7 +84,7 @@ function PaginaUsuario() {
         </form>
       </div>
      </div>
-     {isModalOpen ?<ModalTrocaInfos open={isModalOpen} onClose={closeModal}/>:'123'}
+     {isModalOpen ?<ModalTrocaInfos open={isModalOpen} onClose={closeModal}/>:''}
     </div>
   )
 }
