@@ -1,13 +1,11 @@
 # SkillNet 🚀
 
-
 ## Descrição
 
 SkillNet é uma plataforma online que conecta usuários e freelancers para a contratação de serviços específicos. A aplicação permite a criação de portfólios, gerenciamento de serviços, interações entre clientes e freelancers, além de avaliações e contratos. A plataforma visa facilitar a troca de serviços, com funcionalidades de cadastro, chat, e feedback de usuários.
 
 ## 👨‍💻 Integrantes da Equipe
 
-- **Bruno:** [Bruno Zarowne](https://github.com/BrunoZarowne)  
 - **Maria Eduarda:** [Deluxxe01](https://github.com/deluxxe01)  
 - **Vitor:** [Vithor Lorram Valente](https://github.com/vithorLorramValente7)  
 - **Caio:** [Caio lorram Valente](https://github.com/caiolorramvalente)
@@ -16,12 +14,12 @@ SkillNet é uma plataforma online que conecta usuários e freelancers para a con
 
 ### Requisitos Funcionais (RF)
 
-- **Cadastro e Conta:** O usuário pode se cadastrar, editar seus dados e excluir a conta. **Responsavél:** caio
-- **Gerenciamento de Serviços:** O usuário pode cadastrar, editar e excluir serviços. **Responsavél:** Duda
+- **Cadastro e Conta:** O usuário pode se cadastrar, editar seus dados e excluir a conta. **Responsavél:** Caio
+- **Gerenciamento de Serviços:** O usuário pode cadastrar, editar e excluir serviços. **Responsavél:** Vitor
 - **Contratos e Freelancers:** O usuário pode contratar freelancers para serviços específicos e registrar contratos. **Responsavél:** Vitor
 - **Avaliações:** O sistema permite que usuários e freelancers avaliem serviços e portfólios. **Responsavél:** Duda
 - **Chat:** Comunicação direta entre usuários e freelancers via chat integrado. **Responsavél:** Caio
-- **Portfólio:** Os usuários podem criar e gerenciar seu próprio portfólio dentro da plataforma. **Responsavél:** Bruno
+- **Portfólio:** Os usuários podem criar e gerenciar seu próprio portfólio dentro da plataforma. **Responsavél:** Duda
 
 ### Requisitos Não Funcionais (RNF)
 
