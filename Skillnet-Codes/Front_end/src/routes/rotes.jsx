@@ -3,10 +3,10 @@ import Cadastro from '../pages/Cadastro.jsx'
 import Login from "../pages/Login.jsx";
 import LandingPage from "../pages/LandingPage.jsx";
 import Area_servico_pesquisado from "../pages/Area_servico_pesquisado.jsx";
-import PortfolioRosa from "../pages/PortfolioRosa.jsx";
-import PortfolioUsuarioRosa from "../pages/PortfolioUsuarioRosa.jsx";
+import Portfolio from "../pages/Portfolio.jsx";
+import PortfolioUsuario from "../pages/PortfolioUsuario.jsx";
 import TrabalhoEscolhido from "../pages/TrabalhoEscolhido.jsx";
-import EditarPortfolio from "../pages/EditarPortfolio.jsx";
+import PortfolioEditar from "../pages/PortfolioEditar.jsx";
 // import PaginaUser from "../pages/PaginaUser.jsx";
 import PageSobreNos from "../pages/PageSobreNos.jsx";
 import PaginaUsuario from "../pages/PaginaUsuario.jsx";
@@ -20,9 +20,9 @@ const router = createBrowserRouter([
     {path:'/cadastro',element:<Cadastro />},
     {path:'/area_servico_pesquisado',element:< Area_servico_pesquisado />},
     {path:'/servico',element: <TrabalhoEscolhido />},
-    {path:'/portfoliorosa', element: <PortfolioRosa />},
-    {path:'/portfoliousuariorosa', element: <PortfolioUsuarioRosa />},
-    {path:'/editarportfolio', element: <EditarPortfolio />},
+    {path:'/portfolio', element: <Portfolio />},
+    {path:'/portfoliousuario', element: <PortfolioUsuario />},
+    {path:'/portfolioeditar', element: <PortfolioEditar />},
     {path:'/servico',element: <TrabalhoEscolhido />},
     {path:'sobre_nos',element: <PageSobreNos />},
     {element: <PrivateRoutes />,

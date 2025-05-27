@@ -1,0 +1,90 @@
+.hamburger {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  transition: transform 0.3s ease;
+}
+
+.hamburger:hover {
+  transform: scale(1.1);
+}
+
+.hamburger img {
+  height: 10vh;
+  width: 10vh;
+  border-radius: 8px;
+  object-fit: cover;
+  
+  margin-left: 190vh;
+}
+
+/* Estilização do dialog que contém o menu */
+dialog {
+  width: 240px;
+  margin-left: 170vh;
+  max-height: 400px;
+  padding: 20px;
+  border-radius: 12px;
+  border: none;
+  box-shadow: 0 8px 20px rgba(185, 185, 185, 0.3);
+  background-color: #fff;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  overflow: hidden;
+}
+
+/* Fundo escurecido atrás do dialog */
+dialog::backdrop {
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+/* ContainerMenu para controlar scroll e padding interno */
+.ContainerMenu {
+  max-height: 360px;
+  overflow-y: auto;
+  padding-right: 10px; /* para não cortar o scrollbar */
+}
+
+/* Remove scrollbar em alguns navegadores para visual mais limpo */
+.ContainerMenu::-webkit-scrollbar {
+  width: 6px;
+}
+.ContainerMenu::-webkit-scrollbar-thumb {
+
+  border-radius: 3px;
+}
+
+/* Lista do menu */
+.ContainerMenu ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+/* Itens da lista */
+.ContainerMenu li {
+  margin: 15px 0;
+}
+
+/* Links estilizados */
+.ContainerMenu a {
+  text-decoration: none;
+  color: #004B22;
+  font-weight: 600;
+  font-size: 1.1rem;
+  transition: color 0.25s ease;
+  display: block;
+  padding: 6px 8px;
+  border-radius: 6px;
+}
+
+/* Efeito hover nos links */
+.ContainerMenu a:hover,
+.ContainerMenu a:focus {
+  color: 004B22;
+  background-color: #83CF41;
+  outline: none;
+}

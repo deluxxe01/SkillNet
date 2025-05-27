@@ -1,104 +1,51 @@
 .containerFooter{
     width: 100%;
     height: 280px;
-    background-color: #1e1e1e;
+    background-color: #004B22;
 
-    .containerOrganizacao{
-        position: relative;
-        top: 10%;
-        height: 200px;
-        display: flex;
-        justify-content: space-around;
-    }
-
-    .containertxtLogo{
-        margin-top: 30px;
-        width: 330px;
-        height: fit-content;
-        color: white;
-        display: flex;
-        justify-content: space-between;
-        img{
-            width: 100px;
-        }
-        label{
-            border-bottom: 4px #79BE00 solid;
-            font-size: 30px;
-            margin-top: 40px;
-            font-family: NunitoExtraBold;
-        }
-    }
-    .containerMenuSite{
-        margin-top: 20px;
-        color: white;
-        display: flex;
-        flex-direction: column;
-        button{
-            border: none;
-            background-color: #1e1e1e;
-            color: white;
-            font-size: 18px;
-            text-align: left;
-            margin-top: 8px;
-            font-family: PoppinsRegular;
-        }
-        .txtMenu{
-            font-size: 30px;
-           font-family: NunitoExtrabold;
-            
-        }
-    }
-    .containerEndereço{
-        margin-top: 20px;
-        color: white;
-        display: flex;
-        flex-direction: column;
-        .txtEnd{
-            font-size: 30px;
-            margin-top: 0px;
-            font-family: NunitoExtrabold;
-        }
-        label{
-            margin-top: 5px;
-            font-size: 18px;
-            font-family: PoppinsRegular;
-        }
-    }
-    .containerContatos{
-        margin-top: 20px;
-        color: white;
-        .txtCntt{
-            font-size: 30px;
-            font-family: NunitoExtrabold;
-        }
-        .email{
-            width: fit-content;
-            display: flex;
-           justify-content: space-between;
-            font-size: 17px;
-            margin-top: 20px;
-            align-items: center;
-            font-family: PoppinsRegular;
-            label{
-                margin-top: 10px;
-            }
-        }
-        .telefone{
-            width: 200px;
-            display: flex;
-            justify-content: center;
-            font-size: 17px;
-            font-family: Poppinsregular;
-            align-items: center;
-           
-        }
-    }
+.containerOrganizacao{
+    position: relative;
+    top: 10%;
+    height: 200px;
+    display: flex;
+    justify-content: space-around;
 }
+
+.containerSite{
+    margin-top: 20px;
+    color: white;
+    display: flex;
+    flex-direction: column;
+}  
+
+ .txtMenu{
+    font-size: 30px;
+    margin-top: 0px;
+    font-family: "Lato", sans-serif;
+    /* border: 2vh solid red; */
+}
+
+.buttonFooter{
+    display: block;         /* para quebrar linha como labels */
+    color: #ffffff;         /* ou a cor que você quiser */
+    text-decoration: none;  /* remove o sublinhado */
+    margin: 4px 0;          /* espaço entre os botões */
+    font-size: 2vh;
+    cursor: pointer;
+    transition: color 0.2s ease;
+}
+
+.buttonFooter:hover{
+    color:#83CF41;
+}
+
+.txtMenu:hover{
+    color: #83CF41;
+}
+
+}
+   
 *{
     margin: 0; 
     padding: 0;
-}
-.imgGmail{
-    width: 40px;
-
 }

@@ -1,41 +1,54 @@
 import React from 'react'
 import './Footer.css'
+import { Link } from 'react-router-dom';
 
 function Footer() {
   return (
     <div className='containerFooter'>
         <div className='containerOrganizacao'>
-            <div className='containertxtLogo'>
-                <img src="./logo_SkillNet.svg" alt="" />
-                <label>CONTATE-NOS</label>
-            </div>
-            <div className='containerMenuSite'>
+          
+            <div className='containerSite'>
                 <label className='txtMenu'>Menu do site</label>
                 <br />
-                <button>Home</button>
-                <button>Serviços</button>
-                <button>Portifólios</button>
-                <button>Perfil</button>
+                    <Link to="/" className='buttonFooter'>Home</Link>
+                    <Link to="/servico" className='buttonFooter'>Serviços</Link>
+                    <Link to="/" className='buttonFooter'>Portifólios</Link>
+                    <Link to="/" className='buttonFooter'>Perfil</Link>
             </div>
-            <div className='containerEndereço'>
-                <label className='txtEnd'>Endereço</label>
+
+            <div className='containerSite'>
+                <label className='txtMenu'>Endereço</label>
                 <br />
-                <label>Rua das palmeiras, 789</label>
-                <label>Bairo Coqueiros</label>
-                <label>Floranópolis SC, 88730-201</label>
+                     <Link to="/" className='buttonFooter'>Rua das palmeiras, 789</Link>
+                     <Link to="/" className='buttonFooter'>Bairo Coqueiros</Link>
+                     <Link to="/" className='buttonFooter'>Floranópolis SC, 88730-201</Link>
             </div>
-            <div className='containerContatos'>
-                <label className='txtCntt'>Contatos</label>
-                <div className='email'>
-                    <img src="./images/gmail.svg" alt="" className='imgGmail' />
-                    <label className='lblEmail'>skillnet@gmail.com</label>
-                </div>
+
+            <div className='containerSite'>
+                <label className='txtMenu'>Desenvolvedores</label>
                 <br />
-                <div className='telefone'>
-                    <img className='imgGmail' src="./images/telefone.svg" alt="" />
-                    <label className='lblEmail'>(48)97621-8562</label>
-                </div>
+                <a href="https://www.linkedin.com/in/caio-lorram-valente/" className='buttonFooter' target="_blank" rel="noopener noreferrer">
+                Caio Lorram Valente
+                </a>
+                <a href="https://www.linkedin.com/in/vithor-lorram-valente/" className='buttonFooter' target="_blank" rel="noopener noreferrer">
+                Vithor Lorram Valente
+                </a>
+                <a href="https://www.linkedin.com/in/maria-eduarda-klin-de-carvalho/" className='buttonFooter' target="_blank" rel="noopener noreferrer">
+                Maria Eduarda Klin de Carvalho
+                </a>
             </div>
+
+            <div className='containerSite'>
+                <label className='txtMenu'>Contatos</label>
+                <br />
+                <a href="mailto:skillnet@gmail.com" className='buttonFooter' target="_blank" rel="noopener noreferrer">
+                skillnet@gmail.com
+                </a>
+                <a href="https://wa.me/5548976218562" className='buttonFooter' target="_blank" rel="noopener noreferrer">
+                (11) 91234-5678
+                </a>
+            </div>
+
         </div>
     </div>
   )

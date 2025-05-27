@@ -1,27 +1,13 @@
 import React, { useState, useRef, useEffect } from 'react';
-import './PortfolioUsuarioRosa.css';
+import './Portfolio.css';
 
-function PortfolioUsuarioRosa() {
+function Portfolio() {
+  // Estado para controlar a visibilidade do menu
   const [menuAtivo, setMenuAtivo] = useState(false);
-  const [menuComentarioAtivo, setMenuComentarioAtivo] = useState(false); // Controlar o pop-up de comentário
-  const [comentarios, setComentarios] = useState([]); // Armazenar os comentários
 
-  const [novoComentario, setNovoComentario] = useState(""); // Estado para o comentário
-
+  // Função para alternar o menu
   const toggleMenu = () => {
     setMenuAtivo(!menuAtivo);
-  };
-
-  const handleComentarioChange = (event) => {
-    setNovoComentario(event.target.value);
-  };
-
-  const adicionarComentario = () => {
-    if (novoComentario) {
-      setComentarios([...comentarios, novoComentario]);
-      setNovoComentario(""); // Limpar o campo após adicionar
-      setMenuComentarioAtivo(false); // Fechar o pop-up
-    }
   };
 
   // Referências para os carrosséis
@@ -150,6 +136,7 @@ function PortfolioUsuarioRosa() {
           <label className="Label-Pais" htmlFor="">Brasil</label>
           <label className="Label-Estado" htmlFor="">SP</label>
           </div>
+          <button className="Button-EditarPerfil">Editar Perfil</button>
         </div>
         
         <div className="Header1-InformacoesUsuarioRosa">
@@ -170,7 +157,6 @@ function PortfolioUsuarioRosa() {
 
           <div className="botoes">
             <button className="Button-CompartilharUsuarioRosa">compartilhar</button>
-            <button className="Button-ContratarUsuarioRosa">contrate</button>
           </div>
 
           <div className="Experiencia">
@@ -212,17 +198,14 @@ function PortfolioUsuarioRosa() {
       {/* Avaliações Recebidas */}
       <div className="Container-Avaliacoes">
         <h1 className="Projetos">Avaliações Recebidas</h1>
-        <p className='DeixarAvaliacao'>Deseja deixar uma avaliação?</p>
-        <button className='CliqueiAqui' onClick={() => setMenuComentarioAtivo(true)}>CliqueiAqui</button>
+        
         <div className="CarrosselComentarios-Container">
 
           <div className="Comentarios-Container">
-          <div className="comentarios" ref={comentariosRef}>
-              {comentarios.map((comentario, index) => (
-                <div key={index} className="Comentario">
-                  <p>{comentario}</p>
-                </div>
-              ))}
+            <div className="comentarios" ref={comentariosRef}>
+              <img src="public/images/Group 64.png" alt="Imagem 1" />
+              <img src="public/images/Group 65.png" alt="Imagem 2" />
+
             </div>
           </div>
         </div>
@@ -231,23 +214,6 @@ function PortfolioUsuarioRosa() {
           <button className="SetaComentarios-Direita" ref={setaComentariosDireitaRef}>&gt;</button>
           </div>
       </div>
-
-
-  {/* Pop-up para deixar comentário */}
-  {menuComentarioAtivo && (
-        <div className="PopupComentario">
-          <div className="PopupComentario-Content">
-            <h2>Deixe seu comentário:</h2>
-            <textarea
-              value={novoComentario}
-              onChange={handleComentarioChange}
-              placeholder="Digite seu comentário..."
-            ></textarea>
-            <button onClick={adicionarComentario}>Adicionar Comentário</button>
-            <button onClick={() => setMenuComentarioAtivo(false)}>Fechar</button>
-          </div>
-        </div>
-)}
 
       <div className='ContainerFooterRosa'>
 
@@ -279,4 +245,4 @@ function PortfolioUsuarioRosa() {
   );
 }
 
-export default PortfolioUsuarioRosa;
+export default Portfolio;
