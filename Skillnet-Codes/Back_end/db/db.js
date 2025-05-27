@@ -48,7 +48,6 @@ const sqlPath = path.join(__dirname,'../sql/tableUsuarios.sql')
 const sql = fs.readFileSync(sqlPath,'utf-8')
 
 createDataBase()
-
 createTables(sql)
 
 

@@ -118,6 +118,13 @@ App.get('/cadastra_usuario',(req,res)=>{
 
 })
 
+App.post('postComentario',(req,res)=>{
+    
+    const coments = req.body
+
+
+})
+
 
 
 
