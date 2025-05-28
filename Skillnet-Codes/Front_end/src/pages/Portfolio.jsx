@@ -1,7 +1,7 @@
 import React, { useState, useRef, useEffect } from 'react';
-import './PortfolioRosa.css';
+import './Portfolio.css';
 
-function PortfolioRosa() {
+function Portfolio() {
   // Estado para controlar a visibilidade do menu
   const [menuAtivo, setMenuAtivo] = useState(false);
 
@@ -106,7 +106,7 @@ function PortfolioRosa() {
 
       {/* Menu Hamburguer */}
       <div className="hamburguer" id="hamburguer" onClick={toggleMenu}>
-        <img src="public/images/logoweb.png" alt="Logo" className="logo-img" />
+        <img src="public/images/logoRosa.jpg" alt="Logo" className="logo-img" />
       </div>
 
       {/* Menu Lateral - Condicionalmente renderizado */}
@@ -157,7 +157,6 @@ function PortfolioRosa() {
 
           <div className="botoes">
             <button className="Button-CompartilharUsuarioRosa">compartilhar</button>
-            <button className="Button-ContratarUsuarioRosa">contrate</button>
           </div>
 
           <div className="Experiencia">
@@ -246,4 +245,4 @@ function PortfolioRosa() {
   );
 }
 
-export default PortfolioRosa;
+export default Portfolio;

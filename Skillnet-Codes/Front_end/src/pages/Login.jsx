@@ -7,12 +7,15 @@ import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 import axios from 'axios';
+import { GlobalContext } from '../context/Globalcontext';
+import { useContext } from 'react';
 
 
 function Login() {
   const Cadastro = useNavigate()
   const [inptEmail,setInptEmail]=useState('')
   const [inptSenha,setInptSenha]=useState('')
+  const {userLogado,setUserLogado} = useContext(GlobalContext)
 
   const Logar = async()=>{
     
@@ -34,6 +37,7 @@ function Login() {
 
       }else{
         localStorage.setItem('token',1)
+        setUserLogado(result.data)
         
         console.log(result.data)
         Cadastro('/Servico')

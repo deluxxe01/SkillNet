@@ -10,6 +10,7 @@ import { useNavigate } from 'react-router-dom'
 import axios, { Axios } from 'axios'
 import { GlobalContext } from '../context/Globalcontext';
 import { useContext } from 'react';
+import ModalError from '../components/ModalError';
 
 function Cadastro() {
   const [checkBox, setCheckBox] = useState()
@@ -21,6 +22,8 @@ function Cadastro() {
   const [inptNome,setInptNome] = useState()
   const [inptEmail,setInptEmail]=useState()
   const [inptSenha,setInptSenha]=useState()
+  const [inptAviso,setInptAviso] = useState(true)
+  const [isOpen,setIsOpen]=useState(false)
  
   const  cadastroConta = async() => {
     
@@ -34,19 +37,26 @@ function Cadastro() {
         senha:inptSenha
         
       } 
-      
-      
-      
+
       const resultado = await axios.post('http://localhost:3000/cadastrar_user',usuario) 
 
       console.log(resultado)
       if(resultado.data.message==true){
-        console.log('email ja utilizado')
+        setIsOpen(true)
+
+        setTimeout(()=>{
+
+          setIsOpen(false)
+
+        },5000)
+
+        setInptNome('')
+        setInptEmail('')
+        setInptSenha('')
 
       }else{
         localStorage.setItem('token',1)
         setUserLogado(resultado.data.usuario)
-        console.log(resultado.data.usuario)
         console.log("email unico parabens")
         navigate('/area_servico_pesquisado')
       }
@@ -95,25 +105,24 @@ function Cadastro() {
 
           <div className='containerLogin'><button className='btnIrLogin' onClick={() => { navigate ('/login') }}>LOGIN</button></div>
 
-          <div className='containerLogin'><button className='btnIrLogin' onClick={() => { navigate('/Login') }}>LOGIN</button></div>
 
           <div><h1 className='cadatroH1'><span className='spanH1'>Crie</span> sua conta! </h1></div>
           <div className='divInputs'>
 
             <div className='container_inputs'>
               <label htmlFor="" className='lblCadastro'>Nome de Usuario</label>
-              <input type="text" className='inpt_nome' placeholder='digite seu nome de usuario' onChange={(event)=>{setInptNome(event.target.value)}} />
+              <input type="text" className='inpt_nome' placeholder='digite seu nome de usuario' value={inptNome} onChange={(event)=>{setInptNome(event.target.value)}} />
             </div>
 
 
             <div className='container_inputs'>
               <label htmlFor="" className='lblCadastro'>Email</label> 
-              <input type="text" className='inpt_email' placeholder='digite seu Email' onChange={(e)=>{setInptEmail(e.target.value)}} />
+              <input type="text" className='inpt_email' placeholder='digite seu Email' value={inptEmail} onChange={(e)=>{setInptEmail(e.target.value)}} />
               </div>
 
             <div className='container_inputs'>
               <label htmlFor="" className='lblCadastro'>Senha</label> 
-              <input type="password" className='inpt_senha' placeholder='digite sua senha' onChange={(e)=>{setInptSenha(e.target.value)}}/></div>
+              <input type="password" className='inpt_senha' placeholder='digite sua senha' value={inptSenha} onChange={(e)=>{setInptSenha(e.target.value)}}/></div>
 
             <div className='divCheckBox'>
               <div className='inptCheck' 
@@ -127,6 +136,7 @@ function Cadastro() {
           <button type='submit' className='btnCadastro' onClick={cadastroConta}>CADASTRAR</button>
         </div>
       </div>
+      {isOpen?<ModalError titulo={'Email invalido ❌'} text={'porfavor insira outro email para seu cadastro'} />:''}
 
 
     </div>

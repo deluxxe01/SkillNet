@@ -121,9 +121,16 @@ App.get('/cadastra_usuario',(req,res)=>{
 
 })
 
+<<<<<<< HEAD
 App.get('/servicos',(req,res)=>{
 
  res.send('sdasd')
+=======
+App.post('postComentario',(req,res)=>{
+    
+    const coments = req.body
+
+>>>>>>> e7d6692f6493721f0383825ce6433e793248ff30
 
 })
 

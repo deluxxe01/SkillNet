@@ -1,13 +1,25 @@
 import React, { useState, useRef, useEffect } from 'react';
-import './PortfolioUsuarioRosa.css';
+import './PortfolioUsuario.css';
+import Hamburger from '../components/Hamburger';
+import Footer from '../components/Footer';
 
-function PortfolioUsuarioRosa() {
-  // Estado para controlar a visibilidade do menu
-  const [menuAtivo, setMenuAtivo] = useState(false);
+function PortfolioUsuario() {
 
-  // Função para alternar o menu
-  const toggleMenu = () => {
-    setMenuAtivo(!menuAtivo);
+  const [menuComentarioAtivo, setMenuComentarioAtivo] = useState(false); // Controlar o pop-up de comentário
+  const [comentarios, setComentarios] = useState([]); // Armazenar os comentários
+
+  const [novoComentario, setNovoComentario] = useState(""); // Estado para o comentário
+
+  const handleComentarioChange = (event) => {
+    setNovoComentario(event.target.value);
+  };
+
+  const adicionarComentario = () => {
+    if (novoComentario) {
+      setComentarios([...comentarios, novoComentario]);
+      setNovoComentario(""); // Limpar o campo após adicionar
+      setMenuComentarioAtivo(false); // Fechar o pop-up
+    }
   };
 
   // Referências para os carrosséis
@@ -105,20 +117,9 @@ function PortfolioUsuarioRosa() {
     <div className="PerfilUsuarioRosa-Container">
 
       {/* Menu Hamburguer */}
-      <div className="hamburguer" id="hamburguer" onClick={toggleMenu}>
-        <img src="public/images/logoweb.png" alt="Logo" className="logo-img" />
-      </div>
 
-      {/* Menu Lateral - Condicionalmente renderizado */}
-      <div className={`menu ${menuAtivo ? 'active' : ''}`} id="menu-Side">
-        <ul>
-          <li><a href="/Servico">Serviços</a></li>
-          <li><a href="/PerfilRosa">Portfólios</a></li>
-          <li><a href="/">Home</a></li>
-          <li><a href="#">Sobre Nós</a></li>
-          <li><a href="#">Perfil</a></li>
-        </ul>
-      </div>
+<Hamburger />
+
 
 <div className='FundoRosa'>
   <img src="public/images/fundoRosa.png" alt="" />  
@@ -136,7 +137,6 @@ function PortfolioUsuarioRosa() {
           <label className="Label-Pais" htmlFor="">Brasil</label>
           <label className="Label-Estado" htmlFor="">SP</label>
           </div>
-          <button className="Button-EditarPerfil">Editar Perfil</button>
         </div>
         
         <div className="Header1-InformacoesUsuarioRosa">
@@ -199,14 +199,17 @@ function PortfolioUsuarioRosa() {
       {/* Avaliações Recebidas */}
       <div className="Container-Avaliacoes">
         <h1 className="Projetos">Avaliações Recebidas</h1>
-        
+        <p className='DeixarAvaliacao'>Deseja deixar uma avaliação?</p>
+        <button className='CliqueiAqui' onClick={() => setMenuComentarioAtivo(true)}>CliqueiAqui</button>
         <div className="CarrosselComentarios-Container">
 
           <div className="Comentarios-Container">
-            <div className="comentarios" ref={comentariosRef}>
-              <img src="public/images/Group 64.png" alt="Imagem 1" />
-              <img src="public/images/Group 65.png" alt="Imagem 2" />
-
+          <div className="comentarios" ref={comentariosRef}>
+              {comentarios.map((comentario, index) => (
+                <div key={index} className="Comentario">
+                  <p>{comentario}</p>
+                </div>
+              ))}
             </div>
           </div>
         </div>
@@ -216,34 +219,27 @@ function PortfolioUsuarioRosa() {
           </div>
       </div>
 
-      <div className='ContainerFooterRosa'>
 
-      <div className='ContainerColunas'>
-        <div className='Coluna1'>
-        <h2 className='Pink'>Menu do Site</h2>
-          <p className='Rosa'>Home</p> 
-          <p className='Rosa'>Serviços</p>
-          <p className='Rosa'>Portfólios</p>
+  {/* Pop-up para deixar comentário */}
+  {menuComentarioAtivo && (
+        <div className="PopupComentario">
+          <div className="PopupComentario-Content">
+            <h2>Deixe seu comentário:</h2>
+            <textarea
+              value={novoComentario}
+              onChange={handleComentarioChange}
+              placeholder="Digite seu comentário..."
+            ></textarea>
+            <button onClick={adicionarComentario}>Adicionar Comentário</button>
+            <button onClick={() => setMenuComentarioAtivo(false)}>Fechar</button>
+          </div>
         </div>
-
-        <div className='Coluna2'>
-        <h2 className='Pink'>Endereço</h2> 
-        <p className='Rosa'>Rua João Gualberto, 289</p> 
-        <p className='Rosa'>Bairro Rio vermelho</p>
-        <p className='Rosa'>Florianópolis SC, 88730-201</p>
-        </div>
-
-        <div className='Coluna3'>
-        <h2 className='Pink'>Contatos</h2> 
-        <p className='Rosa'>skillnet@gmail.com</p> 
-        <p className='Rosa'>(48) 97621-8562</p>
+)}
   
-        </div>
 
-      </div>
-      </div>
+  <Footer />
     </div>
   );
 }
 
-export default PortfolioUsuarioRosa;
+export default PortfolioUsuario;
