@@ -4,15 +4,6 @@ export const GlobalContext = createContext()
 
 export const GlobalContextProvider = ({children}) =>{
     const [chat , setChat]=useState([])
-<<<<<<< HEAD
-    const [userLogado,setUserLogado]=useState({})
-const [cadastroServico,setCadastroServico]=useState([{
-titulo: 'sdas',
-img:'url',
-descrição:'sfdsdgskdghjksh',
-area:['blob,blib']
-}])
-=======
 
     const [userLogado,setUserLogado]=useState(()=>{
             try {
@@ -46,7 +37,6 @@ area:['blob,blib']
     }
     },[userLogado])
 
->>>>>>> e7d6692f6493721f0383825ce6433e793248ff30
 
 
 

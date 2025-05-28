@@ -1,1 +1,1 @@
-delete from usuarios where id = $1
+delete from usuarios where id_usuario = $1

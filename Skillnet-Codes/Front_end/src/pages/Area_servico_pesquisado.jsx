@@ -3,6 +3,8 @@ import Header from '../components/Header';
 import './Area_servico_pesquisado.css';
 import { Link } from 'react-router-dom';
 import PainelFiltros from '../components/PainelFiltros';
+import { useContext } from 'react';
+import { GlobalContext } from '../context/Globalcontext';
 
 function Area_servico_pesquisado() {
   const [filtraServico, setFiltraServico] = useState('');

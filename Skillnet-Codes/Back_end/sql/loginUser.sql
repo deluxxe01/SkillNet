@@ -1,1 +1,1 @@
-select id,nome,email,senha from usuarios where email = $1 and senha = $2 
+select id_usuario,nome,email,senha from usuarios where email = $1 and senha = $2 

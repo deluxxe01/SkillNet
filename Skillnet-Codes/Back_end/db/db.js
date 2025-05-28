@@ -2,17 +2,9 @@ require('dotenv').config({ path: './secrets/.env' })
 
 const fs = require('fs');
 const path = require('path');
-
-<<<<<<< HEAD
-=======
-
 const createTables = require('../functions/createTables.js')
 
 
-
-
-
->>>>>>> e7d6692f6493721f0383825ce6433e793248ff30
 async function createDataBase() {
     const {Pool} = require('pg')
 
@@ -46,58 +38,14 @@ async function createDataBase() {
     
 }
 
-<<<<<<< HEAD
-async function criarTabelas() { //por enquanto vai ser assim mais vai ser mudada para um rquivo onde rebera as tabelas por paramentros assim criando todo tipo de tabela para não fazer varias funcoes para se criar so um tipo de tabela
-   
-    const {Pool} = require('pg')
 
-    const pool = new Pool({
-        user:process.env.USER_NAME,
-        host:process.env.HOST,
-        database:process.env.DB_NAME,
-        password:process.env.PASSWORD,
-        port:process.env.PORT_DB
-
-
-    })
-
-    const client = await pool.connect()
-
-    const sqlPath = path.join(__dirname,'../sql/tableUsuarios.sql')
-
-    const sql = fs.readFileSync(sqlPath,'utf-8')
-
-    console.log(sql)
-
-    await client.query(sql)
-
-  console.log(`Tabela "usuarios" verificada/criada com sucesso.`);
-  
-  client.release();
-  await pool.end();
-
-}
-
-createDataBase()
-criarTabelas()
-
-
-
-
-
-
-
-
-
-
-=======
 
 const sqlPath = path.join(__dirname,'../sql/tableUsuarios.sql')
 const sql = fs.readFileSync(sqlPath,'utf-8')
 
 createDataBase()
 createTables(sql)
->>>>>>> e7d6692f6493721f0383825ce6433e793248ff30
+
 
 
 
