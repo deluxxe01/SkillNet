@@ -11,7 +11,7 @@ import PaginaUser from "../pages/PaginaUser.jsx";
 import PageSobreNos from "../pages/PageSobreNos.jsx";
 import PaginaUsuario from "../pages/PaginaUsuario.jsx";
 import PrivateRoutes from "./PrivateRoutes.jsx"
-
+import Cria_servico from "../pages/Cria_servico.jsx";
 
 
 const router = createBrowserRouter([
@@ -26,6 +26,7 @@ const router = createBrowserRouter([
     {path:'/servico',element:<TrabalhoEscolhido />},
     {path:'sobre_nos',element:<PageSobreNos />},
     {path:'user_page',element:<PaginaUsuario />},
+      {path:'/cadastro_servico',element:<Cria_servico />},
     {element:<PrivateRoutes />,
         children:[
             

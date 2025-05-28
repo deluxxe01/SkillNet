@@ -5,12 +5,12 @@ export const GlobalContext = createContext()
 export const GlobalContextProvider = ({children}) =>{
     const [chat , setChat]=useState([])
     const [userLogado,setUserLogado]=useState({})
-const [cadastroServico,setCadastroServico]=useState({
-titulo: "jkljkl",
+const [cadastroServico,setCadastroServico]=useState([{
+titulo: 'sdas',
 img:'url',
 descrição:'sfdsdgskdghjksh',
 area:['blob,blib']
-})
+}])
 
 
 

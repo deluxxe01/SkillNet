@@ -6,6 +6,8 @@ import PainelFiltros from '../components/PainelFiltros';
 
 function Area_servico_pesquisado() {
   const [filtraServico, setFiltraServico] = useState('');
+ 
+  const {userLogado,setUserLogado,cadastroServico,setCadastroServico}=useContext(GlobalContext)
 
   const servicos = [
     {
@@ -87,6 +89,11 @@ function Area_servico_pesquisado() {
       tipo_servico: ['Engenharia', 'Construção'],
     },
   ];
+
+
+
+ 
+
 
   const ServicosFiltrados = useMemo(() => {
     const servicoMinusculo = filtraServico.toLowerCase().trim();

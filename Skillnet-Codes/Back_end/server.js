@@ -7,10 +7,12 @@ const { Server } = require('socket.io')
 const port = process.env.PORT 
 const db = require('./db/db.js')
 const VerrificarEmail = require('./middleware/verficarEmail.js')
+
+
 App.use(express.json({ limit: '50mb' }))
 App.use(cors({
      
-    origin: 'http://localhost:5173'
+    //origin: 'http://localhost:5173'
 }))
 const http = require('http');
 const server = http.createServer(App);
@@ -26,6 +28,7 @@ App.post('/postarPortifolio',(req,res)=>{
    
 
 })
+
 
 App.get('/',(req,res)=>{
 
@@ -115,6 +118,12 @@ App.get('/cadastra_usuario',(req,res)=>{
 
     const client = req.body
     console.log(client.data)
+
+})
+
+App.get('/servicos',(req,res)=>{
+
+ res.send('sdasd')
 
 })
 
