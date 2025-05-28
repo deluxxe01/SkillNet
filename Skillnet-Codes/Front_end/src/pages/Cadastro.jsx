@@ -24,6 +24,7 @@ function Cadastro() {
   const [inptSenha,setInptSenha]=useState()
   const [inptAviso,setInptAviso] = useState(true)
   const [isOpen,setIsOpen]=useState(false)
+  const [messageModal,setMessageModal]=useState()
  
   const  cadastroConta = async() => {
     
@@ -38,11 +39,12 @@ function Cadastro() {
         
       } 
 
-      const resultado = await axios.post('http://localhost:3000/cadastrar_user',usuario) 
+      const resultado = await axios.post('/api/cadastrar_user',usuario) 
 
       console.log(resultado.data.message)
       if(resultado.data.message==true){
         setIsOpen(true)
+        setMessageModal(resultado.data.erro)
 
         setTimeout(()=>{
 
@@ -103,7 +105,7 @@ function Cadastro() {
         
         <div className='container_cadastro'>
           <div className='containerLogin'>
-          {isOpen?<ModalError titulo={'Email invalido ❌'} text={'porfavor insira outro email para seu cadastro'} />:''}
+          {isOpen?<ModalError titulo={'Email invalido ❌'} text={messageModal} />:''}
             <button className='btnIrLogin' onClick={() => { navigate ('/login') }}>LOGIN</button>
             </div>
           <div>

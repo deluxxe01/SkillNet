@@ -10,7 +10,7 @@ function verrificarFinalEmail(req,res,next){
         return next()
     }
     
-    return res.json({message:true})
+    return res.json({message:true,erro:"porfavor utilize @ ou use um email valido"})
 
 }
 
