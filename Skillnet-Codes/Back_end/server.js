@@ -6,7 +6,8 @@ const { Socket } = require('socket.io')
 const { Server } = require('socket.io')
 const port = process.env.PORT 
 const db = require('./db/db.js')
-const VerrificarEmail = require('./middleware/verficarEmail.js')
+const VerrificarEmail = require('./middleware/verficarDuploEmail.js')
+const verrificaFinalEmail = require('./middleware/verrficarEMail.js')
 
 
 App.use(express.json({ limit: '50mb' }))
@@ -34,7 +35,7 @@ App.get('/',(req,res)=>{
 
    
 })
-App.post('/cadastrar_user',VerrificarEmail,async(req,res)=>{
+App.post('/cadastrar_user',VerrificarEmail,verrificaFinalEmail,async(req,res)=>{
 
     try{
         const client = req.body   
