@@ -296,6 +296,9 @@ color: #fbfbfb;
         margin-left: 20px;
         background-repeat: 0;
         background-image: url('./icons/check.svg');
+        background-position: center;
+        
+
         
        
     }
