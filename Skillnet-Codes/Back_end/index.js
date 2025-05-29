@@ -51,6 +51,3 @@ App.delete('/servicos/:id', async (req, res) => {
 
 })
 
-App.listen(port, () => {
-  console.log(`Servidor rodando na porta ${port}`)
-})

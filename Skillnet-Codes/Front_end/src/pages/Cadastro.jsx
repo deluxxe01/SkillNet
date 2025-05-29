@@ -40,7 +40,7 @@ function Cadastro() {
 
       const resultado = await axios.post('http://localhost:3000/cadastrar_user',usuario) 
 
-      console.log(resultado)
+      console.log(resultado.data.message)
       if(resultado.data.message==true){
         setIsOpen(true)
 
@@ -102,11 +102,13 @@ function Cadastro() {
       
         
         <div className='container_cadastro'>
-
-          <div className='containerLogin'><button className='btnIrLogin' onClick={() => { navigate ('/login') }}>LOGIN</button></div>
-
-
-          <div><h1 className='cadatroH1'><span className='spanH1'>Crie</span> sua conta! </h1></div>
+          <div className='containerLogin'>
+          {isOpen?<ModalError titulo={'Email invalido ❌'} text={'porfavor insira outro email para seu cadastro'} />:''}
+            <button className='btnIrLogin' onClick={() => { navigate ('/login') }}>LOGIN</button>
+            </div>
+          <div>
+            <h1 className='cadatroH1'><span className='spanH1'>Crie</span> sua conta! </h1>
+          </div>
           <div className='divInputs'>
 
             <div className='container_inputs'>
@@ -136,7 +138,13 @@ function Cadastro() {
           <button type='submit' className='btnCadastro' onClick={cadastroConta}>CADASTRAR</button>
         </div>
       </div>
-      {isOpen?<ModalError titulo={'Email invalido ❌'} text={'porfavor insira outro email para seu cadastro'} />:''}
+      
+       
+        
+        
+        
+        
+    
 
 
     </div>

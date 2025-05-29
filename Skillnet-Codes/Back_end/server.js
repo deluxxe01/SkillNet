@@ -37,10 +37,12 @@ App.get('/',(req,res)=>{
 })
 App.post('/cadastrar_user',VerrificarEmail,verrificaFinalEmail,async(req,res)=>{
 
+    let user
     try{
         const client = req.body   
            
-          const user = await db.cadastrarUsuarios(client)
+          user = await db.cadastrarUsuarios(client)
+
           res.json({message:false,usuario:user})
      
       
