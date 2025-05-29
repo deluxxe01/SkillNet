@@ -20,7 +20,7 @@ const db = require('../db/db.js')
 
     }
 
-    next()
+    return next()
 
  }
  module.exports = VerrificarEmail

@@ -112,6 +112,7 @@ App.get('/mensagens',(req,res)=>{
 App.get('/cadastra_usuario',(req,res)=>{
 
     const client = req.body
+    
     console.log(client.data)
 
 })
