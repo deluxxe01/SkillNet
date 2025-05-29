@@ -16,7 +16,7 @@
     text-align: center;
   }
   
-  .modal-overlay {
+  .modal-overlay-troca-info {
     top: 0;
     left: 0;
     width: 100%;
@@ -25,7 +25,7 @@
     
   }
   
-  .modal-overlay.show {
+  .modal-overlay-troca-info{
     display: block;
   }
   

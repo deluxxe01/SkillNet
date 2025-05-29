@@ -67,7 +67,7 @@ function PaginaUsuario() {
         <div className="logo">🔗</div>
         <h1>Editar Perfil</h1>
 
-        <form>
+        <form >
           <label htmlFor="nome">Nome completo</label>
           <input type="text" id="nome" value={userLogado.nome} readOnly />
 
