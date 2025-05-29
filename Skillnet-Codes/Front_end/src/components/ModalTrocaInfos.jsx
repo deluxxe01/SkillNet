@@ -38,14 +38,15 @@ function ModalTrocaInfos(props) {
 
   return (
     
-         <dialog open={props.open}   className="modal-overlay">
-            <div className="modal">
+         <dialog open={props.open}   className="modal-overlay-troca-info">
+            <div className="modal_troca_info">
             <h2>Alterar Informações</h2>
-            <form
+            <form className='form-troca-info'
                 onSubmit={e => {
                 e.preventDefault();
                 updateUser(e.target.name.value, e.target.email.value, e.target.password.value);
-                }}
+               
+              }}
             >
                 <input
                 type="text"
