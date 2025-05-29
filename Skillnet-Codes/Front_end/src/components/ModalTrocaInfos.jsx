@@ -16,7 +16,7 @@ function ModalTrocaInfos(props) {
     const updateUser = async() => {
 
         let infos={
-          id:userLogado.id,
+          id:userLogado.id_usuario,
           nome:inptNome,
           email:inptEmail,
           senha:inptSenha
@@ -29,7 +29,7 @@ function ModalTrocaInfos(props) {
       };
 
       const deleteUser = async() => {
-        let  id = userLogado.id
+        let  id = userLogado.id_usuario
         const result =  await axios.delete(`http://localhost:3000/delete_user/${id}`)
           setUserLogado('')
           navigate('/')

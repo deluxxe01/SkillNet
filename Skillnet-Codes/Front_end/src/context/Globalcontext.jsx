@@ -26,8 +26,8 @@ export const GlobalContextProvider = ({children}) =>{
     })
     useEffect(()=>{
     if(userLogado){
-    localStorage.setItem(`user_${userLogado.id}`, JSON.stringify(userLogado));
-    localStorage.setItem('user_atual', userLogado.id);
+    localStorage.setItem(`user_${userLogado.id_usuario}`, JSON.stringify(userLogado));
+    localStorage.setItem('user_atual', userLogado.id_usuario);
 
     }else{
      const lastId = localStorage.getItem('user_atual');

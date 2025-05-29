@@ -37,22 +37,14 @@ App.get('/',(req,res)=>{
 })
 App.post('/cadastrar_user',VerrificarEmail,verrificaFinalEmail,async(req,res)=>{
 
-    let user
-    try{
-        const client = req.body   
+  
+    
+         const client = req.body   
            
           user = await db.cadastrarUsuarios(client)
 
           res.json({message:false,usuario:user})
      
-      
-    }catch(erro){
-
-        res.json({message:true,usuario:user})
-        console.log('ta aqui')
-       
-         
-    }
 })
 
 App.delete('/delete_user/:id', async(req,res)=>{

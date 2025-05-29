@@ -4,7 +4,7 @@ import './ModalError.css'
 function ModalError(props) {
     const [isOpen,setIsOpen]=useState(true)
   return (
-    <div >
+<div >
  <dialog className={`notifications-container-alert ${isOpen ? 'aberto' : ''}`}>
   <div class="error-alert">
     <div class="flex">
@@ -20,10 +20,8 @@ function ModalError(props) {
     </div>
    </div>
     <div className='baraDuraçao'></div>
-</dialog>
-        
-      
-    </div>
+ </dialog>
+</div>
   )
 }
 
