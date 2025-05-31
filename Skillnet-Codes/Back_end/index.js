@@ -51,3 +51,30 @@ App.delete('/servicos/:id', async (req, res) => {
 
 })
 
+//DUDA ROTAS PORTFOLIO
+
+// Rota para listar todos os portfolios
+app.get('/portfolio', async (req, res) => {
+
+    // Chama a função que seleciona os portfolios no banco de dados
+    const portfolios = await db.selectPorti();
+
+    // Envia a resposta em formato JSON contendo os portfolios
+    res.json(portfolios);
+
+    });
+
+
+//Criar a rota que vai enviar a requesição para a função  requesição
+//app é o objeto  (mandar algm coisa para o banco e pedir uma resposta: assincrona "async")
+//requisiao precisa de uma resposta (req,res)
+app.post("/portfolio", async function(requisition, response) {
+    await db.insertPorti(requisition.body)
+    
+     //Retornar algo que deu certo
+    response.sendStatus(201)
+})
+
+app.listen(port);
+
+console.log("Backend Rodando!")

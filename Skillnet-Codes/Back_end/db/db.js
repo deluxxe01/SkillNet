@@ -79,6 +79,7 @@ async function connect(){
     global.connection = pool;
 
     return pool.connect()
+
 }
 
 connect()
@@ -193,4 +194,70 @@ module.exports = {
     connect
     
    
+}
+
+
+//DUDA PORTFOLIO
+
+async function connect() {  
+    const { Pool } = require("pg");
+
+    if(global.connection)
+        return global.connection.connect();
+
+    const pool = new Pool({
+      user: process.env.USER_NAME,
+      host: process.env.HOST_NAME,
+      database: process.env.DB_NAME,
+      password: process.env.DB_PASSWORD,
+      dialect: process.env.DB_DIALECT,
+      port: process.env.PORT_NUMBER
+    });
+    
+    const portfolio = await pool.connect();
+    console.log("O Pool de conexão foi criado com sucesso!")
+    portfolio.release();
+
+    global.connection = pool;
+    
+    return pool.connect();
+  }
+
+  connect();
+
+  // Função para listar portfolios
+  async function selectPorti() {
+
+  // Estabelecer conexão com o banco de dados
+  const portfolio = await connect();
+
+  // Enviar comando SQL para o banco de dados
+  const res = await portfolio.query("SELECT * FROM portfolio");
+
+  // Retorna as linhas (registros) da tabela
+  return res.rows;
+  }
+
+
+  //Função para inserir portfolios (assíncrona) portfolios é objeto
+  async function insertPorti(porti) {
+
+  //Estabelendo a conexão com o banco de dados
+  const portfolio = await connect();
+
+  //Comando/query que vai ser usado na operação (os $ corresponde a cada coluna, no caso temos 5 colunas)
+  let sql = "INSERT INTO portfolio(cpf, nome, email, idade, profissao) VALUES ($1, $2, $3, $4, $5)"
+
+  //Passar os dados que estão chegando em portfolios
+  const values= [porti.cpf, porti.nome, porti.email, porti.idade, porti.profissao ]
+
+  //Enviar os tais dados para o banco
+  await portfolio.query(sql,values)
+
+}
+
+  //Exportar as funções 
+  module.exports ={
+  insertPorti,
+  selectPorti,
 }

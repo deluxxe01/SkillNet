@@ -4,7 +4,7 @@ function PortfolioEditar(){
 
     return(
     <div className="Container-PortfolioEditar">
-        <h1>oiii</h1>
+        <h1>Dudaaaa</h1>
         {/* <input type="text" id="nome" value={portfolio.nome} readOnly  /> */}
         {/* <input type="text" id="nome" value={portfolio.whats} readOnly  /> */}
         {/* <input type="text" id="nome" value={portfolio.insta} readOnly  /> */}
