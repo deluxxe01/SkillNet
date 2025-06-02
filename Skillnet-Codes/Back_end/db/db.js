@@ -283,6 +283,18 @@ async function selectServicos() {
 
 
  } 
+
+ async function deleteCommentServico(id) {
+
+    const client = await connect()
+
+    const values = [id]
+
+    const sql = " DELETE FROM comentarioServico WHERE id_comentario = $1"
+
+    await client.query(sql,values)
+    
+ }
 module.exports = {
     cadastrarUsuarios,
     deleteUser,
@@ -294,7 +306,9 @@ module.exports = {
     selectServicos,
     selectServico,
     insertServico,
-  updateServico,
-   deleteServico
+    updateServico,
+    deleteServico,
+    createComentServico,
+    deleteCommentServico
   };
 

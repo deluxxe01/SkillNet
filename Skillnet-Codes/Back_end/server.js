@@ -168,6 +168,7 @@ App.get('/servicos',(req,res)=>{
 
  res.send('sdasd')
 })
+
 App.post('/postComentarioServico',async(req,res)=>{
     
     const coments = req.body
@@ -175,6 +176,14 @@ App.post('/postComentarioServico',async(req,res)=>{
     res.json("funfou 🥲🥲🥲")
 
 
+})
+
+App.delete('/deleteComentarioServico/:id',async(req,res)=>{
+    const id = req.params.id
+
+    await db.deleteCommentServico(id)
+    
+    res.json('deu certo')
 })
 
 
