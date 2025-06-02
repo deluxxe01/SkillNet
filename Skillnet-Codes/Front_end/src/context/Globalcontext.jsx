@@ -18,12 +18,7 @@ export const GlobalContextProvider = ({children}) =>{
     }
     })
 
-    const [cadastroServico,setCadastroServico]=useState({
-    titulo: "jkljkl",
-    img:'url',
-    descrição:'sfdsdgskdghjksh',
-    area:['blob,blib']
-    })
+    const [cadastroServico,setCadastroServico]=useState([])
     useEffect(()=>{
     if(userLogado){
     localStorage.setItem(`user_${userLogado.id_usuario}`, JSON.stringify(userLogado));

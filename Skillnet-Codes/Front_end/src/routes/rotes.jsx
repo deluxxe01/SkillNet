@@ -18,6 +18,7 @@ const router = createBrowserRouter([
     {path:'/',element:<LandingPage />},
     {path:'/login',element:<Login />},
     {path:'/cadastro',element:<Cadastro />},
+    {path:'/criaServico',element:< Cria_servico />},
     {path:'/area_servico_pesquisado',element:< Area_servico_pesquisado />},
     {path:'/portfolio', element: <Portfolio />},
     {path:'/servico',element:<TrabalhoEscolhido />},
