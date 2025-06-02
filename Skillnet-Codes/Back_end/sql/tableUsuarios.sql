@@ -14,6 +14,7 @@ CREATE TABLE IF NOT EXISTS servicos (
 
 CREATE TABLE IF NOT EXISTS portifolios (
     id_portifolio serial PRIMARY KEY,
+<<<<<<< HEAD
     nome varchar(60),
     experiencia varchar(400),
     localTrabalho varchar(300),
@@ -21,6 +22,17 @@ CREATE TABLE IF NOT EXISTS portifolios (
     img1 bytea,
     img2 bytea,
     img3 bytea,
+=======
+    nome VARCHAR(100) NOT NULL,
+    link_insta VARCHAR(255),
+    link_linkedin VARCHAR(255),
+    link_gmail VARCHAR(255),
+    localidade VARCHAR(100),
+    ano_experiencia VARCHAR(50),
+    area_atuacao VARCHAR(100),
+    foto_url VARCHAR(255),
+    sobremim TEXT,
+>>>>>>> 12a7e03 (Back Portfolios)
     fk_usuario_id int,
     CONSTRAINT fk_usuario_portifolio FOREIGN KEY (fk_usuario_id) REFERENCES usuarios(id_usuario)
 );

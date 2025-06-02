@@ -32,8 +32,12 @@ App.post('/postarPortifolio',(req,res)=>{
 
 
 App.get('/',(req,res)=>{
+<<<<<<< HEAD
     res.json("funfando")
 
+=======
+ res.json("oi")
+>>>>>>> 12a7e03 (Back Portfolios)
    
 })
 App.post('/cadastrar_user',VerrificarEmail,verrificaFinalEmail,async(req,res)=>{
