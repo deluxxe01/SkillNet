@@ -75,6 +75,5 @@ App.post("/portfolio", async function(requisition, response) {
     response.sendStatus(201)
 })
 
-App.listen(port);
 
 console.log("Backend Rodando!")
