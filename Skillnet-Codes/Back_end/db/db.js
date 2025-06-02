@@ -185,10 +185,64 @@ async function cadastrarUsuarios(usuario) {
         return user
     }
 
-    //DUDA PORTFOLI
+   
     
     
 }
+
+
+// Função para buscar todos os serviços
+async function selectServicos() {
+    const client = await connect();
+    const res = await client.query("SELECT * FROM servicos ");
+    return res.rows;
+  }
+  
+  async function selectServico(id) {
+    const client = await connect();
+    const res = await client.query("SELECT * FROM servicos WHERE servico_id=$1",[id]);
+    return res.rows;
+  }
+  
+  async function insertServico(servico) {
+    const client = await connect();
+    const sql = `
+      INSERT INTO servicos (titulo, area, descricao, imagem_capa)
+      VALUES ($1, $2, $3, $4) `;
+    await client.query(sql, [
+      servico.titulo,
+      servico.area,
+      servico.descricao,
+      servico.imagem_capa
+    ]);
+    client.release();
+  }
+  
+  // RETURNING servico_id,titulo,area,imagem_capa
+  
+  async function updateServico(id,servico) {
+    const client = await connect();
+    const sql = "UPDATE servicos SET titulo=$1,area=$2,descricao=$3,imagem_capa=$4 WHERE servico_id=$5";
+   
+    await client.query(sql, [
+      servico.titulo,
+      servico.area,
+      servico.descricao,
+      servico.imagem_capa,
+    id
+  ]);
+   
+  }
+  async function deleteServico(id) {
+    const client = await connect();
+    const sql = "DELETE FROM servicos WHERE servico_id=$1";
+   
+    await client.query(sql, [id]);
+   
+  }
+
+
+
     // Função para listar portfolios
  async function selectPorti() {
 
@@ -237,7 +291,10 @@ module.exports = {
     connect,
     insertPorti,
     selectPorti,
-    createComentServico
-    
-   
-}
+    selectServicos,
+    selectServico,
+    insertServico,
+  updateServico,
+   deleteServico
+  };
+

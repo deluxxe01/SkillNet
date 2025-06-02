@@ -38,7 +38,7 @@ const imgservicos =useRef()
   async function getServicos() {
     const response = await api.get('/servicos');
     setCadastroServico(response.data); // agora atualiza o contexto global
-   
+    console.log(response)
   }
 
   async function createServicos() {
@@ -54,7 +54,19 @@ const imgservicos =useRef()
   async function deleteServicos(id) {
     await api.delete(`/servicos/${id}`);
     getServicos(); // recarrega a lista após exclusão
+  
+
   }
+  async function UpdateServicos(id) {
+    await api.patch(`/servicos/${id}`, {
+      titulo: tituloservicos.current.value,
+      area: areaservicos.current.value,
+      descricao: descricaoservicos.current.value,
+      imagem_capa: imgservicos.current.value
+    });
+    getServicos(); // Atualiza a lista
+  }
+
 
 
 
@@ -86,15 +98,21 @@ return (
       <div>
   <h2>Serviços cadastrados:</h2>
   {cadastroServico.map((servico) => (
-    <div key={servico.id}>
+  <div key={servico.servico_id}>
       <p><strong>Título:</strong> {servico.titulo}</p>
       <p><strong>Área:</strong> {servico.area}</p>
-      <img src={servico.img} alt={servico.titulo} width="150" />
+      <img src={servico.imagem_capa || "./images/img_cara_triste.jpg"} alt={servico.titulo} width="150" />
       <p><strong>Descrição:</strong> {servico.descricao}</p>
-      <button onClick={() => deleteServicos(servico.id)}>Apagar Serviço</button>
+      <button onClick={() => deleteServicos(servico.servico_id)}>Apagar Serviço</button>
+    <button onClick={() => UpdateServicos(servico.servico_id)}>edita servico</button>
+    
+    <button></button>
     </div>
+
   ))}
 </div>
+  
+   
     </div>
   );
 }
