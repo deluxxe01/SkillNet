@@ -32,6 +32,7 @@ App.post('/postarPortifolio',(req,res)=>{
 
 
 App.get('/',(req,res)=>{
+    res.json("funfando")
 
    
 })
@@ -122,12 +123,16 @@ App.get('/servicos',(req,res)=>{
 
  res.send('sdasd')
 })
-App.post('postComentario',(req,res)=>{
+App.post('/postComentarioServico',async(req,res)=>{
     
     const coments = req.body
+    await db.createComentServico(coments)
+    res.json("funfou 🥲🥲🥲")
 
 
 })
+
+
 
 // CRUD SERVICOS
 

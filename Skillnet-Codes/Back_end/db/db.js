@@ -3,7 +3,8 @@ require('dotenv').config({ path: './secrets/.env' })
 const fs = require('fs');
 const path = require('path');
 
-const createTables = require('../functions/createTables.js')
+const createTables = require('../functions/createTables.js');
+const { create } = require('domain');
 
 
 async function createDataBase() {
@@ -216,6 +217,18 @@ async function cadastrarUsuarios(usuario) {
   
   }
 
+ async function createComentServico(comment){
+
+    const client = await connect()
+
+    const values = [comment.comentario,comment.id_usuario,comment.id_servico]
+
+    const sql ="insert into comentarioServico(comentario, fk_servico_id,fk_Usuario_id) values($1,$2,$3)"
+
+    await client.query(sql,values)
+
+
+ } 
 module.exports = {
     cadastrarUsuarios,
     deleteUser,
@@ -223,7 +236,8 @@ module.exports = {
     loginUser,
     connect,
     insertPorti,
-    selectPorti
+    selectPorti,
+    createComentServico
     
    
 }

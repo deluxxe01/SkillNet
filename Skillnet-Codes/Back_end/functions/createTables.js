@@ -22,6 +22,7 @@ async function createTables(table){
  client.release()
  
  pool.end()
+ 
  console.log('tabela criada com sucesso')
  
  return 'tabela: criada com sucesso'
