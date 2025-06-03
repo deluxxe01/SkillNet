@@ -61,7 +61,12 @@ function PaginaUsuario() {
       <Header />
      <div className="container_user">
       <div className="left-panel">
-        <img src={'https://images.memphistours.com/large/237d118c34877083620f9cdbabc57bae.jpg'} alt="Imagem de fundo" />
+       <div className='optionBtn'><img src="./icons/perfilIcon.svg" alt="" className='imgProfile ' /> perfil </div>
+       <div className='optionBtn'> <img src="./icons/editarIcon.svg" alt="" className='imgProfile' /> editar perfil </div>
+       <div className='optionBtn'><img src="./icons/chatIcon.svg" alt="" className='imgProfile' />   conversas </div>
+       <div className='optionBtn'><img src="./icons/servicosIcon.svg" alt="" className='imgProfile' /> serviços </div>
+       <div className='optionBtn'><img src="./icons/portifolioIcon.svg" alt="" className='imgProfile' />portifolios</div>
+        
       </div>
       <div className="right-panel">
         <div className="logo">🔗</div>

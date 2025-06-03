@@ -7,8 +7,7 @@
   
   .container_user {
     display: flex;
-    width: 900px;
-    height: 600px;
+    width: 90%;
     border-radius: 16px;
     overflow: hidden;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
@@ -16,17 +15,20 @@
     align-items: center;
     justify-content: center;
     display: flex;
+    
   }
   
   .left-panel {
-    flex: 1;
+    width: 25%;
+    height: 70vh;
+    display: flex;
+    flex-direction: column;
+    background-color: #1b4d2c;
+    border-radius:10px ;
+    justify-content: space-evenly;
+
   }
   
-  .left-panel img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }
   
   .right-panel {
     flex: 1;
@@ -35,16 +37,13 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-  
-  }
-  
-  .logo {
+    width: 75%;
     
-    top: 20px;
-    right: 30px;
-    font-size: 32px;
-    color: #1b4d2c;
+   
+  
   }
+  
+ 
   
   /* h1 {
     margin-bottom: 30px;
@@ -74,6 +73,7 @@
     border-radius: 8px;
     font-size: 14px;
     background-color: #f9f9f9;
+    width: 40%;
   }
   
   .btn {
@@ -83,6 +83,7 @@
     border-radius: 25px;
     cursor: pointer;
     transition: 0.3s ease;
+    width: 40%;
   }
   
   .salvar {
@@ -137,4 +138,45 @@
 
   .imgOlhos{
     width: 16px;
+  }
+  .div{
+    background-color: rebeccapurple;
+height: 30px;
+font-size: x-large;
+color: white;
+align-items: center;
+    justify-content: center;
+    display: flex;
+  }
+  .div2{
+    height: 30px;
+    font-size: x-large;
+    color: white;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+  }
+  .optionBtn{
+    font-family: Mont ;
+    font-weight: 700;
+    font-size: x-large;
+    background-color: #1b4d2c;
+    color: #fbfbfb;
+    border: 1px solid #1b4d2c;
+    padding: 10px;
+    border-radius: 5px;
+    align-items: center;
+    justify-content: flex-start;
+    display: flex;
+    gap: 8px; 
+  }
+  .optionBtn:hover{
+    background-color: #83CF41;
+    color: #145123;
+    transition: ease 0.5s;
+  }
+  .imgProfile {
+    margin-right:10px ;
+  
+    
   }
