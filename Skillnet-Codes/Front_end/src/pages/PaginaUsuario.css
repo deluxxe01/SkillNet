@@ -7,7 +7,7 @@
   
   .container_user {
     display: flex;
-    width: 90%;
+    width: 70%;
     border-radius: 16px;
     overflow: hidden;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
@@ -139,23 +139,7 @@
   .imgOlhos{
     width: 16px;
   }
-  .div{
-    background-color: rebeccapurple;
-height: 30px;
-font-size: x-large;
-color: white;
-align-items: center;
-    justify-content: center;
-    display: flex;
-  }
-  .div2{
-    height: 30px;
-    font-size: x-large;
-    color: white;
-    align-items: center;
-    justify-content: center;
-    display: flex;
-  }
+
   .optionBtn{
     font-family: Mont ;
     font-weight: 700;
@@ -164,7 +148,7 @@ align-items: center;
     color: #fbfbfb;
     border: 1px solid #1b4d2c;
     padding: 10px;
-    border-radius: 5px;
+    border-radius: 2px;
     align-items: center;
     justify-content: flex-start;
     display: flex;
@@ -178,5 +162,12 @@ align-items: center;
   .imgProfile {
     margin-right:10px ;
   
+    
+  }
+  .containerUserProfile{
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
     
   }

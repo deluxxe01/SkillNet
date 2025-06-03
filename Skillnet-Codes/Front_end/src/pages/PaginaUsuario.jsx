@@ -57,7 +57,7 @@ function PaginaUsuario() {
 
           
   return (
-    <div>
+    <div className='containerUserProfile'>
       <Header />
      <div className="container_user">
       <div className="left-panel">
