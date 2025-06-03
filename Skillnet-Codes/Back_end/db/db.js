@@ -261,10 +261,10 @@ async function selectServicos() {
   const portfolio = await connect();
   
   //Comando/query que vai ser usado na operação (os $ corresponde a cada coluna, no caso temos 5 colunas)
-  let sql = "INSERT INTO portifolios(nome, link_insta, link_linkedin, link_gmail, localidade, ano_experiencia, area_atuacao, foto_url, sobremim) VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9)"
+  let sql = "INSERT INTO portifolios(nome, link_insta, link_linkedin, link_gmail, localidade, ano_experiencia, area_atuacao, foto_url, sobremim, fk_usuario_id) VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9,$10)"
   
   //Passar os dados que estão chegando em portfolios
-  const values= [porti.nome, porti.link_insta, porti.link_linkedin, porti.link_gmail, porti.localidade, porti.ano_experiencia, porti.area_atuacao, porti.foto_url, porti.sobremim ]
+  const values= [porti.nome, porti.link_insta, porti.link_linkedin, porti.link_gmail, porti.localidade, porti.ano_experiencia, porti.area_atuacao, porti.foto_url, porti.sobremim,porti.fkUsuario ]
   
   //Enviar os tais dados para o banco
   await portfolio.query(sql,values)

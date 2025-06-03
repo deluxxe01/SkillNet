@@ -34,6 +34,7 @@ function ModalTrocaInfos(props) {
           setUserLogado('')
           navigate('/')
           localStorage.removeItem(`user${id}`)
+          localStorage.removeItem('token')
         }
 
   return (

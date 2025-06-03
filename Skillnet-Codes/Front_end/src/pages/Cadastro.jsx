@@ -25,11 +25,22 @@ function Cadastro() {
   const [inptAviso,setInptAviso] = useState(true)
   const [isOpen,setIsOpen]=useState(false)
   const [messageModal,setMessageModal]=useState()
+  const [tituloModal,setTituloModal]=useState()
  
   const  cadastroConta = async() => {
     
     if(inptCheck == false|| inptEmail=="" || inptNome =="" || inptSenha==""){
-      alert('porfavor prencha os campos e aceite nossos termos')
+      setMessageModal("porfavor prencha os campos e aceite nossos termos")
+      setTituloModal('Erro ❌')
+
+      setIsOpen(true)
+
+      setTimeout(()=>{
+
+        setIsOpen(false)
+
+      },5000)
+
     }else{
       
       let usuario = {
@@ -45,6 +56,8 @@ function Cadastro() {
       if(resultado.data.message==true){
         setIsOpen(true)
         setMessageModal(resultado.data.erro)
+        setTituloModal("Email invalido ❌")
+        
 
         setTimeout(()=>{
 
@@ -105,10 +118,10 @@ function Cadastro() {
         
         <div className='container_cadastro'>
           <div className='containerLogin'>
-          {isOpen?<ModalError titulo={'Email invalido ❌'} text={messageModal} />:''}
+          {isOpen?<ModalError titulo={tituloModal} text={messageModal} />:''}
             <button className='btnIrLogin' onClick={() => { navigate ('/login') }}>LOGIN</button>
             </div>
-          <div>
+          <div className='conatiner_h1_Cadastro'>
             <h1 className='cadatroH1'><span className='spanH1'>Crie</span> sua conta! </h1>
           </div>
           <div className='divInputs'>

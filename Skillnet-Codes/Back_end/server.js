@@ -32,12 +32,7 @@ App.post('/postarPortifolio',(req,res)=>{
 
 
 App.get('/',(req,res)=>{
-<<<<<<< HEAD
-    res.json("funfando")
-
-=======
  res.json("oi")
->>>>>>> 12a7e03 (Back Portfolios)
    
 })
 App.post('/cadastrar_user',VerrificarEmail,verrificaFinalEmail,async(req,res)=>{
@@ -234,6 +229,28 @@ App.delete('/servicos/:id', async (req, res) => {
 
 
 })
+//rotas para o portifolio
+App.post("/portfolio", async function(requisition, response) {
+    
+    console.log (requisition.body)
+
+      await db.insertPorti(requisition.body)
+      
+       //Retornar algo que deu certo
+      response.sendStatus(201)
+  })
+
+  // Rota para listar todos os portfolios
+App.get('/portfolio', async (req, res) => {
+
+    // Chama a função que seleciona os portfolios no banco de dados
+    const portfolios = await db.selectPorti();
+
+    // Envia a resposta em formato JSON contendo os portfolios
+    res.json(portfolios);
+
+    });
+
 
 
 
