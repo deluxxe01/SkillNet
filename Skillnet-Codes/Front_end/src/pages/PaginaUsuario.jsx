@@ -7,6 +7,8 @@ import axios from 'axios'
 import Header from '../components/Header'
 import { useNavigate } from 'react-router-dom'
 import ModalTrocaInfos from '../components/ModalTrocaInfos'
+import UserInfos from '../components/UserInfos'
+import UserEditInfos from '../components/UserEditInfos'
 
 function PaginaUsuario() {
     const [inptNome,setInptNome]=useState('')
@@ -17,6 +19,7 @@ function PaginaUsuario() {
     const navigate = useNavigate()
     const [inptShow,setInptShow]=useState(true)
     const [password,setPassword] = useState('password')
+    const [paginasUser,setPaginaUser]=useState(0)
 
     const showPassword = () => {
     setInptShow(!inptShow)
@@ -61,36 +64,24 @@ function PaginaUsuario() {
       <Header />
      <div className="container_user">
       <div className="left-panel">
-       <div className='optionBtn'><img src="./icons/perfilIcon.svg" alt="" className='imgProfile ' /> perfil </div>
-       <div className='optionBtn'> <img src="./icons/editarIcon.svg" alt="" className='imgProfile' /> editar perfil </div>
+       <div className='optionBtn' onClick={()=>{setPaginaUser(0)}}><img src="./icons/perfilIcon.svg" alt="" className='imgProfile ' /> perfil </div>
+       <div className='optionBtn' onClick={()=>{setPaginaUser(1)}}> <img src="./icons/editarIcon.svg" alt="" className='imgProfile' /> editar perfil </div>
        <div className='optionBtn'><img src="./icons/chatIcon.svg" alt="" className='imgProfile' />   conversas </div>
        <div className='optionBtn'><img src="./icons/servicosIcon.svg" alt="" className='imgProfile' /> serviços </div>
        <div className='optionBtn'><img src="./icons/portifolioIcon.svg" alt="" className='imgProfile' />portifolios</div>
-        
       </div>
+
       <div className="right-panel">
-        <div className="logo">🔗</div>
-        <h1>Editar Perfil</h1>
-
-        <form >
-          <label htmlFor="nome">Nome completo</label>
-          <input type="text" id="nome" value={userLogado.nome} readOnly />
-
-          <label htmlFor="email">Email</label>
-          <input type="email" id="email" value={userLogado.email} readOnly />
-          <div className='containerInptPass'>
-            <label htmlFor="senha">Senha</label>
-            <div>
-            <input type={inptShow ? "password" :"text"} id="senha" value={userLogado.senha} readOnly /> <button type='button' className='btnShowPasword' onClick={showPassword}><img className='imgOlhos' src={inptShow ? "./icons/olhoFechado.png" : "./icons/olho_cheio.png"} alt="" /></button>
-            </div>
-          </div>
-          <button type="button" className="btn salvar" onClick={()=>{setIsModalOpen(!isModalOpen)}}>Editar</button>
-          <button type="button" className="btn cancelar">Cancelar</button>
-        </form>
+        {paginasUser== 0 && <UserInfos />}
+        {paginasUser== 1 && <UserEditInfos /> }
+  
       </div>
      </div>
      {isModalOpen ?<ModalTrocaInfos open={isModalOpen} onClose={closeModal}/>:''}
     </div>
+    
+      
+      
   )
 }
 
