@@ -207,31 +207,49 @@ async function selectServicos() {
   async function insertServico(servico) {
     const client = await connect();
     const sql = `
-      INSERT INTO servicos (titulo, area, descricao, imagem_capa)
-      VALUES ($1, $2, $3, $4) `;
+      INSERT INTO servicos (titulo, descricao,area,imagem_capa , tempo_entrega, preco_minimo, idioma)
+      VALUES ($1, $2, $3, $4, $5, $6,$7)
+    `;
     await client.query(sql, [
       servico.titulo,
-      servico.area,
       servico.descricao,
-      servico.imagem_capa
+      servico.area,
+      servico.imagem_capa ,          // correspondendo ao campo 'capa' do banco
+      servico.tempo_entrega,
+      servico.preco_minimo,
+      servico.idioma
     ]);
     client.release();
   }
   
   // RETURNING servico_id,titulo,area,imagem_capa
   
-  async function updateServico(id,servico) {
+  async function updateServico(id, servico) {
     const client = await connect();
-    const sql = "UPDATE servicos SET titulo=$1,area=$2,descricao=$3,imagem_capa=$4 WHERE servico_id=$5";
-   
+    const sql = `
+      UPDATE servicos
+      SET titulo = $1,
+          descricao = $2,
+          area=$3,
+          imagem_capa = $4,
+          tempo_entrega = $5,
+          preco_minimo = $6,
+          idioma = $7
+      WHERE servico_id = $8
+    `;
+  
     await client.query(sql, [
       servico.titulo,
-      servico.area,
       servico.descricao,
-      servico.imagem_capa,
-    id
-  ]);
-   
+      servico.area,
+      servico.imagem_capa ,          // correspondendo ao campo 'capa' do banco
+      servico.tempo_entrega,
+      servico.preco_minimo,
+      servico.idioma,
+      id
+    ]);
+  
+    client.release();
   }
   async function deleteServico(id) {
     const client = await connect();

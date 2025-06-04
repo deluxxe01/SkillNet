@@ -13,27 +13,17 @@ function Cria_servico() {
   const [inptImageServico, setInptImageServico] = useState('');
   const [inptDescricaoServico, setInptDescricaoServico] = useState('');
   const [inptAreaServico, setInptAreaServico] = useState('');
-
-  function cadastraServico() {
-    const novoServico = {
-      titulo: inptTituloServico,
-      img: inptImageServico,
-      descricao: inptDescricaoServico,
-      area: inptAreaServico
-    };
-
-    setCadastroServico([...cadastroServico, novoServico]);
-
-    // limpa os inputs
-    setInptTituloServico('');
-    setInptImageServico('');
-    setInptDescricaoServico('');
-    setInptAreaServico('');
-  }
+  const [inptPrecoMinimo, setInptPrecoMinimo] = useState('');
+  const [inptPrazoEntrega, setInptPrazoEntrega] = useState('');
+  const [inptIdioma, setInptIdioma] = useState('');
+  
 const tituloservicos =useRef()
 const descricaoservicos =useRef()
 const areaservicos =useRef()
 const imgservicos =useRef()
+const tempoEntrega = useRef()
+const precoMinimo = useRef()
+const idiomaAtende = useRef()
 
   async function getServicos() {
     const response = await api.get('/servicos');
@@ -46,7 +36,13 @@ const imgservicos =useRef()
       titulo:tituloservicos.current.value,
       area:areaservicos.current.value,
       descricao:descricaoservicos.current.value,
-     imagem_capa:imgservicos.current.value
+     imagem_capa:imgservicos.current.value,
+     tempo_entrega:tempoEntrega.current.value,
+    preco_minimo:precoMinimo.current.value,
+    idioma:idiomaAtende.current.value,
+    
+
+
     });
     getServicos()
   }
@@ -59,10 +55,15 @@ const imgservicos =useRef()
   }
   async function UpdateServicos(id) {
     await api.patch(`/servicos/${id}`, {
-      titulo: tituloservicos.current.value,
-      area: areaservicos.current.value,
-      descricao: descricaoservicos.current.value,
-      imagem_capa: imgservicos.current.value
+      titulo:tituloservicos.current.value,
+      area:areaservicos.current.value,
+      descricao:descricaoservicos.current.value,
+     imagem_capa:imgservicos.current.value,
+     tempo_entrega:tempoEntrega.current.value,
+    preco_minimo:precoMinimo.current.value,
+    idioma:idiomaAtende.current.value,
+   
+   
     });
     getServicos(); // Atualiza a lista
   }
@@ -89,9 +90,39 @@ return (
         <label>Descrição</label>
         <input type="text" value={inptDescricaoServico} onChange={(e) => setInptDescricaoServico(e.target.value)} ref={descricaoservicos} />
 
-        <label>Área do Serviço</label>
+        <label>area</label>
         <input type="text" value={inptAreaServico} onChange={(e) => setInptAreaServico(e.target.value)} ref={areaservicos} />
 
+       
+        
+      <label>Preço Mínimo (R$):</label>
+      <input
+        type="number"
+        step="0.01"
+        min="0"
+        value={inptPrecoMinimo}
+        onChange={(e) => setInptPrecoMinimo(e.target.value)}
+        ref={precoMinimo}
+      />
+
+      <label>Prazo de Entrega:</label>
+      <input
+        type="text"
+        value={inptPrazoEntrega}
+        onChange={(e) => setInptPrazoEntrega(e.target.value)}
+      ref={tempoEntrega}
+      />
+
+      <label>Idioma:</label>
+      <input
+        type="text"
+        value={inptIdioma}
+        onChange={(e) => setInptIdioma(e.target.value)}
+        ref={idiomaAtende}
+      />
+        
+       
+       
         <button onClick={createServicos}>Cadastrar Serviço</button>
       </div>
 
@@ -103,10 +134,14 @@ return (
       <p><strong>Área:</strong> {servico.area}</p>
       <img src={servico.imagem_capa || "./images/img_cara_triste.jpg"} alt={servico.titulo} width="150" />
       <p><strong>Descrição:</strong> {servico.descricao}</p>
+      <p>idioma em que atende:{servico.idioma}</p>
+      <p>tempo de entrega:{servico.tempo_entrega}</p>
+      <p>preço minimo:{servico.preco_minimo}</p>
+
       <button onClick={() => deleteServicos(servico.servico_id)}>Apagar Serviço</button>
     <button onClick={() => UpdateServicos(servico.servico_id)}>edita servico</button>
     
-    <button></button>
+    
     </div>
 
   ))}

@@ -6,10 +6,14 @@ CREATE TABLE IF NOT EXISTS usuarios (
 );
 
 CREATE TABLE IF NOT EXISTS servicos (
-    servico_id serial PRIMARY KEY,
-    titulo varchar(80),
-    descricao varchar(500),
-    capa bytea
+    servico_id SERIAL PRIMARY KEY,
+    titulo VARCHAR(80) NOT NULL,
+    descricao VARCHAR(500),
+    area VARCHAR(100),
+    imagem_capa varchar (2000),
+    tempo_entrega VARCHAR(50),
+    preco_minimo NUMERIC(10, 2) CHECK (preco_minimo >= 0),
+    idioma VARCHAR(50)
 );
 
 CREATE TABLE IF NOT EXISTS portifolios (
