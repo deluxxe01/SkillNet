@@ -11,6 +11,7 @@ import axios, { Axios } from 'axios'
 import { GlobalContext } from '../context/Globalcontext';
 import { useContext } from 'react';
 import ModalError from '../components/ModalError';
+import { useEffect } from 'react';
 
 function Cadastro() {
   const [checkBox, setCheckBox] = useState()
@@ -72,6 +73,7 @@ function Cadastro() {
       }else{
         localStorage.setItem('token',1)
         setUserLogado(resultado.data.usuario)
+        console.log(userLogado)
         console.log("email unico parabens")
         navigate('/area_servico_pesquisado')
       }
@@ -83,6 +85,7 @@ function Cadastro() {
    
   
   }
+ 
 
   return (
     <div >

@@ -63,6 +63,7 @@ App.put('/put_user',async(req,res)=>{
     const user = req.body
 
     const Usuario =await db.updateUser(user)
+    console.log(Usuario)
 
     res.json(Usuario)
 
