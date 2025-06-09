@@ -34,7 +34,7 @@ CREATE TABLE IF NOT EXISTS comentarioPortifolio (
     id_comentario SERIAL PRIMARY KEY,
     comentario text,
     fk_Usuario_id INT,
-    fk_portifolio_id INT,
+    fk_portifolio_id INT ,
     CONSTRAINT fk_usuario_comentario_portifolio FOREIGN KEY (fk_Usuario_id) REFERENCES usuarios(id_usuario),
     CONSTRAINT fk_portifolio_comentario FOREIGN KEY (fk_portifolio_id) REFERENCES portifolios(id_portifolio)
 );
@@ -47,3 +47,11 @@ CREATE TABLE IF NOT EXISTS comentarioServico (
     CONSTRAINT fk_servico FOREIGN KEY (fk_servico_id) REFERENCES servicos(servico_id),
     CONSTRAINT fk_usuario_comentario_servico FOREIGN KEY (fk_Usuario_id) REFERENCES usuarios(id_usuario)
 );
+
+CREATE TABLE IF NOT EXISTS salasChat(
+    id_sala serial PRIMARY KEY,
+    FK_id_usuario1 integer not null,
+    FK_id_usuario2 integer not null,
+    CONSTRAINT fk_usuario1_salasChat FOREIGN KEY (FK_id_usuario1) REFERENCES usuarios(id_usuario),
+    CONSTRAINT fk_usuario2_salasChat FOREIGN KEY (FK_id_usuario2) REFERENCES usuarios(id_usuario)
+)

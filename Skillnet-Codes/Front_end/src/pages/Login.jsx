@@ -30,6 +30,7 @@ function Login() {
       }
 
       const result = await axios.post('http://localhost:3000/login_user',infos)
+      console.log(result)
       
       
       if(result.data == false){
@@ -40,7 +41,7 @@ function Login() {
         setUserLogado(result.data)
         
         console.log(result.data)
-        Cadastro('/Servico')
+        Cadastro('/area_servico_pesquisado')
 
       }
     }

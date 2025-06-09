@@ -62,7 +62,7 @@ App.put('/put_user',async(req,res)=>{
 
     const user = req.body
 
-    const Usuario =await db.updateUser(user)
+    const Usuario = await db.updateUser(user)
     console.log(Usuario)
 
     res.json(Usuario)
@@ -141,6 +141,15 @@ io.on("connection", socket =>{
            
             mensagens.push(data)
             io.emit('mensagemRecebida',data)
+
+    })
+    socket.on('criarSala',async (id_usuario1,id_usuario2,callback) =>{
+
+        const sala_id =  await db.createSalasChat(id_usuario1,id_usuario2)
+
+        socket.join(sala_id)
+
+        callback({sucesso:true,sala_id})
 
     })
 

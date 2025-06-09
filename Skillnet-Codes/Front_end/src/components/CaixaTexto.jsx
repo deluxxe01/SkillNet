@@ -46,7 +46,7 @@ function CaixaTexto(props) {
          
        }
        
-       socket.emit('mandarMensagem',mensagem)
+       socket.emit('criarSala',1,2)
        setInptMess("")
 
      }
@@ -66,8 +66,9 @@ function CaixaTexto(props) {
   
       // Carregar as mensagens do servidor ao montar o componente
       const renderMessage = async () => {
-        const resultado = await axios.get('http://localhost:3000/Mensagens')
+        const resultado = await axios.get('api/Mensagens')
         setChat(resultado.data)
+
       }
   
       renderMessage()

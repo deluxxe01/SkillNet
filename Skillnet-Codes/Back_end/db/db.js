@@ -7,6 +7,7 @@ const createTables = require('../functions/createTables.js');
 const { create } = require('domain');
 
 
+
 async function createDataBase() {
     const {Pool} = require('pg')
 
@@ -313,6 +314,37 @@ async function selectServicos() {
     await client.query(sql,values)
     
  }
+  
+ async function createSalasChat(id_usuario1,id_usuario2) {
+  
+  const client = await connect()
+
+  const sql = 'insert into salasChat(FK_id_usuario1,FK_id_usuario2) values($1,$2) returning id_sala' 
+
+  const values=[id_usuario1,id_usuario2]
+
+  const res = await client.query(sql,values)
+
+  console.log(res.rows[0].id_sala)
+
+  return res.rows[0].id_sala
+  
+ }
+
+ async function findSala(user){
+
+  const client = await connect()
+
+  const sql = "select id_sala from salasChat where(FK_id_usuario1=$1 and FK_id_usuario2=$2) or (FK_id_usuario1=$2 and FK_id_usuario2=$1)"
+ 
+  const values = [user.id_usuario1,user.id_usuario2]
+
+  const res = await client.query(sql,values)
+
+  return res.rowCount[0]?.id_sala
+
+ }
+
 module.exports = {
     cadastrarUsuarios,
     deleteUser,
@@ -327,6 +359,8 @@ module.exports = {
     updateServico,
     deleteServico,
     createComentServico,
-    deleteCommentServico
+    deleteCommentServico,
+    createSalasChat,
+    findSala
   };
 

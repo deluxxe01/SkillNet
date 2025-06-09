@@ -74,7 +74,6 @@ function Cadastro() {
         localStorage.setItem('token',1)
         setUserLogado(resultado.data.usuario)
         console.log(userLogado)
-        console.log("email unico parabens")
         navigate('/area_servico_pesquisado')
       }
      
