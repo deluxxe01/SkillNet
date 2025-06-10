@@ -80,30 +80,38 @@
     margin-top: 25px;
     padding: 12px;
     font-size: 16px;
-    border-radius: 25px;
+    border-radius: 5px;
     cursor: pointer;
     transition: 0.3s ease;
     width: 40%;
   }
   
   .salvar {
-    background-color: #1b4d2c;
-    color: white;
-    border: none;
+    background-color: #fbfbfb;
+    color: black;
+    border: 2px solid #145123;
+    font-family: Mont;
+    font-weight: 500;
+
   }
   
   .salvar:hover {
     background-color: #145123;
+    color: #fbfbfb;
   }
   
   .cancelar {
     background-color: transparent;
-    border: 2px solid #1b4d2c;
-    color: #1b4d2c;
+    border: 2px solid #da1e37;
+    color: black;
+    font-family: Mont;
+    font-weight: 500;
   }
   
   .cancelar:hover {
-    background-color: #e6f3eb;
+    background-color: #da1e37;
+    color: #fbfbfb;
+    transition: 0.3s ease;
   }
   .containerInptPass{
     display: flex;

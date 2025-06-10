@@ -9,6 +9,7 @@ import { useNavigate } from 'react-router-dom'
 import ModalTrocaInfos from '../components/ModalTrocaInfos'
 import UserInfos from '../components/UserInfos'
 import UserEditInfos from '../components/UserEditInfos'
+import SalasChat from '../components/SalasChat'
 
 function PaginaUsuario() {
     const [inptNome,setInptNome]=useState('')
@@ -66,14 +67,15 @@ function PaginaUsuario() {
       <div className="left-panel">
        <div className='optionBtn' onClick={()=>{setPaginaUser(0)}}><img src="./icons/perfilIcon.svg" alt="" className='imgProfile ' /> perfil </div>
        <div className='optionBtn' onClick={()=>{setPaginaUser(1)}}> <img src="./icons/editarIcon.svg" alt="" className='imgProfile' /> editar perfil </div>
-       <div className='optionBtn'><img src="./icons/chatIcon.svg" alt="" className='imgProfile' />   conversas </div>
+       <div className='optionBtn' onClick={()=>{setPaginaUser(2)}}><img src="./icons/chatIcon.svg" alt="" className='imgProfile' />   conversas </div>
        <div className='optionBtn'><img src="./icons/servicosIcon.svg" alt="" className='imgProfile' /> serviços </div>
        <div className='optionBtn'><img src="./icons/portifolioIcon.svg" alt="" className='imgProfile' />portifolios</div>
       </div>
 
       <div className="right-panel">
-        {paginasUser== 0 && <UserInfos />}
-        {paginasUser== 1 && <UserEditInfos /> }
+        {paginasUser == 0 && <UserInfos />}
+        {paginasUser == 1 && <UserEditInfos /> }
+        {paginasUser == 2 && <SalasChat />}
   
       </div>
      </div>

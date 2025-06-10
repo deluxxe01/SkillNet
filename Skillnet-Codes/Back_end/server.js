@@ -12,14 +12,18 @@ const verrificaFinalEmail = require('./middleware/verrficarEMail.js')
 
 App.use(express.json({ limit: '50mb' }))
 App.use(cors({
-     
-    //origin: 'http://localhost:5173'
+    origin: 'http://localhost:5173'
 }))
 const http = require('http');
 const server = http.createServer(App);
 const io = new Server(server,{
+    cors: {
+        origin: 'http://localhost:5173',
+        methods: ['GET', 'POST']
+    },
     pingInterval: 25000, // envia ping a cada 25 segundos
-    pingTimeout: 60000,  // espera até 60 segundos antes de desconecta
+    pingTimeout: 60000, // espera até 60 segundos antes de desconecta
+     
 })
 App.use(express.urlencoded({ extended: true }));
 let messages 
@@ -65,7 +69,7 @@ App.put('/put_user',async(req,res)=>{
     const Usuario = await db.updateUser(user)
     console.log(Usuario)
 
-    res.json(Usuario)
+    res.json({user:Usuario})
 
 })
 
@@ -145,11 +149,25 @@ io.on("connection", socket =>{
     })
     socket.on('criarSala',async (id_usuario1,id_usuario2,callback) =>{
 
+        console.log('criou ',id_usuario1,id_usuario2)
         const sala_id =  await db.createSalasChat(id_usuario1,id_usuario2)
 
         socket.join(sala_id)
 
         callback({sucesso:true,sala_id})
+
+    })
+    socket.on('salasUsuario', async (id_usuario,callback)=>{
+
+        console.log(id_usuario)
+
+        const salasUsuario = await db.findSala(id_usuario)
+
+        console.log(salasUsuario)
+
+        callback({salas:salasUsuario})
+
+
 
     })
 

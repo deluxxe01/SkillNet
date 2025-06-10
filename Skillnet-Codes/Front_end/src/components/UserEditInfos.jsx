@@ -36,24 +36,20 @@ function UserEditInfos() {
             }
             console.log(userLogado.id_usuario)
             if(inputEmail==userLogado.email || inputNome==userLogado.nome  || inputSenha==userLogado.senha){
-              alert("troca os inputs corno")
+              alert("insira valores novos nos campos")
               setIsReadOnly(false)
             }else{
               const result =  await axios.put('/api/put_user',infos)
            
               setUserLogado(infos)
                console.log("nomeUser"+userLogado.id_usuario)
-              console.log("resultado do banco"+result.data)
+              console.log("resultado do banco",result.data.user)
               setIsReadOnly(true)
             }
          
         }
       }
-       useEffect(() => {
-        if (userLogado) {
-          console.log('Usuário logado:', userLogado)
-        }
-      }, [userLogado])
+       
    
   return (
     <div>
@@ -71,7 +67,7 @@ function UserEditInfos() {
             </div>
           </div>
           <button type="button" className="btn salvar" onClick={controlarInputs}>{isReadOnly ?"editar":"salvar"}</button>
-          <button type="button" className="btn cancelar">Cancelar</button>
+          {isReadOnly ? '':<button type="button" className="btn cancelar" onClick={()=>{setIsReadOnly(true)}}>Cancelar</button>}
         </form>
     </div>
   )

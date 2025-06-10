@@ -16,7 +16,7 @@ function CaixaTexto(props) {
    })
     const [inptMess,setInptMess]=useState('')
    
-    const {chat,setChat}=useContext(GlobalContext)
+    const {chat,setChat,userLogado,setUserLogado}=useContext(GlobalContext)
     const[teste,setTeste]=useState([])
     const [vetorChat,setVetorChat]=useState([])
     const socketRef=useRef(null)
@@ -46,7 +46,11 @@ function CaixaTexto(props) {
          
        }
        
-       socket.emit('criarSala',1,2)
+       socket.emit('criarSala',userLogado.id_usuario,2,(resposta)=>{
+
+        console.log("resposta do server",resposta)
+
+       })
        setInptMess("")
 
      }

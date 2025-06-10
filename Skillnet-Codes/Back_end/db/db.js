@@ -149,11 +149,12 @@ async function cadastrarUsuarios(usuario) {
     const sql = fs.readFileSync(sqlPath,'utf-8')
     
    
-    const value = [usuario.nome,usuario.email,usuario.senha,usuario.id]
+    const value = [usuario.nome,usuario.email,usuario.senha,usuario.id_usuario]
 
     
 
     const result = await client.query(sql,value)
+    
 
     return result.rows[0]
  
@@ -335,13 +336,14 @@ async function selectServicos() {
 
   const client = await connect()
 
-  const sql = "select id_sala from salasChat where(FK_id_usuario1=$1 and FK_id_usuario2=$2) or (FK_id_usuario1=$2 and FK_id_usuario2=$1)"
+  const sql = "SELECT * FROM salasChat WHERE FK_id_usuario1 = $1 OR FK_id_usuario2 = $1"
  
-  const values = [user.id_usuario1,user.id_usuario2]
+  const values = [user.id_usuario]
+  console.log(user.id_usuario)
 
   const res = await client.query(sql,values)
 
-  return res.rowCount[0]?.id_sala
+  return res.rows
 
  }
 
