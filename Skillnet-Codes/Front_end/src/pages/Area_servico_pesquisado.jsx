@@ -3,108 +3,29 @@ import Header from '../components/Header';
 import './Area_servico_pesquisado.css';
 import { Link } from 'react-router-dom';
 import PainelFiltros from '../components/PainelFiltros';
-import { useContext } from 'react';
+import { useContext,useEffect, } from 'react';
 import { GlobalContext } from '../context/Globalcontext';
-
+import CadastrarServico from './CadastrarServico';
+import api from '../Services/api';
 function Area_servico_pesquisado() {
   const [filtraServico, setFiltraServico] = useState('');
  
   const {userLogado,setUserLogado,cadastroServico,setCadastroServico}=useContext(GlobalContext)
 
-  const servicos = [
-    {
-      titulo: 'Fotografia Profissional',
-      poster: 'https://assets.querobolsa.com.br/assets/covers/courses/fotografia-e598e34a8f3d4ac1d8376da393c6f4f979ea763f8d482af06630713de014434f.webp',
-      sinopse: 'Captura momentos inesquecíveis com qualidade e criatividade.',
-      tipo_servico: ['Fotografia'],
-    },
-    {
-      titulo: 'Consultoria de Negócios',
-      poster: 'https://plus.unsplash.com/premium_photo-1661772661721-b16346fe5b0f',
-      sinopse: 'Soluções estratégicas para impulsionar o crescimento da empresa.',
-      tipo_servico: ['Consultoria'],
-    },
-    {
-      titulo: 'Design de Interiores',
-      poster: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRhagREYiuYvqOIEIfeFG58TMSMnMZyFTS-dQ&s',
-      sinopse: 'Transforme espaços com elegância e funcionalidade.',
-      tipo_servico: ['Design de Interiores', 'Arquitetura'],
-    },
-    {
-      titulo: 'Desenvolvimento Web',
-      poster: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQVdnVsZv7of9Wwxn9ovPj1UX-yg5vaQCYcfA&',
-      sinopse: 'Criação de sites modernos, responsivos e otimizados.',
-      tipo_servico: ['Desenvolvimento', 'Tecnologia'],
-    },
-    {
-      titulo: 'Personal Trainer',
-      poster: 'https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b',
-      sinopse: 'Acompanhamento personalizado para saúde e bem-estar.',
-      tipo_servico: ['Fitness', 'Saúde'],
-    },
-    {
-      titulo: 'Maquiagem Profissional',
-      poster: 'https://images.unsplash.com/photo-1522337660859-02fbefca4702',
-      sinopse: 'Realce sua beleza com técnicas modernas.',
-      tipo_servico: ['Beleza'],
-    },
-    {
-      titulo: 'Aulas de Música',
-      poster: 'https://images.unsplash.com/photo-1470225620780-dba8ba36b745',
-      sinopse: 'Aprenda com professores experientes.',
-      tipo_servico: ['Educação', 'Música'],
-    },
-    {
-      titulo: 'Serviços de Jardinagem',
-      poster: 'https://images.unsplash.com/photo-1587300003388-59208cc962cb',
-      sinopse: 'Cuidamos do seu jardim com carinho.',
-      tipo_servico: ['Jardinagem'],
-    },
-    {
-      titulo: 'Tradução de Documentos',
-      poster: 'https://images.unsplash.com/photo-1519337265831-281ec6cc8514',
-      sinopse: 'Traduções precisas para diversas línguas.',
-      tipo_servico: ['Tradução', 'Idiomas'],
-    },
-    {
-      titulo: 'Marketing Digital',
-      poster: 'https://images.unsplash.com/photo-1556745753-b2904692b3cd',
-      sinopse: 'Campanhas para aumentar sua presença online.',
-      tipo_servico: ['Marketing', 'Publicidade'],
-    },
-    {
-      titulo: 'Serviços Jurídicos',
-      poster: 'https://images.unsplash.com/photo-1676145643363-e195aa2213f7',
-      sinopse: 'Assessoria jurídica especializada.',
-      tipo_servico: ['Advocacia', 'Jurídico'],
-    },
-    {
-      titulo: 'Consultas Médicas',
-      poster: 'https://images.unsplash.com/photo-1651008376811-b90baee60c1f',
-      sinopse: 'Atendimento médico de qualidade.',
-      tipo_servico: ['Medicina', 'Saúde'],
-    },
-    {
-      titulo: 'Engenharia Civil',
-      poster: 'https://plus.unsplash.com/premium_photo-1663100465979-7d42b0f37bbc',
-      sinopse: 'Projetos e execuções com excelência.',
-      tipo_servico: ['Engenharia', 'Construção'],
-    },
-  ];
-
+  
+  async function getServicos() {
+    const response = await api.get('/servicos');
+    setCadastroServico(response.data); // agora atualiza o contexto global
+    console.log(response)
+  }
 
 
  
 
 
-  const ServicosFiltrados = useMemo(() => {
-    const servicoMinusculo = filtraServico.toLowerCase().trim();
-    return servicos.filter((servico) =>
-      servico.tipo_servico.some((tipo) =>
-        tipo.toLowerCase().includes(servicoMinusculo)
-      )
-    );
-  }, [filtraServico]);
+  useEffect(() => {
+    getServicos();
+  }, []); // roda apenas uma vez ao montar
 
   return (
     <div className='container_pagina'>
@@ -162,34 +83,29 @@ function Area_servico_pesquisado() {
         </div>
 
         <div className='lista_serviço'>
-          {ServicosFiltrados.length > 0 ? (
-            ServicosFiltrados.map((servico, index) => (
-              <div className='card_servico' key={index}>
-                <img
-                  src={servico.poster}
-                  alt={servico.titulo}
-                  className='poster'
-                />
-               
-               
-               
-                <div className='container_cat_servico' >
-  {servico.tipo_servico.map((tipo, index) => (
-    <span key={index} className="categoria_servico_especifico">{tipo}</span>
-  ))}
-</div>
-                
+       
+  {cadastroServico.map((servico) => (
+  <div key={servico.servico_id} className='card_servico'>
+      <img src={servico.imagem_capa || "./images/img_cara_triste.jpg"} alt={servico.titulo} className='poster' />
+      <p className="categoria_servico_especifico">{servico.area}</p>
+      <p className='titulo_servico'>Título: {servico.titulo}</p>
+      <p><strong>Descrição:</strong> {servico.descricao}</p>
+      <p>preço minimo:{servico.preco_minimo}</p>
 
-                
-                
-                <h3 className='titulo_servico'>{servico.titulo}</h3>
-                <p >{servico.sinopse}</p>
-              </div>
-            ))
-          ) : (
-            <span className='span_nFilmes'>Nenhum serviço encontrado!</span>
-          )}
+      {/* <button onClick={() => deleteServicos(servico.servico_id)}>Apagar Serviço</button>
+    <button onClick={() => UpdateServicos(servico.servico_id)}>edita servico</button> */}
+    
+    
+    </div>
+
+  ))}
+       
+       
+       
         </div>
+     
+     
+     
       </div>
     </div>
   );

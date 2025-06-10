@@ -5,10 +5,8 @@
 
 width: 100%;
 height:70vh;
-align-items: center;
 justify-content: space-evenly;
 display: flex;
-justify-content: space-evenly;
 padding: 5px;
 font-size: 20px;
 font-family: mont;
@@ -62,7 +60,7 @@ font-weight: 500;
 .divInputsServico{
     display: flex;
     flex-direction: column;
-    align-items: center;
+    
 
 }.text_descrição_servico{
 width: 350px;
@@ -113,17 +111,15 @@ justify-content: space-around;
     margin-top: 50px;
     display: flex;
     flex-direction: column;
-    align-items: center;
 }.div_Inputs_servico_titulo{
 
     display: flex;
     flex-direction: column;
-    align-items: center;
+  
 margin-bottom: 10PX;
 }.container_buttons{
     width: 100%;
 height: fit-content;
-
 display: flex;
 justify-content: space-evenly;
 color: white;
@@ -185,4 +181,5 @@ align-items: center;
 border-radius: 5px;
 align-items: center;
 }
+
 

@@ -72,9 +72,7 @@ const idiomaAtende = useRef()
 
 
 
-  useEffect(() => {
-    getServicos();
-  }, []);
+
 
 return (
     <div>
@@ -132,7 +130,7 @@ return (
   <div key={servico.servico_id}>
       <p><strong>Título:</strong> {servico.titulo}</p>
       <p><strong>Área:</strong> {servico.area}</p>
-      <img src={servico.imagem_capa || "./images/img_cara_triste.jpg"} alt={servico.titulo} width="150" />
+      <img src={servico.imagem_capa} alt={servico.titulo} width="150" />
       <p><strong>Descrição:</strong> {servico.descricao}</p>
       <p>idioma em que atende:{servico.idioma}</p>
       <p>tempo de entrega:{servico.tempo_entrega}</p>
