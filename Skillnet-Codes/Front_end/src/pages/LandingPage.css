@@ -238,4 +238,8 @@ display: flex;
     justify-self:center;
     display: flex;
     flex-direction: column;
+}.container_Footer_LadingPage{
+width: 100%;
+
+
 }

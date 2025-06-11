@@ -7,6 +7,7 @@ import { useContext,useEffect, } from 'react';
 import { GlobalContext } from '../context/Globalcontext';
 import CadastrarServico from './CadastrarServico';
 import api from '../Services/api';
+import Footer from '../components/Footer';
 function Area_servico_pesquisado() {
   const [filtraServico, setFiltraServico] = useState('');
  
@@ -22,13 +23,13 @@ function Area_servico_pesquisado() {
 
  
 
-
+  
   useEffect(() => {
     getServicos();
   }, []); // roda apenas uma vez ao montar
 
   return (
-    <div className='container_pagina'>
+    <div className='container_pagina_servico_pesquisado'>
       <div className='container_img_bg '>
         <Header />
 
@@ -42,10 +43,11 @@ function Area_servico_pesquisado() {
               placeholder='Procure a sua área'
               value={filtraServico}
               onChange={(e) => setFiltraServico(e.target.value)}
-            />
+              />
           </div>
         </div>
 
+              </div>
         <div className='painel_filtros'>
           <PainelFiltros />
         </div>
@@ -88,9 +90,9 @@ function Area_servico_pesquisado() {
   <div key={servico.servico_id} className='card_servico'>
       <img src={servico.imagem_capa || "./images/img_cara_triste.jpg"} alt={servico.titulo} className='poster' />
       <p className="categoria_servico_especifico">{servico.area}</p>
-      <p className='titulo_servico'>Título: {servico.titulo}</p>
-      <p><strong>Descrição:</strong> {servico.descricao}</p>
-      <p>preço minimo:{servico.preco_minimo}</p>
+      <p className='titulo_servico'>{servico.titulo}</p>
+      <p><strong></strong> {servico.descricao}</p>
+      <p>{servico.preco_minimo}R$</p>
 
       {/* <button onClick={() => deleteServicos(servico.servico_id)}>Apagar Serviço</button>
     <button onClick={() => UpdateServicos(servico.servico_id)}>edita servico</button> */}
@@ -104,10 +106,15 @@ function Area_servico_pesquisado() {
        
         </div>
      
-     
-     
+      <div className='container_footer_servico'>
+
+     <Footer/>
       </div>
+    
+     
+  
     </div>
+    
   );
 }
 

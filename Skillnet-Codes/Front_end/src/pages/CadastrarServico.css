@@ -46,14 +46,15 @@ background-position: center;
 .inptServicos{
    width: 200px;
    width: 350px; 
-   background-color: #D9D9D9;
    height: 50px;
-   border: none;
+   background-color: #ffffff;
+   border: #004B22 solid 2px;
    border-radius: 5px;
-   
    font-size: 15px;
-font-family: mont;
-font-weight: 500;
+    font-family: mont;
+    font-weight: 500;
+
+
 }
 
 
@@ -66,10 +67,9 @@ font-weight: 500;
 width: 350px;
 height: 270px;
 padding: 10px;
-background-color: #D9D9D9;
-border: none;
 border-radius: 10px;
-
+background-color: #ffffff;
+   border: #004B22 solid 2px;
 font-size: 15px;
 font-family: mont;
 font-weight: 500;
@@ -78,23 +78,21 @@ font-weight: 500;
 
 .inpt_titulo_servico{
     width: 350px; 
-background-color: #D9D9D9;
 height: 50px;
-border: none;
 border-radius: 5px;
-
+background-color: #ffffff;
+   border: #004B22 solid 2px;
 font-size: 15px;
 font-family: mont;
 font-weight: 500;
 }.select_area_servico{
 
     width: 350px; 
-    background-color: #D9D9D9;
     height: 50px;
-    border: none;
     border-radius: 5px;
-margin: 5px;
-
+    margin: 5px;
+    background-color: #ffffff;
+    border: #004B22 solid 2px;
 font-size: 15px;
 font-family: mont;
 font-weight: 500;

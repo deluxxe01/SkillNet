@@ -3,7 +3,7 @@ import './LandingPage.css'
 import PainelFiltros from '../components/PainelFiltros'
 import Button from '../components/Button'
 import Header from '../components/Header'
-
+import Footer from '../components/Footer'
 
 
 function LandingPage() {
@@ -84,6 +84,9 @@ function LandingPage() {
       <div className='conteiner3'>
 
       </div>
+     <div className='container_Footer_LadingPage'>
+     <Footer/>
+     </div>
       
 
     </div>

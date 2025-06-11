@@ -2,6 +2,7 @@
   box-sizing: border-box;
   padding: 0;
   margin: 0;
+  overflow-x: hidden;
 }
 #root::-webkit-scrollbar,body::-webkit-scrollbar,html::-webkit-scrollbar{
   width: 0;
