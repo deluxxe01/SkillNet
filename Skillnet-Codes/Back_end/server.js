@@ -147,10 +147,16 @@ io.on("connection", socket =>{
             io.emit('mensagemRecebida',data)
 
     })
-    socket.on('criarSala',async (id_usuario1,id_usuario2,callback) =>{
+    socket.on('criarSala',async (user1,user2,callback) =>{
+        console.log(user1)
 
-        console.log('criou ',id_usuario1,id_usuario2)
-        const sala_id =  await db.createSalasChat(id_usuario1,id_usuario2)
+        console.log('criou ',{
+            id:user1.id_usuario1
+            ,nome:user1.nome
+        },{
+            id:user2.id_usuario2,
+            nome:user2.nome})
+        const sala_id =  await db.createSalasChat({ id:user1.id_usuario1  ,nome:user1.nome},{ id:user2.id_usuario2, nome:user2.nome})
 
         socket.join(sala_id)
 
@@ -163,7 +169,7 @@ io.on("connection", socket =>{
 
         const salasUsuario = await db.findSala(id_usuario)
 
-        console.log(salasUsuario)
+        console.log("salas do usuario",salasUsuario)
 
         callback({salas:salasUsuario})
 

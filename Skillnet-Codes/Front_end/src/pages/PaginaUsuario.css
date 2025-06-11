@@ -32,7 +32,7 @@
   
   .right-panel {
     flex: 1;
-    padding: 40px;
+    
     background-color: white;
     display: flex;
     flex-direction: column;

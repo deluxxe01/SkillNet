@@ -46,7 +46,14 @@ function CaixaTexto(props) {
          
        }
        
-       socket.emit('criarSala',userLogado.id_usuario,2,(resposta)=>{
+       socket.emit('criarSala',({
+        id_usuario1:userLogado.id_usuario,
+        nome:userLogado.nome
+
+       }),({
+        id_usuario2:userLogado.id_usuario+1,
+        nome:'tyler cariane da silva'
+      }),(resposta)=>{
 
         console.log("resposta do server",resposta)
 

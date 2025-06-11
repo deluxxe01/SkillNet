@@ -4,11 +4,12 @@ import { useEffect } from 'react'
 import { GlobalContext } from '../context/Globalcontext'
 import { useContext } from 'react'
 import { useState } from 'react'
+import './salasChat.css'
 
 const socket = io("http://localhost:3000")
 function SalasChat() {
     const {userLogado,setUserlogado}=useContext(GlobalContext)
-    const [salasUser,setSalasUser]=useState('')
+    const [salasUser,setSalasUser]=useState([])
 
 
 
@@ -17,6 +18,8 @@ function SalasChat() {
         socket.emit('salasUsuario',({id_usuario:userLogado.id_usuario}),(resposta)=>{
 
             console.log('salas do usuario',resposta)
+            console.log("sala",resposta.salas)
+          
             setSalasUser(resposta.salas)
             
 
@@ -29,13 +32,14 @@ function SalasChat() {
     },[])
 
   return (
-    <div>testezim
+    <div className='containerPaiContatos'>
+          <div>{salasUser.map((sala,)=>(
+            <div className='containerContatos'> 
+              <p key={sala.id_sala} className='pContatos'>{userLogado.nome==sala.nomeuser1?sala.nomeuser2:sala.nomeuser1}</p>
+            </div>
 
-         {/* <div>{salasUser.map((sala)=>{
 
-            <p>salas {sa}</p>
-
-        })}</div> */}
+        ))}</div> 
          
     </div>
   )

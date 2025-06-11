@@ -316,13 +316,13 @@ async function selectServicos() {
     
  }
   
- async function createSalasChat(id_usuario1,id_usuario2) {
+ async function createSalasChat(user1,user2) {
   
   const client = await connect()
 
-  const sql = 'insert into salasChat(FK_id_usuario1,FK_id_usuario2) values($1,$2) returning id_sala' 
+  const sql = 'insert into salasChat(FK_id_usuario1,FK_id_usuario2,nomeUser1,nomeUser2) values($1,$2,$3,$4) returning id_sala' 
 
-  const values=[id_usuario1,id_usuario2]
+  const values=[user1.id,user2.id,user1.nome,user2.nome]
 
   const res = await client.query(sql,values)
 
@@ -339,6 +339,7 @@ async function selectServicos() {
   const sql = "SELECT * FROM salasChat WHERE FK_id_usuario1 = $1 OR FK_id_usuario2 = $1"
  
   const values = [user.id_usuario]
+
   console.log(user.id_usuario)
 
   const res = await client.query(sql,values)

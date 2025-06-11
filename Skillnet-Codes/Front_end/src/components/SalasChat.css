@@ -1,0 +1,22 @@
+.containerContatos{
+    width: 300px;
+    align-items: center;
+    justify-content: flex-start;
+    display: flex;
+    background-color: #e7ecef;
+    min-width: 200px;
+    border-radius: 10px;
+    
+}
+.containerPaiContatos{
+    
+    height: 60vh;
+    width: 100%;
+    background-color: rebeccapurple;
+    
+}
+.pContatos{
+    font-family: Mont;
+    font-weight: 500;
+    padding: 15px;
+}

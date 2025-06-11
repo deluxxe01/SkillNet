@@ -4,6 +4,7 @@ import { useContext } from 'react'
 import { GlobalContext } from '../context/Globalcontext'
 import axios from 'axios'
 import { useEffect } from 'react'
+import "./UserEditinfos.css"
 function UserEditInfos() {
     const {userLogado,setUserLogado} = useContext(GlobalContext)
     const [isModalOpen,setIsModalOpen]=useState(false)
@@ -52,8 +53,7 @@ function UserEditInfos() {
        
    
   return (
-    <div>
-         
+    <div className='containerEditInfos'>  
         <h1 className='h1UserProfile'>Editar Perfil</h1>
         <form >
           <label htmlFor="nome">Nome completo</label>

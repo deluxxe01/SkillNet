@@ -3,6 +3,7 @@ import { useState } from 'react'
 import { useContext } from 'react'
 import { GlobalContext } from '../context/Globalcontext'
 import { useNavigate } from 'react-router-dom'
+import './UserInfos.css'
 function UserInfos(){
 const navigate = useNavigate()
 const {userLogado,setUserLogado} = useContext(GlobalContext) 
@@ -25,7 +26,7 @@ const [password,setPassword] = useState('password')
 
 
     return (
-        <div>
+        <div className='containerInfos'>
              <h1 className='h1UserProfile'>Olá {userLogado.nome}, seja bem-vindo!</h1>
              <form >
           <label htmlFor="nome">Nome completo</label>

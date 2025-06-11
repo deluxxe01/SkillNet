@@ -10,6 +10,7 @@ import ModalTrocaInfos from '../components/ModalTrocaInfos'
 import UserInfos from '../components/UserInfos'
 import UserEditInfos from '../components/UserEditInfos'
 import SalasChat from '../components/SalasChat'
+import Footer from '../components/Footer'
 
 function PaginaUsuario() {
     const [inptNome,setInptNome]=useState('')
@@ -52,7 +53,7 @@ function PaginaUsuario() {
     }
       // Função para deletar a conta do usuário
       const deleteUser = async() => {
-          let  id = userLogado.id
+          let  id = userLogado.id_usuario
           const result =  await axios.delete(`http://localhost:3000/delete_user/${id}`)
             setUserLogado('')
             navigate('/')
@@ -80,6 +81,7 @@ function PaginaUsuario() {
       </div>
      </div>
      {isModalOpen ?<ModalTrocaInfos open={isModalOpen} onClose={closeModal}/>:''}
+     <Footer />
     </div>
     
       
