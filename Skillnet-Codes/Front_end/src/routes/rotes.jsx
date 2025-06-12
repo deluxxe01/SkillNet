@@ -25,6 +25,7 @@ const router = createBrowserRouter([
     {path:'/servico',element:<TrabalhoEscolhido />},
     {path:'/servico',element:<TrabalhoEscolhido />},
     {path:'sobre_nos',element:<PageSobreNos />},
+    {path:'portfolioeditar', element:<PortfolioEditar />},
     {path:'/cadastro_servico',element:<CadastrarServico />},
     {element:<PrivateRoutes />,
 
