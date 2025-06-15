@@ -9,7 +9,9 @@ import './salasChat.css'
 const socket = io("http://localhost:3000")
 function SalasChat() {
     const {userLogado,setUserlogado}=useContext(GlobalContext)
+    const [inptMenssagen,setInptMenssagen]=useState()
     const [salasUser,setSalasUser]=useState([])
+    const [arrayMess,setArrayMess]=useState([])
 
 
 
@@ -30,9 +32,35 @@ function SalasChat() {
 
 
     },[])
+    function mandarMess(){
+
+        let data = new Date();
+        // Pega as horas e minutos
+        let horas = data.getHours().toString().padStart(2, '0'); // Adiciona zero à esquerda, se necessário
+        let minutos = data.getMinutes().toString().padStart(2, '0'); // Adiciona zero à esquerda, se necessário
+
+        // Exibe no formato HH:mm
+        let horaEminuto = `${horas}:${minutos}`;
+
+      let mensagen={
+        mensagen:inptMenssagen,
+        horas:horaEminuto
+
+      }
+
+      socket.emit('menssagens',({mensagen}),(resposta)=>{
+        
+        setArrayMess([...arrayMess,resposta])
+        console.log('vetor',arrayMess)
+      })
+      setInptMenssagen('')
+
+
+    }
 
   return (
     <div className='containerPaiContatos'>
+      <div>
           <div>{salasUser.map((sala,)=>(
             <div className='containerContatos'> 
               <p key={sala.id_sala} className='pContatos'>{userLogado.nome==sala.nomeuser1?sala.nomeuser2:sala.nomeuser1}</p>
@@ -40,6 +68,19 @@ function SalasChat() {
 
 
         ))}</div> 
+         </div>
+        <div className='contaienerMenssagens'>
+          {arrayMess.map(mess =>(
+            <div className='CaixaMensagem'>
+              <p>{mess.mensagens.mensagen}</p>
+              <p>{mess.mensagens.horas}</p>
+             </div>
+          ))}
+
+          <input type="text" className='submitText' value={inptMenssagen} onChange={(e)=>{setInptMenssagen(e.target.value)}} />
+          <button onClick={mandarMess}>enviar</button>
+          
+        </div>
          
     </div>
   )

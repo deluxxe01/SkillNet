@@ -348,6 +348,31 @@ async function selectServicos() {
 
  }
 
+ async function findMenssagens(id_usuario) {
+
+  const client = await connect()
+  
+  const sql = 'select * from mensagen where fk_id_usuario = $1'
+
+  const resultado=await client.query(sql,[id_usuario])
+
+  return resultado.rows
+
+
+  
+ }
+
+ async function createMensage(obj) {
+
+  const client = await connect()
+
+  const sql = "insert into mensagen(menssagen,fk_id_usuario) values($1,$2)"
+  const values = [obj.menssagen,obj.id_usuario]
+  
+  await client.query(sql,values)
+  
+ }
+
 module.exports = {
     cadastrarUsuarios,
     deleteUser,
@@ -364,6 +389,7 @@ module.exports = {
     createComentServico,
     deleteCommentServico,
     createSalasChat,
-    findSala
+    findSala,
+    findMenssagens,createMensage
   };
 

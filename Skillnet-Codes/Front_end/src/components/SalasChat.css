@@ -13,10 +13,20 @@
     height: 60vh;
     width: 100%;
     background-color: rebeccapurple;
+    display: flex;
     
 }
 .pContatos{
     font-family: Mont;
     font-weight: 500;
     padding: 15px;
+}
+.contaienerMenssagens{
+    width: 100%;
+    align-items: flex-start;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+      
+
 }

@@ -157,7 +157,7 @@ io.on("connection", socket =>{
             id:user2.id_usuario2,
             nome:user2.nome})
         const sala_id =  await db.createSalasChat({ id:user1.id_usuario1  ,nome:user1.nome},{ id:user2.id_usuario2, nome:user2.nome})
-
+        console.log("id da sla de chat",sala_id)
         socket.join(sala_id)
 
         callback({sucesso:true,sala_id})
@@ -165,17 +165,26 @@ io.on("connection", socket =>{
     })
     socket.on('salasUsuario', async (id_usuario,callback)=>{
 
-        console.log(id_usuario)
+        
+         console.log("salas",socket.rooms)
 
         const salasUsuario = await db.findSala(id_usuario)
 
-        console.log("salas do usuario",salasUsuario)
 
         callback({salas:salasUsuario})
 
 
 
     })
+    socket.on('menssagens',(obj,callback) =>{
+        console.log('passoui aqui')
+        console.log("objeto",obj)
+
+        callback({mensagens:obj.mensagen,horario:obj.horas})
+
+
+    })
+     
 
     socket.on("disconnect", (reason) => {
         console.log(`Cliente desconectado (${socket.id}): ${reason}`);

@@ -56,4 +56,10 @@ CREATE TABLE IF NOT EXISTS salasChat(
     nomeUser2 varchar(100) not null,
     CONSTRAINT fk_usuario1_salasChat FOREIGN KEY (FK_id_usuario1) REFERENCES usuarios(id_usuario),
     CONSTRAINT fk_usuario2_salasChat FOREIGN KEY (FK_id_usuario2) REFERENCES usuarios(id_usuario)
+);
+CREATE TABLE IF NOT EXISTS mensagen(
+    id_mensagen serial PRIMARY key,
+    menssagen varchar(200),
+    fk_id_usuario int,
+    CONSTRAINT fk_usuario_mensagen FOREIGN key (fk_id_usuario) REFERENCES usuarios(id_usuario)
 )
