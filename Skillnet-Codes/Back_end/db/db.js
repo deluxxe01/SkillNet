@@ -373,6 +373,52 @@ async function selectServicos() {
   
  }
 
+ async function joinSala(user){
+
+  const client = await connect()
+  console.log(user.id_usuario)
+
+  const sql = "SELECT id_sala FROM salasChat WHERE FK_id_usuario1 = $1 OR FK_id_usuario2 = $1"
+ 
+  const values = [user.id_usuario]
+
+
+
+  const res = await client.query(sql,values)
+  console.log("banco",res.rows)
+
+  return res.rows[1]
+
+ }
+
+ async function salvarMenssagen(obj) {
+
+  const client = await connect()
+  
+  const sql = 'insert into mensagen(menssagen,fk_id_usuario,fk_id_sala,horas) values($1,$2,$3,$4)'
+  const values = [obj.mensagen,obj.id_usuario,obj.id_sala,obj.horas]
+  
+
+   await client.query(sql,values)
+  
+ }
+
+ async function selecionarMenssagens(id_sala) {
+
+  const client  = await connect()
+
+  const sql = 'select * from mensagen where fk_id_sala = $1'
+
+  const res = await client.query(sql,[id_sala])
+
+  return res.rows
+
+
+
+  
+  
+ }
+
 module.exports = {
     cadastrarUsuarios,
     deleteUser,
@@ -390,6 +436,10 @@ module.exports = {
     deleteCommentServico,
     createSalasChat,
     findSala,
-    findMenssagens,createMensage
+    findMenssagens,
+    createMensage,
+    joinSala,
+    salvarMenssagen,
+    selecionarMenssagens
   };
 

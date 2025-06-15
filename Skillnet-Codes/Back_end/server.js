@@ -141,8 +141,6 @@ io.on("connection", socket =>{
 
     socket.on("mandarMensagem", data =>{
         console.log(data)
-
-           
             mensagens.push(data)
             io.emit('mensagemRecebida',data)
 
@@ -176,16 +174,30 @@ io.on("connection", socket =>{
 
 
     })
-    socket.on('menssagens',(obj,callback) =>{
+    socket.on('menssagens',async (obj,callback) =>{
         console.log('passoui aqui')
         console.log("objeto",obj)
+        await db.salvarMenssagen(obj.mensagen)
+
 
         callback({mensagens:obj.mensagen,horario:obj.horas})
 
 
     })
-     
 
+    socket.on('puxarMenssagen',async(id_sala,callback) =>{
+
+       const res = await db.selecionarMenssagens(id_sala.id_sala)
+
+       callback({res})
+
+    })
+     
+    socket.on('salas', (id_sala, callback) => {
+    socket.join(id_sala)
+    console.log(`Socket ${socket.id} entrou na sala ${id_sala}`)
+    callback({ sucesso: true })
+  })
     socket.on("disconnect", (reason) => {
         console.log(`Cliente desconectado (${socket.id}): ${reason}`);
     });

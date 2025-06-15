@@ -12,6 +12,7 @@ function SalasChat() {
     const [inptMenssagen,setInptMenssagen]=useState()
     const [salasUser,setSalasUser]=useState([])
     const [arrayMess,setArrayMess]=useState([])
+    const [salaSelecionada,setSalaSelecionada]=useState('')
 
 
 
@@ -44,7 +45,9 @@ function SalasChat() {
 
       let mensagen={
         mensagen:inptMenssagen,
-        horas:horaEminuto
+        horas:horaEminuto,
+        id_usuario:userLogado.id_usuario,
+        id_sala:salaSelecionada
 
       }
 
@@ -58,11 +61,32 @@ function SalasChat() {
 
     }
 
+     function selecionarSala(id_sala) {
+    setSalaSelecionada(id_sala)
+    setArrayMess([]) // limpar mensagens antigas
+
+    socket.emit('salas', id_sala, (resposta) => {
+      console.log('Entrou na sala', resposta)
+    })
+  }
+
+  function menssagens(id_sala){
+    socket.emit('puxarMenssagen',({id_sala}),(resposta)=>{
+
+      console.log(resposta)
+
+       setArrayMess(resposta.res)
+
+    })
+  }
+
   return (
     <div className='containerPaiContatos'>
       <div>
           <div>{salasUser.map((sala,)=>(
-            <div className='containerContatos'> 
+            <div className='containerContatos' onClick={()=>{selecionarSala(sala.id_sala)
+              menssagens(sala.id_sala)
+            }} key={sala.id_sala}> 
               <p key={sala.id_sala} className='pContatos'>{userLogado.nome==sala.nomeuser1?sala.nomeuser2:sala.nomeuser1}</p>
             </div>
 
@@ -72,8 +96,8 @@ function SalasChat() {
         <div className='contaienerMenssagens'>
           {arrayMess.map(mess =>(
             <div className='CaixaMensagem'>
-              <p>{mess.mensagens.mensagen}</p>
-              <p>{mess.mensagens.horas}</p>
+              <p>{mess.menssagen}</p>
+              <p>{mess.horas}</p>
              </div>
           ))}
 
