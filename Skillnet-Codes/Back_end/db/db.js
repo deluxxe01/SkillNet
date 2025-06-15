@@ -436,7 +436,7 @@ async function deletePorti(id) {
   const client = await connect()
   
   const sql = 'insert into mensagen(menssagen,fk_id_usuario,fk_id_sala,horas) values($1,$2,$3,$4)'
-  const values = [obj.mensagen,obj.id_usuario,obj.id_sala,obj.horas]
+  const values = [obj.menssagen,obj.id_usuario,obj.id_sala,obj.horas]
   
 
    await client.query(sql,values)

@@ -44,7 +44,7 @@ function SalasChat() {
         let horaEminuto = `${horas}:${minutos}`;
 
       let mensagen={
-        mensagen:inptMenssagen,
+        menssagen:inptMenssagen,
         horas:horaEminuto,
         id_usuario:userLogado.id_usuario,
         id_sala:salaSelecionada
@@ -53,7 +53,7 @@ function SalasChat() {
 
       socket.emit('menssagens',({mensagen}),(resposta)=>{
         
-        setArrayMess([...arrayMess,resposta])
+        setArrayMess([...arrayMess,resposta.mensagens])
         console.log('vetor',arrayMess)
       })
       setInptMenssagen('')
@@ -87,25 +87,34 @@ function SalasChat() {
             <div className='containerContatos' onClick={()=>{selecionarSala(sala.id_sala)
               menssagens(sala.id_sala)
             }} key={sala.id_sala}> 
-              <p key={sala.id_sala} className='pContatos'>{userLogado.nome==sala.nomeuser1?sala.nomeuser2:sala.nomeuser1}</p>
+              <p key={sala.id_sala} className='pContatos' >{userLogado.nome==sala.nomeuser1?sala.nomeuser2:sala.nomeuser1}</p>
             </div>
 
 
         ))}</div> 
          </div>
-        <div className='contaienerMenssagens'>
-          {arrayMess.map(mess =>(
-            <div className='CaixaMensagem'>
-              <p>{mess.menssagen}</p>
-              <p>{mess.horas}</p>
-             </div>
-          ))}
-
-          <input type="text" className='submitText' value={inptMenssagen} onChange={(e)=>{setInptMenssagen(e.target.value)}} />
-          <button onClick={mandarMess}>enviar</button>
-          
-        </div>
-         
+<div className='divChat'>
+  <div className='corpoChat2'>
+    {arrayMess.map(mess =>(
+      <div className='CaixaMensagem' style={{
+                  backgroundColor:mess.fk_id_usuario != userLogado.id_usuario ? '#83CF41' : '#004B22',
+                  marginRight:mess.fk_id_usuario != userLogado.id_usuario?"50%" :"-50%",
+                  marginLeft:mess.fk_id_usuario != userLogado.id_usuario ?"10px":"-10px"}}>
+        <p>{mess.menssagen}</p>
+        <p>{mess.horas}</p>
+      </div>
+    ))}
+  </div>
+  <div className='footerChat'>
+    <input
+      type="text"
+      className='submitText'
+      value={inptMenssagen}
+      onChange={(e)=>{setInptMenssagen(e.target.value)}}
+    />
+    <button onClick={mandarMess} className='buttonChat'>enviar</button>
+  </div>
+</div>
     </div>
   )
 }
