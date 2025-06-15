@@ -263,7 +263,7 @@ async function selectServicos() {
 
 
 
-    // Função para listar portfolios
+ // Função para listar portfolios
  async function selectPorti() {
 
     // Estabelecer conexão com o banco de dados
@@ -275,8 +275,10 @@ async function selectServicos() {
     // Retorna as linhas (registros) da tabela
     return res.rows;
   }
+
+//funcao para adcionar porfolios
   async function insertPorti(porti) {
-  
+
   //Estabelendo a conexão com o banco de dados
   const portfolio = await connect();
   
@@ -290,6 +292,44 @@ async function selectServicos() {
   await portfolio.query(sql,values)
   
   }
+
+  // Buscar um portfólio por ID
+async function selectPortiById(id) {
+    const portfolio = await connect();
+    const res = await portfolio.query("SELECT * FROM portifolios WHERE id = $1", [id]);
+    return res.rows[0]; // retorna um único objeto
+}
+
+// Atualizar um portfólio
+async function updatePorti(id, porti) {
+    const portfolio = await connect();
+    const sql = `
+        UPDATE portifolios SET 
+            nome = $1, 
+            link_insta = $2, 
+            link_linkedin = $3, 
+            link_gmail = $4, 
+            localidade = $5, 
+            ano_experiencia = $6, 
+            area_atuacao = $7, 
+            foto_url = $8, 
+            sobremim = $9, 
+            fk_usuario_id = $10
+        WHERE id = $11
+    `;
+    const values = [
+        porti.nome, porti.link_insta, porti.link_linkedin, porti.link_gmail,
+        porti.localidade, porti.ano_experiencia, porti.area_atuacao,
+        porti.foto_url, porti.sobremim, porti.fkUsuario, id
+    ];
+    await portfolio.query(sql, values);
+}
+
+// Deletar um portfólio por ID
+async function deletePorti(id) {
+    const portfolio = await connect();
+    await portfolio.query("DELETE FROM portifolios WHERE id = $1", [id]);
+}
 
  async function createComentServico(comment){
 
@@ -381,6 +421,9 @@ module.exports = {
     connect,
     insertPorti,
     selectPorti,
+    deletePorti,
+    updatePorti,
+    selectPortiById,
     selectServicos,
     selectServico,
     insertServico,

@@ -272,7 +272,10 @@ App.delete('/servicos/:id', async (req, res) => {
 
 
 })
+
+
 //rotas para o portifolio
+//rota adcionar portfolio
 App.post("/portfolio", async function(requisition, response) {
     
     console.log (requisition.body)
@@ -294,11 +297,41 @@ App.get('/portfolio', async (req, res) => {
 
     });
 
+// Buscar um portfólio por ID
+App.get('/portfolio/:id', async (req, res) => {
+    const { id } = req.params;
+    const porti = await db.selectPortiById(id);
 
+    if (porti) {
+        res.json(porti);
+    } else {
+        res.status(404).json({ error: 'Portfólio não encontrado' });
+    }
+});
 
+// Atualizar um portfólio por ID
+App.put('/portfolio/:id', async (req, res) => {
+    const { id } = req.params;
 
+    try {
+        await db.updatePorti(id, req.body);
+        res.sendStatus(200);
+    } catch (err) {
+        console.error(err);
+        res.status(500).json({ error: 'Erro ao atualizar portfólio' });
+    }
+});
 
+// Deletar um portfólio por ID
+App.delete('/portfolio/:id', async (req, res) => {
+    const { id } = req.params;
 
-
-
+    try {
+        await db.deletePorti(id);
+        res.sendStatus(204);
+    } catch (err) {
+        console.error(err);
+        res.status(500).json({ error: 'Erro ao deletar portfólio' });
+    }
+});
 server.listen(3000,()=>{})
