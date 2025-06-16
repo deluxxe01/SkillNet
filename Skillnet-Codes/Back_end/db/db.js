@@ -1,6 +1,4 @@
 require('dotenv').config({ path: './secrets/.env' });
-console.log('USER_NAME:', process.env.USER_NAME);
-console.log('PASSWORD:', process.env.PASSWORD);
 const fs = require('fs');
 const path = require('path');
 const { Pool } = require('pg');
@@ -17,7 +15,6 @@ async function createDataBase() {
   });
 
   const client = await defaultPool.connect();
-
   const dbName = process.env.DB_NAME;
 
   const result = await client.query("SELECT 1 FROM pg_database WHERE datname = $1", [dbName]);
@@ -58,12 +55,10 @@ async function connect() {
   });
 
   console.log('Conexão com banco estabelecida!');
-
   return pool.connect();
 }
 
-// --- FUNÇÕES USUÁRIOS ---
-
+// --- USUÁRIOS ---
 async function cadastrarUsuarios(usuario) {
   const client = await connect();
   try {
@@ -114,13 +109,7 @@ async function loginUser(usuario) {
     const sql = fs.readFileSync(sqlPath, 'utf-8');
     const values = [usuario.email, usuario.senha];
     const result = await client.query(sql, values);
-    if (result.rows.length === 0) {
-      console.log('Usuário não existe');
-      return false;
-    } else {
-      console.log('Usuário autenticado');
-      return result.rows[0];
-    }
+    return result.rows.length === 0 ? false : result.rows[0];
   } catch (error) {
     console.error('Erro no login:', error);
   } finally {
@@ -128,8 +117,7 @@ async function loginUser(usuario) {
   }
 }
 
-// --- FUNÇÕES SERVIÇOS ---
-
+// --- SERVIÇOS ---
 async function selectServicos() {
   const client = await connect();
   try {
@@ -211,8 +199,7 @@ async function deleteServico(id) {
   }
 }
 
-// --- FUNÇÕES PORTFÓLIO ---
-
+// --- PORTIFÓLIOS (sem usuários) ---
 async function selectPorti() {
   const client = await connect();
   try {
@@ -223,20 +210,25 @@ async function selectPorti() {
   }
 }
 
+async function selectPortiById(id) {
+  const client = await connect();
+  try {
+    const res = await client.query("SELECT * FROM portifolios WHERE id_portifolio = $1", [id]);
+    return res.rows[0];
+  } finally {
+    client.release();
+  }
+}
+
 async function insertPorti(porti) {
   const client = await connect();
-  
-  console.log('Dados recebidos no insertPorti:', porti); // <-- Aqui
-  
-  
   const sql = `
     INSERT INTO portifolios
-      (nome, link_insta, link_linkedin, link_gmail, localidade, ano_experiencia, area_atuacao, foto_url, sobremim, fk_usuario_id)
+      (link_insta, link_linkedin, link_gmail, localidade, ano_experiencia, area_atuacao, foto_url, sobremim)
     VALUES
-      ($1,$2,$3,$4,$5,$6,$7,$8,$9,$10)
+      ($1, $2, $3, $4, $5, $6, $7, $8)
   `;
   const values = [
-    porti.nome,
     porti.link_insta,
     porti.link_linkedin,
     porti.link_gmail,
@@ -244,21 +236,12 @@ async function insertPorti(porti) {
     porti.ano_experiencia,
     porti.area_atuacao,
     porti.foto_url,
-    porti.sobremim,
-    porti.fk_usuario_id,
+    porti.sobremim
   ];
   try {
     await client.query(sql, values);
-  } finally {
-    client.release();
-  }
-}
-
-async function selectPortiById(id) {
-  const client = await connect();
-  try {
-    const res = await client.query("SELECT * FROM portifolios WHERE id = $1", [id]);
-    return res.rows[0];
+  } catch (error) {
+    console.error('Erro ao inserir portfólio:', error);
   } finally {
     client.release();
   }
@@ -268,20 +251,17 @@ async function updatePorti(id, porti) {
   const client = await connect();
   const sql = `
     UPDATE portifolios SET
-      nome = $1,
-      link_insta = $2,
-      link_linkedin = $3,
-      link_gmail = $4,
-      localidade = $5,
-      ano_experiencia = $6,
-      area_atuacao = $7,
-      foto_url = $8,
-      sobremim = $9,
-      fk_usuario_id = $10
-    WHERE id = $11
+      link_insta = $1,
+      link_linkedin = $2,
+      link_gmail = $3,
+      localidade = $4,
+      ano_experiencia = $5,
+      area_atuacao = $6,
+      foto_url = $7,
+      sobremim = $8
+    WHERE id_portifolio = $9
   `;
   const values = [
-    porti.nome,
     porti.link_insta,
     porti.link_linkedin,
     porti.link_gmail,
@@ -290,8 +270,7 @@ async function updatePorti(id, porti) {
     porti.area_atuacao,
     porti.foto_url,
     porti.sobremim,
-    porti.fk_usuario_id,
-    id,
+    id
   ];
   try {
     await client.query(sql, values);
@@ -303,14 +282,13 @@ async function updatePorti(id, porti) {
 async function deletePorti(id) {
   const client = await connect();
   try {
-    await client.query("DELETE FROM portifolios WHERE id = $1", [id]);
+    await client.query("DELETE FROM portifolios WHERE id_portifolio = $1", [id]);
   } finally {
     client.release();
   }
 }
 
-// --- FUNÇÕES COMENTÁRIOS SERVIÇO ---
-
+// --- COMENTÁRIOS ---
 async function createComentServico(comment) {
   const client = await connect();
   const sql = `
@@ -334,8 +312,7 @@ async function deleteCommentServico(id) {
   }
 }
 
-// --- FUNÇÕES CHAT ---
-
+// --- CHAT ---
 async function createSalasChat(user1, user2) {
   const client = await connect();
   const sql = `
@@ -395,7 +372,7 @@ async function joinSala(user) {
   `;
   try {
     const res = await client.query(sql, [user.id_usuario]);
-    return res.rows[0]; // retornando a primeira sala encontrada
+    return res.rows[0];
   } finally {
     client.release();
   }
@@ -426,10 +403,8 @@ async function selecionarMenssagens(id_sala) {
 }
 
 // --- INICIALIZAÇÃO ---
-
 (async () => {
   await createDataBase();
-
   const sqlPath = path.join(__dirname, '../sql/tableUsuarios.sql');
   const sql = fs.readFileSync(sqlPath, 'utf-8');
   await createTables(sql);
@@ -447,8 +422,8 @@ module.exports = {
   updateServico,
   deleteServico,
   selectPorti,
-  insertPorti,
   selectPortiById,
+  insertPorti,
   updatePorti,
   deletePorti,
   createComentServico,
