@@ -1,4 +1,32 @@
-.Container-EditarPortfolio{
+:root {
+    --cor-primaria: hwb(0 85% 0%);
+    --cor-secundaria: #FFC5C6;
+    --cor-texto: #333333;
+    --cor-fundo: #f5f5f5;
+    --cor-destaque: #ffc107;
+  }
+
+.Container-PortfolioEditar{
     background-color: aquamarine;
-    margin: 10vh;
+    margin: 8vh;
 }
+.Title-EditarPortfolio{
+    margin-left: 80vh;
+    font-size: 5vh;
+}
+.Formulario{
+    background-color: var(--cor-primaria);
+    border-radius: 5vh;
+    margin-top: 5vh;
+    margin-left: 40vh;
+    width: 120vh;
+    height: 50vh;
+}
+.Inpt-Formulario{
+    background-color: var(--cor-secundaria);
+    border: none
+}
+input, textarea:focus {
+    outline: none;
+    box-shadow: none;
+  }

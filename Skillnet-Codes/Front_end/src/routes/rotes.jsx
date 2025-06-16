@@ -13,7 +13,7 @@ import PaginaUsuario from "../pages/PaginaUsuario.jsx";
 import PrivateRoutes from "./PrivateRoutes.jsx"
 import Cria_servico from "../pages/Cria_servico.jsx";
 import CadastrarServico from "../pages/CadastrarServico.jsx";
-
+import Servico_escolhido from "../pages/Servico_escolhido.jsx";
 
 const router = createBrowserRouter([
     {path:'/',element:<LandingPage />},
@@ -22,6 +22,9 @@ const router = createBrowserRouter([
     {path:'/criaServico',element:< Cria_servico />},
     {path:'/area_servico_pesquisado',element:< Area_servico_pesquisado />},
     {path:'/portfolio', element: <Portfolio />},
+   
+    { path:'/servico/:servico_id',  element: <Servico_escolhido/> },
+    
     {path:'/servico',element:<TrabalhoEscolhido />},
     {path:'sobre_nos',element:<PageSobreNos />},
     {path:'portfolioeditar', element:<PortfolioEditar />},

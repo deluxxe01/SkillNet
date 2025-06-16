@@ -25,9 +25,7 @@ CREATE TABLE IF NOT EXISTS portifolios (
     ano_experiencia VARCHAR(50),
     area_atuacao VARCHAR(100),
     foto_url VARCHAR(255),
-    sobremim TEXT,
-    fk_usuario_id int,
-    CONSTRAINT fk_usuario_portifolio FOREIGN KEY (fk_usuario_id) REFERENCES usuarios(id_usuario)
+    sobremim TEXT
 );
 
 CREATE TABLE IF NOT EXISTS comentarioPortifolio (

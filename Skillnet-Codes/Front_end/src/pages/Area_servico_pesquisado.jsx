@@ -87,7 +87,9 @@ function Area_servico_pesquisado() {
         <div className='lista_serviço'>
        
   {cadastroServico.map((servico) => (
-  <div key={servico.servico_id} className='card_servico'>
+   <Link  key={servico.servico_id} to={`/servico/${servico.servico_id}`} className='Link_servico'>
+
+  <div className='card_servico'>
       <img src={servico.imagem_capa || "./images/img_cara_triste.jpg"} alt={servico.titulo} className='poster' />
       <p className="categoria_servico_especifico">{servico.area}</p>
       <p className='titulo_servico'>{servico.titulo}</p>
@@ -99,6 +101,7 @@ function Area_servico_pesquisado() {
     
     
     </div>
+    </Link>
 
   ))}
        
