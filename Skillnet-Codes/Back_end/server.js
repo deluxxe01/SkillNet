@@ -286,64 +286,65 @@ App.delete('/servicos/:id', async (req, res) => {
 })
 
 
-//rotas para o portifolio
-//rota adcionar portfolio
-App.post("/portfolio", async function(requisition, response) {
-    
-    console.log (requisition.body)
-
-      await db.insertPorti(requisition.body)
-      
-       //Retornar algo que deu certo
-      response.sendStatus(201)
-  })
-
-  // Rota para listar todos os portfolios
-App.get('/portfolio', async (req, res) => {
-
-    // Chama a função que seleciona os portfolios no banco de dados
-    const portfolios = await db.selectPorti();
-
-    // Envia a resposta em formato JSON contendo os portfolios
-    res.json(portfolios);
-
-    });
-
-// Buscar um portfólio por ID
-App.get('/portfolio/:id', async (req, res) => {
-    const { id } = req.params;
-    const porti = await db.selectPortiById(id);
-
-    if (porti) {
+// Criar portfolio
+App.post("/portfolios", async (req, res) => {
+    try {
+      await db.insertPorti(req.body);
+      res.sendStatus(201);
+    } catch (error) {
+      console.error(error);
+      res.status(500).json({ error: "Erro ao inserir portfolio" });
+    }
+  });
+  
+  // Listar todos portfolios
+  App.get('/portfolios', async (req, res) => {
+    try {
+      const portfolios = await db.selectPorti();
+      res.json(portfolios);
+    } catch (error) {
+      console.error(error);
+      res.status(500).json({ error: "Erro ao listar portfolios" });
+    }
+  });
+  
+  // Buscar portfolio por ID
+  App.get('/portfolios/:id', async (req, res) => {
+    try {
+      const { id } = req.params;
+      const porti = await db.selectPortiById(id);
+      if (porti) {
         res.json(porti);
-    } else {
+      } else {
         res.status(404).json({ error: 'Portfólio não encontrado' });
+      }
+    } catch (error) {
+      console.error(error);
+      res.status(500).json({ error: "Erro ao buscar portfolio" });
     }
-});
-
-// Atualizar um portfólio por ID
-App.put('/portfolio/:id', async (req, res) => {
-    const { id } = req.params;
-
+  });
+  
+  // Atualizar portfolio por ID
+  App.put('/portfolios/:id', async (req, res) => {
     try {
-        await db.updatePorti(id, req.body);
-        res.sendStatus(200);
-    } catch (err) {
-        console.error(err);
-        res.status(500).json({ error: 'Erro ao atualizar portfólio' });
+      const { id } = req.params;
+      await db.updatePorti(id, req.body);
+      res.sendStatus(200);
+    } catch (error) {
+      console.error(error);
+      res.status(500).json({ error: 'Erro ao atualizar portfólio' });
     }
-});
-
-// Deletar um portfólio por ID
-App.delete('/portfolio/:id', async (req, res) => {
-    const { id } = req.params;
-
+  });
+  
+  // Deletar portfolio por ID
+  App.delete('/portfolios/:id', async (req, res) => {
     try {
-        await db.deletePorti(id);
-        res.sendStatus(204);
-    } catch (err) {
-        console.error(err);
-        res.status(500).json({ error: 'Erro ao deletar portfólio' });
+      const { id } = req.params;
+      await db.deletePorti(id);
+      res.sendStatus(204);
+    } catch (error) {
+      console.error(error);
+      res.status(500).json({ error: 'Erro ao deletar portfólio' });
     }
-});
+  });
 server.listen(3000,()=>{})

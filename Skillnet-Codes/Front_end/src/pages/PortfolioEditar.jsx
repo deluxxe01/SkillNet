@@ -1,205 +1,232 @@
-import { useState, useEffect } from "react"
-import "../pages/PortfolioEditar.css"
+import { useState, useEffect } from "react";
+import "../pages/PortfolioEditar.css";
 import axios from 'axios';
 
-function PortfolioEditar(){
+function PortfolioEditar() {
   const [portfolios, setPortfolios] = useState([]);
   const [portfolioSelect, setPortfolioSelect] = useState(null);
 
-  const [inputNome, setInputNome] = useState('')
-  const [inputEmail, setInputEmail] = useState('')
-  const [inputLinkedin, setInputLinkedin] = useState('')
-  const [inputEndereco, setInputEndereco] = useState('')
-  const [inputCategoria, setInputCategoria] = useState('')
-  const [inputExperiencia, setInputExperiencia] = useState('')
+  // Campos alinhados com sua tabela SQL
+  const [inputLinkInsta, setInputLinkInsta] = useState('');
+  const [inputLinkLinkedin, setInputLinkLinkedin] = useState('');
+  const [inputLinkGmail, setInputLinkGmail] = useState('');
+  const [inputLocalidade, setInputLocalidade] = useState('');
+  const [inputAnoExperiencia, setInputAnoExperiencia] = useState('');
+  const [inputAreaAtuacao, setInputAreaAtuacao] = useState('');
+  const [inputFotoUrl, setInputFotoUrl] = useState('');
+  const [inputSobreMim, setInputSobreMim] = useState('');
 
   const fetchPortfolios = async () => {
-    try{
-        const response = await axios.get('http://localhost:3000/portfolios');
-        setPortfolios(response.data);
-          } catch (error) {
-            console.error('Erro ao buscar portfolios:', error);
-        }
-    };
-   
+    try {
+      const response = await axios.get('http://localhost:3000/portfolios');
+      setPortfolios(response.data);
+    } catch (error) {
+      console.error('Erro ao buscar portfolios:', error);
+    }
+  };
 
-    useEffect(() =>{
+  useEffect(() => {
+    fetchPortfolios();
+  }, []);
+
+  const cadastrarPortfolio = async () => {
+    try {
+      const portfolio = {
+        link_insta: inputLinkInsta,
+        link_linkedin: inputLinkLinkedin,
+        link_gmail: inputLinkGmail,
+        localidade: inputLocalidade,
+        ano_experiencia: inputAnoExperiencia,
+        area_atuacao: inputAreaAtuacao,
+        foto_url: inputFotoUrl,
+        sobremim: inputSobreMim,
+        // fk_usuario_id: ... incluir se precisar
+      };
+      const response = await axios.post('http://localhost:3000/portfolios', portfolio);
+      if (response.status === 201) {
         fetchPortfolios();
-    }, []);
-
-    useEffect(() =>{
-        console.log(portfolios);
-    }, [portfolios]);
-
-    const cadastrarPortfolio = async () => {
-        try {
-            const portfolio = {
-                nome: inputNome,
-                email: inputEmail,
-                linkedin: inputLinkedin,
-                endereco: inputEndereco,
-                categoria: inputCategoria,
-                experiencia: inputExperiencia
-            };
-            const response = await axios.post('http://localhost:3000/portfolios', portfolio);
-            if (response.status === 201) {
-                fetchPortfolios();
-                limparForm();
-            }
-        }catch (error) {
-            console.error('Erro ao adicionar portfolio', error);
-        }
-    };
-
-    const salvarPortfolio = async () => {
-        try {
-            const portfolio = {
-                nome: inputNome,
-                email: inputEmail,
-                linkedin: inputLinkedin,
-                endereco: inputEndereco,
-                categoria: inputCategoria,
-                experiencia: inputExperiencia
-            }
-            const response= await axios.put(`http://localhost:3000/portfolios/${portfolioSelect.id}`, portfolio);
-            if (response.status === 200) {
-                fetchPortfolios() ;
-                setPortfolioSelect(null);
-                limparForm();
-            }
-        } catch (error) {
-            console.error('erro ao atualizar portfolio', error);
-        }
+        limparForm();
+      }
+    } catch (error) {
+      console.error('Erro ao adicionar portfolio', error);
     }
+  };
 
-    const buscarPortfolioId = async (id) => {
-        try {
-            const response = await axios.get(`http://localhost:3000/portfolios/${id}`);
-            setPortfolioSelect(response.data);
-            exibirPortfolio(response.data)
-        } catch (error) {
-            console.error('Erro ao buscar portfolio por ID:', error);
-        }
-        
+  const salvarPortfolio = async () => {
+    try {
+      const portfolio = {
+        link_insta: inputLinkInsta,
+        link_linkedin: inputLinkLinkedin,
+        link_gmail: inputLinkGmail,
+        localidade: inputLocalidade,
+        ano_experiencia: inputAnoExperiencia,
+        area_atuacao: inputAreaAtuacao,
+        foto_url: inputFotoUrl,
+        sobremim: inputSobreMim,
+      };
+      const response = await axios.put(`http://localhost:3000/portfolios/${portfolioSelect.id_portifolio}`, portfolio);
+      if (response.status === 200) {
+        fetchPortfolios();
+        setPortfolioSelect(null);
+        limparForm();
+      }
+    } catch (error) {
+      console.error('Erro ao atualizar portfolio', error);
     }
+  };
 
-     const deletarPortfolio = async (id) => {
-        try {
-            const response = await axios.delete (`http://localhost:3000/portfolios/${id}`)
-            if (response.status === 200) {
-                fetchPortfolios()
-            }
-        }catch (error) {
-            console.error('Erro ao deletar portfolio:', error)
-        }
-     }
+  const buscarPortfolioId = async (id) => {
+    try {
+      const response = await axios.get(`http://localhost:3000/portfolios/${id}`);
+      setPortfolioSelect(response.data);
+      exibirPortfolio(response.data);
+    } catch (error) {
+      console.error('Erro ao buscar portfolio por ID:', error);
+    }
+  };
 
-     function limparForm(){
-        setInputNome('')
-        setInputEmail('')
-        setInputLinkedin('')
-        setInputEndereco('')
-        setInputCategoria('')
-        setInputExperiencia('')
-     }
+  const deletarPortfolio = async (id) => {
+    try {
+      const response = await axios.delete(`http://localhost:3000/portfolios/${id}`);
+      if (response.status === 200) {
+        fetchPortfolios();
+      }
+    } catch (error) {
+      console.error('Erro ao deletar portfolio:', error);
+    }
+  };
 
-     function exibirPortfolio(portfolio){
-         setInputNome(portfolio.nome || '')
-         setInputEmail(portfolio.email || '')
-         setInputLinkedin(portfolio.linkedin || '')
-         setInputEndereco(portfolio.endereco || '')
-         setInputCategoria(portfolio.categoria || '')
-         setInputExperiencia(portfolio.experiencia || '')
-     }
+  function limparForm() {
+    setInputLinkInsta('');
+    setInputLinkLinkedin('');
+    setInputLinkGmail('');
+    setInputLocalidade('');
+    setInputAnoExperiencia('');
+    setInputAreaAtuacao('');
+    setInputFotoUrl('');
+    setInputSobreMim('');
+  }
 
+  function exibirPortfolio(portfolio) {
+    setInputLinkInsta(portfolio.link_insta || '');
+    setInputLinkLinkedin(portfolio.link_linkedin || '');
+    setInputLinkGmail(portfolio.link_gmail || '');
+    setInputLocalidade(portfolio.localidade || '');
+    setInputAnoExperiencia(portfolio.ano_experiencia || '');
+    setInputAreaAtuacao(portfolio.area_atuacao || '');
+    setInputFotoUrl(portfolio.foto_url || '');
+    setInputSobreMim(portfolio.sobremim || '');
+  }
 
-    return(
+  return (
     <div className="Container-PortfolioEditar">
-        <h1>Dudaaaa</h1>
+      <h1>Editar Portfólio</h1>
 
-<div className="lala">
+      <div className="formulario">
 
-<div className="inputContainer">
-        <label>Nome Completo </label>
-        <input type="text" 
-        placeholder="Usuario "
-        value={inputNome}
-        onChange={(event) => setInputNome(event.target.value)}
-        required
-        />
-</div>
+        <div className="inputContainer">
+          <label>Instagram</label>
+          <input
+            type="text"
+            placeholder="Link do Instagram"
+            value={inputLinkInsta}
+            onChange={e => setInputLinkInsta(e.target.value)}
+          />
+        </div>
 
-<div className="inputContainer">
-    <label>Link Email </label>
-         <input type="text" 
-        placeholder="https;ksjdksd"
-        value={inputEmail}
-        onChange={(event) => setInputEmail(event.target.value)}
-        required
-        />
-</div>
+        <div className="inputContainer">
+          <label>Linkedin</label>
+          <input
+            type="text"
+            placeholder="Link do Linkedin"
+            value={inputLinkLinkedin}
+            onChange={e => setInputLinkLinkedin(e.target.value)}
+          />
+        </div>
 
-<div className="inputContainer">
-    <label>Link Linkedin </label>
-       <input type="text" 
-        placeholder="https;ksjdksd"
-        value={inputLinkedin}
-        onChange={(event) => setInputLinkedin(event.target.value)}
-        required
-        />
-</div>
+        <div className="inputContainer">
+          <label>Email (Gmail)</label>
+          <input
+            type="text"
+            placeholder="Link do Gmail"
+            value={inputLinkGmail}
+            onChange={e => setInputLinkGmail(e.target.value)}
+          />
+        </div>
 
-<div className="inputContainer"> 
-    <label>Localidade </label>    
-       <input type="text" 
-        placeholder="Brasil SP"
-        value={inputEndereco}
-        onChange={(event) => setInputEndereco(event.target.value)}
-        required
-        />
-</div>
+        <div className="inputContainer">
+          <label>Localidade</label>
+          <input
+            type="text"
+            placeholder="Localidade"
+            value={inputLocalidade}
+            onChange={e => setInputLocalidade(e.target.value)}
+          />
+        </div>
 
-<div className="inputContainer"> 
-    <label>Área de Trabalho </label>    
-       <input type="text" 
-        placeholder="Desenvolvedor Web"
-        value={inputCategoria}
-        onChange={(event) => setInputCategoria(event.target.value)}
-        required
-        />
-</div>
+        <div className="inputContainer">
+          <label>Ano de Experiência</label>
+          <input
+            type="text"
+            placeholder="Ex: 2 anos"
+            value={inputAnoExperiencia}
+            onChange={e => setInputAnoExperiencia(e.target.value)}
+          />
+        </div>
 
-<div className="inputContainer"> 
-    <label>Tempo de Experiencia</label>    
-       <input type="text" 
-        placeholder="2 anos"
-        value={inputExperiencia}
-        onChange={(event) => setInputExperiencia(event.target.value)}
-        required
-        />
-</div>
+        <div className="inputContainer">
+          <label>Área de Atuação</label>
+          <input
+            type="text"
+            placeholder="Ex: Desenvolvedor Web"
+            value={inputAreaAtuacao}
+            onChange={e => setInputAreaAtuacao(e.target.value)}
+          />
+        </div>
 
- </div>
+        <div className="inputContainer">
+          <label>Foto URL</label>
+          <input
+            type="text"
+            placeholder="URL da foto"
+            value={inputFotoUrl}
+            onChange={e => setInputFotoUrl(e.target.value)}
+          />
+        </div>
 
-{portfolioSelect && <button type="button" onClick={salvarPortfolio}>Salvar Alterações</button>}
-{!portfolioSelect && <button type="button" onClick={cadastrarPortfolio}>Cadastrar Cliente</button>}
+        <div className="inputContainer">
+          <label>Sobre Mim</label>
+          <textarea
+            placeholder="Fale sobre você"
+            value={inputSobreMim}
+            onChange={e => setInputSobreMim(e.target.value)}
+          />
+        </div>
 
+      </div>
 
-    <section className='portfolios'>
-                {portfolios.map((portfolio) => (
-                    <div key={portfolio.id} className='cliente'>
-                        <h2>{portfolio.nome}</h2>
-                        <p>{portfolio.email}</p>
-                        <p>{portfolio.telefone}</p>
-                        <p>{portfolio.endereco}</p>
-                        <p>{portfolio.id}</p>
-                        <button onClick={() => buscarPortfolioId(portfolio.id)}>Editar</button>
-                        <button onClick={() => deletarPortfolio(portfolio.id)}>Deletar</button>
-                    </div>
-                ))}
-            </section>
-</div>
+      {portfolioSelect ? (
+        <button type="button" onClick={salvarPortfolio}>Salvar Alterações</button>
+      ) : (
+        <button type="button" onClick={cadastrarPortfolio}>Cadastrar Portfólio</button>
+      )}
 
-    )
+      <section className='portfolios'>
+        {portfolios.map((portfolio) => (
+          <div key={portfolio.id_portifolio} className='cliente'>
+            <h2>{portfolio.link_insta || 'Instagram não informado'}</h2>
+            <p>{portfolio.link_gmail}</p>
+            <p>{portfolio.link_linkedin}</p>
+            <p>{portfolio.localidade}</p>
+            <p>{portfolio.ano_experiencia}</p>
+            <p>{portfolio.area_atuacao}</p>
+            <button onClick={() => buscarPortfolioId(portfolio.id_portifolio)}>Editar</button>
+            <button onClick={() => deletarPortfolio(portfolio.id_portifolio)}>Deletar</button>
+          </div>
+        ))}
+      </section>
+    </div>
+  );
 }
-export default PortfolioEditar
+
+export default PortfolioEditar;
