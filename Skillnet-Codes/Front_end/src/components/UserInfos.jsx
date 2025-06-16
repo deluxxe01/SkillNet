@@ -4,20 +4,24 @@ import { useContext } from 'react'
 import { GlobalContext } from '../context/Globalcontext'
 import { useNavigate } from 'react-router-dom'
 import './UserInfos.css'
+import ModalConfirm from './ModalConfirm'
 function UserInfos(){
 const navigate = useNavigate()
 const {userLogado,setUserLogado} = useContext(GlobalContext) 
 const [isModalOpen,setIsModalOpen]=useState(false)
 const [inptShow,setInptShow]=useState(true)
 const [password,setPassword] = useState('password')
+const [openModal,setOpenModal]=useState(false)
 
    const showPassword = () => {
     setInptShow(!inptShow)
     }
     const logOut= () => {
-        navigate('/')
-        setUserLogado('')
-        localStorage.removeItem("token")
+
+     setOpenModal(!openModal)
+        // navigate('/')
+        // setUserLogado('')
+        // localStorage.removeItem("token")
         
 
     }
@@ -40,11 +44,12 @@ const [password,setPassword] = useState('password')
             <input type={inptShow ? "password" :"text"} id="senha" value={userLogado.senha} readOnly /> <button type='button' className='btnShowPasword' onClick={showPassword}><img className='imgOlhos' src={inptShow ? "./icons/olhoFechado.png" : "./icons/olho_cheio.png"} alt="" /></button>
             </div>
           </div>
-        <button class="noselect" onClick={logOut}><span class="text">Sair</span>
+        <button class="noselect" type='button' onClick={logOut}><span class="text">Sair</span>
         <span class="icon">
         <img className='imgLogOut' src="./icons/seta-esquerda.png" alt="" />
          </span></button>
         </form>
+        {openModal ? <ModalConfirm />:''}
 
         </div>
 

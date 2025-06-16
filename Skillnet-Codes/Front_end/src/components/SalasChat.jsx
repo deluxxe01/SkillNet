@@ -46,7 +46,7 @@ function SalasChat() {
       let mensagen={
         menssagen:inptMenssagen,
         horas:horaEminuto,
-        id_usuario:userLogado.id_usuario,
+        fk_id_usuario:userLogado.id_usuario,
         id_sala:salaSelecionada
 
       }
@@ -100,8 +100,8 @@ function SalasChat() {
                   backgroundColor:mess.fk_id_usuario != userLogado.id_usuario ? '#83CF41' : '#004B22',
                   marginRight:mess.fk_id_usuario != userLogado.id_usuario?"50%" :"-50%",
                   marginLeft:mess.fk_id_usuario != userLogado.id_usuario ?"10px":"-10px"}}>
-        <p>{mess.menssagen}</p>
-        <p>{mess.horas}</p>
+        <p className=''>{mess.menssagen}</p>
+        <p className='spamChat'>{mess.horas}</p>
       </div>
     ))}
   </div>

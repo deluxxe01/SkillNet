@@ -23,7 +23,6 @@ const router = createBrowserRouter([
     {path:'/area_servico_pesquisado',element:< Area_servico_pesquisado />},
     {path:'/portfolio', element: <Portfolio />},
     {path:'/servico',element:<TrabalhoEscolhido />},
-    {path:'/servico',element:<TrabalhoEscolhido />},
     {path:'sobre_nos',element:<PageSobreNos />},
     {path:'portfolioeditar', element:<PortfolioEditar />},
     {path:'/cadastro_servico',element:<CadastrarServico />},

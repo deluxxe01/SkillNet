@@ -380,7 +380,7 @@ async function createMensage(obj) {
     INSERT INTO mensagen (menssagen, fk_id_usuario)
     VALUES ($1, $2)
   `;
-  const values = [obj.menssagen, obj.id_usuario];
+  const values = [obj.menssagen, obj.fk_id_usuario];
   try {
     await client.query(sql, values);
   } finally {
@@ -407,7 +407,7 @@ async function salvarMenssagen(obj) {
     INSERT INTO mensagen (menssagen, fk_id_usuario, fk_id_sala, horas)
     VALUES ($1, $2, $3, $4)
   `;
-  const values = [obj.menssagen, obj.id_usuario, obj.id_sala, obj.horas];
+  const values = [obj.menssagen, obj.fk_id_usuario, obj.id_sala, obj.horas];
   try {
     await client.query(sql, values);
   } finally {

@@ -6,7 +6,6 @@ import { useContext } from 'react'
 import axios from 'axios'
 import Header from '../components/Header'
 import { useNavigate } from 'react-router-dom'
-import ModalTrocaInfos from '../components/ModalTrocaInfos'
 import UserInfos from '../components/UserInfos'
 import UserEditInfos from '../components/UserEditInfos'
 import SalasChat from '../components/SalasChat'
@@ -80,7 +79,6 @@ function PaginaUsuario() {
   
       </div>
      </div>
-     {isModalOpen ?<ModalTrocaInfos open={isModalOpen} onClose={closeModal}/>:''}
      <Footer />
     </div>
     
