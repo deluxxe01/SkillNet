@@ -122,41 +122,55 @@ function PortfolioEditar() {
 
   return (
     <div className="Container-PortfolioEditar">
-      <h1>Editar Portfólio</h1>
 
-      <div className="formulario">
+      
+      <h1 className="Title-EditarPortfolio">Criar Portfólio</h1>
+
+      <div className="Formulario">
+
+
+      <div className="inputContainer">
+          <label>Nome de usuário: </label>
+          <input className="Inpt-Formulario" type="text"  />
+        </div>
+
+
         <div className="inputContainer">
           <label>Instagram</label>
-          <input type="text" value={inputLinkInsta} onChange={e => setInputLinkInsta(e.target.value)} />
+          <input className="Inpt-Formulario" type="text" value={inputLinkInsta} onChange={e => setInputLinkInsta(e.target.value)} />
         </div>
+
         <div className="inputContainer">
           <label>Linkedin</label>
-          <input type="text" value={inputLinkLinkedin} onChange={e => setInputLinkLinkedin(e.target.value)} />
+          <input className="Inpt-Formulario" type="text" value={inputLinkLinkedin} onChange={e => setInputLinkLinkedin(e.target.value)} />
         </div>
+
         <div className="inputContainer">
           <label>Email (Gmail)</label>
-          <input type="text" value={inputLinkGmail} onChange={e => setInputLinkGmail(e.target.value)} />
+          <input className="Inpt-Formulario" type="text" value={inputLinkGmail} onChange={e => setInputLinkGmail(e.target.value)} />
         </div>
+
         <div className="inputContainer">
           <label>Localidade</label>
-          <input type="text" value={inputLocalidade} onChange={e => setInputLocalidade(e.target.value)} />
+          <input className="Inpt-Formulario" type="text" value={inputLocalidade} onChange={e => setInputLocalidade(e.target.value)} />
         </div>
+
         <div className="inputContainer">
           <label>Ano de Experiência</label>
-          <input type="text" value={inputAnoExperiencia} onChange={e => setInputAnoExperiencia(e.target.value)} />
+          <input className="Inpt-Formulario" type="text" value={inputAnoExperiencia} onChange={e => setInputAnoExperiencia(e.target.value)} />
         </div>
+
         <div className="inputContainer">
           <label>Área de Atuação</label>
-          <input type="text" value={inputAreaAtuacao} onChange={e => setInputAreaAtuacao(e.target.value)} />
+          <input className="Inpt-Formulario" type="text" value={inputAreaAtuacao} onChange={e => setInputAreaAtuacao(e.target.value)} />
         </div>
+
         <div className="inputContainer">
           <label>Foto URL</label>
-          <input type="text" value={inputFotoUrl} onChange={e => setInputFotoUrl(e.target.value)} />
+          <input className="Inpt-Formulario" type="text" value={inputFotoUrl} onChange={e => setInputFotoUrl(e.target.value)} />
         </div>
-        <div className="inputContainer">
-          <label>Sobre Mim</label>
-          <textarea value={inputSobreMim} onChange={e => setInputSobreMim(e.target.value)} />
-        </div>
+
+        
       </div>
 
       {portfolioSelect ? (
@@ -164,6 +178,11 @@ function PortfolioEditar() {
       ) : (
         <button onClick={cadastrarPortfolio}>Cadastrar Portfólio</button>
       )}
+
+        <div className="inputContainer">
+          <label>Sobre Mim</label>
+          <textarea className="Inpt-Formulario" value={inputSobreMim} onChange={e => setInputSobreMim(e.target.value)} />
+        </div>
 
       <section className='portfolios'>
         {portfolios.map((portfolio) => (
