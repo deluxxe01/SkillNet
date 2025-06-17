@@ -1,31 +1,33 @@
 .modalTest{
         border: none;
         border-radius: 10px;
-        width: 30%;
+        width: 25%;
         box-shadow: 0 0 1em rgba(0, 0, 0, 0.699);
-        position: fixed; /* Garante que ele fique fora do fluxo normal */
         top: 20%;
         left: -35%;
-        transform: translate(-50%, -50%); /* Centraliza o diálogo */
+        transform: translate(-60%, -20%); /* Centraliza o diálogo */
         background-color: #fbfbff;
         padding: 20px;
         align-items: center;
-        justify-content: center;
+        justify-content: space-evenly;
         display: flex;
         flex-direction: column;
-      
-      
+        height: 40vw;
 }
 .iconTrash{
     width: 70px;
+    
 }
 .h1Sair{
     color: #525252;
-    font-family:LatoBlack ;
+    font-family:Mont ;
+    font-size: 30px;
+    font-weight: 600;
 }
 .h2Sair{
     color: #525252;
     font-family: LatoBold;
+    font-size: 20px;
 }
 .btnAceitar{
     height: fit-content;
@@ -39,6 +41,7 @@
     color: #fbfbff;
     border-radius:5px ;
     border: none;
+    border: 1px solid #DA1E37;
 }
 .btnNegar{
 
@@ -53,5 +56,21 @@
     color: #fbfbff;
     border-radius:5px ;
     border: none;
+    margin: 10px;
+    border: 1px solid #83CF41;
+    
+
+}
+.btnNegar:hover{
+    background-color: #fbfbff;
+    color: #83CF41;
+    border: 1px solid #83CF41;
+    transition: linear 0.2s;
+}
+.btnAceitar:hover{
+    background-color: #fbfbff;
+    color: #DA1E37;
+    border: 1px solid #DA1E37;
+    transition: linear 0.2s;
 
 }

@@ -92,7 +92,7 @@
     
 }
 .corpoChat2{
-    overflow-y: auto;
+   
     align-items: center;
     justify-content: center;
     display: flex;
@@ -100,11 +100,7 @@
     width: 100%;
     background-color: #0E261E
 }
-.corpoChat::-webkit-scrollbar{
-     width: 8px;
-    
- 
-}
+
 .spamChat{
     font-size: xx-small;
     margin-left: 5px;

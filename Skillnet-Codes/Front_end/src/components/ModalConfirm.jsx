@@ -11,7 +11,7 @@ function ModalConfirm() {
             <h2 className='h2Sair'>Esse processo não poderá ser desfeito</h2>
             <div>
                 <button className='btnAceitar'>sim</button>
-                <button className='btnNegar'>nao</button>
+                <button className='btnNegar'>não</button>
             </div>
         </dialog>
     </div>

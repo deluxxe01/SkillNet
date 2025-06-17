@@ -31,10 +31,12 @@
 
 }
 .divChat {
-  flex: 1;
   display: flex;
   flex-direction: column;
   height: 100%; /* ocupar o espaço disponível */
+  width: 100%;
+  
+ 
 }
 
 .corpoChat2 {
@@ -44,14 +46,16 @@
   display: flex;
   flex-direction: column;
   gap: 10px;
+  
+ /* ESSENCIAL para flex funcionar bem */
 }
 
 /* Já está bom */
 .footerChat {
-  display: flex;
   padding: 10px;
   background-color: #fff;
   border-top: 1px solid #ccc;
+  width: 100%;
 }
 
 /* Apenas para garantir que o input e botão não sejam espremidos */

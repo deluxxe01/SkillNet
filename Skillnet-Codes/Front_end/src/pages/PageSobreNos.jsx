@@ -18,8 +18,6 @@ function PageSobreNos() {
         <div className='divSobreNos'>
           <h1>Objetivos e Propósitos</h1>
         </div>
-        
-        
     </div>
   )
 }
