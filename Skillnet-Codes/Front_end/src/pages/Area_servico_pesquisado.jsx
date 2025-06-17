@@ -90,7 +90,7 @@ function Area_servico_pesquisado() {
    <Link  key={servico.servico_id} to={`/servico/${servico.servico_id}`} className='Link_servico'>
 
   <div className='card_servico'>
-      <img src={servico.imagem_capa || "./images/img_cara_triste.jpg"} alt={servico.titulo} className='poster' />
+      <img src={servico.imagem_capa || null} className='poster' />
       <p className="categoria_servico_especifico">{servico.area}</p>
       <p className='titulo_servico'>{servico.titulo}</p>
       <p><strong></strong> {servico.descricao}</p>

@@ -14,6 +14,7 @@ CREATE TABLE IF NOT EXISTS servicos (
     tempo_entrega VARCHAR(50),
     preco_minimo NUMERIC(10, 2) CHECK (preco_minimo >= 0),
     idioma VARCHAR(50)
+
 );
 
 CREATE TABLE IF NOT EXISTS portifolios (

@@ -1,0 +1,207 @@
+
+:root {
+    --primary: #004B22;
+    --secondary: #83CF41;
+    --background: #ffffff;
+    --muted: #666;
+    --light-gray: #f3f3f3;
+  }
+
+
+  main {
+    padding: 60px 40px;
+    max-width: 1200px;
+    margin: auto;
+  
+}
+
+  .servico_titulo {
+    font-size: 36px;
+    font-weight: 600;
+    color: var(--primary);
+    margin-bottom: 8px;
+  font-family: mont;
+
+}
+
+  .freelancer {
+    font-size: 18px;
+    color: var(--muted);
+    margin-bottom: 40px;
+  }
+
+  .service-content {
+    display: flex;
+    gap: 40px;
+    flex-wrap: wrap;
+  }
+
+  .service-image {
+    flex: 1;
+    min-width: 320px;
+    max-width: 500px;
+  }
+
+  .service-image img {
+    width: 100%;
+    border-radius: 12px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+  }
+
+  .service-details {
+    flex: 2;
+    min-width: 300px;
+  }
+
+  .description {
+    font-size: 18px;
+    line-height: 1.7;
+    margin-bottom: 30px;
+  }
+
+  .price {
+    font-size: 24px;
+    color: var(--secondary);
+    font-weight: bold;
+    margin-bottom: 30px;
+  }
+
+  .tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 30px;
+  font-family: mont;
+}
+
+  .tag_servico_especifico {
+    background: var(--secondary);
+    color: #fff;
+    padding: 6px 14px;
+    border-radius: 20px;
+    font-size: 14px;
+  }
+
+  .cta-button {
+    background: var(--primary);
+    color: white;
+    padding: 14px 28px;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+  }
+
+  .cta-button:hover {
+    background: #033c1b;
+  }
+
+  section {
+    margin-top: 80px;
+  }
+
+  .section-title {
+    font-size: 22px;
+    color: var(--primary);
+    margin-bottom: 20px;
+  }
+
+  .freelancer-about {
+    background: var(--light-gray);
+    padding: 20px;
+    border-radius: 12px;
+  }
+
+  .freelancer-about p {
+    font-size: 16px;
+    line-height: 1.6;
+    color: #333;
+  }
+
+  .reviews {
+    display: grid;
+    gap: 20px;
+  }
+
+  .review {
+    background: #f8f8f8;
+    padding: 16px;
+    border-radius: 10px;
+  }
+
+  .review strong {
+    color: var(--primary);
+  }
+
+  .stars {
+    color: #FFD700;
+    margin-bottom: 8px;
+  }
+
+  .faq {
+    background: #f9f9f9;
+    padding: 24px;
+    border-radius: 10px;
+  }
+
+  .faq-item {
+    margin-bottom: 16px;
+  }
+
+  .faq-item h4 {
+    font-size: 16px;
+    color: var(--primary);
+    margin-bottom: 4px;
+  }
+
+  .faq-item p {
+    font-size: 15px;
+    color: #444;
+  }
+
+  footer {
+    margin-top: 80px;
+    text-align: center;
+    font-size: 14px;
+    color: var(--muted);
+    padding: 20px;
+  }
+
+  /* botão fixo em mobile */
+  @media (max-width: 768px) {
+    .service-content {
+      flex-direction: column;
+    }
+
+    .fixed-contact {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: var(--primary);
+      padding: 16px;
+      text-align: center;
+      z-index: 1000;
+    }
+
+    .fixed-contact button {
+      background: var(--secondary);
+      color: white;
+      border: none;
+      padding: 12px 30px;
+      font-size: 16px;
+      border-radius: 30px;
+      cursor: pointer;
+    }
+  }.span_area_servico{
+
+text-transform: uppercase;
+
+    }.h1_descrição_servico{
+font-size: 25px;
+font-family: mont;
+font-weight: 600;
+    color: #004B22;
+}
+

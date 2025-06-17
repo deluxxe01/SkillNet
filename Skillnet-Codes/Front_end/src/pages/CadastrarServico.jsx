@@ -97,7 +97,7 @@ function CadastrarServico() {
             <div className='divInputsServico'>
               <label>Imagem (URL)</label>
               <input
-                type="file"
+                type="text"
                 className='inptServicos'
                 placeholder='https://exemplo.com/sua-imagem.jpg'
                 value={inptImageServico}
