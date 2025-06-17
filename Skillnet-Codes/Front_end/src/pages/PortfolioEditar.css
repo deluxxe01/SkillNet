@@ -1,18 +1,46 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
+
+
 :root {
     --cor-primaria: hwb(0 85% 0%);
     --cor-secundaria: #FFC5C6;
     --cor-texto: #333333;
     --cor-fundo: #f5f5f5;
     --cor-destaque: #ffc107;
-  }
-
+}
+.containerr > img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 170vh;
+    height: 70vh;
+    object-fit: cover;
+   
+}  
 .Container-PortfolioEditar{
-    background-color: aquamarine;
+    position: relative;
+    z-index: 1; /* aparece acima da imagem */
+    margin-top: -10vh;
     margin: 8vh;
 }
+
 .Title-EditarPortfolio{
     margin-left: 80vh;
     font-size: 5vh;
+    font-family: "Lato", sans-serif;
+    color: #f5f5f5;
+}
+
+.linha1{
+    margin-left: 80vh;
+    width: 32vh;
+    height: 1vh;
+    border-radius: 1vh;
+    background-color: #FFC5C6;
+    transition: transform 0.3s ease;
+}
+.linha1:hover{
+    transform: scaleX(0.2); /* aumenta no eixo X */
 }
 .Formulario{
     background-color: var(--cor-primaria);
@@ -21,12 +49,223 @@
     margin-left: 40vh;
     width: 120vh;
     height: 50vh;
+    display: flex;
 }
+
+.fotoUsuario{
+    margin-top: 5vh;
+    margin-left: 15vh;
+}
+
+.ContainerButtons{
+  width: 30vh;
+  margin-left: -24vh;
+  margin-top: 25vh;
+  display: flex;
+  flex-direction: column;
+  /* border: solid 2px black; */
+}
+
+.buttonCadastrar{
+    width: 30vh;
+    height: 4vh;
+    background-color: #FFD9D9;
+    --color: #CE499C;
+    font-family: inherit;
+    display: inline-block;
+    line-height: 1.5vh;
+    position: relative;
+    cursor: pointer;
+    overflow: hidden;
+    border: 0.3vh solid var(--color);
+    transition: color 0.4s ease-in-out;
+    z-index: 1;
+    font-size: 2vh;
+    border-radius: 2vh;
+    font-weight: 500;
+    color: #CE499C;
+    text-align: center;
+    font-family: Mont;
+    font-weight: 600;
+}
+.buttonCadastrar:before{
+    content: "";
+    position: absolute;
+    z-index: -1;
+    background: #CE499C;
+    width: 200%;
+    height: 500%;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 50%;
+    transition: all 0.7s ease-in-out;
+}
+.buttonCadastrar:hover{
+    color:#FFD9D9;
+    background-color: #FFD9D9;
+}
+.buttonCadastrar:hover:before{
+    top: -150%;
+}
+.buttonCadastrar:active:before{
+    background: #CE499C;
+    transition: background 0s;
+    color: #fbfbfb;
+}
+.buttonEditar{
+    margin-top: 2vh;
+    width: 30vh;
+    height: 4vh;
+    width: 30vh;
+    height: 4vh;
+    background-color: #CE499C;
+    --color: #CE499C;
+    font-family: inherit;
+    display: inline-block;
+    line-height: 1.5vh;
+    position: relative;
+    cursor: pointer;
+    overflow: hidden;
+    border: 0.3vh solid var(--color);
+    transition: color 0.4s ease-in-out;
+    z-index: 1;
+    font-size: 2vh;
+    border-radius: 2vh;
+    font-weight: 500;
+    color: #FFD9D9;
+    text-align: center;
+    font-family: Mont;
+    font-weight: 600;
+}
+.buttonEditar:before{
+    content: "";
+    position: absolute;
+    z-index: -1;
+    background: #FFD9D9;
+    width: 200%;
+    height: 500%;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 50%;
+    transition: all 0.7s ease-in-out;
+}
+.buttonEditar:hover{
+    color:#CE499C;
+    background-color: #CE499C;
+}
+.buttonEditar:hover:before{
+    top: -150%;
+}
+.buttonEditar:active:before{
+    background: #CE499C;
+    transition: background 0s;
+    color: #fbfbfb;
+}
+.Container-Inpts{
+    margin-top: 5vh;
+    margin-left: 10vh;
+    display: flex;
+    flex-direction: column;
+}
+.Container-Inpts2{
+    margin-left: 5vh;
+    margin-top: 5vh;
+    display: flex;
+    flex-direction: column;
+}
+.inputContainer{
+    margin-top: 3vh;
+    display: flex;
+    flex-direction: column;
+}
+
 .Inpt-Formulario{
     background-color: var(--cor-secundaria);
-    border: none
+    border: none;
+    width: 30vh;
 }
+
 input, textarea:focus {
     outline: none;
     box-shadow: none;
+}
+
+.ConatinerSobremim{
+    margin-top: 10vh;
+    margin-left: 40vh;
+    display: flex;
+    flex-direction: column;  
+}
+.LabelSobremim{
+    color: #500040;
+    font-size: 3vh;
+    font-family: "Lato", sans-serif;
+}
+.TextArea-Formulario{
+    margin-top: 1vh;
+    background-color: #FBFBFB;
+    font-size: 2vh;
+    border: none;
+    width: 120vh;
+    height: 15vh;
+    color: #500040;
+}
+
+.material{
+    width: 5vh;
+    margin-top: -40vh;
+   
+}
+
+.menu-popup {
+    position: absolute;
+    background-color: #FBFBFB;
+    border: 1px solid #ccc;
+    padding: 10px;
+    right: 30vh;
+    top: 20vh;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    z-index: 10;
+    border-radius: 2vh;
   }
+  
+  .menu-popup ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .menu-popup li {
+    padding: 8px 12px;
+    cursor: pointer;
+  }
+  
+  .menu-popup li:hover {
+    background-color: #eee;
+  }
+
+.Lirosa{
+    color: #CE499C;
+}
+
+.Liazul{
+    color: #0024B6;
+}
+
+.Liverde{
+    color: #004B22;
+}
+
+.Lirosa:hover{
+   color: #500040;
+}
+
+.Liazul:hover{
+    color: #00104E;
+}
+
+.Liverde:hover{
+  color: #79BE00;
+}
