@@ -403,12 +403,13 @@ async function selecionarMenssagens(id_sala) {
 }
 
 // --- INICIALIZAÇÃO ---
-(async () => {
-  await createDataBase();
-  const sqlPath = path.join(__dirname, '../sql/tableUsuarios.sql');
-  const sql = fs.readFileSync(sqlPath, 'utf-8');
-  await createTables(sql);
-})();
+if (process.env.NODE_ENV !== 'test') {
+  (async () => {
+    await createDataBase();
+    const sqlPath = path.join(__dirname, '../sql/tableUsuarios.sql');
+    const sql = fs.readFileSync(sqlPath, 'utf-8');
+    await createTables(sql);
+})();}
 
 module.exports = {
   connect,
