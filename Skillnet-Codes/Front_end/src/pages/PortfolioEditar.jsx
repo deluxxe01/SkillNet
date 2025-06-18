@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import "../pages/PortfolioEditar.css";
 import axios from 'axios';
+import Hamburger from "../components/Hamburger";
 
 function PortfolioEditar() {
   const [portfolios, setPortfolios] = useState([]);
@@ -20,7 +21,25 @@ function PortfolioEditar() {
     setMostrarMenu(!mostrarMenu);
   };
 
+  const [corSelecionada, setCorSelecionada] = useState('');
+  const selecionarCor = (cor) => {
+    setCorSelecionada(cor);
+    setMostrarMenu(false); // opcional: fecha o menu após a escolha
+  };
 
+  const imagensMaterial = {
+    rosa: 'public/icons/material 2.svg',
+    azul: 'public/icons/material 3.svg',
+    verde: 'public/icons/material 4.svg',
+    default: 'public/icons/material 2.svg',
+  };
+
+  const imagensFundo = {
+    rosa: 'public/images/fundoRosa2 (1).png',
+    azul: 'public/images/fundoazul.png',
+    verde: 'public/images/fundoverde.png',
+    default: 'public/images/fundoRosa2 (1).png',
+  };
   const fetchPortfolios = async () => {
     try {
       const response = await axios.get('http://localhost:3000/portfolios');
@@ -130,14 +149,16 @@ function PortfolioEditar() {
 
   return (
     <div className="containerr">
-      <img src="public/images/fundoRosa2 (1).png" alt="" />
+      <img src={corSelecionada ? imagensFundo[corSelecionada] : imagensFundo.default} alt="" />
 
+
+      <Hamburger />
     <div className="Container-PortfolioEditar">
 
       <h1 className="Title-EditarPortfolio">Criar Portfólio</h1>
-      <div className="linha1"></div>
+      <div className={`linha1 ${corSelecionada ? `linha-${corSelecionada}` : ''}`}></div>
 
-      <div className="Formulario">
+      <div className={`Formulario ${corSelecionada ? `formulario-${corSelecionada}` : ''}`}>
 
 
 
@@ -163,37 +184,70 @@ function PortfolioEditar() {
 <div className="ContainerButtons">
 
       {portfolioSelect ? (
-        <button className="buttonCadastrar" onClick={salvarPortfolio}>Salvar Alterações</button>
-      ) : (
-        <button className="buttonCadastrar" onClick={cadastrarPortfolio}>Cadastrar Portfólio</button>
-      )}
-
+  <button 
+    className={`buttonCadastrar ${corSelecionada ? `button-${corSelecionada}` : ''}`}
+    onClick={salvarPortfolio}
+  >
+    Salvar Alterações
+  </button>
+) : (
+  portfolios.length === 0 && (
+    <button 
+      className={`buttonCadastrar ${corSelecionada ? `button-${corSelecionada}` : ''}`}
+      onClick={cadastrarPortfolio}
+    >
+      Cadastrar Portfólio
+    </button>
+  )
+)}
 {portfolios.map((portfolio) => (
     <div key={portfolio.id_portifolio} className='cliente'>
-      <button className="buttonEditar" onClick={() => buscarPortfolioId(portfolio.id_portifolio)}>Editar</button>
-      <button className="buttonEditar" onClick={() => deletarPortfolio(portfolio.id_portifolio)}>Deletar</button>
+      <button
+       className={`buttonEditar ${corSelecionada ? `button2-${corSelecionada}` : ''}`}
+       onClick={() => buscarPortfolioId(portfolio.id_portifolio)}>
+        Editar</button>
+
+      <button 
+       className={`buttonEditar ${corSelecionada ? `button2-${corSelecionada}` : ''}`}
+       onClick={() => deletarPortfolio(portfolio.id_portifolio)}>
+        Deletar</button>
     </div>
   ))}
 </div>  
         <div className="Container-Inpts">
         <div className="inputContainer">
           <label>Nome de usuário: </label>
-          <input className="Inpt-Formulario" type="text"  />
+          <input 
+          className={`Inpt-Formulario ${corSelecionada ? `input-${corSelecionada}` : ''}`}
+          type="text" 
+           />
         </div>
 
         <div className="inputContainer">
           <label>Link instagram:</label>
-          <input className="Inpt-Formulario" type="text" value={inputLinkInsta} onChange={e => setInputLinkInsta(e.target.value)} />
+          <input 
+           className={`Inpt-Formulario ${corSelecionada ? `input-${corSelecionada}` : ''}`}
+           type="text" 
+           value={inputLinkInsta}
+           onChange={e => setInputLinkInsta(e.target.value)} />
         </div>
 
         <div className="inputContainer">
           <label>Link Linkedin:</label>
-          <input className="Inpt-Formulario" type="text" value={inputLinkLinkedin} onChange={e => setInputLinkLinkedin(e.target.value)} />
+          <input 
+          className={`Inpt-Formulario ${corSelecionada ? `input-${corSelecionada}` : ''}`}
+          type="text"
+          value={inputLinkLinkedin}
+          onChange={e => setInputLinkLinkedin(e.target.value)} />
         </div>
 
         <div className="inputContainer">
           <label>Link Email (Gmail):</label>
-          <input className="Inpt-Formulario" type="text" value={inputLinkGmail} onChange={e => setInputLinkGmail(e.target.value)} />
+          <input 
+          className={`Inpt-Formulario ${corSelecionada ? `input-${corSelecionada}` : ''}`}
+          type="text" 
+          value={inputLinkGmail} 
+          onChange={e => setInputLinkGmail(e.target.value)} />
         </div>
 
         </div>
@@ -201,29 +255,45 @@ function PortfolioEditar() {
         <div className="Container-Inpts2">
         <div className="inputContainer">
           <label>Localidade:</label>
-          <input className="Inpt-Formulario" type="text" value={inputLocalidade} onChange={e => setInputLocalidade(e.target.value)} />
+          <input 
+          className={`Inpt-Formulario ${corSelecionada ? `input-${corSelecionada}` : ''}`}
+          type="text"
+          value={inputLocalidade} 
+          onChange={e => setInputLocalidade(e.target.value)} />
         </div>
 
         <div className="inputContainer">
           <label>Ano de Experiência:</label>
-          <input className="Inpt-Formulario" type="text" value={inputAnoExperiencia} onChange={e => setInputAnoExperiencia(e.target.value)} />
+          <input 
+          className={`Inpt-Formulario ${corSelecionada ? `input-${corSelecionada}` : ''}`}
+          type="text" 
+          value={inputAnoExperiencia} 
+          onChange={e => setInputAnoExperiencia(e.target.value)} />
         </div>
 
         <div className="inputContainer">
           <label>Área de Atuação:</label>
-          <input className="Inpt-Formulario" type="text" value={inputAreaAtuacao} onChange={e => setInputAreaAtuacao(e.target.value)} />
+          <input 
+          className={`Inpt-Formulario ${corSelecionada ? `input-${corSelecionada}` : ''}`}
+          type="text"
+          value={inputAreaAtuacao} 
+          onChange={e => setInputAreaAtuacao(e.target.value)} />
         </div>
 
         <div className="inputContainer">
           <label>Foto URL:</label>
-          <input className="Inpt-Formulario" type="text" value={inputFotoUrl} onChange={e => setInputFotoUrl(e.target.value)} />
+          <input 
+          className={`Inpt-Formulario ${corSelecionada ? `input-${corSelecionada}` : ''}`}
+          type="text"
+          value={inputFotoUrl}
+          onChange={e => setInputFotoUrl(e.target.value)} />
         </div>
 
         </div>
 
         <img 
   className="material" 
-  src="public/icons/material 2.svg" 
+  src={corSelecionada ? imagensMaterial[corSelecionada] : imagensMaterial.default} 
   alt="menu"
   onClick={toggleMenu}
   style={{ cursor: 'pointer' }}
@@ -232,9 +302,9 @@ function PortfolioEditar() {
 {mostrarMenu && (
   <div className="menu-popup">
     <ul>
-      <li className="Lirosa">Rosa </li>
-      <li className="Liazul">Azul </li>
-      <li className="Liverde">Verde </li>
+     <li className="Lirosa" onClick={() => selecionarCor('rosa')}>Rosa</li>
+      <li className="Liazul" onClick={() => selecionarCor('azul')}>Azul</li>
+      <li className="Liverde" onClick={() => selecionarCor('verde')}>Verde</li>
     </ul>
   </div>
 )}
@@ -248,11 +318,14 @@ function PortfolioEditar() {
 
 <div className="ConatinerSobremim">
         
-          <h2 className="LabelSobremim">Sobre Mim</h2>
-          <textarea className="TextArea-Formulario" value={inputSobreMim} onChange={e => setInputSobreMim(e.target.value)} />
+          <h2  className={`LabelSobremim ${corSelecionada ? `label-${corSelecionada}` : ''}`}>Sobre Mim</h2>
+          <textarea 
+          className={`TextArea-Formulario ${corSelecionada ? `textArea-${corSelecionada}` : ''}`}
+          value={inputSobreMim}
+           onChange={e => setInputSobreMim(e.target.value)} />
 
 </div>
-       <section className='portfolios'>
+       {/* <section className='portfolios'>
         {portfolios.map((portfolio) => (
           <div key={portfolio.id_portifolio} className='cliente'>
             <h2>{portfolio.link_insta || 'Instagram não informado'}</h2>
@@ -274,7 +347,7 @@ function PortfolioEditar() {
 
         </div>
         ))}
-      </section> 
+      </section>  */}
 
     </div>
     </div>

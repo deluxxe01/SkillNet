@@ -8,6 +8,14 @@
     --cor-fundo: #f5f5f5;
     --cor-destaque: #ffc107;
 }
+
+
+body{
+    background-color: #FBFBFB;
+}
+
+/* COR SELECT ROSA */
+
 .containerr > img {
     position: absolute;
     top: 0;
@@ -268,4 +276,258 @@ input, textarea:focus {
 
 .Liverde:hover{
   color: #79BE00;
+}
+
+
+/* COR SELECT AZUL  */
+
+.input-azul {
+    background-color: #8FBAE3; /* azul claro */
+    color: #000;
+}
+
+.formulario-azul{
+    background-color: #BFE0FF;
+}
+
+.button-azul{
+    width: 30vh;
+    height: 4vh;
+    background-color: #BFE0FF;
+    --color: #0033FF;
+    font-family: inherit;
+    display: inline-block;
+    line-height: 1.5vh;
+    position: relative;
+    cursor: pointer;
+    overflow: hidden;
+    border: 0.3vh solid var(--color);
+    transition: color 0.4s ease-in-out;
+    z-index: 1;
+    font-size: 2vh;
+    border-radius: 2vh;
+    font-weight: 500;
+    color: #0033FF;
+    text-align: center;
+    font-family: Mont;
+    font-weight: 600;
+}
+
+.button-azul:before{
+    content: "";
+    position: absolute;
+    z-index: -1;
+    background: #0033FF;
+    width: 200%;
+    height: 500%;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 50%;
+    transition: all 0.7s ease-in-out;
+}
+
+.button-azul:hover{
+    color:#BFE0FF;
+    background-color: #BFE0FF;
+}
+.button-azul:hover:before{
+    top: -150%;
+}
+.button-azul:active:before{
+    background: #0033FF;
+    transition: background 0s;
+    color: #BFE0FF;
+}
+
+.button2-azul{
+    margin-top: 2vh;
+    width: 30vh;
+    height: 4vh;
+    width: 30vh;
+    height: 4vh;
+    background-color: #0033FF;
+    --color: #0033FF;
+    font-family: inherit;
+    display: inline-block;
+    line-height: 1.5vh;
+    position: relative;
+    cursor: pointer;
+    overflow: hidden;
+    border: 0.3vh solid var(--color);
+    transition: color 0.4s ease-in-out;
+    z-index: 1;
+    font-size: 2vh;
+    border-radius: 2vh;
+    font-weight: 500;
+    color: #BFE0FF;
+    text-align: center;
+    font-family: Mont;
+    font-weight: 600;
+}
+.button2-azul:before{
+    content: "";
+    position: absolute;
+    z-index: -1;
+    background: #BFE0FF;
+    width: 200%;
+    height: 500%;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 50%;
+    transition: all 0.7s ease-in-out;
+}
+.button2-azul:hover{
+    color:#0033FF;
+    background-color: #0033FF;
+}
+.button2-azul:hover:before{
+    top: -150%;
+}
+.button2-azul:active:before{
+    background: #0033FF;
+    transition: background 0s;
+    color: #BFE0FF;
+}
+
+.linha-azul{
+    background-color: #0033FF;
+}
+
+.label-azul{
+    color: #00104E;
+}
+
+.textArea-azul{
+    color: #00104E;
+}
+
+/* COR SELECT VERDE  */
+
+.input-verde {
+    background-color: #CCCCCC; /* azul claro */
+    color: #000;
+}
+
+.formulario-verde{
+    background-color: #E6E6E6;
+}
+
+.button-verde{
+    width: 30vh;
+    height: 4vh;
+    background-color: #E6E6E6;
+    --color: #004B22;
+    font-family: inherit;
+    display: inline-block;
+    line-height: 1.5vh;
+    position: relative;
+    cursor: pointer;
+    overflow: hidden;
+    border: 0.3vh solid var(--color);
+    transition: color 0.4s ease-in-out;
+    z-index: 1;
+    font-size: 2vh;
+    border-radius: 2vh;
+    font-weight: 500;
+    color: #004B22;
+    text-align: center;
+    font-family: Mont;
+    font-weight: 600;
+}
+
+.button-verde:before{
+    
+    content: "";
+    position: absolute;
+    z-index: -1;
+    background: #004B22;
+    width: 200%;
+    height: 500%;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 50%;
+    transition: all 0.7s ease-in-out;
+}
+
+.button-verde:hover{
+    color:#E6E6E6;
+    background-color: #E6E6E6;
+}
+.button-verde:hover:before{
+    top: -150%;
+}
+.button-verde:active:before{
+    background: #004B22;
+    transition: background 0s;
+    color: #E6E6E6;
+}
+
+.button2-verde{
+    margin-top: 2vh;
+    width: 30vh;
+    height: 4vh;
+    width: 30vh;
+    height: 4vh;
+    background-color: #004B22;
+    --color: #004B22;
+    font-family: inherit;
+    display: inline-block;
+    line-height: 1.5vh;
+    position: relative;
+    cursor: pointer;
+    overflow: hidden;
+    border: 0.3vh solid var(--color);
+    transition: color 0.4s ease-in-out;
+    z-index: 1;
+    font-size: 2vh;
+    border-radius: 2vh;
+    font-weight: 500;
+    color: #E6E6E6;
+    text-align: center;
+    font-family: Mont;
+    font-weight: 600;
+}
+.button2-verde:before{
+    content: "";
+    position: absolute;
+    z-index: -1;
+    background: #E6E6E6;
+    width: 200%;
+    height: 500%;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 50%;
+    transition: all 0.7s ease-in-out;
+}
+.button2-verde:hover{
+    color:#004B22;
+    background-color: #004B22;
+}
+.button2-verde:hover:before{
+    top: -150%;
+}
+.button2-verde:active:before{
+    background: #004B22;
+    transition: background 0s;
+    color: #E6E6E6;
+}
+
+.linha-verde{
+    background-color: #83CF41;
+}
+
+.label-verde{
+    color: #004B22;
+}
+
+.textArea-verde{
+    color: #004B22;
+}
+
+.LogoVerde{
+    width: 10vh;
 }

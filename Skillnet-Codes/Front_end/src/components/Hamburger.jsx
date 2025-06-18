@@ -14,7 +14,7 @@ function Hamburger() {
    {/* Botão hamburger */}
    <button className="hamburger" onClick={toggleMenu} aria-label="Toggle menu" style={{ background: 'none', border: 'none', padding: 0, cursor: 'pointer' }}>
         <img 
-          src="/images/logoRosa.jpg"  
+          src="public/images/logoVerde.jpg"  
           alt="Menu" 
     
         />
@@ -22,16 +22,18 @@ function Hamburger() {
 
        {/* Menu aparece só se isOpen for true */}
        
-        <dialog open={isOpen}>
-          <div className='ContainerMenu'>
-            <ul>
-              <li><a href="#home">Home</a></li>
-              <li><a href="#servicos">Serviços</a></li>
-              <li><a href="#portfolios">Portfólios</a></li>
-              <li><a href="#perfil">Perfil</a></li>
-            </ul> 
-            </div>
-          </dialog>
+       {isOpen && (
+  <div className="ContainerMenuWrapper">
+    <div className="ContainerMenu">
+      <ul>
+        <li><a href="/">Home</a></li>
+        <li><a href="/area_servico_pesquisado">Serviços</a></li>
+        <li><a href="/">Portfolio</a></li>
+        <li><a href="/">Perfil</a></li>
+      </ul>
+    </div>
+  </div>
+)}
       </div>
     )
 }
