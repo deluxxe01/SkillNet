@@ -3,16 +3,15 @@
         border-radius: 10px;
         width: 25%;
         box-shadow: 0 0 1em rgba(0, 0, 0, 0.699);
-        top: 20%;
-        left: -35%;
-        transform: translate(-60%, -20%); /* Centraliza o diálogo */
+        transform: translate(140%, -100%); /* Centraliza o diálogo */
         background-color: #fbfbff;
         padding: 20px;
         align-items: center;
         justify-content: space-evenly;
         display: flex;
         flex-direction: column;
-        height: 40vw;
+        height: fit-content;
+        position: fixed;
 }
 .iconTrash{
     width: 70px;
@@ -23,11 +22,13 @@
     font-family:Mont ;
     font-size: 30px;
     font-weight: 600;
+    margin: 20px;
 }
 .h2Sair{
     color: #525252;
     font-family: LatoBold;
     font-size: 20px;
+   margin-bottom:20px ;
 }
 .btnAceitar{
     height: fit-content;

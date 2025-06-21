@@ -53,8 +53,8 @@ CREATE TABLE IF NOT EXISTS salasChat(
     FK_id_usuario2 integer not null,
     nomeUser1 varchar(100) not null,
     nomeUser2 varchar(100) not null,
-    CONSTRAINT fk_usuario1_salasChat FOREIGN KEY (FK_id_usuario1) REFERENCES usuarios(id_usuario),
-    CONSTRAINT fk_usuario2_salasChat FOREIGN KEY (FK_id_usuario2) REFERENCES usuarios(id_usuario)
+    CONSTRAINT fk_usuario1_salasChat FOREIGN KEY (FK_id_usuario1) REFERENCES usuarios(id_usuario) ON DELETE CASCADE,
+    CONSTRAINT fk_usuario2_salasChat FOREIGN KEY (FK_id_usuario2) REFERENCES usuarios(id_usuario) ON DELETE CASCADE
 );
 CREATE TABLE IF NOT EXISTS mensagen(
     id_mensagen serial PRIMARY key,
@@ -62,6 +62,6 @@ CREATE TABLE IF NOT EXISTS mensagen(
     fk_id_usuario int,
     fk_id_sala int,
     horas varchar(20),
-    CONSTRAINT fk_usuario_mensagen FOREIGN key (fk_id_usuario) REFERENCES usuarios(id_usuario),
-    CONSTRAINT fk_id_sala_mensagen FOREIGN key (fk_id_sala) REFERENCES salasChat(id_sala)
+    CONSTRAINT fk_usuario_mensagen FOREIGN key (fk_id_usuario) REFERENCES usuarios(id_usuario) ON DELETE CASCADE,
+    CONSTRAINT fk_id_sala_mensagen FOREIGN key (fk_id_sala) REFERENCES salasChat(id_sala) ON DELETE CASCADE
 )

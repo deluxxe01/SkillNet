@@ -66,6 +66,7 @@ async function cadastrarUsuarios(usuario) {
     const sql = fs.readFileSync(sqlPath, 'utf-8');
     const values = [usuario.nome, usuario.email, usuario.senha];
     const result = await client.query(sql, values);
+    console.log(result.rows[0])
     return result.rows[0];
   } catch (error) {
     console.error('Erro ao cadastrar usuário:', error);

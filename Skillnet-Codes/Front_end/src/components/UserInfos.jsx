@@ -19,12 +19,16 @@ const [openModal,setOpenModal]=useState(false)
     const logOut= () => {
 
      setOpenModal(!openModal)
-        // navigate('/')
-        // setUserLogado('')
-        // localStorage.removeItem("token")
+         navigate('/')
+         setUserLogado('')
+        localStorage.removeItem("token")
         
 
     }
+      function fecharModal(){
+        setOpenModal(false)
+        
+       }
 
     
 
@@ -44,12 +48,20 @@ const [openModal,setOpenModal]=useState(false)
             <input type={inptShow ? "password" :"text"} id="senha" value={userLogado.senha} readOnly /> <button type='button' className='btnShowPasword' onClick={showPassword}><img className='imgOlhos' src={inptShow ? "./icons/olhoFechado.png" : "./icons/olho_cheio.png"} alt="" /></button>
             </div>
           </div>
-        <button class="noselect" type='button' onClick={logOut}><span class="text">Sair</span>
+        <button class="noselect" type='button' onClick={()=>{setOpenModal(!openModal)}}><span class="text">Sair</span>
         <span class="icon">
         <img className='imgLogOut' src="./icons/seta-esquerda.png" alt="" />
          </span></button>
         </form>
-        {openModal ? <ModalConfirm />:''}
+          {openModal ? 
+          <ModalConfirm 
+          logOut={logOut} 
+          fecharModal={fecharModal} 
+          url={'./icons/seta-esquerda.png'} 
+          titulo={"Deseja sair do SkillNet?"}
+          descricao={'Você será desconectado da sua conta. Para voltar, será necessário fazer login novamente.'}
+           />
+           :''}
 
         </div>
 

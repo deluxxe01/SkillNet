@@ -5,6 +5,8 @@ import { GlobalContext } from '../context/Globalcontext'
 import axios from 'axios'
 import { useEffect } from 'react'
 import "./UserEditinfos.css"
+import { useNavigate } from 'react-router-dom'
+import ModalConfirm from './ModalConfirm'
 function UserEditInfos() {
     const {userLogado,setUserLogado} = useContext(GlobalContext)
     const [isModalOpen,setIsModalOpen]=useState(false)
@@ -15,6 +17,8 @@ function UserEditInfos() {
     const [inputSenha,setInputSenha]=useState(userLogado.senha)
     const [controladorNome,setControladorNome]=useState()
     const [isReadOnly,setIsReadOnly]=useState(true)
+    const navigate=useNavigate()
+
        const showPassword = () => {
         setInptShow(!inptShow)
         }
@@ -50,10 +54,22 @@ function UserEditInfos() {
          
         }
       }
+       const deleteUser = async() => {
+         await axios.delete(`http://localhost:3000/delete_user/${userLogado.id_usuario}`)
+          console.log("deu certo")
+          navigate('/')
+       }
+        function fecharModal(){
+       setIsModalOpen(false)
+        
+       }
+
+     
        
    
   return (
     <div className='containerEditInfos'>  
+      
         <h1 className='h1UserProfile'>Editar Perfil</h1>
         <form >
           <label htmlFor="nome">Nome completo</label>
@@ -68,7 +84,18 @@ function UserEditInfos() {
           </div>
           <button type="button" className="btn salvar" onClick={controlarInputs}>{isReadOnly ?"editar":"salvar"}</button>
           {isReadOnly ? '':<button type="button" className="btn cancelar" onClick={()=>{setIsReadOnly(true)}}>Cancelar</button>}
+          {isReadOnly ? <button type='button' className='btn cancelar' onClick={()=>{setIsModalOpen(!isModalOpen)}}>Deletar</button>:''}
+        
         </form>
+          {isModalOpen ? 
+          <ModalConfirm logOut={deleteUser} 
+          fecharModal={fecharModal} 
+          url={'data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0Ij48cGF0aCBmaWxsPSIjNTI1MjUyIiBkPSJNMTEgMTZoMnYtNC4xNWwxLjYgMS41NUwxNiAxMmwtNC00bC00IDRsMS40IDEuNGwxLjYtMS41NXptLTYgNVY2SDRWNGg1VjNoNnYxaDV2MmgtMXYxNXoiLz48L3N2Zz4='} 
+          titulo={'Deseja excluir sua conta?'} 
+          descricao={'Essa ação é permanente e não poderá ser desfeita. Todos os seus dados e mensagens serão apagados do SkillNet.'}
+          
+          />
+           : ''}
     </div>
   )
 }

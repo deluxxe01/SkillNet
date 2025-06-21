@@ -9,6 +9,7 @@ import "swiper/css/pagination";
 import axios from 'axios';
 import { GlobalContext } from '../context/Globalcontext';
 import { useContext } from 'react';
+import ModalError from '../components/ModalError';
 
 
 function Login() {
@@ -16,11 +17,20 @@ function Login() {
   const [inptEmail,setInptEmail]=useState('')
   const [inptSenha,setInptSenha]=useState('')
   const {userLogado,setUserLogado} = useContext(GlobalContext)
+  const [open,setOpen]=useState()
+  const [titulo,setTitulo]=useState()
+  const [descricao,setDescricao]=useState()
 
   const Logar = async()=>{
     
     if(inptEmail == "" || inptSenha == ""){
-      alert('porfavor prencha os campos')
+      setOpen(true)
+      setTitulo("Erro")
+      setDescricao("porfavor prencha os campos")
+      tempoModal()
+
+      
+      
 
     }else{
 
@@ -34,8 +44,12 @@ function Login() {
       
       
       if(result.data == false){
-        console.log('usuario n exite,ou valores insiridos errodo por favor insira corretamente')
-
+          setOpen(true)
+          setTitulo("Erro no Login")
+          setDescricao("Usuário não encontrado ou dados incorretos. Por favor, verifique e tente novamente.");
+          tempoModal()
+          console.log("deu merda")
+      
       }else{
         localStorage.setItem('token',1)
         setUserLogado(result.data)
@@ -52,6 +66,13 @@ function Login() {
 
   },[]
 )
+
+function tempoModal(){
+  setTimeout(()=>{
+    setOpen(false)
+
+  },5000)
+}
 
 
 
@@ -88,6 +109,7 @@ function Login() {
 
 <div className='container-login'>
   <div className='containerCadastro'>
+    
     <button className='btnIrCadastro' onClick={()=>{Cadastro('/Cadastro')}}>CADASTRE-SE</button>
   </div>
   <div className='containerTitle'>
@@ -111,6 +133,7 @@ function Login() {
   <button type='submit' className='btnLogin' onClick={Logar}>LOGAR</button>
  </div>
 </div>
+{open?<ModalError titulo={titulo} text={descricao} />:''}
     </div>
   )
 }

@@ -5,8 +5,13 @@
   display: flex;
   flex-direction: column;
   background-color:rgb(254 242 242) ;
-  top: 20%;           /* posiciona 50% do topo */
-  left:-9% ;
+  position:absolute;
+  z-index: 10;
+  top: 20%;
+  left: 75%;
+  border: 2px solid #DA1E37;
+  border-radius: 10px;
+
   
 }
 .flex {
