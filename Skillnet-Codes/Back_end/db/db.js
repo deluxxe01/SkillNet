@@ -62,14 +62,14 @@ async function connect() {
 async function cadastrarUsuarios(usuario) {
   const client = await connect();
   try {
-    const sqlPath = path.join(__dirname, '../sql/insertUser.sql');
-    const sql = fs.readFileSync(sqlPath, 'utf-8');
+    const sql ='insert into usuarios(nome,email,senha) VALUES($1,$2,$3)  RETURNING id_usuario,nome,email,senha'
     const values = [usuario.nome, usuario.email, usuario.senha];
     const result = await client.query(sql, values);
     console.log(result.rows[0])
     return result.rows[0];
   } catch (error) {
     console.error('Erro ao cadastrar usuário:', error);
+      throw new Error("houve um erro")
   } finally {
     client.release();
   }
@@ -78,11 +78,13 @@ async function cadastrarUsuarios(usuario) {
 async function deleteUser(id) {
   const client = await connect();
   try {
-    const sqlPath = path.join(__dirname, '../sql/deleteUser.sql');
-    const sql = fs.readFileSync(sqlPath, 'utf-8');
+  
+    const sql = 'delete from usuarios where id_usuario = $1'
     await client.query(sql, [id]);
+    return true
   } catch (error) {
     console.error('Erro ao deletar usuário:', error);
+    throw new Error("houve um erro")
   } finally {
     client.release();
   }
@@ -404,13 +406,7 @@ async function selecionarMenssagens(id_sala) {
 }
 
 // --- INICIALIZAÇÃO ---
-if (process.env.NODE_ENV !== 'test') {
-  (async () => {
-    await createDataBase();
-    const sqlPath = path.join(__dirname, '../sql/tableUsuarios.sql');
-    const sql = fs.readFileSync(sqlPath, 'utf-8');
-    await createTables(sql);
-})();}
+
 
 module.exports = {
   connect,
