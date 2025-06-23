@@ -87,6 +87,7 @@ function SalasChat() {
             <div className='containerContatos' onClick={()=>{selecionarSala(sala.id_sala)
               menssagens(sala.id_sala)
             }} key={sala.id_sala}> 
+            <img src="./icons/iconUserChat.svg" alt="" className='iconUserChat' />
               <p key={sala.id_sala} className='pContatos' >{userLogado.nome==sala.nomeuser1?sala.nomeuser2:sala.nomeuser1}</p>
             </div>
 
@@ -112,7 +113,7 @@ function SalasChat() {
       value={inptMenssagen}
       onChange={(e)=>{setInptMenssagen(e.target.value)}}
     />
-    <button onClick={mandarMess} className='buttonChat'>enviar</button>
+    <button onClick={mandarMess} className='buttonChat'>  <img src="./icons/seta.svg" alt="" /></button>
   </div>
 </div>
     </div>

@@ -3,17 +3,18 @@
     align-items: center;
     justify-content: flex-start;
     display: flex;
-    background-color: #e7ecef;
+    border: 1px solid #79BE00;
     min-width: 200px;
-    border-radius: 10px;
+    border-radius: 1px;
+    background-color: #fbfbfb;
+    
     
 }
 .containerPaiContatos{
-    
     height: 60vh;
     width: 100%;
-    background-color: rebeccapurple;
     display: flex;
+    background-color: #c1ec78
     
 }
 .pContatos{
@@ -53,9 +54,13 @@
 /* Já está bom */
 .footerChat {
   padding: 10px;
-  background-color: #fff;
   border-top: 1px solid #ccc;
   width: 100%;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  border: #79BE00 1px solid;
+  background-color: #1E1E1E;
 }
 
 /* Apenas para garantir que o input e botão não sejam espremidos */
@@ -64,16 +69,24 @@
   padding: 8px;
   margin-right: 10px;
   border-radius: 5px;
-  border: 1px solid #ccc;
 }
 
 .buttonChat {
   padding: 8px 16px;
   border-radius: 5px;
-  background-color: #007bff;
-  color: #007bff;
+  background-color:#79BE00;
   border: none;
   cursor: pointer;
+  
+}
+.buttonChat:hover{
+    border: 1px solid #1E1E1E;
+    background-color: #83CF41;
+    transition: ease-in-out 0.5s;
+    outline: 0;
 }
 
+.iconUserChat{
+  width: 30px;
+}
 /* Caixa de mensagem individual */
