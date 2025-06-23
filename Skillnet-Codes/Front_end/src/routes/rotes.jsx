@@ -22,9 +22,7 @@ const router = createBrowserRouter([
     {path:'/criaServico',element:< Cria_servico />},
     {path:'/area_servico_pesquisado',element:< Area_servico_pesquisado />},
     {path:'/portfolio', element: <Portfolio />},
-   
     { path:'/servico/:servico_id',  element: <Servico_escolhido/> },
-    
     {path:'/servico',element:<TrabalhoEscolhido />},
     {path:'sobre_nos',element:<PageSobreNos />},
     {path:'portfolioeditar', element:<PortfolioEditar />},

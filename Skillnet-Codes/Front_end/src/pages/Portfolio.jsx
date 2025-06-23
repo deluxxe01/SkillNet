@@ -1,5 +1,6 @@
 import React, { useState, useRef, useEffect } from 'react';
 import './Portfolio.css';
+import Hamburger from "../components/Hamburger";
 
 function Portfolio() {
   // Estado para controlar a visibilidade do menu
@@ -108,17 +109,7 @@ function Portfolio() {
       <div className="hamburguer" id="hamburguer" onClick={toggleMenu}>
         <img src="public/images/logoRosa.jpg" alt="Logo" className="logo-img" />
       </div>
-
-      {/* Menu Lateral - Condicionalmente renderizado */}
-      <div className={`menu ${menuAtivo ? 'active' : ''}`} id="menu-Side">
-        <ul>
-          <li><a href="/Servico">Serviços</a></li>
-          <li><a href="/PerfilRosa">Portfólios</a></li>
-          <li><a href="/">Home</a></li>
-          <li><a href="#">Sobre Nós</a></li>
-          <li><a href="#">Perfil</a></li>
-        </ul>
-      </div>
+    <Hamburger />
 
 <div className='FundoRosa'>
   <img src="public/images/fundoRosa.png" alt="" />  
