@@ -94,7 +94,7 @@ function SalasChat() {
 
         ))}</div> 
          </div>
-<div className='divChat'>
+{salasUser.length>0 ?  (<div className='divChat'>
   <div className='corpoChat2'>
     {arrayMess.map(mess =>(
       <div className='CaixaMensagem' style={{
@@ -115,7 +115,7 @@ function SalasChat() {
     />
     <button onClick={mandarMess} className='buttonChat'>  <img src="./icons/seta.svg" alt="" /></button>
   </div>
-</div>
+</div>):'no tiene ninguem'}
     </div>
   )
 }

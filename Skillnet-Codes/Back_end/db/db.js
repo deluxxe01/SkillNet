@@ -2,6 +2,7 @@ require('dotenv').config({ path: './secrets/.env' });
 const fs = require('fs');
 const path = require('path');
 const { Pool } = require('pg');
+const createTables = require('../functions/createTables')
 
 let pool;
 
@@ -31,17 +32,12 @@ async function createDataBase() {
   await defaultPool.end();
 }
 
-async function createTables(sql) {
-  const client = await connect();
-  try {
-    await client.query(sql);
-    console.log('Tabelas criadas ou verificadas com sucesso!');
-  } catch (error) {
-    console.error('Erro ao criar tabelas:', error);
-  } finally {
-    client.release();
-  }
+async function createTablesFunc(){
+  const sqlPath = path.join(__dirname, '../sql/tableUsuarios.sql');
+  const sql = fs.readFileSync(sqlPath, 'utf-8');
+  createTables(sql)
 }
+createTablesFunc()
 
 async function connect() {
   if (pool) return pool.connect();

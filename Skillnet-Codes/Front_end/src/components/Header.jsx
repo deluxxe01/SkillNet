@@ -63,7 +63,10 @@ return (
        
        
         <button className={`botaoHeader ${paginaAtiva===4 ? 'ativo' :'inativo'}`}
-        onClick={()=>ativaPagina(4)}>Sobre Nós</button>
+        onClick={()=>{
+          ativaPagina(4) 
+          navigate('/sobre_nos')}}
+          >Sobre Nós</button>
   
        
    
