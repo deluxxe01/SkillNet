@@ -22,6 +22,22 @@ function PortfolioEditar() {
   };
 
   const [corSelecionada, setCorSelecionada] = useState('');
+
+  // Carregar a cor do localStorage quando o componente for montado
+  useEffect(() => {
+    const savedCor = localStorage.getItem('corSelecionada');
+    if (savedCor) {
+      setCorSelecionada(savedCor);
+    }
+  }, []);
+
+  // Salvar a cor selecionada no localStorage toda vez que ela mudar
+  useEffect(() => {
+    if (corSelecionada) {
+      localStorage.setItem('corSelecionada', corSelecionada);
+    }
+  }, [corSelecionada]);
+
   const selecionarCor = (cor) => {
     setCorSelecionada(cor);
     setMostrarMenu(false); // opcional: fecha o menu após a escolha
@@ -40,6 +56,7 @@ function PortfolioEditar() {
     verde: 'public/images/fundoverde.png',
     default: 'public/images/fundoRosa2 (1).png',
   };
+
   const fetchPortfolios = async () => {
     try {
       const response = await axios.get('http://localhost:3000/portfolios');
@@ -51,7 +68,34 @@ function PortfolioEditar() {
 
   useEffect(() => {
     fetchPortfolios();
+    // Carregar dados do localStorage ao carregar a página
+    const savedInputs = JSON.parse(localStorage.getItem('portfolioInputs'));
+    if (savedInputs) {
+      setInputLinkInsta(savedInputs.inputLinkInsta || '');
+      setInputLinkLinkedin(savedInputs.inputLinkLinkedin || '');
+      setInputLinkGmail(savedInputs.inputLinkGmail || '');
+      setInputLocalidade(savedInputs.inputLocalidade || '');
+      setInputAnoExperiencia(savedInputs.inputAnoExperiencia || '');
+      setInputAreaAtuacao(savedInputs.inputAreaAtuacao || '');
+      setInputFotoUrl(savedInputs.inputFotoUrl || '');
+      setInputSobreMim(savedInputs.inputSobreMim || '');
+    }
   }, []);
+
+  useEffect(() => {
+    // Salvar os inputs no localStorage toda vez que um valor mudar
+    const inputs = {
+      inputLinkInsta,
+      inputLinkLinkedin,
+      inputLinkGmail,
+      inputLocalidade,
+      inputAnoExperiencia,
+      inputAreaAtuacao,
+      inputFotoUrl,
+      inputSobreMim
+    };
+    localStorage.setItem('portfolioInputs', JSON.stringify(inputs));
+  }, [inputLinkInsta, inputLinkLinkedin, inputLinkGmail, inputLocalidade, inputAnoExperiencia, inputAreaAtuacao, inputFotoUrl, inputSobreMim]);
 
   const cadastrarPortfolio = async () => {
     try {
@@ -116,9 +160,8 @@ function PortfolioEditar() {
       if (response.status === 200 || response.status === 204) {
         setPortfolios((prevPortfolios) =>
         prevPortfolios.filter((portfolio) => portfolio.id_portifolio !== id)
-        
         );
-        limparForm()
+        limparForm();
       }
     } catch (error) {
       console.error('Erro ao deletar portfolio:', error);
@@ -146,6 +189,7 @@ function PortfolioEditar() {
     setInputFotoUrl(portfolio.foto_url || '');
     setInputSobreMim(portfolio.sobremim || '');
   }
+
 
   return (
     <div className="containerr">
