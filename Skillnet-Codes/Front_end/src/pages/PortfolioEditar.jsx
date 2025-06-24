@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import "../pages/PortfolioEditar.css";
 import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
 import Hamburger from "../components/Hamburger";
 
 function PortfolioEditar() {
@@ -23,6 +24,25 @@ function PortfolioEditar() {
 
   const [corSelecionada, setCorSelecionada] = useState('');
 
+
+const navigate = useNavigate();
+
+const irParaVisualizacao = () => {
+  const dadosPortfolio = {
+    link_insta: inputLinkInsta,
+    link_linkedin: inputLinkLinkedin,
+    link_gmail: inputLinkGmail,
+    localidade: inputLocalidade,
+    ano_experiencia: inputAnoExperiencia,
+    area_atuacao: inputAreaAtuacao,
+    foto_url: inputFotoUrl,
+    sobremim: inputSobreMim,
+    corSelecionada
+  };
+  
+  console.log("Dados enviados para visualização:", dadosPortfolio); // 👈 Aqui
+  navigate('/portfolio', { state: dadosPortfolio });
+};
   // Carregar a cor do localStorage quando o componente for montado
   useEffect(() => {
     const savedCor = localStorage.getItem('corSelecionada');
@@ -120,6 +140,8 @@ function PortfolioEditar() {
     }
   };
 
+
+  
   const salvarPortfolio = async () => {
     try {
       const portfolio = {
@@ -246,6 +268,10 @@ function PortfolioEditar() {
 )}
 {portfolios.map((portfolio) => (
     <div key={portfolio.id_portifolio} className='cliente'>
+        <button 
+       className={`buttonCadastrar ${corSelecionada ? `button-${corSelecionada}` : ''}`}
+       onClick={irParaVisualizacao}>
+        Visualizar </button>
       <button
        className={`buttonEditar ${corSelecionada ? `button2-${corSelecionada}` : ''}`}
        onClick={() => buscarPortfolioId(portfolio.id_portifolio)}>
@@ -255,7 +281,10 @@ function PortfolioEditar() {
        className={`buttonEditar ${corSelecionada ? `button2-${corSelecionada}` : ''}`}
        onClick={() => deletarPortfolio(portfolio.id_portifolio)}>
         Deletar</button>
+
+
     </div>
+    
   ))}
 </div>  
         <div className="Container-Inpts">
@@ -354,11 +383,6 @@ function PortfolioEditar() {
 )}
       </div>
 
-      {/* {portfolioSelect ? (
-        <button onClick={salvarPortfolio}>Salvar Alterações</button>
-      ) : (
-        <button onClick={cadastrarPortfolio}>Cadastrar Portfólio</button>
-      )} */}
 
 <div className="ConatinerSobremim">
         
@@ -369,29 +393,7 @@ function PortfolioEditar() {
            onChange={e => setInputSobreMim(e.target.value)} />
 
 </div>
-       {/* <section className='portfolios'>
-        {portfolios.map((portfolio) => (
-          <div key={portfolio.id_portifolio} className='cliente'>
-            <h2>{portfolio.link_insta || 'Instagram não informado'}</h2>
-            <p>{portfolio.link_gmail}</p>
-            <p>{portfolio.link_linkedin}</p>
-            <p>{portfolio.localidade}</p>
-            <p>{portfolio.ano_experiencia}</p>
-            <p>{portfolio.area_atuacao}</p>
-            <p>{portfolio.sobremim}</p>
-            {portfolio.foto_url && (
-        <img
-          src={portfolio.foto_url}
-          alt="Foto do portfólio"
-          style={{ width: "150px", height: "150px", objectFit: "cover", borderRadius: "8px", margin: "10px 0" }}
-        />
-      )}
-             <button onClick={() => buscarPortfolioId(portfolio.id_portifolio)}>Editar</button>
-            <button onClick={() => deletarPortfolio(portfolio.id_portifolio)}>Deletar</button>  
-
-        </div>
-        ))}
-      </section>  */}
+       
 
     </div>
     </div>

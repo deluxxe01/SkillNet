@@ -68,7 +68,7 @@ body{
 .ContainerButtons{
   width: 30vh;
   margin-left: -24vh;
-  margin-top: 25vh;
+  margin-top: 18vh;
   display: flex;
   flex-direction: column;
   /* border: solid 2px black; */
@@ -78,6 +78,7 @@ body{
     width: 30vh;
     height: 4vh;
     background-color: #FFD9D9;
+    margin-top: 5vh;
     --color: #CE499C;
     font-family: inherit;
     display: inline-block;
