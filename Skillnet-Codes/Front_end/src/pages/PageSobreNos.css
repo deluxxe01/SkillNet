@@ -4,13 +4,116 @@
     justify-content: center;
     display: flex;
     flex-direction: column;
+    background-color: #004B22;
+    color: #fbfbfb;
+    width: 100%;
 
   }
   .h1Sobrenos{
     font-family: Mont;
     font-weight: 800;
+    border-bottom: 5px solid #83CF41;
+    margin-bottom: 50px;
+    font-size: xxx-large;
 
   }
-  
+  .h2Sobrenos{
+     word-wrap: break-word;
+     max-width: 400px;
+     font-family: LatoRegular;
+     font-size: x-large;
+  }
+  .containerH2SobreNos{
+    align-items: center;
+    justify-content:space-evenly ;
+    display: flex;
+    width: 100%;
+    flex-direction: row;
+  }
+  .containerH1Nos{
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+    
+  }
+  .imgSobrenos{
+   width: 1100px;
+   border-radius: 20px;
+   height: 300px;
+  }
+  .containerSobreNos{
+    width: 95%;
+    background-color: #fbfbfb;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+    border-radius: 10px;
+  }
+  .h1Objetivo{
+    font-family: Mont;
+    font-weight: 700;
+    color: #0E261E;
+  }
+  .spanP{
+    font-size: LatoExtraBold;
+    color: #004B22;
+    font-size: 25px;
+    
+    
+  }
+  .pSobrenos{
+    color: #000000;
+    font-family: LatoRegular;
+    word-wrap: break-word;
+    max-width: 200px;
+    font-size: 20px;
+    margin-bottom: 50px;
+  }
+  .containerPsobreNos{
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+     align-items: center;
+     display: flex;
+     
+
+  }
+  .containerPsobreNos2{
+    display: flex;
+    flex-direction: column;
+    
+    
+  }
+  .imgColunaSobreNos{
+    width: 30px;
+    position: relative;
+  }
+  .containerPaiSobreNos{
+    align-items: center;
+    justify-content: space-evenly;
+    display: flex;
+    width: 100%;
+   
+   
+
+  }
+  .divImg{
+    width: 500px;
+    height: 300px;
+    background-color: rebeccapurple;
+  }
+  .containerPaiAbsolute{
+     width: 100%;
+
+
+  }
+  .sectionSobreNos{
+    align-items: center;
+    justify-content: center;
+    display: flex;
+  }
   
 
