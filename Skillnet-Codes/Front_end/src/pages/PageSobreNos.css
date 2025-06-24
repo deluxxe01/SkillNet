@@ -36,6 +36,7 @@
     justify-content: center;
     display: flex;
     flex-direction: column;
+    margin-bottom: 100px;
     
   }
   .imgSobrenos{
@@ -51,39 +52,48 @@
     display: flex;
     flex-direction: column;
     border-radius: 10px;
+    min-height:100vh ;
   }
   .h1Objetivo{
     font-family: Mont;
     font-weight: 700;
     color: #0E261E;
+    margin-bottom: 50px;
   }
   .spanP{
-    font-size: LatoExtraBold;
+    font-size: Mont;
+   font-weight: 600;
     color: #004B22;
     font-size: 25px;
+    text-align: center;
+    word-wrap: break-word;
     
     
   }
   .pSobrenos{
     color: #000000;
-    font-family: LatoRegular;
+    font-family: Mont;
+    font-weight: 500;
     word-wrap: break-word;
-    max-width: 200px;
     font-size: 20px;
     margin-bottom: 50px;
+    width: 450px; /* ajuste para testar visualmente até ficar igual */
+    text-align: center;
+
   }
   .containerPsobreNos{
     display: flex;
-    width: 100%;
-    justify-content: space-between;
-     align-items: center;
-     display: flex;
+     width: fit-content;
+     margin-top: 50px;
+    
      
 
   }
   .containerPsobreNos2{
     display: flex;
     flex-direction: column;
+    align-items: center;
+    justify-content: center;
     
     
   }
@@ -96,6 +106,7 @@
     justify-content: space-evenly;
     display: flex;
     width: 100%;
+    background-color: #fbfbfb;
    
    
 
@@ -103,7 +114,7 @@
   .divImg{
     width: 500px;
     height: 300px;
-    background-color: rebeccapurple;
+   
   }
   .containerPaiAbsolute{
      width: 100%;
@@ -115,5 +126,95 @@
     justify-content: center;
     display: flex;
   }
-  
+  .containerImgSobrenos{
+    margin-top: 50px;
+  }
+  .containerPaiAbsolute{
+    margin-top: 50px;
+  }
+  .containerSobreNos2{
+    align-items: center;
+    justify-content: space-evenly;
+    display: flex;
+    margin-top: 100px;
+  }
+  .containerColunaInfos{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .imgSobreNosLading{
+    width: 500px;
 
+  }
+  .containerEquipes{
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+    margin-top: 70px;
+    
+  
+  }
+  .containerIntegrantes{
+    align-items: center;
+    justify-content: space-evenly;
+    display: flex;
+    width: 100%;
+    margin-top: 70px;
+    margin-bottom: 70px;
+  }
+  .containerImgCaio{
+    background-image: url('./icons/fotoGato.png');
+    width: 300px;
+    height: 300px;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    align-items: end;
+    justify-content: space-evenly;
+    display: flex;
+  }
+  .containerImgMaria{
+    background-image: url('./icons/fotoGato.png');
+    width: 300px;
+    height: 300px;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    align-items: end;
+    justify-content: space-evenly;
+    display: flex;
+
+  }
+  .containerImgVitor{
+    background-image: url('./icons/fotoGato.png');
+    width: 300px;
+    height: 300px;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    align-items: end;
+    justify-content: space-evenly;
+    display: flex;
+  }
+  .h1Equipe{
+    font-family: Mont;
+    font-family: 600;
+    color: #0E261E;
+   
+  }
+  .h2Equipe{
+    font-family: Mont;
+    font-weight: 500;
+    color: #0E261E;
+   
+  }
+  .h3Equipe{
+    color: #0E261E;
+  }
+  .iconSobreNos{
+    width: 40px;
+    margin-bottom: 25px;
+    }
