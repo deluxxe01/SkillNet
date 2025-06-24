@@ -10,7 +10,7 @@ import UserInfos from '../components/UserInfos'
 import UserEditInfos from '../components/UserEditInfos'
 import SalasChat from '../components/SalasChat'
 import Footer from '../components/Footer'
-
+import Page_meu_servico from '../components/Page_meu_servico'
 function PaginaUsuario() {
     const [inptNome,setInptNome]=useState('')
     const [inptSenha,setInptSenha]=useState('')
@@ -68,7 +68,14 @@ function PaginaUsuario() {
        <div className='optionBtn' onClick={()=>{setPaginaUser(0)}}><img src="./icons/perfilIcon.svg" alt="" className='imgProfile ' /> perfil </div>
        <div className='optionBtn' onClick={()=>{setPaginaUser(1)}}> <img src="./icons/editarIcon.svg" alt="" className='imgProfile' /> editar perfil </div>
        <div className='optionBtn' onClick={()=>{setPaginaUser(2)}}><img src="./icons/chatIcon.svg" alt="" className='imgProfile' />   conversas </div>
-       <div className='optionBtn'><img src="./icons/servicosIcon.svg" alt="" className='imgProfile' /> serviços </div>
+       {/* <div className='optionBtn'><img src="./icons/servicosIcon.svg" alt="" className='imgProfile' /> serviços </div> */}
+       <div class="dropdown">
+      <button class="dropbtn">serviços ▼</button>
+      <div class="dropdown-content">
+        <a href="#" onClick={()=>{setPaginaUser(3)}}>meus serviços</a>
+        <a href="#">Serviço contratado</a>
+    </div>
+  </div>
        <div className='optionBtn'><img src="./icons/portifolioIcon.svg" alt="" className='imgProfile' />portifolios</div>
       </div>
 
@@ -76,7 +83,7 @@ function PaginaUsuario() {
         {paginasUser == 0 && <UserInfos />}
         {paginasUser == 1 && <UserEditInfos /> }
         {paginasUser == 2 && <SalasChat />}
-  
+        {paginasUser ==3 && <Page_meu_servico/>}
       </div>
      </div>
      <Footer />

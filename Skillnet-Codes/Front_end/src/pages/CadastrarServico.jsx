@@ -4,7 +4,7 @@ import './CadastrarServico.css';
 import { GlobalContext } from '../context/Globalcontext';
 import api from "../Services/api";
 function CadastrarServico() {
-  const { cadastroServico, setCadastroServico } = useContext(GlobalContext);
+  const { cadastroServico, setCadastroServico ,userLogado, setUserLogado,} = useContext(GlobalContext);
 
   const [inptTituloServico, setInptTituloServico] = useState('');
   const [inptImageServico, setInptImageServico] = useState('');
@@ -35,7 +35,8 @@ function CadastrarServico() {
      tempo_entrega:tempoEntrega.current.value,
     preco_minimo:faixaPreco.current.value,
     idioma:idiomaAtende.current.value,
-    
+    fk_usuario_id:userLogado.id
+
 
 
     });

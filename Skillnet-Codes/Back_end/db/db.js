@@ -4,6 +4,7 @@ const path = require('path');
 const { Pool } = require('pg');
 const createTables = require('../functions/createTables')
 
+
 let pool;
 
 async function createDataBase() {
@@ -140,8 +141,8 @@ async function selectServico(id) {
 async function insertServico(servico) {
   const client = await connect();
   const sql = `
-    INSERT INTO servicos (titulo, descricao, area, imagem_capa, tempo_entrega, preco_minimo, idioma)
-    VALUES ($1, $2, $3, $4, $5, $6, $7)
+    INSERT INTO servicos (titulo, descricao, area, imagem_capa, tempo_entrega, preco_minimo, idioma,fk_usuario_id )
+    VALUES ($1, $2, $3, $4, $5, $6, $7,$8)
   `;
   const values = [
     servico.titulo,
@@ -151,6 +152,7 @@ async function insertServico(servico) {
     servico.tempo_entrega,
     servico.preco_minimo,
     servico.idioma,
+    servico.fk_usuario_id // <- importante
   ];
   try {
     await client.query(sql, values);
@@ -429,4 +431,5 @@ module.exports = {
   joinSala,
   salvarMenssagen,
   selecionarMenssagens,
+  createTablesFunc
 };

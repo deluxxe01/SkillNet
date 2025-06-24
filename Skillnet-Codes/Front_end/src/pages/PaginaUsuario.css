@@ -179,3 +179,63 @@
     flex-direction: column;
     
   }
+
+  .dropdown {
+    position: relative;
+    display: inline-block;
+    font-family: sans-serif;
+  }
+  
+  .dropbtn {
+    font-family: Mont ;
+    font-weight: 700;
+    font-size: x-large;
+    background-color: #1b4d2c;
+    color: #ffffff;
+    padding: 10px 16px;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    text-align: left;
+  background-image: url("./icons/servicosIcon.svg" );
+  background-repeat: no-repeat;
+background-size:28px ;
+background-position: 10px;
+  text-align: center;
+
+}
+.dropbtn:hover{
+  background-color: #83CF41;
+    color: #145123;
+    transition: ease 0.5s;
+
+}
+
+
+
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: white;
+     width: 100%;
+    box-shadow: 0px 4px 10px rgba(0,0,0,0.1);
+    z-index: 1;
+  }
+  
+  .dropdown-content a {
+    color: #004B22;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    font-weight: 600;
+  }
+  
+  .dropdown-content a:hover {
+    background-color: #f4fff0;
+    border-bottom: 2px solid #83CF41;
+  }
+  
+  .dropdown:hover .dropdown-content {
+    display: block;
+  }
+  

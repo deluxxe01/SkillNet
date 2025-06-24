@@ -10,11 +10,12 @@ CREATE TABLE IF NOT EXISTS servicos (
     titulo VARCHAR(80) NOT NULL,
     descricao VARCHAR(500),
     area VARCHAR(100),
-    imagem_capa varchar (2000),
+    imagem_capa VARCHAR(2000),
     tempo_entrega VARCHAR(50),
     preco_minimo NUMERIC(10, 2) CHECK (preco_minimo >= 0),
-    idioma VARCHAR(50)
-
+    idioma VARCHAR(50),
+    fk_Usuario_id INT,
+    CONSTRAINT servicos_usuarios FOREIGN KEY (fk_Usuario_id) REFERENCES usuarios(id_usuario)
 );
 
 CREATE TABLE IF NOT EXISTS portifolios (
