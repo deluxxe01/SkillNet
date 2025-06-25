@@ -35,7 +35,7 @@ function CadastrarServico() {
      tempo_entrega:tempoEntrega.current.value,
     preco_minimo:faixaPreco.current.value,
     idioma:idiomaAtende.current.value,
-    fk_usuario_id:userLogado.id
+    fk_usuario_id:userLogado.id_usuario
 
 
 

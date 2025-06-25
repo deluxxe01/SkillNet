@@ -88,7 +88,7 @@
   
   .salvar {
     background-color: #fbfbfb;
-    color: black;
+    color: #145123 ;
     border: 2px solid #145123;
     font-family: Mont;
     font-weight: 500;
@@ -103,7 +103,7 @@
   .cancelar {
     background-color: transparent;
     border: 2px solid #da1e37;
-    color: black;
+    color:#da1e37;
     font-family: Mont;
     font-weight: 500;
   }

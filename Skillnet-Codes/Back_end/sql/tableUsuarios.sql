@@ -14,8 +14,8 @@ CREATE TABLE IF NOT EXISTS servicos (
     tempo_entrega VARCHAR(50),
     preco_minimo NUMERIC(10, 2) CHECK (preco_minimo >= 0),
     idioma VARCHAR(50),
-    fk_Usuario_id INT,
-    CONSTRAINT servicos_usuarios FOREIGN KEY (fk_Usuario_id) REFERENCES usuarios(id_usuario)
+    fk_usuario_id INT,
+    CONSTRAINT servicos_usuarios FOREIGN KEY (fk_usuario_id) REFERENCES usuarios(id_usuario)
 );
 
 CREATE TABLE IF NOT EXISTS portifolios (
