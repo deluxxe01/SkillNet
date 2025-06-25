@@ -11,8 +11,6 @@ export const GlobalContextProvider = ({children}) =>{
     
     return(
         <GlobalContext.Provider value={{
-            chat,
-            setChat,
             userLogado,
             setUserLogado,
             cadastroServico,

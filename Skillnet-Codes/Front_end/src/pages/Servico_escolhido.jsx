@@ -1,13 +1,16 @@
 import { useParams } from "react-router-dom";
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { GlobalContext } from "../context/Globalcontext";
 import api from "../Services/api";
 import './Servico_escolhido.css';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
+import CaixaTexto from "../components/CaixaTexto"
 
 
 function Servico_escolhido() {
+
+  const [openModal,setOpenModal] = useState(false)
  
     const { servico_id } = useParams();
      const { cadastroServico } = useContext(GlobalContext); // nome certo aqui
@@ -45,7 +48,10 @@ function Servico_escolhido() {
           
         </div>
 
-        <button className="cta-button">Entrar em Contato</button>
+        <button className="cta-button" onClick={()=>{
+          setOpenModal(!openModal)
+        }}>Entrar em Contato</button>
+        { openModal &&<CaixaTexto />}
       </div>
     </div>
 

@@ -8,6 +8,7 @@
     background-color: #E6E6E6;
     border-radius:20px ;
     margin-left: 100px;
+    position: absolute;
 }
 .submitText{
     width: 60%;

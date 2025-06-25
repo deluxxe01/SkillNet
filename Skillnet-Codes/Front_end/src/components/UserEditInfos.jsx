@@ -57,6 +57,7 @@ function UserEditInfos() {
        const deleteUser = async() => {
          await axios.delete(`http://localhost:3000/delete_user/${userLogado.id_usuario}`)
           console.log("deu certo")
+          sessionStorage.removeItem('token')
           navigate('/')
        }
         function fecharModal(){

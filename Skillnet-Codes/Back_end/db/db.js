@@ -333,7 +333,7 @@ async function findSala(user) {
   const client = await connect();
   const sql = `
     SELECT * FROM salasChat WHERE FK_id_usuario1 = $1 OR FK_id_usuario2 = $1
-  `;
+  `
   try {
     const res = await client.query(sql, [user.id_usuario]);
     return res.rows;

@@ -5,7 +5,8 @@ import { Outlet } from "react-router-dom";
 
 
 const autenticado =() =>{
-    return localStorage.getItem("token")
+
+    return  sessionStorage.getItem('token')
 }
 const PrivateRoutes = () =>{ 
 
