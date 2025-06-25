@@ -21,7 +21,7 @@ const [openModal,setOpenModal]=useState(false)
      setOpenModal(!openModal)
          navigate('/')
          setUserLogado('')
-        localStorage.removeItem("token")
+         sessionStorage.removeItem("token")
         
 
     }

@@ -51,7 +51,7 @@ function Login() {
           console.log("deu merda")
       
       }else{
-        localStorage.setItem('token',1)
+        sessionStorage.setItem('token',1)
         setUserLogado(result.data)
         
         console.log(result.data)

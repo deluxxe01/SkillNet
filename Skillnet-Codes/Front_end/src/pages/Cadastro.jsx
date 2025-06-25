@@ -71,9 +71,9 @@ function Cadastro() {
         setInptSenha('')
 
       }else{
-        localStorage.setItem('token',1)
+        sessionStorage.setItem('token',1)
 
-        localStorage.setItem('id_usuario', resultado.data.usuario.id)
+     
         
         setUserLogado(resultado.data.usuario)
         console.log(userLogado)
