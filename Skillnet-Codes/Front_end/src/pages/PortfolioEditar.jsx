@@ -390,7 +390,7 @@ const irParaVisualizacao = () => {
           <textarea 
           className={`TextArea-Formulario ${corSelecionada ? `textArea-${corSelecionada}` : ''}`}
           value={inputSobreMim}
-           onChange={e => setInputSobreMim(e.target.value)} />
+          onChange={e => setInputSobreMim(e.target.value)} />
 
 </div>
        
