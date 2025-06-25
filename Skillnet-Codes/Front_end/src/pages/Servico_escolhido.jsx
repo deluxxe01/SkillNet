@@ -10,7 +10,7 @@ import Footer from '../components/Footer';
 function Servico_escolhido() {
  
     const { servico_id } = useParams();
-     const { cadastroServico } = useContext(GlobalContext); // nome certo aqui
+     const {cadastroServico,setCadastroServico,userLogado,setUserLogado} = useContext(GlobalContext); // nome certo aqui
     
     const servico = cadastroServico.find(s => String(s.servico_id) === String(servico_id));
     if (!servico) return <p>Serviço não encontrado ou carregando...</p>;
@@ -25,7 +25,7 @@ function Servico_escolhido() {
 
 <main>
     <h2 className="servico_titulo">{servico.titulo}</h2>
-    <div className="freelancer">Feito por Maria Oliveira @ </div>
+    <div className="freelancer">Feito por porcas @ </div>
 
     <div className="service-content">
       <div className="service-image">
