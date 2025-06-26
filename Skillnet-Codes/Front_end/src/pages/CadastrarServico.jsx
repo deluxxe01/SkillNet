@@ -4,6 +4,7 @@ import './CadastrarServico.css';
 import { GlobalContext } from '../context/Globalcontext';
 import api from "../Services/api";
 function CadastrarServico() {
+  
   const { cadastroServico, setCadastroServico ,userLogado, setUserLogado,} = useContext(GlobalContext);
 
   const [inptTituloServico, setInptTituloServico] = useState('');

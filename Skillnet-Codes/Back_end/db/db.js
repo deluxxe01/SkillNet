@@ -320,10 +320,20 @@ async function createSalasChat(user1, user2) {
     INSERT INTO salasChat (FK_id_usuario1, FK_id_usuario2, nomeUser1, nomeUser2)
     VALUES ($1, $2, $3, $4) RETURNING id_sala
   `;
-  const values = [user1.id, user2.id, user1.nome, user2.nome];
   try {
+    const sql2='SELECT u.nome FROM salasChat s JOIN usuarios u ON s.FK_id_usuario2 = u.id_usuario WHERE s.id_sala = $1;'
+
+    const values2 = [user2.id]
+
+    const nomeUser2 = await client.query(sql2,values2)
+
+    console.log("nome do usuario que tem a fk = 2",nomeUser2)
+
+    const values = [user1.id, user2.id, user1.nome, user2.nome];
     const res = await client.query(sql, values);
     return res.rows[0].id_sala;
+  }catch(erro){
+    console.log('seu erro: ',erro)
   } finally {
     client.release();
   }
