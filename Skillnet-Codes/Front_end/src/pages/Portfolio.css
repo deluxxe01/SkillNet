@@ -1,13 +1,13 @@
 
 .Container-Um{
-    border: solid;
+    /* border: solid; */
     width: 40vh;
 }
 .fotoUsuarioVisu{
     margin-top: 5vh;
 }
 .DivLocalidade{
-   border: solid;
+   /* border: solid; */
    display: flex;
    flex-direction: row;
    gap: 1vh;
@@ -78,7 +78,7 @@
     color: #fbfbfb;
 }
 .Container-um{
-    border: solid;
+    /* border: solid; */
     margin-top: 5vh;
     width: 65vh;
     height: 45vh;
@@ -100,13 +100,58 @@
 
 .ButonContainer{
    margin-left: 21vh;
-   margin-top: -4vh;
+   margin-top: -7vh;
 }
 .CompartilharButton{
     width: 20vh;
     height: 4vh;
+    background-color: #CE499C;
+    --color: #CE499C;
+    font-family: inherit;
+    display: inline-block;
+    line-height: 1.5vh;
+    position: relative;
+    cursor: pointer;
+    overflow: hidden;
+    border: 0.3vh solid var(--color);
+    transition: color 0.4s ease-in-out;
+    z-index: 1;
+    font-size: 2vh;
+    border-radius: 2vh;
+    font-weight: 500;
+    color: #FFD9D9;
+    text-align: center;
+    font-family: Mont;
+    font-weight: 600;
 }
 
+.CompartilharButton:before{
+    content: "";
+    position: absolute;
+    z-index: -1;
+    background: #FFD9D9;
+    width: 200%;
+    height: 500%;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 50%;
+    transition: all 0.7s ease-in-out;
+}
+.CompartilharButton:hover{
+    color:#CE499C;
+    background-color: #CE499C;
+}
+
+.CompartilharButton:hover:before{
+    top: -150%;
+}
+
+.CompartilharButton:active:before{
+    background: #CE499C;
+    transition: background 0s;
+    color: #fbfbfb;
+}
 .TextContainer{
     margin-top: 5vh;
     display: flex;

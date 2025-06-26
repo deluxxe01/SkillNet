@@ -191,7 +191,7 @@
   appearance: none;
   background-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0Ij48cGF0aCBmaWxsPSIjMDA0QjIyIiBkPSJtMTIgMTAuOGwtMy45IDMuOXEtLjI3NS4yNzUtLjcuMjc1dC0uNy0uMjc1dC0uMjc1LS43dC4yNzUtLjdsNC42LTQuNnEuMy0uMy43LS4zdC43LjNsNC42IDQuNnEuMjc1LjI3NS4yNzUuN3QtLjI3NS43dC0uNy4yNzV0LS43LS4yNzV6Ii8+PC9zdmc+");
   background-repeat: no-repeat;
-background-position: 115px;
+  background-position: 115px;
 font-size: 15px;
 padding: 5px;
 margin-right: 50px;

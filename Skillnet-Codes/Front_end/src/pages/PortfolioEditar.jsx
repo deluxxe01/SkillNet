@@ -6,26 +6,26 @@ import Hamburger from "../components/Hamburger";
 
 function PortfolioEditar() {
   const [portfolios, setPortfolios] = useState([]);
-  const [portfolioSelect, setPortfolioSelect] = useState(null);
+  const [portfolioSelect, setPortfolioSelect] = useState(null)
+  const [inputNome, setInputNome] = useState('')
+  const [inputLinkInsta, setInputLinkInsta] = useState('')
+  const [inputLinkLinkedin, setInputLinkLinkedin] = useState('')
+  const [inputLinkGmail, setInputLinkGmail] = useState('')
+  const [inputLocalidade, setInputLocalidade] = useState('')
+  const [inputAnoExperiencia, setInputAnoExperiencia] = useState('')
+  const [inputAreaAtuacao, setInputAreaAtuacao] = useState('')
+  const [inputFotoUrl, setInputFotoUrl] = useState('')
+  const [inputSobreMim, setInputSobreMim] = useState('')
 
-  const [inputLinkInsta, setInputLinkInsta] = useState('');
-  const [inputLinkLinkedin, setInputLinkLinkedin] = useState('');
-  const [inputLinkGmail, setInputLinkGmail] = useState('');
-  const [inputLocalidade, setInputLocalidade] = useState('');
-  const [inputAnoExperiencia, setInputAnoExperiencia] = useState('');
-  const [inputAreaAtuacao, setInputAreaAtuacao] = useState('');
-  const [inputFotoUrl, setInputFotoUrl] = useState('');
-  const [inputSobreMim, setInputSobreMim] = useState('');
-
-  const [mostrarMenu, setMostrarMenu] = useState(false);
+  const [mostrarMenu, setMostrarMenu] = useState(false)
   const toggleMenu = () => {
-    setMostrarMenu(!mostrarMenu);
-  };
+    setMostrarMenu(!mostrarMenu)
+  }
 
-  const [corSelecionada, setCorSelecionada] = useState('');
+  const [corSelecionada, setCorSelecionada] = useState('')
 
 
-const navigate = useNavigate();
+const navigate = useNavigate()
 
 const irParaVisualizacao = () => {
   const dadosPortfolio = {
@@ -38,69 +38,69 @@ const irParaVisualizacao = () => {
     foto_url: inputFotoUrl,
     sobremim: inputSobreMim,
     corSelecionada
-  };
+  }
   
-  console.log("Dados enviados para visualização:", dadosPortfolio); // 👈 Aqui
-  navigate('/portfolio', { state: dadosPortfolio });
-};
+  console.log("Dados enviados para visualização:", dadosPortfolio); 
+  navigate('/portfolio', { state: dadosPortfolio })
+}
   // Carregar a cor do localStorage quando o componente for montado
   useEffect(() => {
     const savedCor = localStorage.getItem('corSelecionada');
     if (savedCor) {
-      setCorSelecionada(savedCor);
+      setCorSelecionada(savedCor)
     }
   }, []);
 
   // Salvar a cor selecionada no localStorage toda vez que ela mudar
   useEffect(() => {
     if (corSelecionada) {
-      localStorage.setItem('corSelecionada', corSelecionada);
+      localStorage.setItem('corSelecionada', corSelecionada)
     }
-  }, [corSelecionada]);
+  }, [corSelecionada])
 
   const selecionarCor = (cor) => {
-    setCorSelecionada(cor);
-    setMostrarMenu(false); // opcional: fecha o menu após a escolha
-  };
+    setCorSelecionada(cor)
+    setMostrarMenu(false);// opcional: fecha o menu após a escolha
+  }
 
   const imagensMaterial = {
     rosa: 'public/icons/material 2.svg',
     azul: 'public/icons/material 3.svg',
     verde: 'public/icons/material 4.svg',
     default: 'public/icons/material 2.svg',
-  };
+  }
 
   const imagensFundo = {
     rosa: 'public/images/fundoRosa2 (1).png',
     azul: 'public/images/fundoazul.png',
     verde: 'public/images/fundoverde.png',
     default: 'public/images/fundoRosa2 (1).png',
-  };
+  }
 
   const fetchPortfolios = async () => {
     try {
-      const response = await axios.get('http://localhost:3000/portfolios');
-      setPortfolios(response.data);
+      const response = await axios.get('http://localhost:3000/portfolios')
+      setPortfolios(response.data)
     } catch (error) {
-      console.error('Erro ao buscar portfolios:', error);
+      console.error('Erro ao buscar portfolios:', error)
     }
   };
 
   useEffect(() => {
-    fetchPortfolios();
+    fetchPortfolios()
     // Carregar dados do localStorage ao carregar a página
-    const savedInputs = JSON.parse(localStorage.getItem('portfolioInputs'));
+    const savedInputs = JSON.parse(localStorage.getItem('portfolioInputs'))
     if (savedInputs) {
-      setInputLinkInsta(savedInputs.inputLinkInsta || '');
-      setInputLinkLinkedin(savedInputs.inputLinkLinkedin || '');
-      setInputLinkGmail(savedInputs.inputLinkGmail || '');
-      setInputLocalidade(savedInputs.inputLocalidade || '');
-      setInputAnoExperiencia(savedInputs.inputAnoExperiencia || '');
-      setInputAreaAtuacao(savedInputs.inputAreaAtuacao || '');
-      setInputFotoUrl(savedInputs.inputFotoUrl || '');
-      setInputSobreMim(savedInputs.inputSobreMim || '');
+      setInputLinkInsta(savedInputs.inputLinkInsta || '')
+      setInputLinkLinkedin(savedInputs.inputLinkLinkedin || '')
+      setInputLinkGmail(savedInputs.inputLinkGmail || '')
+      setInputLocalidade(savedInputs.inputLocalidade || '')
+      setInputAnoExperiencia(savedInputs.inputAnoExperiencia || '')
+      setInputAreaAtuacao(savedInputs.inputAreaAtuacao || '')
+      setInputFotoUrl(savedInputs.inputFotoUrl || '')
+      setInputSobreMim(savedInputs.inputSobreMim || '')
     }
-  }, []);
+  }, [])
 
   useEffect(() => {
     // Salvar os inputs no localStorage toda vez que um valor mudar
@@ -113,8 +113,8 @@ const irParaVisualizacao = () => {
       inputAreaAtuacao,
       inputFotoUrl,
       inputSobreMim
-    };
-    localStorage.setItem('portfolioInputs', JSON.stringify(inputs));
+    }
+    localStorage.setItem('portfolioInputs', JSON.stringify(inputs))
   }, [inputLinkInsta, inputLinkLinkedin, inputLinkGmail, inputLocalidade, inputAnoExperiencia, inputAreaAtuacao, inputFotoUrl, inputSobreMim]);
 
   const cadastrarPortfolio = async () => {
@@ -130,13 +130,13 @@ const irParaVisualizacao = () => {
         sobremim: inputSobreMim
       };
 
-      const response = await axios.post('http://localhost:3000/portfolios', portfolio);
+      const response = await axios.post('http://localhost:3000/portfolios', portfolio)
       if (response.status === 201) {
-        fetchPortfolios();
+        fetchPortfolios()
         // limparForm();
       }
     } catch (error) {
-      console.error('Erro ao adicionar portfolio', error);
+      console.error('Erro ao adicionar portfolio', error)
     }
   };
 
@@ -155,61 +155,61 @@ const irParaVisualizacao = () => {
         sobremim: inputSobreMim
       };
 
-      const response = await axios.put(`http://localhost:3000/portfolios/${portfolioSelect.id_portifolio}`, portfolio);
+      const response = await axios.put(`http://localhost:3000/portfolios/${portfolioSelect.id_portifolio}`, portfolio)
       if (response.status === 200) {
         fetchPortfolios();
-        setPortfolioSelect(null);
+        setPortfolioSelect(null)
         // limparForm();
       }
     } catch (error) {
-      console.error('Erro ao atualizar portfolio', error);
+      console.error('Erro ao atualizar portfolio', error)
     }
   };
 
   const buscarPortfolioId = async (id) => {
     try {
-      const response = await axios.get(`http://localhost:3000/portfolios/${id}`);
-      setPortfolioSelect(response.data);
-      exibirPortfolio(response.data);
+      const response = await axios.get(`http://localhost:3000/portfolios/${id}`)
+      setPortfolioSelect(response.data)
+      exibirPortfolio(response.data)
     } catch (error) {
-      console.error('Erro ao buscar portfolio por ID:', error);
+      console.error('Erro ao buscar portfolio por ID:', error)
     }
   };
 
   const deletarPortfolio = async (id) => {
     try {
-      const response = await axios.delete(`http://localhost:3000/portfolios/${id}`);
+      const response = await axios.delete(`http://localhost:3000/portfolios/${id}`)
       if (response.status === 200 || response.status === 204) {
         setPortfolios((prevPortfolios) =>
         prevPortfolios.filter((portfolio) => portfolio.id_portifolio !== id)
         );
-        limparForm();
+        limparForm()
       }
     } catch (error) {
-      console.error('Erro ao deletar portfolio:', error);
+      console.error('Erro ao deletar portfolio:', error)
     }
   };
 
   function limparForm() {
-    setInputLinkInsta('');
-    setInputLinkLinkedin('');
-    setInputLinkGmail('');
-    setInputLocalidade('');
-    setInputAnoExperiencia('');
-    setInputAreaAtuacao('');
-    setInputFotoUrl('');
-    setInputSobreMim('');
+    setInputLinkInsta('')
+    setInputLinkLinkedin('')
+    setInputLinkGmail('')
+    setInputLocalidade('')
+    setInputAnoExperiencia('')
+    setInputAreaAtuacao('')
+    setInputFotoUrl('')
+    setInputSobreMim('')
   }
 
   function exibirPortfolio(portfolio) {
-    setInputLinkInsta(portfolio.link_insta || '');
-    setInputLinkLinkedin(portfolio.link_linkedin || '');
-    setInputLinkGmail(portfolio.link_gmail || '');
-    setInputLocalidade(portfolio.localidade || '');
-    setInputAnoExperiencia(portfolio.ano_experiencia || '');
-    setInputAreaAtuacao(portfolio.area_atuacao || '');
-    setInputFotoUrl(portfolio.foto_url || '');
-    setInputSobreMim(portfolio.sobremim || '');
+    setInputLinkInsta(portfolio.link_insta || '')
+    setInputLinkLinkedin(portfolio.link_linkedin || '')
+    setInputLinkGmail(portfolio.link_gmail || '')
+    setInputLocalidade(portfolio.localidade || '')
+    setInputAnoExperiencia(portfolio.ano_experiencia || '')
+    setInputAreaAtuacao(portfolio.area_atuacao || '')
+    setInputFotoUrl(portfolio.foto_url || '')
+    setInputSobreMim(portfolio.sobremim || '')
   }
 
 

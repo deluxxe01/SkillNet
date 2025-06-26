@@ -233,7 +233,7 @@ input, textarea:focus {
     background-color: #FBFBFB;
     border: 1px solid #ccc;
     padding: 10px;
-    right: 30vh;
+    right: 2vh;
     top: 20vh;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     z-index: 10;

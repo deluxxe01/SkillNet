@@ -8,13 +8,18 @@ export const GlobalContextProvider = ({children}) =>{
     const [userLogado,setUserLogado]=useState()
 
     const [cadastroServico,setCadastroServico]=useState([])
+
+    const [portfolios,setPortfolios] = useState([])
     
     return(
         <GlobalContext.Provider value={{
             userLogado,
             setUserLogado,
             cadastroServico,
-            setCadastroServico
+            setCadastroServico,
+            portfolios,
+            setPortfolios
+
             // aqui vai as variaves pro resto da aplicação
        
        

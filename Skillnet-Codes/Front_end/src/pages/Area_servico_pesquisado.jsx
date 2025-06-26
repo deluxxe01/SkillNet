@@ -21,9 +21,6 @@ function Area_servico_pesquisado() {
   }
 
 
- 
-
-  
   useEffect(() => {
     getServicos();
   }, []); // roda apenas uma vez ao montar

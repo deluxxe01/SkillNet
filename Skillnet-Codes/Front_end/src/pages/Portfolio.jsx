@@ -36,9 +36,9 @@ function Portfolio() {
   <div className="Container-PortfolioEditar">
 
     <h1 className="Title-EditarPortfolio">Criar Portfólio</h1>
-    <div className="linha1"></div>
+    <div className={`linha1 ${corSelecionada ? `linha-${corSelecionada}` : ''}`}></div>
 
-    <div className="Formulario">
+    <div className={`Formulario ${corSelecionada ? `formulario-${corSelecionada}` : ''}`}>
 
 
     <div className='fotoUsuario'>
@@ -119,7 +119,7 @@ function Portfolio() {
      </div>
 
   <div className='ButonContainer'>
-  <button className='CompartilharButton'>Compartilhar</button>
+  <button className={`CompartilharButton ${corSelecionada ? `button2-${corSelecionada}` : ''}`}>Compartilhar</button>
   </div>
 
 <div className='TextContainer'>
@@ -137,21 +137,15 @@ function Portfolio() {
 
      </div>
 
-
-
-
-
- 
-
     </div>
 
 
 <div className="ConatineSobremim">
       
-        <h2 className='h1Sobremim'>Sobre Mim</h2>
+        <h2 className={`LabelSobremim ${corSelecionada ? `label-${corSelecionada}` : ''}`}>Sobre Mim</h2>
         <textarea value={dados.sobremim || ''}
           readOnly
-        className="h1Formulario"
+        className={`TextArea-Formulario ${corSelecionada ? `textArea-${corSelecionada}` : ''}`}
          />
 
 </div>
