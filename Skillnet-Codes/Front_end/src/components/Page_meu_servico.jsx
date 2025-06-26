@@ -1,45 +1,48 @@
-import React from 'react'
-import { useNavigate } from 'react-router-dom'
-import './Page_meu_servico.css'
-
+import { useNavigate } from 'react-router-dom';
+import './Page_meu_servico.css';
+import { useContext } from 'react';
+import { GlobalContext } from '../context/Globalcontext'; 
 
 function Page_meu_servico() {
+  const { userLogado, cadastroServico } = useContext(GlobalContext);
+  const navigate = useNavigate();
+
   
-  const navigate=useNavigate()
-  
+  if (!userLogado || !cadastroServico) {
+    return <p>Carregando...</p>;
+  }
+
+  // Filtra só os serviços do usuário logado
+  const servicosDoUsuario = cadastroServico.filter(
+    (s) => s.fk_Usuario_id === userLogado.id_usuario
+  );
+
   return (
     <div className='container_page_meu_serviço'>
+      <div className='conteiner_meu_serviço'>
+        <h2>Meus Serviços</h2>
 
-<div className='conteiner_meu_serviço'>
+        {servicosDoUsuario.length === 0 && <p>Você ainda não tem serviços cadastrados.</p>}
 
-
- <div className='card_servico'>
-      <img src={'https://d2j6dbq0eux0bg.cloudfront.net/images/66610504/2636936256.jpg' || null} className='poster' />
-      <p className="categoria_servico_especifico">sssssss</p>
-      <p className='titulo_servico'></p>
-      <p>texto muito foda</p>
-      <p>100R$</p>
-
-      {/* <button onClick={() => deleteServicos(servico.servico_id)}>Apagar Serviço</button>
-    <button onClick={() => UpdateServicos(servico.servico_id)}>edita servico</button> */}
-    
-    
+        <div className="meuservico_lista">
+  {servicosDoUsuario.map((servico) => (
+    <div key={servico.servico_id} className="meuservico_card">
+      <img src={servico.imagem_capa} className="meuservico_img" alt="Capa do serviço" />
+      <h3 className="meuservico_titulo">{servico.titulo}</h3>
+      <p className="meuservico_descricao">{servico.descricao}</p>
+      <div className="meuservico_categoria_container">
+        <span className="meuservico_categoria">{servico.area}</span>
+      </div>
     </div>
-
-
-
-
-
-
-<button onClick={()=>{navigate('/cadastro_servico')}}>cadastar servico</button>
-
-
+  ))}
 </div>
 
-
-
+        <button onClick={() => navigate('/cadastro_servico')}>
+          Cadastrar serviço
+        </button>
+      </div>
     </div>
-  )
+  );
 }
 
-export default Page_meu_servico
+export default Page_meu_servico;

@@ -57,7 +57,7 @@ async function createServicos() {
   
 setTimeout(()=>{
 
-navigate('/area_servico_pesquisado')
+navigate('')
 
 },3000)
 

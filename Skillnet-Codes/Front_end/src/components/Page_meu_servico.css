@@ -11,4 +11,68 @@ height: 100%;
 border-radius: 10px;
 padding:5px ;
 
+}.meuservico_lista {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 40px;
+  padding: 20px;
+
+  max-height: 80vh; /* limite de altura visível */
+  overflow-y: auto; /* ativa a rolagem se passar do limite */
+  scroll-behavior: smooth;
 }
+
+.meuservico_card {
+  width: 360px;
+  background-color: #ffffff;
+  border: 2px solid #004B22;
+  border-radius: 35px;
+  overflow: hidden;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+  transition: transform 0.2s ease;
+  text-align: left;
+}
+
+.meuservico_card:hover {
+  transform: scale(1.02);
+}
+
+.meuservico_img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  border-top-left-radius: 35px;
+  border-top-right-radius: 35px;
+}
+
+.meuservico_titulo {
+  font-size: 20px;
+  color: #004B22;
+  margin: 10px 20px 5px;
+  font-family: Mont;
+}
+
+.meuservico_descricao {
+  font-size: 14px;
+  font-family: Mont;
+  font-weight: 500;
+  margin: 0 20px 10px;
+  color: #444;
+}
+
+.meuservico_categoria_container {
+  margin: 10px 20px 20px;
+}
+
+.meuservico_categoria {
+  background-color: #83CF41;
+  color: #004B22;
+  padding: 4px 10px;
+  border-radius: 12px;
+  font-size: 13px;
+  font-family: Mont;
+  font-weight: 600;
+  display: inline-block;
+}
+
