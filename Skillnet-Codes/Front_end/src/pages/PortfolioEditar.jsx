@@ -7,7 +7,7 @@ import Hamburger from "../components/Hamburger";
 function PortfolioEditar() {
   const [portfolios, setPortfolios] = useState([]);
   const [portfolioSelect, setPortfolioSelect] = useState(null)
-  const [inputNome, setInputNome] = useState('')
+  // const [inputNome, setInputNome] = useState('')
   const [inputLinkInsta, setInputLinkInsta] = useState('')
   const [inputLinkLinkedin, setInputLinkLinkedin] = useState('')
   const [inputLinkGmail, setInputLinkGmail] = useState('')
@@ -25,7 +25,7 @@ function PortfolioEditar() {
   const [corSelecionada, setCorSelecionada] = useState('')
 
 
-const navigate = useNavigate()
+  const navigate = useNavigate()
 
 const irParaVisualizacao = () => {
   const dadosPortfolio = {
@@ -43,7 +43,7 @@ const irParaVisualizacao = () => {
   console.log("Dados enviados para visualização:", dadosPortfolio); 
   navigate('/portfolio', { state: dadosPortfolio })
 }
-  // Carregar a cor do localStorage quando o componente for montado
+  
   useEffect(() => {
     const savedCor = localStorage.getItem('corSelecionada');
     if (savedCor) {
@@ -51,7 +51,7 @@ const irParaVisualizacao = () => {
     }
   }, []);
 
-  // Salvar a cor selecionada no localStorage toda vez que ela mudar
+  
   useEffect(() => {
     if (corSelecionada) {
       localStorage.setItem('corSelecionada', corSelecionada)
@@ -60,7 +60,7 @@ const irParaVisualizacao = () => {
 
   const selecionarCor = (cor) => {
     setCorSelecionada(cor)
-    setMostrarMenu(false);// opcional: fecha o menu após a escolha
+    setMostrarMenu(false); // opcional: fecha o menu após a escolha
   }
 
   const imagensMaterial = {
@@ -114,8 +114,9 @@ const irParaVisualizacao = () => {
       inputFotoUrl,
       inputSobreMim
     }
+
     localStorage.setItem('portfolioInputs', JSON.stringify(inputs))
-  }, [inputLinkInsta, inputLinkLinkedin, inputLinkGmail, inputLocalidade, inputAnoExperiencia, inputAreaAtuacao, inputFotoUrl, inputSobreMim]);
+  }, [inputLinkInsta, inputLinkLinkedin, inputLinkGmail, inputLocalidade, inputAnoExperiencia, inputAreaAtuacao, inputFotoUrl, inputSobreMim])
 
   const cadastrarPortfolio = async () => {
     try {
@@ -133,7 +134,7 @@ const irParaVisualizacao = () => {
       const response = await axios.post('http://localhost:3000/portfolios', portfolio)
       if (response.status === 201) {
         fetchPortfolios()
-        // limparForm();
+       
       }
     } catch (error) {
       console.error('Erro ao adicionar portfolio', error)
@@ -159,7 +160,7 @@ const irParaVisualizacao = () => {
       if (response.status === 200) {
         fetchPortfolios();
         setPortfolioSelect(null)
-        // limparForm();
+     
       }
     } catch (error) {
       console.error('Erro ao atualizar portfolio', error)
@@ -190,16 +191,6 @@ const irParaVisualizacao = () => {
     }
   };
 
-  function limparForm() {
-    setInputLinkInsta('')
-    setInputLinkLinkedin('')
-    setInputLinkGmail('')
-    setInputLocalidade('')
-    setInputAnoExperiencia('')
-    setInputAreaAtuacao('')
-    setInputFotoUrl('')
-    setInputSobreMim('')
-  }
 
   function exibirPortfolio(portfolio) {
     setInputLinkInsta(portfolio.link_insta || '')

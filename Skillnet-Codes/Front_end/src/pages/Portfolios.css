@@ -14,3 +14,15 @@
     height: 100vh;
     border-radius: 5vh ;
 }
+
+.clique{
+    color: antiquewhite;
+    margin-top: 30vh;
+    margin-left: 10vh;
+    font-size: 2vh;
+}
+
+.clique:hover{
+    color: #83CF41;
+    cursor: pointer;
+}

@@ -36,7 +36,7 @@ body{
     margin-left: 80vh;
     font-size: 5vh;
     font-family: "Lato", sans-serif;
-    color: #f5f5f5;
+    color: #500040;
 }
 
 .linha1{
@@ -233,7 +233,7 @@ input, textarea:focus {
     background-color: #FBFBFB;
     border: 1px solid #ccc;
     padding: 10px;
-    right: 2vh;
+    right: 30vh;
     top: 20vh;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     z-index: 10;

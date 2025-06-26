@@ -1,6 +1,7 @@
-import Header from '../components/Header'
-import '../pages/Portfolios.css'
 import React, { useState, useMemo, useContext, useEffect } from 'react';
+import { useNavigate, Link } from 'react-router-dom';
+import Header from '../components/Header';
+import '../pages/Portfolios.css';
 import { GlobalContext } from '../context/Globalcontext';
 
 function Portfolios() {
@@ -14,7 +15,12 @@ function Portfolios() {
       setCadastroServico(response.data); // agora atualiza o contexto global
       console.log(response)
     }
-  
+
+    const navigate = useNavigate();
+
+    const irParaCadastro = () => {
+      navigate('/portfolioeditar');
+    }
   
     useEffect(() => {
       getServicos();
@@ -27,6 +33,8 @@ return(
 <div className="Container-Portfolios">
     <Header />
     
+     <h1  onClick={irParaCadastro} className='clique'>Clique Aqui para criar um portfolio!</h1>
+
     <div className='container_barra_pesquisa'>
           <h1 className='h1_servicos'>Portfolios</h1>
           <div className='barra_verde'></div>
