@@ -6,6 +6,7 @@ import api from "../Services/api";
 
 import { useNavigate } from 'react-router-dom';
 function CadastrarServico() {
+  
   const { cadastroServico, setCadastroServico ,userLogado, setUserLogado,} = useContext(GlobalContext);
 
   const [inptTituloServico, setInptTituloServico] = useState('');
