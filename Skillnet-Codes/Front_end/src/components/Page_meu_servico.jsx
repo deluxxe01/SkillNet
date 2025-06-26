@@ -23,11 +23,6 @@ function Page_meu_servico() {
 
 
 
-
-console.log("User logado:", userLogado);
-console.log("ID do usuário logado:", userLogado.id_usuario);
-console.log("Serviços cadastrados:", cadastroServico);
-
   return (
     <div className='container_page_meu_serviço'>
       <div className='conteiner_meu_serviço'>
