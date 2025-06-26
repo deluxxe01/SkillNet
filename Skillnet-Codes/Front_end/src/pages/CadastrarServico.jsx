@@ -3,6 +3,8 @@ import Header from '../components/Header';
 import './CadastrarServico.css';
 import { GlobalContext } from '../context/Globalcontext';
 import api from "../Services/api";
+
+import { useNavigate } from 'react-router-dom';
 function CadastrarServico() {
   
   const { cadastroServico, setCadastroServico ,userLogado, setUserLogado,} = useContext(GlobalContext);
@@ -14,6 +16,7 @@ function CadastrarServico() {
   const [inptFaixapreco, setInptFaixapreco] = useState('');
   const [inptPrazoEntrega, setInptPrazoEntrega] = useState('');
   const [inptIdioma, setInptIdioma] = useState('');
+  const [mostrarConfirmacao, setMostrarConfirmacao] = useState(false);
 
   const tituloservicos = useRef();
   const descricaoservicos = useRef();
@@ -23,30 +26,48 @@ function CadastrarServico() {
   const faixaPreco = useRef();
   const idiomaAtende = useRef();
 
+const navigate = useNavigate()
 
 
 
-
-  async function createServicos() {
-    await api.post('/servicos',{
-      titulo:tituloservicos.current.value,
-      area:areaservicos.current.value,
-      descricao:descricaoservicos.current.value,
-     imagem_capa:imgservicos.current.value,
-     tempo_entrega:tempoEntrega.current.value,
-    preco_minimo:faixaPreco.current.value,
-    idioma:idiomaAtende.current.value,
-    fk_usuario_id:userLogado.id_usuario
-
-
-
+async function createServicos() {
+  try {
+    await api.post('/servicos', {
+      titulo: tituloservicos.current.value,
+      area: areaservicos.current.value,
+      descricao: descricaoservicos.current.value,
+      imagem_capa: imgservicos.current.value,
+      tempo_entrega: tempoEntrega.current.value,
+      preco_minimo: faixaPreco.current.value,
+      idioma: idiomaAtende.current.value,
+      fk_usuario_id: userLogado.id_usuario  // Aqui está correto
     });
-    
+
+    // Limpar inputs
+    setInptTituloServico('');
+    setInptDescricaoServico('');
+    setInptAreaServico('');
+    setInptFaixapreco('');
+    setInptPrazoEntrega('');
+    setInptIdioma('');
+    setInptImageServico('');
+
+    // Mostrar confirmação
+    setMostrarConfirmacao(true);
+  
+  
+setTimeout(()=>{
+
+navigate('/area_servico_pesquisado')
+
+},3000)
+
+
+
+  } catch (error) {
+    console.error("Erro ao criar serviço:", error);
   }
-
-
-
-
+}
 
   return (
     <div>
@@ -185,6 +206,15 @@ function CadastrarServico() {
           <button className='butonn_cancela_servico'>Cancelar</button>
         </div>
       </div>
+ 
+      {mostrarConfirmacao && (
+        <div className="confirmacao-overlay">
+          <div className="confirmacao-content">
+            <h2>Serviço criado com sucesso!</h2>
+            <button onClick={() => setMostrarConfirmacao(false) }>Fechar</button>
+          </div>
+        </div>
+      )}
     </div>
   );
 }
