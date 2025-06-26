@@ -32,6 +32,8 @@ padding:5px ;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
   transition: transform 0.2s ease;
   text-align: left;
+  display: flex;
+  justify-content: center;
 }
 
 .meuservico_card:hover {

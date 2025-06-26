@@ -126,8 +126,14 @@ async function selectServicos() {
         servicos.servico_id,
         servicos.titulo,
         servicos.descricao,
+        servicos.area,
+        servicos.imagem_capa,
+        servicos.tempo_entrega,
+        servicos.preco_minimo,
+        servicos.idioma,
+        servicos.fk_usuario_id,
         usuarios.nome AS nome_usuario
-      FROM servicos
+        FROM servicos
       LEFT JOIN usuarios ON servicos.fk_usuario_id = usuarios.id_usuario
       ORDER BY servicos.servico_id DESC
     `;
