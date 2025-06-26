@@ -121,7 +121,17 @@ async function loginUser(usuario) {
 async function selectServicos() {
   const client = await connect();
   try {
-    const res = await client.query("SELECT * FROM servicos");
+    const sql = `
+      SELECT 
+        servicos.servico_id,
+        servicos.titulo,
+        servicos.descricao,
+        usuarios.nome AS nome_usuario
+      FROM servicos
+      LEFT JOIN usuarios ON servicos.fk_usuario_id = usuarios.id_usuario
+      ORDER BY servicos.servico_id DESC
+    `;
+    const res = await client.query(sql);
     return res.rows;
   } finally {
     client.release();

@@ -28,7 +28,7 @@ function Servico_escolhido() {
 
 <main>
     <h2 className="servico_titulo">{servico.titulo}</h2>
-    <div className="freelancer">Feito por porcas @ </div>
+    <div className="freelancer">Feito por {servico.nome_usuario} @ </div>
 
     <div className="service-content">
       <div className="service-image">
