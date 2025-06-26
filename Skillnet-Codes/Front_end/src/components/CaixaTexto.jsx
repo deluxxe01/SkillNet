@@ -47,12 +47,12 @@ function CaixaTexto(props) {
          
        }
        
-       socket.emit('criarSala',({
+           socket.emit('criarSala',({
         id_usuario1:userLogado.id_usuario,
         nome:userLogado.nome
 
        }),({
-        id_usuario2:userLogado.id_usuario+1,
+        id_usuario2:props.id_frela,
         nome:'tyler cariane da silva'
       }),(resposta)=>{
 

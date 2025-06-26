@@ -99,3 +99,25 @@
   width: 30px;
 }
 /* Caixa de mensagem individual */
+/* Caixa de mensagem individual */
+.divNaotemCont{
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
+}
+.h2NaotemCont{
+  max-width: 500px;
+  font-family: Mont;
+  font-weight: 500;
+  font-size: 20px;
+  text-align: center;
+  color: #0c2119;
+  
+}
+.h1NaoTemCont{
+  font-family: Mont;
+  color: #004B22;
+  margin-bottom: 40px;
+}

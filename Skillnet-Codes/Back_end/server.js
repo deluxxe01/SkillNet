@@ -142,6 +142,15 @@ App.delete('/deleteComentarioServico/:id', async (req, res) => {
   res.json('Comentário deletado')
 })
 
+App.get('/getComentsServicos/:id', async (req,res)=>{
+  const values = req.params.id
+
+  const coments = await db.selectComentsServico(values)
+
+  res.json({commenst:coments})
+
+})
+
 // WebSocket (chat, salas e mensagens)
 io.on("connection", socket => {
   socket.on("mandarMensagem", data => {

@@ -1,5 +1,5 @@
 import { useParams } from "react-router-dom";
-import { useContext, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { GlobalContext } from "../context/Globalcontext";
 import api from "../Services/api";
 import './Servico_escolhido.css';
@@ -17,6 +17,10 @@ function Servico_escolhido() {
     
     const servico = cadastroServico.find(s => String(s.servico_id) === String(servico_id));
     if (!servico) return <p>Serviço não encontrado ou carregando...</p>;
+
+    useEffect(()=>{
+      console.log(servico)
+    })
     
  
  
@@ -51,7 +55,7 @@ function Servico_escolhido() {
         <button className="cta-button" onClick={()=>{
           setOpenModal(!openModal)
         }}>Entrar em Contato</button>
-        { openModal &&<CaixaTexto />}
+        { openModal && <CaixaTexto autor={servico.nome_usuario} id_frela={servico.fk_usuario_id} />}
       </div>
     </div>
 
@@ -98,9 +102,6 @@ function Servico_escolhido() {
 }
 
 export default Servico_escolhido
-
-
-
 
 
 

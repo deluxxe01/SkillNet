@@ -126,14 +126,9 @@ async function selectServicos() {
         servicos.servico_id,
         servicos.titulo,
         servicos.descricao,
-        servicos.area,
-        servicos.imagem_capa,
-        servicos.tempo_entrega,
-        servicos.preco_minimo,
-        servicos.idioma,
         servicos.fk_usuario_id,
         usuarios.nome AS nome_usuario
-        FROM servicos
+      FROM servicos
       LEFT JOIN usuarios ON servicos.fk_usuario_id = usuarios.id_usuario
       ORDER BY servicos.servico_id DESC
     `;
@@ -329,6 +324,27 @@ async function deleteCommentServico(id) {
   }
 }
 
+async function selectComentsServico(id){
+
+  const client = await connect()
+
+  try{
+
+    const values = [id]
+
+    const sql = 'select * from comentarioServico where fk_servico_id = $1 '
+
+    const coments = await client.query(sql,values)
+
+    return coments.rows
+
+  }catch(erro){
+    console.log(erro)
+
+  }
+
+}
+
 // --- CHAT ---
 async function createSalasChat(user1, user2) {
   const client = await connect();
@@ -337,7 +353,7 @@ async function createSalasChat(user1, user2) {
     VALUES ($1, $2, $3, $4) RETURNING id_sala
   `;
   try {
-    const sql2='SELECT u.nome FROM salasChat s JOIN usuarios u ON s.FK_id_usuario2 = u.id_usuario WHERE s.id_sala = $1;'
+    const sql2='SELECT nome FROM usuarios where id_usuario=$1 '
 
     const values2 = [user2.id]
 
@@ -345,7 +361,8 @@ async function createSalasChat(user1, user2) {
 
     console.log("nome do usuario que tem a fk = 2",nomeUser2)
 
-    const values = [user1.id, user2.id, user1.nome, user2.nome];
+    const values = [user1.id, user2.id, user1.nome, nomeUser2.rows[0].nome];
+
     const res = await client.query(sql, values);
     return res.rows[0].id_sala;
   }catch(erro){
@@ -457,5 +474,6 @@ module.exports = {
   joinSala,
   salvarMenssagen,
   selecionarMenssagens,
-  createTablesFunc
+  createTablesFunc,
+  selectComentsServico
 };

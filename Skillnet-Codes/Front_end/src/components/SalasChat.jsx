@@ -94,7 +94,7 @@ function SalasChat() {
 
         ))}</div> 
          </div>
-{salasUser.length>0 ?  (<div className='divChat'>
+{salasUser.length> 0 ?  (<div className='divChat'>
   <div className='corpoChat2'>
     {arrayMess.map(mess =>(
       <div className='CaixaMensagem' style={{
@@ -115,7 +115,12 @@ function SalasChat() {
     />
     <button onClick={mandarMess} className='buttonChat'>  <img src="./icons/seta.svg" alt="" /></button>
   </div>
-</div>):'no tiene ninguem'}
+</div>):(
+  <div className='divNaotemCont'>
+    <h1 className='h1NaoTemCont'>Nenhuma Conversa Iniciada</h1>
+    <h2 className='h2NaotemCont'>Você ainda não iniciou uma conversa com nenhum freelancer. Que tal explorar os perfis e dar o primeiro passo?</h2>  
+  </div>
+  )}
     </div>
   )
 }

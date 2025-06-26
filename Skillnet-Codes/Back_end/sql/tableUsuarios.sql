@@ -44,6 +44,7 @@ CREATE TABLE IF NOT EXISTS comentarioServico (
     comentario text,
     fk_servico_id INT,
     fk_Usuario_id INT,
+    estrelas varchar(5),
     CONSTRAINT fk_servico FOREIGN KEY (fk_servico_id) REFERENCES servicos(servico_id),
     CONSTRAINT fk_usuario_comentario_servico FOREIGN KEY (fk_Usuario_id) REFERENCES usuarios(id_usuario)
 );
