@@ -18,13 +18,7 @@ function CadastrarServico() {
   const [inptIdioma, setInptIdioma] = useState('');
   const [mostrarConfirmacao, setMostrarConfirmacao] = useState(false);
 
-  const tituloservicos = useRef();
-  const descricaoservicos = useRef();
-  const areaservicos = useRef();
-  const imgservicos = useRef();
-  const tempoEntrega = useRef();
-  const faixaPreco = useRef();
-  const idiomaAtende = useRef();
+
 
 const navigate = useNavigate()
 
@@ -33,14 +27,14 @@ const navigate = useNavigate()
 async function createServicos() {
   try {
     await api.post('/servicos', {
-      titulo: tituloservicos.current.value,
-      area: areaservicos.current.value,
-      descricao: descricaoservicos.current.value,
-      imagem_capa: imgservicos.current.value,
-      tempo_entrega: tempoEntrega.current.value,
-      preco_minimo: faixaPreco.current.value,
-      idioma: idiomaAtende.current.value,
-      fk_usuario_id: userLogado.id_usuario  // Aqui está correto
+      titulo: inptTituloServico,
+      area: inptAreaServico,
+      descricao: inptDescricaoServico,
+      imagem_capa: inptImageServico,
+      tempo_entrega: inptPrazoEntrega,
+      preco_minimo: inptFaixapreco,
+      idioma: inptIdioma,
+      fk_usuario_id: userLogado.id_usuario
     });
 
     // Limpar inputs
@@ -58,9 +52,9 @@ async function createServicos() {
   
 setTimeout(()=>{
 
-navigate('')
+navigate('/area_servico_pesquisado')
 
-},3000)
+},2000)
 
 
 
@@ -88,7 +82,7 @@ navigate('')
                 placeholder='Título do seu serviço'
                 value={inptTituloServico}
                 onChange={(e) => setInptTituloServico(e.target.value)}
-                ref={tituloservicos}
+               
               />
             </div>
 
@@ -99,7 +93,7 @@ navigate('')
                 placeholder='Escreva detalhadamente sobre seu serviço'
                 value={inptDescricaoServico}
                 onChange={(e) => setInptDescricaoServico(e.target.value)}
-                ref={descricaoservicos}
+                
               ></textarea>
             </div>
           </div>
@@ -113,7 +107,7 @@ navigate('')
                 placeholder='10-11 dias'
                 value={inptPrazoEntrega}
                 onChange={(e) => setInptPrazoEntrega(e.target.value)}
-                ref={tempoEntrega}
+                
               />
             </div>
 
@@ -125,7 +119,7 @@ navigate('')
                 placeholder='https://exemplo.com/sua-imagem.jpg'
                 value={inptImageServico}
                 onChange={(e) => setInptImageServico(e.target.value)}
-                ref={imgservicos}
+               
               />
             </div>
 
@@ -135,7 +129,7 @@ navigate('')
                 className='select_area_servico'
                 value={inptAreaServico}
                 onChange={(e) => setInptAreaServico(e.target.value)}
-                ref={areaservicos}
+                
               >
                 <option value="" disabled>Escolha uma das opções</option>
                 <option value="matador de rato">Matador de rato</option>
@@ -181,7 +175,7 @@ navigate('')
                   placeholder='R$200 - R$1000'
                   value={inptFaixapreco}
                   onChange={(e) => setInptFaixapreco(e.target.value)}
-                  ref={faixaPreco}
+                  
                 />
               </div>
 
@@ -193,7 +187,7 @@ navigate('')
                   placeholder='espanhol, português, inglês'         
                   value={inptIdioma}
                   onChange={(e) => setInptIdioma(e.target.value)}
-                  ref={idiomaAtende}
+                 
                 />
               </div>
             </div>

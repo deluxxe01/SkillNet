@@ -4,7 +4,7 @@ import { useContext } from 'react';
 import { GlobalContext } from '../context/Globalcontext'; 
 
 function Page_meu_servico() {
-  const { userLogado, cadastroServico } = useContext(GlobalContext);
+  const {  userLogado, cadastroServico } = useContext(GlobalContext);
   const navigate = useNavigate();
 
   
@@ -21,7 +21,7 @@ function Page_meu_servico() {
   (s) => Number(s.fk_Usuario_id) === Number(userLogado.id_usuario)
 );
 
-
+console.log(servicosDoUsuario)
 
   return (
     <div className='container_page_meu_serviço'>
@@ -33,12 +33,7 @@ function Page_meu_servico() {
         <div className="meuservico_lista">
   {servicosDoUsuario.map(servico => (
   <div key={servico.servico_id}>
-      <img src={servico.imagem_capa} className="meuservico_img" alt="Capa do serviço" />
       <h3 className="meuservico_titulo">{servico.titulo}</h3>
-      <p className="meuservico_descricao">{servico.descricao}</p>
-      <div className="meuservico_categoria_container">
-        <span className="meuservico_categoria">{servico.area}</span>
-      </div>
     </div>
   ))}
 </div>

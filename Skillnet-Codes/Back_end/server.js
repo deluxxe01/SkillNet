@@ -61,6 +61,7 @@ App.get('/servicos/:id', async (req, res) => {
   res.json(Servico)
 })
 
+// posta
 App.post('/servicos', async (req, res) => {
   await db.insertServico(req.body)
   res.sendStatus(201)

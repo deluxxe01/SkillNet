@@ -75,7 +75,7 @@ function Portfolio() {
 
     <div className='Container-um'>
 
-     <h1 className='NameH1'>Nome Pessoa falta transferir</h1>
+     <h1 className='NameH1'>duda</h1>
      
      <div className='IconsContainer'>
 
