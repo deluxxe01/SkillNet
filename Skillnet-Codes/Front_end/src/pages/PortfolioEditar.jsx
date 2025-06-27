@@ -7,7 +7,7 @@ import Hamburger from "../components/Hamburger";
 function PortfolioEditar() {
   const [portfolios, setPortfolios] = useState([]);
   const [portfolioSelect, setPortfolioSelect] = useState(null)
-  // const [inputNome, setInputNome] = useState('')
+   const [inputNome, setInputNome] = useState('')
   const [inputLinkInsta, setInputLinkInsta] = useState('')
   const [inputLinkLinkedin, setInputLinkLinkedin] = useState('')
   const [inputLinkGmail, setInputLinkGmail] = useState('')
@@ -29,6 +29,7 @@ function PortfolioEditar() {
 
 const irParaVisualizacao = () => {
   const dadosPortfolio = {
+    nome: inputNome,
     link_insta: inputLinkInsta,
     link_linkedin: inputLinkLinkedin,
     link_gmail: inputLinkGmail,
@@ -91,6 +92,7 @@ const irParaVisualizacao = () => {
     // Carregar dados do localStorage ao carregar a página
     const savedInputs = JSON.parse(localStorage.getItem('portfolioInputs'))
     if (savedInputs) {
+      setInputNome(savedInputs.inputNome ||'')
       setInputLinkInsta(savedInputs.inputLinkInsta || '')
       setInputLinkLinkedin(savedInputs.inputLinkLinkedin || '')
       setInputLinkGmail(savedInputs.inputLinkGmail || '')
@@ -105,6 +107,7 @@ const irParaVisualizacao = () => {
   useEffect(() => {
     // Salvar os inputs no localStorage toda vez que um valor mudar
     const inputs = {
+      inputNome,
       inputLinkInsta,
       inputLinkLinkedin,
       inputLinkGmail,
@@ -116,11 +119,12 @@ const irParaVisualizacao = () => {
     }
 
     localStorage.setItem('portfolioInputs', JSON.stringify(inputs))
-  }, [inputLinkInsta, inputLinkLinkedin, inputLinkGmail, inputLocalidade, inputAnoExperiencia, inputAreaAtuacao, inputFotoUrl, inputSobreMim])
+  }, [inputNome, inputLinkInsta, inputLinkLinkedin, inputLinkGmail, inputLocalidade, inputAnoExperiencia, inputAreaAtuacao, inputFotoUrl, inputSobreMim])
 
   const cadastrarPortfolio = async () => {
     try {
       const portfolio = {
+        nome: inputNome,
         link_insta: inputLinkInsta,
         link_linkedin: inputLinkLinkedin,
         link_gmail: inputLinkGmail,
@@ -146,6 +150,7 @@ const irParaVisualizacao = () => {
   const salvarPortfolio = async () => {
     try {
       const portfolio = {
+        nome: inputNome,
         link_insta: inputLinkInsta,
         link_linkedin: inputLinkLinkedin,
         link_gmail: inputLinkGmail,
@@ -156,11 +161,12 @@ const irParaVisualizacao = () => {
         sobremim: inputSobreMim
       };
 
+
       const response = await axios.put(`http://localhost:3000/portfolios/${portfolioSelect.id_portifolio}`, portfolio)
       if (response.status === 200) {
         fetchPortfolios();
         setPortfolioSelect(null)
-     
+        
       }
     } catch (error) {
       console.error('Erro ao atualizar portfolio', error)
@@ -190,6 +196,18 @@ const irParaVisualizacao = () => {
       console.error('Erro ao deletar portfolio:', error)
     }
   };
+
+  function limparForm() {
+    setInputNome('')
+    setInputLinkInsta('')
+    setInputLinkGmail('')
+    setInputLinkLinkedin('')
+    setInputLocalidade('')
+    setInputAnoExperiencia('')
+    setInputAreaAtuacao('')
+    setInputFotoUrl('')
+    setInputSobreMim('')
+}
 
 
   function exibirPortfolio(portfolio) {
@@ -284,7 +302,9 @@ const irParaVisualizacao = () => {
           <input 
           className={`Inpt-Formulario ${corSelecionada ? `input-${corSelecionada}` : ''}`}
           type="text" 
-           />
+          value={inputNome}
+          onChange={e => setInputNome(e.target.value)} />
+          
         </div>
 
         <div className="inputContainer">

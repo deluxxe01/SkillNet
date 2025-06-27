@@ -75,7 +75,7 @@ function Portfolio() {
 
     <div className='Container-um'>
 
-     <h1 className='NameH1'>duda</h1>
+     <h1 className='NameH1'>{dados.nome}</h1>
      
      <div className='IconsContainer'>
 
@@ -129,7 +129,7 @@ function Portfolio() {
   </div>
 
   <div className='TextUni'>
-  <p className='AreaText'>área de Atuação:</p>
+  <p className='AreaText'>Área de Atuação:</p>
   <p className='DadosTransferidos'>{dados.area_atuacao}</p>
   </div>
 </div>

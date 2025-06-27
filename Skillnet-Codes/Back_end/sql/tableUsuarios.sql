@@ -27,7 +27,8 @@ CREATE TABLE IF NOT EXISTS portifolios (
     ano_experiencia VARCHAR(50),
     area_atuacao VARCHAR(100),
     foto_url VARCHAR(255),
-    sobremim TEXT
+    sobremim TEXT,
+    nome VARCHAR(200)
 );
 
 CREATE TABLE IF NOT EXISTS comentarioPortifolio (

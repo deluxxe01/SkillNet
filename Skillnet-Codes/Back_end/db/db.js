@@ -244,9 +244,9 @@ async function insertPorti(porti) {
   const client = await connect();
   const sql = `
     INSERT INTO portifolios
-      (link_insta, link_linkedin, link_gmail, localidade, ano_experiencia, area_atuacao, foto_url, sobremim)
+      (link_insta, link_linkedin, link_gmail, localidade, ano_experiencia, area_atuacao, foto_url, sobremim, nome)
     VALUES
-      ($1, $2, $3, $4, $5, $6, $7, $8)
+      ($1, $2, $3, $4, $5, $6, $7, $8, $9)
   `;
   const values = [
     porti.link_insta,
@@ -256,7 +256,8 @@ async function insertPorti(porti) {
     porti.ano_experiencia,
     porti.area_atuacao,
     porti.foto_url,
-    porti.sobremim
+    porti.sobremim,
+    porti.nome
   ];
   try {
     await client.query(sql, values);
@@ -278,8 +279,9 @@ async function updatePorti(id, porti) {
       ano_experiencia = $5,
       area_atuacao = $6,
       foto_url = $7,
-      sobremim = $8
-    WHERE id_portifolio = $9
+      sobremim = $8,
+      nome = $9
+    WHERE id_portifolio = $10
   `;
   const values = [
     porti.link_insta,
@@ -290,6 +292,7 @@ async function updatePorti(id, porti) {
     porti.area_atuacao,
     porti.foto_url,
     porti.sobremim,
+    porti.nome,
     id
   ];
   try {
