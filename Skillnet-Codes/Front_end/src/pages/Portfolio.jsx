@@ -38,7 +38,7 @@ function Portfolio() {
     <h1 className="Title-EditarPortfolio">Criar Portfólio</h1>
     <div className={`linha1 ${corSelecionada ? `linha-${corSelecionada}` : ''}`}></div>
 
-    <div className="Formulario">
+    <div className={`Formulario ${corSelecionada ? `formulario-${corSelecionada}` : ''}`}>
 
 
     <div className='fotoUsuario'>

@@ -21,19 +21,7 @@ export const GlobalContextProvider = ({children}) =>{
             setPortfolios
 
             // aqui vai as variaves pro resto da aplicação
-       
-       
-       
-       
-       
-       
-       
-       
-       
-       
-       
-       
-       
+ 
        
        }} >
             {children}

@@ -274,3 +274,68 @@ textarea:focus {
   top: 20vh;
   box-shadow: 0 4px 8px rgb
 }
+
+/* MUDANÇA DE CORES */
+.formulario-azul{
+  background-color: #BFE0FF;
+}
+.input-azul{
+  background-color: #ACD7FF;
+}
+
+/* Botão Azul Secundário */
+.button2-azul {
+  background-color: var(--azul-border);   /* Fundo azul escuro */
+  border-color: var(--azul-border);        /* Borda azul escuro */
+  color: var(--azul-bg);                   /* Texto azul claro */
+}
+
+/* Ao passar o mouse (hover) */
+.button2-azul:hover {
+  color: var(--azul-border);               /* Texto azul escuro */
+  background-color: var(--azul-border);    /* Fundo azul escuro */
+}
+
+/* Estado quando o botão é pressionado (active) */
+.button2-azul:active {
+  background-color: #004B22;        /* Fundo azul claro */
+  color: var(--azul-border);               /* Texto azul escuro */
+}
+
+/* Botão Azul */
+.button-azul {
+  background-color: var(--azul-bg);  /* Fundo azul escuro */
+  border-color:  var(--azul-border);    ;      /* Borda azul escuro */
+  /* Borda azul escuro */
+  color: var(--azul-border);                 /* Texto azul claro */
+ 
+}
+
+/* Ao passar o mouse (hover) */
+.button-azul:hover {
+  background-color: var(--azul-bg);  /* Fundo azul escuro no hover */
+  color: var(--azul-border);  
+  border-color: var(--azul-border);                   /* Texto azul claro */
+}
+
+/* Estado quando o botão é pressionado (active) */
+.button-azul:active {
+  background-color: var(--azul-border);      /* Fundo azul claro quando pressionado */
+  color: var(--azul-bg);  
+  
+}
+.popup{
+  background-color: #fdfdff;
+  width: 50VH;
+  border-radius: 2vh;
+  height: 13vh;
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: 10vh;
+}
+
+.popup-content{
+  font-size: 1.5VH;
+  margin: 5vh;
+}
