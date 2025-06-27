@@ -38,7 +38,7 @@ function Portfolio() {
     <h1 className="Title-EditarPortfolio">Criar Portfólio</h1>
     <div className={`linha1 ${corSelecionada ? `linha-${corSelecionada}` : ''}`}></div>
 
-    <div className={`Formulario ${corSelecionada ? `formulario-${corSelecionada}` : ''}`}>
+    <div className="Formulario">
 
 
     <div className='fotoUsuario'>
@@ -66,7 +66,7 @@ function Portfolio() {
        </div>
     <div className="ContainerButtons">
          <button 
-         className={`buttonOutraTela ${corSelecionada ? `button-${corSelecionada}` : ''}`} 
+         className="buttonOutraTela" 
          onClick={irParaOutraPagina}>
          Editar 
          </button>
@@ -119,7 +119,7 @@ function Portfolio() {
      </div>
 
   <div className='ButonContainer'>
-  <button className={`CompartilharButton ${corSelecionada ? `button2-${corSelecionada}` : ''}`}>Compartilhar</button>
+  <button className="CompartilharButton">Compartilhar</button>
   </div>
 
 <div className='TextContainer'>

@@ -1,534 +1,276 @@
 @import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
 
-
 :root {
-    --cor-primaria: hwb(0 85% 0%);
-    --cor-secundaria: #FFC5C6;
-    --cor-texto: #333333;
-    --cor-fundo: #f5f5f5;
-    --cor-destaque: #ffc107;
+  --cor-primaria: hwb(0 85% 0%);
+  --cor-secundaria: #FFC5C6;
+  --cor-texto: #333333;
+  --cor-fundo: #f5f5f5;
+  --cor-destaque: #ffc107;
+
+  /* Cores secundárias para temas */
+  --rosa-bg: #FFD9D9;
+  --rosa-border: #CE499C;
+  --rosa-text: #CE499C;
+
+  --azul-bg: #BFE0FF;
+  --azul-border: #0033FF;
+  --azul-text: #0033FF;
+
+  --verde-bg: #E6E6E6;
+  --verde-border: #004B22;
+  --verde-text: #004B22;
 }
 
-
-body{
-    background-color: #FBFBFB;
+body {
+  background-color: #FBFBFB;
+  font-family: 'Lato', sans-serif;
+  color: var(--cor-texto);
+  margin: 0;
+  padding: 0;
 }
 
-/* COR SELECT ROSA */
-
+/* Container imagem background */
 .containerr > img {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 170vh;
-    height: 70vh;
-    object-fit: cover;
-   
-}  
-.Container-PortfolioEditar{
-    position: relative;
-    z-index: 1; /* aparece acima da imagem */
-    margin-top: -10vh;
-    margin: 8vh;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 170vh;
+  height: 70vh;
+  object-fit: cover;
 }
 
-.Title-EditarPortfolio{
-    margin-left: 80vh;
-    font-size: 5vh;
-    font-family: "Lato", sans-serif;
-    color: #ffe2f9;
+.Container-PortfolioEditar {
+  position: relative;
+  z-index: 1;
+  margin: -10vh 8vh 0 8vh;
 }
 
-.linha1{
-    margin-left: 80vh;
-    width: 32vh;
-    height: 1vh;
-    border-radius: 1vh;
-    background-color: #FFC5C6;
-    transition: transform 0.3s ease;
-}
-.linha1:hover{
-    transform: scaleX(0.2); /* aumenta no eixo X */
-}
-.Formulario{
-    background-color: var(--cor-primaria);
-    border-radius: 5vh;
-    margin-top: 5vh;
-    margin-left: 40vh;
-    width: 120vh;
-    height: 50vh;
-    display: flex;
+.Title-EditarPortfolio {
+  margin-left: 80vh;
+  font-size: 5vh;
+  color: #ffe2f9;
 }
 
-.fotoUsuario{
-    margin-top: 5vh;
-    margin-left: 15vh;
+.linha1 {
+  margin-left: 80vh;
+  width: 32vh;
+  height: 1vh;
+  border-radius: 1vh;
+  background-color: var(--cor-secundaria);
+  transition: transform 0.3s ease;
+}
+.linha1:hover {
+  transform: scaleX(0.2);
 }
 
-.ContainerButtons{
+/* Formulário base */
+.Formulario {
+  position: relative;
+  background-color: var(--cor-primaria);
+  border-radius: 5vh;
+  margin: 5vh 0 0 40vh;
+  width: 120vh;
+  height: 50vh;
+  display: flex;
+  padding: 2vh;
+  box-sizing: border-box;
+}
+
+.fotoUsuario {
+  position: absolute;
+  margin-top: 5vh;
+  margin-left: 15vh;
+}
+
+.fotoUsuario img {
+  width: 15vh;
+  height: 15vh;
+  object-fit: cover;
+  border-radius: 10vh;
+}
+
+.ContainerButtons {
   width: 30vh;
-  margin-left: -24vh;
-  margin-top: 18vh;
+  margin-left: 5vh;
+  margin-top: 22vh;
   display: flex;
   flex-direction: column;
-  /* border: solid 2px black; */
+  gap: 1.5vh;
 }
 
-.buttonCadastrar{
-    width: 30vh;
-    height: 4vh;
-    background-color: #FFD9D9;
-    margin-top: 5vh;
-    --color: #CE499C;
-    font-family: inherit;
-    display: inline-block;
-    line-height: 1.5vh;
-    position: relative;
-    cursor: pointer;
-    overflow: hidden;
-    border: 0.3vh solid var(--color);
-    transition: color 0.4s ease-in-out;
-    z-index: 1;
-    font-size: 2vh;
-    border-radius: 2vh;
-    font-weight: 500;
-    color: #CE499C;
-    text-align: center;
-    font-family: Mont;
-    font-weight: 600;
-}
-.buttonCadastrar:before{
-    content: "";
-    position: absolute;
-    z-index: -1;
-    background: #CE499C;
-    width: 200%;
-    height: 500%;
-    top: 100%;
-    left: 50%;
-    transform: translateX(-50%);
-    border-radius: 50%;
-    transition: all 0.7s ease-in-out;
-}
-.buttonCadastrar:hover{
-    color:#FFD9D9;
-    background-color: #FFD9D9;
-}
-.buttonCadastrar:hover:before{
-    top: -150%;
-}
-.buttonCadastrar:active:before{
-    background: #CE499C;
-    transition: background 0s;
-    color: #fbfbfb;
-}
-.buttonEditar{
-    margin-top: 2vh;
-    width: 30vh;
-    height: 4vh;
-    width: 30vh;
-    height: 4vh;
-    background-color: #CE499C;
-    --color: #CE499C;
-    font-family: inherit;
-    display: inline-block;
-    line-height: 1.5vh;
-    position: relative;
-    cursor: pointer;
-    overflow: hidden;
-    border: 0.3vh solid var(--color);
-    transition: color 0.4s ease-in-out;
-    z-index: 1;
-    font-size: 2vh;
-    border-radius: 2vh;
-    font-weight: 500;
-    color: #FFD9D9;
-    text-align: center;
-    font-family: Mont;
-    font-weight: 600;
-}
-.buttonEditar:before{
-    content: "";
-    position: absolute;
-    z-index: -1;
-    background: #FFD9D9;
-    width: 200%;
-    height: 500%;
-    top: 100%;
-    left: 50%;
-    transform: translateX(-50%);
-    border-radius: 50%;
-    transition: all 0.7s ease-in-out;
-}
-.buttonEditar:hover{
-    color:#CE499C;
-    background-color: #CE499C;
-}
-.buttonEditar:hover:before{
-    top: -150%;
-}
-.buttonEditar:active:before{
-    background: #CE499C;
-    transition: background 0s;
-    color: #fbfbfb;
-}
-.Container-Inpts{
-    margin-top: 5vh;
-    margin-left: 10vh;
-    display: flex;
-    flex-direction: column;
-}
-.Container-Inpts2{
-    margin-left: 5vh;
-    margin-top: 5vh;
-    display: flex;
-    flex-direction: column;
-}
-.inputContainer{
-    margin-top: 3vh;
-    display: flex;
-    flex-direction: column;
+/* Botões base */
+.buttonCadastrar,
+.buttonEditar,
+.button-azul,
+.button2-azul,
+.button-verde,
+.button2-verde {
+  width: 30vh;
+  height: 4vh;
+  font-family: 'Mont', sans-serif;
+  font-weight: 600;
+  font-size: 2vh;
+  border-radius: 2vh;
+  cursor: pointer;
+  display: inline-block;
+  line-height: 1.5vh;
+  position: relative;
+  overflow: hidden;
+  border: 0.3vh solid transparent;
+  transition: color 0.4s ease-in-out;
+  z-index: 1;
+  text-align: center;
 }
 
-.Inpt-Formulario{
-    background-color: var(--cor-secundaria);
-    border: none;
-    width: 30vh;
+/* Botão Rosa */
+.buttonCadastrar {
+  background-color: var(--rosa-bg);
+  border-color: var(--rosa-border);
+  color: var(--rosa-text);
 }
 
-input, textarea:focus {
-    outline: none;
-    box-shadow: none;
+.buttonCadastrar::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  background: var(--rosa-border);
+  width: 200%;
+  height: 500%;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  border-radius: 50%;
+  transition: all 0.7s ease-in-out;
 }
 
-.ConatinerSobremim{
-    margin-top: 10vh;
-    margin-left: 40vh;
-    display: flex;
-    flex-direction: column;  
-}
-.LabelSobremim{
-    color: #500040;
-    font-size: 3vh;
-    font-family: "Lato", sans-serif;
-}
-.TextArea-Formulario{
-    margin-top: 1vh;
-    background-color: #FBFBFB;
-    font-size: 2vh;
-    border: none;
-    width: 120vh;
-    height: 15vh;
-    color: #500040;
+.buttonCadastrar:hover {
+  color: var(--rosa-bg);
+  background-color: var(--rosa-bg);
 }
 
-.material{
-    width: 5vh;
-    margin-top: -40vh;
-   
+.buttonCadastrar:hover::before {
+  top: -150%;
 }
 
+.buttonCadastrar:active::before {
+  background: var(--rosa-border);
+  transition: background 0s;
+  color: #fbfbfb;
+}
+
+/* Botão Editar Rosa */
+.buttonEditar {
+  margin-top: 2vh;
+  background-color: var(--rosa-border);
+  border-color: var(--rosa-border);
+  color: var(--rosa-bg);
+}
+
+.buttonEditar::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  background: var(--rosa-bg);
+  width: 200%;
+  height: 500%;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  border-radius: 50%;
+  transition: all 0.7s ease-in-out;
+}
+
+.buttonEditar:hover {
+  color: var(--rosa-border);
+  background-color: var(--rosa-border);
+}
+
+.buttonEditar:hover::before {
+  top: -150%;
+}
+
+.buttonEditar:active::before {
+  background: var(--rosa-border);
+  transition: background 0s;
+  color: #fbfbfb;
+}
+
+/* Containers input */
+.Container-Inpts,
+.Container-Inpts2 {
+  margin-top: 5vh;
+  margin-left: 10vh;
+  display: flex;
+  flex-direction: column;
+  gap: 3vh;
+}
+
+.Container-Inpts2 {
+  margin-left: 5vh;
+}
+
+/* Input container */
+.inputContainer {
+  display: flex;
+  flex-direction: column;
+}
+
+.Inpt-Formulario {
+  background-color: var(--cor-secundaria);
+  border: none;
+  width: 30vh;
+  padding: 0.5vh 1vh;
+  font-size: 1.8vh;
+  color: var(--cor-texto);
+  border-radius: 1vh;
+}
+
+input:focus,
+textarea:focus {
+  outline: none;
+  box-shadow: none;
+}
+
+/* Sobre mim */
+.ConatinerSobremim {
+  margin-top: 10vh;
+  margin-left: 40vh;
+  display: flex;
+  flex-direction: column;
+  gap: 1vh;
+}
+
+.LabelSobremim {
+  color: #500040;
+  font-size: 3vh;
+}
+
+.TextArea-Formulario {
+  background-color: #FBFBFB;
+  font-size: 2vh;
+  border: none;
+  width: 120vh;
+  height: 15vh;
+  color: #500040;
+  padding: 1vh;
+  border-radius: 1vh;
+  resize: vertical;
+}
+
+/* Material icon */
+.material {
+  width: 5vh;
+  margin-top: -40vh;
+  cursor: pointer;
+}
+
+/* Menu popup */
 .menu-popup {
-    position: absolute;
-    background-color: #FBFBFB;
-    border: 1px solid #ccc;
-    padding: 10px;
-    right: 30vh;
-    top: 20vh;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    z-index: 10;
-    border-radius: 2vh;
-  }
-  
-  .menu-popup ul {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-  }
-  
-  .menu-popup li {
-    padding: 8px 12px;
-    cursor: pointer;
-  }
-  
-  .menu-popup li:hover {
-    background-color: #eee;
-  }
-
-.Lirosa{
-    color: #CE499C;
-}
-
-.Liazul{
-    color: #0024B6;
-}
-
-.Liverde{
-    color: #004B22;
-}
-
-.Lirosa:hover{
-   color: #500040;
-}
-
-.Liazul:hover{
-    color: #00104E;
-}
-
-.Liverde:hover{
-  color: #79BE00;
-}
-
-
-/* COR SELECT AZUL  */
-
-.input-azul {
-    background-color: #8FBAE3; /* azul claro */
-    color: #000;
-}
-
-.formulario-azul{
-    background-color: #BFE0FF;
-}
-
-.button-azul{
-    width: 30vh;
-    height: 4vh;
-    background-color: #BFE0FF;
-    --color: #0033FF;
-    font-family: inherit;
-    display: inline-block;
-    line-height: 1.5vh;
-    position: relative;
-    cursor: pointer;
-    overflow: hidden;
-    border: 0.3vh solid var(--color);
-    transition: color 0.4s ease-in-out;
-    z-index: 1;
-    font-size: 2vh;
-    border-radius: 2vh;
-    font-weight: 500;
-    color: #0033FF;
-    text-align: center;
-    font-family: Mont;
-    font-weight: 600;
-}
-
-.button-azul:before{
-    content: "";
-    position: absolute;
-    z-index: -1;
-    background: #0033FF;
-    width: 200%;
-    height: 500%;
-    top: 100%;
-    left: 50%;
-    transform: translateX(-50%);
-    border-radius: 50%;
-    transition: all 0.7s ease-in-out;
-}
-
-.button-azul:hover{
-    color:#BFE0FF;
-    background-color: #BFE0FF;
-}
-.button-azul:hover:before{
-    top: -150%;
-}
-.button-azul:active:before{
-    background: #0033FF;
-    transition: background 0s;
-    color: #BFE0FF;
-}
-
-.button2-azul{
-    margin-top: 2vh;
-    width: 30vh;
-    height: 4vh;
-    width: 30vh;
-    height: 4vh;
-    background-color: #0033FF;
-    --color: #0033FF;
-    font-family: inherit;
-    display: inline-block;
-    line-height: 1.5vh;
-    position: relative;
-    cursor: pointer;
-    overflow: hidden;
-    border: 0.3vh solid var(--color);
-    transition: color 0.4s ease-in-out;
-    z-index: 1;
-    font-size: 2vh;
-    border-radius: 2vh;
-    font-weight: 500;
-    color: #BFE0FF;
-    text-align: center;
-    font-family: Mont;
-    font-weight: 600;
-}
-.button2-azul:before{
-    content: "";
-    position: absolute;
-    z-index: -1;
-    background: #BFE0FF;
-    width: 200%;
-    height: 500%;
-    top: 100%;
-    left: 50%;
-    transform: translateX(-50%);
-    border-radius: 50%;
-    transition: all 0.7s ease-in-out;
-}
-.button2-azul:hover{
-    color:#0033FF;
-    background-color: #0033FF;
-}
-.button2-azul:hover:before{
-    top: -150%;
-}
-.button2-azul:active:before{
-    background: #0033FF;
-    transition: background 0s;
-    color: #BFE0FF;
-}
-
-.linha-azul{
-    background-color: #0033FF;
-}
-
-.label-azul{
-    color: #00104E;
-}
-
-.textArea-azul{
-    color: #00104E;
-}
-
-/* COR SELECT VERDE  */
-
-.input-verde {
-    background-color: #CCCCCC; /* azul claro */
-    color: #000;
-}
-
-.formulario-verde{
-    background-color: #E6E6E6;
-}
-
-.button-verde{
-    width: 30vh;
-    height: 4vh;
-    background-color: #E6E6E6;
-    --color: #004B22;
-    font-family: inherit;
-    display: inline-block;
-    line-height: 1.5vh;
-    position: relative;
-    cursor: pointer;
-    overflow: hidden;
-    border: 0.3vh solid var(--color);
-    transition: color 0.4s ease-in-out;
-    z-index: 1;
-    font-size: 2vh;
-    border-radius: 2vh;
-    font-weight: 500;
-    color: #004B22;
-    text-align: center;
-    font-family: Mont;
-    font-weight: 600;
-}
-
-.button-verde:before{
-    
-    content: "";
-    position: absolute;
-    z-index: -1;
-    background: #004B22;
-    width: 200%;
-    height: 500%;
-    top: 100%;
-    left: 50%;
-    transform: translateX(-50%);
-    border-radius: 50%;
-    transition: all 0.7s ease-in-out;
-}
-
-.button-verde:hover{
-    color:#E6E6E6;
-    background-color: #E6E6E6;
-}
-.button-verde:hover:before{
-    top: -150%;
-}
-.button-verde:active:before{
-    background: #004B22;
-    transition: background 0s;
-    color: #E6E6E6;
-}
-
-.button2-verde{
-    margin-top: 2vh;
-    width: 30vh;
-    height: 4vh;
-    width: 30vh;
-    height: 4vh;
-    background-color: #004B22;
-    --color: #004B22;
-    font-family: inherit;
-    display: inline-block;
-    line-height: 1.5vh;
-    position: relative;
-    cursor: pointer;
-    overflow: hidden;
-    border: 0.3vh solid var(--color);
-    transition: color 0.4s ease-in-out;
-    z-index: 1;
-    font-size: 2vh;
-    border-radius: 2vh;
-    font-weight: 500;
-    color: #E6E6E6;
-    text-align: center;
-    font-family: Mont;
-    font-weight: 600;
-}
-.button2-verde:before{
-    content: "";
-    position: absolute;
-    z-index: -1;
-    background: #E6E6E6;
-    width: 200%;
-    height: 500%;
-    top: 100%;
-    left: 50%;
-    transform: translateX(-50%);
-    border-radius: 50%;
-    transition: all 0.7s ease-in-out;
-}
-.button2-verde:hover{
-    color:#004B22;
-    background-color: #004B22;
-}
-.button2-verde:hover:before{
-    top: -150%;
-}
-.button2-verde:active:before{
-    background: #004B22;
-    transition: background 0s;
-    color: #E6E6E6;
-}
-
-.linha-verde{
-    background-color: #83CF41;
-}
-
-.label-verde{
-    color: #004B22;
-}
-
-.textArea-verde{
-    color: #004B22;
-}
-
-.LogoVerde{
-    width: 10vh;
+  position: absolute;
+  background-color: #FBFBFB;
+  border: 1px solid #ccc;
+  padding: 10px;
+  right: 30vh;
+  top: 20vh;
+  box-shadow: 0 4px 8px rgb
 }

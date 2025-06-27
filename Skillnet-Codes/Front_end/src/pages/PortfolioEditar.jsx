@@ -166,7 +166,7 @@ const irParaVisualizacao = () => {
       if (response.status === 200) {
         fetchPortfolios();
         setPortfolioSelect(null)
-        
+        irParaVisualizacao()
       }
     } catch (error) {
       console.error('Erro ao atualizar portfolio', error)
@@ -277,10 +277,7 @@ const irParaVisualizacao = () => {
 )}
 {portfolios.map((portfolio) => (
     <div key={portfolio.id_portifolio} className='cliente'>
-        <button 
-       className={`buttonCadastrar ${corSelecionada ? `button-${corSelecionada}` : ''}`}
-       onClick={irParaVisualizacao}>
-        Visualizar </button>
+      
       <button
        className={`buttonEditar ${corSelecionada ? `button2-${corSelecionada}` : ''}`}
        onClick={() => buscarPortfolioId(portfolio.id_portifolio)}>

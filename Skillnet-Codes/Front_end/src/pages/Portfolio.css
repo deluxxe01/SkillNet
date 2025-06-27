@@ -1,38 +1,38 @@
-
-.Container-Um{
-    /* border: solid; */
+.Container-Um {
     width: 40vh;
+    /* border: solid; */
 }
-.fotoUsuarioVisu{
+
+.fotoUsuarioVisu {
     margin-top: 5vh;
 }
-.DivLocalidade{
-   /* border: solid; */
-   display: flex;
-   flex-direction: row;
-   gap: 1vh;
-   width: 30vh;
-   height: 5vh;
-   margin-top: 25vh;
-   margin-left: -20vh;
+
+.DivLocalidade {
+     border: solid; 
+    display: flex;
+    flex-direction: row;
+    gap: 1vh;
+    width: 30vh;
+    height: 5vh;
+    margin-top: 25vh;
+    margin-left: 8vh;
 }
-.LocalidadeFont{
+
+.LocalidadeFont {
     font-family: "Lato", sans-serif;
     font-weight: 400;
     font-style: normal;
     font-size: 2vh;
-    
 }
 
-.buttonOutraTela{
-    margin-top: 15vh;
-    margin-left: -6vh;
-
+.buttonOutraTela {
+    margin-top: 8vh;
+    margin-left: -33vh;/* Corrigido: só um margin-left */
     width: 30vh;
     height: 4vh;
     background-color: #FFD9D9;
     --color: #CE499C;
-    font-family: inherit;
+    font-family: Mont, inherit;
     display: inline-block;
     line-height: 1.5vh;
     position: relative;
@@ -43,14 +43,12 @@
     z-index: 1;
     font-size: 2vh;
     border-radius: 2vh;
-    font-weight: 500;
+    font-weight: 600;
     color: #CE499C;
     text-align: center;
-    font-family: Mont;
-    font-weight: 600;
 }
 
-.buttonOutraTela:before{
+.buttonOutraTela:before {
     content: "";
     position: absolute;
     z-index: -1;
@@ -64,33 +62,36 @@
     transition: all 0.7s ease-in-out;
 }
 
-.buttonOutraTela:hover{
-    color:#FFD9D9;
+.buttonOutraTela:hover {
+    color: #FFD9D9;
     background-color: #FFD9D9;
 }
 
-.buttonOutraTela:hover:before{
+.buttonOutraTela:hover:before {
     top: -150%;
 }
 
-.buttonOutraTela:active:before{
+.buttonOutraTela:active:before {
     background: #CE499C;
     transition: background 0s;
     color: #fbfbfb;
 }
-.Container-um{
-    /* border: solid; */
+
+.Container-um {
+    /* border: solid;  */
     margin-top: 5vh;
-    width: 65vh;
-    height: 45vh;
+    margin-left: -25vh;
+    margin-right: 5vh;
+    width: 75vh;
+    height: 35vh;
 }
 
-.NameH1{
+.NameH1 {
     font-family: "Montserrat", sans-serif;
-    
+    color: black;
 }
 
-.IconsContainer{
+.IconsContainer {
     width: 20vh;
     /* border: solid 2px; */
     margin-top: 1vh;
@@ -99,16 +100,18 @@
     gap: 1vh; /* Espaçamento horizontal entre os itens */
 }
 
-.ButonContainer{
-   margin-left: 21vh;
-   margin-top: -7vh;
+.ButonContainer {
+    margin-left: 21vh;
+    margin-top: -7vh;
 }
-.CompartilharButton{
+
+.CompartilharButton {
     width: 20vh;
     height: 4vh;
+    margin-top: 2vh;
     background-color: #CE499C;
     --color: #CE499C;
-    font-family: inherit;
+    font-family: Mont, inherit;
     display: inline-block;
     line-height: 1.5vh;
     position: relative;
@@ -119,14 +122,12 @@
     z-index: 1;
     font-size: 2vh;
     border-radius: 2vh;
-    font-weight: 500;
+    font-weight: 600;
     color: #FFD9D9;
     text-align: center;
-    font-family: Mont;
-    font-weight: 600;
 }
 
-.CompartilharButton:before{
+.CompartilharButton:before {
     content: "";
     position: absolute;
     z-index: -1;
@@ -139,59 +140,67 @@
     border-radius: 50%;
     transition: all 0.7s ease-in-out;
 }
-.CompartilharButton:hover{
-    color:#CE499C;
+
+.CompartilharButton:hover {
+    color: #CE499C;
     background-color: #CE499C;
 }
 
-.CompartilharButton:hover:before{
+.CompartilharButton:hover:before {
     top: -150%;
 }
 
-.CompartilharButton:active:before{
+.CompartilharButton:active:before {
     background: #CE499C;
     transition: background 0s;
     color: #fbfbfb;
 }
-.TextContainer{
+
+.TextContainer {
     margin-top: 5vh;
     display: flex;
     flex-direction: column;
     gap: 2vh;
 }
 
-.TextUni{
+.TextUni {
     display: flex;
     flex-direction: row;
     gap: 1vh;
+    color: black;
 }
 
-.AreaText{
+.AreaText {
     font-family: "Lato", sans-serif;
     font-weight: bold;
     font-style: normal;
     font-size: 2vh;
+    color: black;
 }
 
-.DadosTransferidos{
+.DadosTransferidos {
     font-family: "Lato", sans-serif;
     font-weight: 400;
     font-style: normal;
     font-size: 2vh;
+    color: black;
 }
-.ConatineSobremim{
+
+.ConatineSobremim {
     margin-top: 10vh;
     margin-left: 48vh;
     display: flex;
-    flex-direction: column;  
-    gap: 1;
+    flex-direction: column;
+    gap: 1vh; /* Corrigido para valor válido */
 }
-.h1Sobremim{
+
+.h1Sobremim {
     color: #500040;
     font-size: 3vh;
     font-family: "Lato", sans-serif;
 }
-.h1Formulario{
+
+.h1Formulario {
     margin-top: 1vh;
     background-color: #FBFBFB;
     font-size: 2vh;
