@@ -6,11 +6,13 @@ import './Servico_escolhido.css';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 import CaixaTexto from "../components/CaixaTexto"
+import PostComent from '../components/PostComent'
 
 
 function Servico_escolhido() {
 
   const [openModal,setOpenModal] = useState(false)
+  const [modalComent,setModalComent]=useState(true)
  
     const { servico_id } = useParams();
      const {cadastroServico,setCadastroServico,userLogado,setUserLogado} = useContext(GlobalContext); // nome certo aqui
@@ -65,7 +67,8 @@ function Servico_escolhido() {
         <p>Sou designer especializada em UX/UI com 5 anos de experiência. Já criei interfaces para startups, e-commerce e produtos educacionais. Prezo por entregas rápidas, acessíveis e alinhadas com o objetivo do cliente.</p>
       </div>
     </section>
-
+    <button className="cta-button">Avaliar</button>
+    { modalComent ? <PostComent  fk_id_servico = { servico.fk_usuario_id} />:''}
     <section>
       <h3 className="section-title">Avaliações</h3>
       <div className="reviews">

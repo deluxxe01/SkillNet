@@ -314,6 +314,7 @@ async function deletePorti(id) {
 // --- COMENTÁRIOS ---
 async function createComentServico(comment) {
   const client = await connect();
+  console.log(comment)
   const sql = `
     INSERT INTO comentarioServico (comentario, fk_servico_id, fk_usuario_id)
     VALUES ($1, $2, $3)

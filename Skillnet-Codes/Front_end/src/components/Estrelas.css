@@ -1,0 +1,25 @@
+.star-rating {
+  display: flex;
+  gap: 4px;
+  font-size: 30px;
+  cursor: pointer;
+}
+
+.star-wrapper {
+  position: relative;
+  width: 30px;
+  height: 30px;
+}
+
+.star {
+  position: absolute;
+  overflow: hidden;
+  color: #ffc107;
+  z-index: 1;
+}
+
+.star-empty {
+  color: #ccc;
+  z-index: 0;
+  position: absolute;
+}
