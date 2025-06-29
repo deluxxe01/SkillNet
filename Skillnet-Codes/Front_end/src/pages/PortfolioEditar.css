@@ -56,7 +56,7 @@ body {
   width: 32vh;
   height: 1vh;
   border-radius: 1vh;
-  background-color: var(--cor-secundaria);
+  background-color: #83CF41;
   transition: transform 0.3s ease;
 }
 .linha1:hover {
@@ -66,7 +66,7 @@ body {
 /* Formulário base */
 .Formulario {
   position: relative;
-  background-color: var(--cor-primaria);
+  background-color: #DBDBDB;
   border-radius: 5vh;
   margin: 5vh 0 0 40vh;
   width: 120vh;
@@ -124,16 +124,16 @@ body {
 
 /* Botão Rosa */
 .buttonCadastrar {
-  background-color: var(--rosa-bg);
-  border-color: var(--rosa-border);
-  color: var(--rosa-text);
+  background-color: #DBDBDB;
+  border-color: #004B22;
+  color:#004B22;
 }
 
 .buttonCadastrar::before {
   content: "";
   position: absolute;
   z-index: -1;
-  background: var(--rosa-border);
+  background: #004B22;
   width: 200%;
   height: 500%;
   top: 100%;
@@ -144,8 +144,8 @@ body {
 }
 
 .buttonCadastrar:hover {
-  color: var(--rosa-bg);
-  background-color: var(--rosa-bg);
+  color: #DBDBDB;
+  background-color: #DBDBDB;
 }
 
 .buttonCadastrar:hover::before {
@@ -153,24 +153,24 @@ body {
 }
 
 .buttonCadastrar:active::before {
-  background: var(--rosa-border);
+  background: #004B22;
   transition: background 0s;
   color: #fbfbfb;
 }
 
-/* Botão Editar Rosa */
+/* Botão Editar Verde */
 .buttonEditar {
   margin-top: 2vh;
-  background-color: var(--rosa-border);
-  border-color: var(--rosa-border);
-  color: var(--rosa-bg);
+  background-color: #004B22;
+  border-color: #004B22;
+  color: #DBDBDB;
 }
 
 .buttonEditar::before {
   content: "";
   position: absolute;
   z-index: -1;
-  background: var(--rosa-bg);
+  background: #DBDBDB;
   width: 200%;
   height: 500%;
   top: 100%;
@@ -181,8 +181,8 @@ body {
 }
 
 .buttonEditar:hover {
-  color: var(--rosa-border);
-  background-color: var(--rosa-border);
+  color: #004B22;
+  background-color: #004B22;
 }
 
 .buttonEditar:hover::before {
@@ -190,7 +190,7 @@ body {
 }
 
 .buttonEditar:active::before {
-  background: var(--rosa-border);
+  background: #004B22;
   transition: background 0s;
   color: #fbfbfb;
 }
@@ -216,7 +216,7 @@ body {
 }
 
 .Inpt-Formulario {
-  background-color: var(--cor-secundaria);
+  background-color: #C8C8C8;
   border: none;
   width: 30vh;
   padding: 0.5vh 1vh;
@@ -267,14 +267,57 @@ textarea:focus {
 /* Menu popup */
 .menu-popup {
   position: absolute;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   background-color: #FBFBFB;
-  border: 1px solid #ccc;
+  height: 15vh;
+  border-radius: 1vh;
+  width: 15vh;
   padding: 10px;
-  right: 30vh;
-  top: 20vh;
-  box-shadow: 0 4px 8px rgb
+  right: 5vh;
+  top: 8vh;
+  box-shadow: 0 4px 8px rgb;
+ 
 }
 
+.Lirosa{
+  list-style: none;
+  
+  color: var(--cor-texto); /* cor normal */
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.Liazul{
+  margin-top:1vh;
+  list-style: none;
+  
+  color: var(--cor-texto); /* cor normal */
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.Liverde{
+   margin-top:1vh;
+  list-style: none;
+  
+  color: var(--cor-texto); /* cor normal */
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+.Lirosa:hover {
+  color: #CE499C; /* cor ao passar o mouse */
+}
+
+.Liazul:hover{
+  color:#0033FF;
+}
+
+.Liverde:hover{
+  color: #004B22;
+}
 /* MUDANÇA DE CORES */
 .formulario-azul{
   background-color: #BFE0FF;
@@ -298,7 +341,7 @@ textarea:focus {
 
 /* Estado quando o botão é pressionado (active) */
 .button2-azul:active {
-  background-color: #004B22;        /* Fundo azul claro */
+  background-color: var(--azul-border);        /* Fundo azul claro */
   color: var(--azul-border);               /* Texto azul escuro */
 }
 
@@ -310,7 +353,9 @@ textarea:focus {
   color: var(--azul-border);                 /* Texto azul claro */
  
 }
-
+.button-azul::before{
+   background-color: var(--azul-border);
+   color: var(--azul-bg) ;}
 /* Ao passar o mouse (hover) */
 .button-azul:hover {
   background-color: var(--azul-bg);  /* Fundo azul escuro no hover */
@@ -324,6 +369,39 @@ textarea:focus {
   color: var(--azul-bg);  
   
 }
+
+/* Botão rosa */
+.formulario-rosa{
+  background-color:#FFD9D9 ;
+}
+.input-rosa{
+  background-color: #FFC5C6;
+}
+.button-rosa {
+  background-color: #FFD9D9;  /* Fundo azul escuro */
+  border-color: #CE499C;    ;      /* Borda azul escuro */
+  /* Borda azul escuro */
+  color: #CE499C;                 /* Texto azul claro */
+ 
+}
+.button-rosa::before{
+  background-color: #CE499C;
+  color: #FFD9D9;
+}
+/* Ao passar o mouse (hover) */
+.button-rosa:hover {
+  background-color: #FFD9D9;  /* Fundo azul escuro no hover */
+  color: #FFD9D9;  
+  border-color: #CE499C;                   /* Texto azul claro */
+}
+
+/* Estado quando o botão é pressionado (active) */
+.button-azul:active {
+  background-color: #CE499C;      /* Fundo azul claro quando pressionado */
+  color: #FFD9D9;  
+  
+}
+
 .popup{
   background-color: #fdfdff;
   width: 50VH;

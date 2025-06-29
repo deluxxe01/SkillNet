@@ -4,7 +4,7 @@ import Login from "../pages/Login.jsx";
 import LandingPage from "../pages/LandingPage.jsx";
 import Area_servico_pesquisado from "../pages/Area_servico_pesquisado.jsx";
 import Portfolio from "../pages/Portfolio.jsx";
-import Portfolios from "../pages/Portfolios.jsx";
+
 
 import TrabalhoEscolhido from "../pages/TrabalhoEscolhido.jsx";
 import PortfolioEditar from "../pages/PortfolioEditar.jsx";
@@ -26,7 +26,7 @@ const router = createBrowserRouter([
     { path:'/servico/:servico_id',  element: <Servico_escolhido/> },
     {path:'/servico',element:<TrabalhoEscolhido />},
     {path:'sobre_nos',element:<PageSobreNos />},
-    {path:'portfolios',element:<Portfolios />},
+    
     {path:'portfolioeditar', element:<PortfolioEditar />},
     {path:'/cadastro_servico',element:<CadastrarServico />},
     {element:<PrivateRoutes />,
