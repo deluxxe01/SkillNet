@@ -344,10 +344,21 @@ async function selectComentsServico(id){
 
     const values = [id]
 
-    const sql = 'select * from comentarioServico where fk_servico_id = $1 '
+    const sql = `
+      SELECT 
+        c.*, 
+        u.nome AS nome
+      FROM 
+        comentarioServico c
+      JOIN 
+        usuarios u ON c.fk_usuario_id = u.id_usuario
+      WHERE 
+        c.fk_servico_id = $1
+    `;
 
     const coments = await client.query(sql,values)
 
+  
     return coments.rows
 
   }catch(erro){
@@ -458,6 +469,26 @@ async function selecionarMenssagens(id_sala) {
   }
 }
 
+async function getServicoEspecifico(obj) {
+ const client = await connect()
+
+ try{
+
+  const sql = 'select * from servicos where area = $1'
+
+  const values = [obj.area]
+
+  const resultado = await client.query(sql,values)
+
+  return resultado.rows
+
+ }catch(err){
+  console.log(err)
+
+ }
+  
+}
+
 // --- INICIALIZAÇÃO ---
 
 
@@ -487,5 +518,6 @@ module.exports = {
   salvarMenssagen,
   selecionarMenssagens,
   createTablesFunc,
-  selectComentsServico
+  selectComentsServico,
+  getServicoEspecifico
 };

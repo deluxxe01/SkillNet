@@ -145,10 +145,10 @@ App.delete('/deleteComentarioServico/:id', async (req, res) => {
 
 App.get('/getComentsServicos/:id', async (req,res)=>{
   const values = req.params.id
-
+  
   const coments = await db.selectComentsServico(values)
 
-  res.json({commenst:coments})
+  res.json({Comentarios:coments})
 
 })
 
@@ -195,6 +195,17 @@ io.on("connection", socket => {
 
 App.get('/mensagens', (req, res) => {
   res.json(mensagens)
+})
+
+App.get('/servicoEspecifico/:area',async(req,res)=>{
+
+  const area = req.params.area
+
+   const resultado = await db.getServicoEspecifico({area})
+
+   res.json({resultado})
+
+
 })
 
 server.listen(3000, () => {

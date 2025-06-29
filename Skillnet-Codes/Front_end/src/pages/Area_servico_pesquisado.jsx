@@ -8,10 +8,12 @@ import { GlobalContext } from '../context/Globalcontext';
 import CadastrarServico from './CadastrarServico';
 import api from '../Services/api';
 import Footer from '../components/Footer';
+import axios from 'axios';
 function Area_servico_pesquisado() {
   const [filtraServico, setFiltraServico] = useState('');
  
   const {userLogado,setUserLogado,cadastroServico,setCadastroServico}=useContext(GlobalContext)
+  const [valorSelect,setValorSelect]=useState()
 
   
   async function getServicos() {
@@ -20,10 +22,27 @@ function Area_servico_pesquisado() {
     console.log(response)
   }
 
+  async function getServicoEspecifico(){
+
+    const resultado = await axios.get(`/api/servicoEspecifico/${valorSelect}`)
+
+    console.log("serviço especifico",resultado.data.resultado)
+
+    setCadastroServico(resultado.data.resultado)
+
+
+  }
+
 
   useEffect(() => {
     getServicos();
   }, []); // roda apenas uma vez ao montar
+
+  useEffect(() => {
+  if (valorSelect) {
+    getServicoEspecifico();
+  }
+}, [valorSelect]);
 
   return (
     <div className='container_pagina_servico_pesquisado'>
@@ -60,14 +79,36 @@ function Area_servico_pesquisado() {
             <option value='valor4'>op 4</option>
           </select>
 
-          <select className='select_opc_servico'>
+          <select className='select_opc_servico'  onChange={(e)=>{
+            setValorSelect(e.target.value)
+          }}>
             <option value='faixa' disabled selected>
               opções de serviço
             </option>
-            <option value='valor1'>op 1</option>
-            <option value='valor2'>op 2</option>
-            <option value='valor3'>op 3</option>
-            <option value='valor4'>op 4</option>
+                <option value="matador de rato">Matador de rato</option>
+                <option value="desenvolvimento de software">Desenvolvimento de software</option>
+                <option value="back end developer">Back End Developer</option>
+                <option value="scrum master">Scrum Master</option>
+                <option value="design gráfico">Design Gráfico</option>
+                <option value="marketing digital">Marketing Digital</option>
+                <option value="tradução">Tradução</option>
+                <option value="edição de vídeo">Edição de Vídeo</option>
+                <option value="fotografia">Fotografia</option>
+                <option value="redação">Redação</option>
+                <option value="suporte técnico">Suporte Técnico</option>
+                <option value="consultoria financeira">Consultoria Financeira</option>
+                <option value="gestão de projetos">Gestão de Projetos</option>
+                <option value="UX/UI design">UX/UI Design</option>
+                <option value="análise de dados">Análise de Dados</option>
+                <option value="engenharia civil">Engenharia Civil</option>
+                <option value="arquitetura">Arquitetura</option>
+                <option value="manutenção elétrica">Manutenção Elétrica</option>
+                <option value="desenvolvimento mobile">Desenvolvimento Mobile</option>
+                <option value="gestão de tráfego pago">Gestão de Tráfego Pago</option>
+                <option value="advocacia">Advocacia</option>
+                <option value="coaching de carreira">Coaching de Carreira</option>
+                <option value="ilustração">Ilustração</option>
+                <option value="criação de conteúdo">Criação de Conteúdo</option>
           </select>
 
           <select className='select_prazo_entrega'>

@@ -7,12 +7,14 @@ import Header from '../components/Header';
 import Footer from '../components/Footer';
 import CaixaTexto from "../components/CaixaTexto"
 import PostComent from '../components/PostComent'
+import axios from "axios";
 
 
 function Servico_escolhido() {
 
   const [openModal,setOpenModal] = useState(false)
-  const [modalComent,setModalComent]=useState(true)
+  const [modalComent,setModalComent]=useState(false)
+  const [arrayComentarios,setArrayComentarios]=useState([])
  
     const { servico_id } = useParams();
      const {cadastroServico,setCadastroServico,userLogado,setUserLogado} = useContext(GlobalContext); // nome certo aqui
@@ -23,6 +25,29 @@ function Servico_escolhido() {
     useEffect(()=>{
       console.log(servico)
     })
+
+    function showModalComment(){
+      
+      setModalComent(!modalComent)
+    }
+
+    async function getComent(){
+
+      const comentarios = await axios.get(`/api/getComentsServicos/${servico.servico_id}`)
+
+      console.log("comentarios",comentarios.data.Comentarios)
+
+      setArrayComentarios(comentarios.data.Comentarios)
+      
+     
+
+    }
+
+    useEffect(() => {
+  if (servico?.servico_id) {
+    getComent();
+  }
+}, []);
     
  
  
@@ -67,19 +92,20 @@ function Servico_escolhido() {
         <p>Sou designer especializada em UX/UI com 5 anos de experiência. Já criei interfaces para startups, e-commerce e produtos educacionais. Prezo por entregas rápidas, acessíveis e alinhadas com o objetivo do cliente.</p>
       </div>
     </section>
-    <button className="cta-button">Avaliar</button>
-    { modalComent ? <PostComent  fk_id_servico = { servico.fk_usuario_id} />:''}
+    <button className="cta-button" onClick={showModalComment}>Avaliar</button>
+    { modalComent ? <PostComent showModal={showModalComment}  fk_id_servico = { servico.fk_usuario_id} />:''}
     <section>
       <h3 className="section-title">Avaliações</h3>
       <div className="reviews">
-        <div className="review">
+      {arrayComentarios.length > 0 ? (arrayComentarios.map((comentario) =>(
+         <div key={comentario.id_comentario} className="review">
           <div className="stars">★★★★★</div>
-          <strong>Ana Pereira:</strong> "Trabalho impecável! Minha landing ficou linda e rápida."
+          <strong>{comentario.nome}</strong> {comentario.comentario}
         </div>
-        <div className="review">
-          <div className="stars">★★★★☆</div>
-          <strong>Carlos Mendes:</strong> "Ótimo atendimento e entrega antes do prazo."
-        </div>
+
+       ))):(
+        <p>loser</p>
+       )}
       </div>
     </section>
 
