@@ -15,7 +15,7 @@ CREATE TABLE IF NOT EXISTS servicos (
     preco_minimo NUMERIC(10, 2) CHECK (preco_minimo >= 0),
     idioma VARCHAR(50),
     fk_usuario_id INT,
-    CONSTRAINT servicos_usuarios FOREIGN KEY (fk_usuario_id) REFERENCES usuarios(id_usuario)
+    CONSTRAINT servicos_usuarios FOREIGN KEY (fk_usuario_id) REFERENCES usuarios(id_usuario) ON DELETE CASCADE
 );
 
 CREATE TABLE IF NOT EXISTS portifolios (

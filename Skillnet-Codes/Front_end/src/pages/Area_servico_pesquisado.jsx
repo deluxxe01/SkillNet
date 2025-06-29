@@ -8,6 +8,7 @@ import { GlobalContext } from '../context/Globalcontext';
 import CadastrarServico from './CadastrarServico';
 import api from '../Services/api';
 import Footer from '../components/Footer';
+import { motion } from 'framer-motion';
 function Area_servico_pesquisado() {
   const [filtraServico, setFiltraServico] = useState('');
  
@@ -81,30 +82,32 @@ function Area_servico_pesquisado() {
           </select>
         </div>
 
-        <div className='lista_serviço'>
-       
-  {cadastroServico.map((servico) => (
-   <Link  key={servico.servico_id} to={`/servico/${servico.servico_id}`} className='Link_servico'>
-
-  <div className='card_servico'>
-      <img src={servico.imagem_capa || null} className='poster' />
-      <p className="categoria_servico_especifico">{servico.area}</p>
-      <p className='titulo_servico'>{servico.titulo}</p>
-      <p><strong></strong> {servico.descricao}</p>
-      <p>{servico.preco_minimo}R$</p>
-
-      {/* <button onClick={() => deleteServicos(servico.servico_id)}>Apagar Serviço</button>
-    <button onClick={() => UpdateServicos(servico.servico_id)}>edita servico</button> */}
-    
-    
-    </div>
+       <div className='lista_serviço'>
+ {cadastroServico
+  .filter((servico) =>
+    servico.area.toLowerCase().includes(filtraServico.toLowerCase())
+  )
+  .map((servico, index) => (
+    <Link
+      key={servico.servico_id}
+      to={`/servico/${servico.servico_id}`}
+      className='Link_servico'
+    >
+      <motion.div
+        className='card_servico'
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.4, delay: index * 0.1 }}
+      >
+        <img src={servico.imagem_capa || null} className='poster' />
+        <p className='categoria_servico_especifico'>{servico.area}</p>
+        <p className='titulo_servico'>{servico.titulo}</p>
+        <p>{servico.descricao}</p>
+        <p>{servico.preco_minimo} R$</p>
+      </motion.div>
     </Link>
-
-  ))}
-       
-       
-       
-        </div>
+))}
+</div>
      
       <div className='container_footer_servico'>
 
