@@ -160,12 +160,19 @@ io.on("connection", socket => {
   })
 
   socket.on('criarSala', async (user1, user2, callback) => {
+
+    const salaExistente = await db.findSalaEntreUsuarios(user1.id_usuario1, user2.id_usuario2);
+
+  if (salaExistente) {
+    // Já existe, retorna ela
+    return callback({ salaExistente });
+  }
     const sala_id = await db.createSalasChat(
       { id: user1.id_usuario1, nome: user1.nome },
       { id: user2.id_usuario2, nome: user2.nome }
     )
     socket.join(sala_id)
-    callback({ sucesso: true, sala_id })
+    return callback({ sucesso: true, sala_id })
   })
 
   socket.on('salasUsuario', async (id_usuario, callback) => {
@@ -179,13 +186,24 @@ io.on("connection", socket => {
   })
 
   socket.on('puxarMenssagen', async (id_sala, callback) => {
+    
     const res = await db.selecionarMenssagens(id_sala.id_sala)
+    console.log("resposta",res)
     callback({ res })
   })
 
   socket.on('salas', (id_sala, callback) => {
     socket.join(id_sala)
     callback({ sucesso: true })
+  })
+
+  socket.on('salaEspecifica',async(users,callback)=>{
+    
+    const resultado = await db.findSalaEspecifica(users)
+
+    callback({resultado})
+
+
   })
 
   socket.on("disconnect", reason => {

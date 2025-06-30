@@ -6,21 +6,14 @@ import  axios from 'axios'
 
 
 function CaixaTexto(props) {
-  const socket = io('http://localhost:3000', { 
-    transports: ['websocket'],
-    reconnection: true,          // Habilita reconexão automática
-    reconnectionAttempts: 5,     // Número máximo de tentativas de reconexão
-    reconnectionDelay: 1000,     // Tempo de atraso entre as tentativas
-    reconnectionDelayMax: 5000,  // Tempo máximo entre as tentativas
-    timeout: 20000, 
-   })
+  const socket = io('http://localhost:3000',)
     const [inptMess,setInptMess]=useState('')
-   
     const {userLogado,setUserLogado}=useContext(GlobalContext)
     const [chat , setChat]=useState([])
     const[teste,setTeste]=useState([])
     const [vetorChat,setVetorChat]=useState([])
     const socketRef=useRef(null)
+    const [salaId,setSalaId]=useState()
     
 
     
@@ -40,12 +33,21 @@ function CaixaTexto(props) {
         let horaEminuto = `${horas}:${minutos}`;
 
        
-       let mensagem = {
-         nome:props.autor,
-         mess:inptMess,
-         horario:horaEminuto
-         
-       }
+      let mensagen={
+        menssagen:inptMess,
+        horas:horaEminuto,
+        fk_id_usuario:userLogado.id_usuario,
+        id_sala:salaId
+
+      }
+       socket.emit('menssagens',({mensagen}),(resposta)=>{
+      
+        console.log('vetor',resposta.mensagens)
+        setChat([...chat,resposta.mensagens])
+
+        
+       
+      })
        
            socket.emit('criarSala',({
         id_usuario1:userLogado.id_usuario,
@@ -72,17 +74,19 @@ function CaixaTexto(props) {
     // }
   
     useEffect(()=>{
-      socket.on('mensagemRecebida', (data) => {
-        setChat(prev => [...prev, data]);
-      })
-  
-      // Carregar as mensagens do servidor ao montar o componente
-      const renderMessage = async () => {
-        
-      }
-  
-      renderMessage()
+      socket.emit('salaEspecifica',({id_usuario:userLogado.id_usuario,fk_id_usuario:props.id_frela}),(resposta)=>{
+         const idSala = resposta.resultado[0].id_sala
+        setSalaId(resposta.resultado[0].id_sala)
 
+
+         socket.emit('puxarMenssagen',({id_sala:idSala}),(resposta)=>{
+     
+        console.log('vaetor mensagens',resposta)
+        setChat(resposta.res)
+      })
+      })
+
+      
     
       
     },[])
@@ -98,11 +102,10 @@ function CaixaTexto(props) {
                {chat.map((msg ,index)=> (
                 <div key={index} className='CaixaMensagem' 
                 style={
-                  {backgroundColor: msg.nome != props.autor ? '#83CF41' : '#004B22',
-                  marginRight:msg.nome != props.autor?"50%" :"-50%",
-                  marginLeft:msg.nome !=props.autor ?"10px":"-10px"
+                  {backgroundColor: msg.fk_id_usuario!= userLogado.id_usuario ? '#83CF41' : '#004B22',
+                  marginLeft:msg.fk_id_usuario != userLogado.id_usuario ?"-50%":"50%"
                   }}>
-                  <p>{msg.mess} <span className='spamChat' style={{color:msg.nome!=props.autor ?" #46553C":"#9CB988"}}>{msg.horario}</span></p> 
+                  <p>{msg.menssagen} <span className='spamChat' style={{color:msg.nome!=props.autor ?" #46553C":"#9CB988"}}>{msg.horario}</span></p> 
                   </div>
               ))} 
           </div>

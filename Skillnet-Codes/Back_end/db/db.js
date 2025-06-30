@@ -451,6 +451,7 @@ async function salvarMenssagen(obj) {
     INSERT INTO mensagen (menssagen, fk_id_usuario, fk_id_sala, horas)
     VALUES ($1, $2, $3, $4)
   `;
+  
   const values = [obj.menssagen, obj.fk_id_usuario, obj.id_sala, obj.horas];
   try {
     await client.query(sql, values);
@@ -489,6 +490,37 @@ async function getServicoEspecifico(obj) {
   
 }
 
+async function findSalaEspecifica(user) {
+  const client = await connect();
+
+  const sql = `
+    SELECT * FROM salasChat WHERE FK_id_usuario1 = $1 AND FK_id_usuario2 = $2 OR FK_id_usuario1 = $2 AND FK_id_usuario2 =$1
+  `
+  try {
+
+    const res = await client.query(sql, [user.id_usuario,user.fk_id_usuario]);
+
+    return res.rows;
+  } finally {
+    client.release();
+  }
+}
+
+async function findSalaEntreUsuarios(user1, user2) {
+  const client = await connect();
+  try {
+    const sql = `
+      SELECT * FROM salasChat 
+      WHERE (fk_id_usuario1 = $1 AND fk_id_usuario2 = $2)
+         OR (fk_id_usuario1 = $2 AND fk_id_usuario2 = $1)
+    `;
+    const res = await client.query(sql, [user1, user2]);
+    return res.rows[0]; // retorna a sala existente (ou undefined)
+  } finally {
+    client.release();
+  }
+}
+
 // --- INICIALIZAÇÃO ---
 
 
@@ -519,5 +551,7 @@ module.exports = {
   selecionarMenssagens,
   createTablesFunc,
   selectComentsServico,
-  getServicoEspecifico
+  getServicoEspecifico,
+  findSalaEspecifica,
+  findSalaEntreUsuarios
 };
