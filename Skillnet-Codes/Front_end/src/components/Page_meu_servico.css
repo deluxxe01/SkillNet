@@ -23,11 +23,17 @@ padding:5px ;
   scroll-behavior: smooth;
 }
 
-.meuservico_card {
-  width: 360px;
-  background-color: #ffffff;
+.poster_meu_servico {
+  width: 500px;
+  height: 200px;
+  display: block; /* remove espaços em branco indesejados */
+
+    background-color: #ffffff;
   border: 2px solid #004B22;
-  border-radius: 35px;
+ border-top-right-radius:10px ;
+  border-top-left-radius:10px ;
+
+
   overflow: hidden;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
   transition: transform 0.2s ease;
@@ -72,9 +78,56 @@ padding:5px ;
   color: #004B22;
   padding: 4px 10px;
   border-radius: 12px;
-  font-size: 13px;
+  font-size: 8px;
   font-family: Mont;
   font-weight: 600;
   display: inline-block;
 }
 
+*{border: solid red;}
+.card_meu_servico{
+border: purple solid ;
+display: flex;
+flex-direction: column;
+justify-content: center;
+ overflow: hidden; /* importante */
+
+}
+.modal-editar-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal-editar-conteudo {
+  background: white;
+  padding: 20px;
+  border-radius: 12px;
+  width: 90%;
+  max-width: 400px;
+  text-align: center;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+  animation: modalFadeIn 0.3s ease-in-out;
+}
+
+.modal-editar-botoes button {
+  margin-top: 15px;
+  padding: 8px 16px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+@keyframes modalFadeIn {
+  from { opacity: 0; transform: scale(0.95); }
+  to { opacity: 1; transform: scale(1); }
+}
