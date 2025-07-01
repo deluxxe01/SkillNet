@@ -24,6 +24,7 @@ function Servico_escolhido() {
 
     useEffect(()=>{
       console.log(servico)
+        
     })
 
     function showModalComment(){
@@ -78,10 +79,17 @@ function Servico_escolhido() {
           <span className="tag_servico_especifico">{servico.area}</span>
           
         </div>
+          <div>
+                {servico.fk_usuario_id != userLogado.id_usuario ? (
+              <button className="cta-button" onClick={() => setOpenModal(!openModal)}>
+                Entrar em Contato
+              </button>
+            ) : (
+              <p>Você não pode contatar seu serviço</p>
+            )}
+          </div>
+    
 
-        <button className="cta-button" onClick={()=>{
-          setOpenModal(!openModal)
-        }}>Entrar em Contato</button>
         { openModal && <CaixaTexto autor={servico.nome_usuario} id_frela={servico.fk_usuario_id} />}
       </div>
     </div>
@@ -104,7 +112,7 @@ function Servico_escolhido() {
         </div>
 
        ))):(
-        <p>loser</p>
+        <p>Não possui comentarios</p>
        )}
       </div>
     </section>

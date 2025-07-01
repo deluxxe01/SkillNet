@@ -72,7 +72,10 @@ function LandingPage() {
           <div className='containerMulherLanding'>
             <h2 className='h2Landing'>Transformando ideais em <br />
               <span className='spnLanding'> Obras-primas</span></h2>
-              <img src="./images/MulherLanding.jpg" alt="" className='imgMulherldp' />
+              <img src="./images/imgPcSkillnet.svg" alt="" className='imgMulherldp' />
+          </div>
+          <div>
+            <img src="./images/imgCaraLanding.svg" alt="" className='imgCaraLanding' />
           </div>
         </div>
         <div>

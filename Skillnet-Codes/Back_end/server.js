@@ -188,7 +188,7 @@ io.on("connection", socket => {
   socket.on('puxarMenssagen', async (id_sala, callback) => {
     
     const res = await db.selecionarMenssagens(id_sala.id_sala)
-    console.log("resposta",res)
+    
     callback({ res })
   })
 
@@ -207,7 +207,7 @@ io.on("connection", socket => {
   })
 
   socket.on("disconnect", reason => {
-    console.log(`Cliente desconectado (${socket.id}): ${reason}`)
+
   })
 })
 

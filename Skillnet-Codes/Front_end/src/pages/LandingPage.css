@@ -205,7 +205,7 @@ display: flex;
     font-size: 1.5em;
 }
 .imgMulherldp{
-    width: 15%;
+    width: 600px;
     margin-top: 10px;
     border-radius: 10px;
     
@@ -214,6 +214,7 @@ display: flex;
     font-family: Mont;
     font-weight: 800;
     color: #0E261E;
+    padding-bottom: 120px;
 }
 .spnLanding{
     border-bottom: 7px solid #83CF41;
@@ -229,17 +230,26 @@ display: flex;
 }
 .containerLanding3{
     align-items: center;
-    justify-content: center;
+    justify-content: space-evenly;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
+    margin-top: 70px;
+    width: 100%;
+    margin-bottom: 70px;
+    
 }
 .containerMulherLanding{
     align-items: center;
     justify-self:center;
     display: flex;
     flex-direction: column;
+
 }.container_Footer_LadingPage{
 width: 100%;
 
 
+}
+
+.imgCaraLanding{
+    width: 600px;
 }

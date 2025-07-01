@@ -6,7 +6,7 @@ import  axios from 'axios'
 
 
 function CaixaTexto(props) {
-  const socket = io('http://localhost:3000',)
+  const socket = io('http://localhost:3000')
     const [inptMess,setInptMess]=useState('')
     const {userLogado,setUserLogado}=useContext(GlobalContext)
     const [chat , setChat]=useState([])
