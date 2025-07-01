@@ -76,6 +76,7 @@ function CaixaTexto(props) {
     useEffect(()=>{
       socket.emit('salaEspecifica',({id_usuario:userLogado.id_usuario,fk_id_usuario:props.id_frela}),(resposta)=>{
          const idSala = resposta.resultado[0].id_sala
+         console.log('oiii',idSala)
         setSalaId(resposta.resultado[0].id_sala)
 
 

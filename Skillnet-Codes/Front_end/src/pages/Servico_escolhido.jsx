@@ -224,9 +224,9 @@ async function UpdateServicos(id) {
               )}
             </div>
 
-            <button className="cta-button" onClick={() => setOpenModal(!openModal)}>
+            {servico.fk_usuario_id != userLogado.id_usuario ?<button className="cta-button" onClick={() => setOpenModal(!openModal)}>
               Entrar em Contato
-            </button>
+            </button> :(<p>Botão desativado:<br/>Dono do serviço</p>)}
 
             {openModal && (
               <CaixaTexto autor={servico.nome_usuario} id_frela={servico.fk_usuario_id} />
