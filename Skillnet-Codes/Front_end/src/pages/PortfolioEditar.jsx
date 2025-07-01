@@ -61,9 +61,9 @@ function PortfolioEditar() {
   }
 
   const imagensMaterial = {
-    rosa: 'public/icons/material 2.svg',
-    azul: 'public/icons/material 3.svg',
     verde: 'public/icons/material 4.svg',
+    azul: 'public/icons/material 3.svg',
+    rosa: 'public/icons/material 2.svg',
     default: 'public/icons/material 2.svg',
   }
 
@@ -342,7 +342,7 @@ function PortfolioEditar() {
             </div>
 
             <div className="inputContainer">
-              <label>Ano de Experiência:</label>
+              <label>Tempo de Experiência:</label>
               <input 
                 className={`Inpt-Formulario ${corSelecionada ? `input-${corSelecionada}` : ''}`}
                 type="text" 

@@ -46,8 +46,8 @@ return (
      
         <button className={`botaoHeader ${paginaAtiva===2 ? 'ativo' :'inativo'}`}
         onClick={()=>{ativaPagina(2)
-          navigate("/portfolios")
-        }}>Portifólios</button>
+          navigate("/portfolioeditar")
+        }}>Portifólio</button>
        
        
        

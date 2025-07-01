@@ -46,9 +46,10 @@ body {
 }
 
 .Title-EditarPortfolio {
+  margin-top: 5vh;
   margin-left: 80vh;
   font-size: 5vh;
-  color: #ffe2f9;
+  color: #fffbfe;
 }
 
 .linha1 {
@@ -241,7 +242,7 @@ textarea:focus {
 }
 
 .LabelSobremim {
-  color: #500040;
+  color: #00501b;
   font-size: 3vh;
 }
 
@@ -249,9 +250,9 @@ textarea:focus {
   background-color: #FBFBFB;
   font-size: 2vh;
   border: none;
+  border: 1px solid #00501b;
   width: 120vh;
   height: 15vh;
-  color: #500040;
   padding: 1vh;
   border-radius: 1vh;
   resize: vertical;
@@ -316,7 +317,7 @@ textarea:focus {
 }
 
 .Liverde:hover{
-  color: #004B22;
+  color: #83CF41;
 }
 /* MUDANÇA DE CORES */
 .formulario-azul{
@@ -359,7 +360,7 @@ textarea:focus {
 /* Ao passar o mouse (hover) */
 .button-azul:hover {
   background-color: var(--azul-bg);  /* Fundo azul escuro no hover */
-  color: var(--azul-border);  
+  color: var(--azul-bg);  
   border-color: var(--azul-border);                   /* Texto azul claro */
 }
 
@@ -369,7 +370,17 @@ textarea:focus {
   color: var(--azul-bg);  
   
 }
+.linha-azul{
+  background-color: #60b7ff;
+}
+.label-azul{
+color: #001361;
+}
 
+.textArea-azul{
+  border: 1px solid #001361;
+  background-color: #FBFBFB;
+}
 /* Botão rosa */
 .formulario-rosa{
   background-color:#FFD9D9 ;
@@ -384,7 +395,7 @@ textarea:focus {
   color: #CE499C;                 /* Texto azul claro */
  
 }
-.button-rosa::before{
+.button-rosa:before{
   background-color: #CE499C;
   color: #FFD9D9;
 }
@@ -396,12 +407,48 @@ textarea:focus {
 }
 
 /* Estado quando o botão é pressionado (active) */
-.button-azul:active {
+.button-rosa:active {
   background-color: #CE499C;      /* Fundo azul claro quando pressionado */
   color: #FFD9D9;  
   
 }
+.linha-rosa{
+  
+  background-color: #500049;
+}
+.label-rosa{
+  color: #500049;
+  font-size: 3vh;
+}
 
+.button2-rosa{
+  background-color: #CE499C;  /* Fundo azul escuro */
+  border-color: #CE499C;    ;      /* Borda azul escuro */
+  /* Borda azul escuro */
+  color: #FFD9D9;   
+}
+
+.button2-rosa:before{
+  background-color: #FFD9D9;
+  color: #CE499C;
+}
+
+.button2-rosa:hover{
+  background-color: #CE499C;  /* Fundo azul escuro no hover */
+  color: #CE499C;  
+  border-color: #CE499C;  
+}
+
+.button2-rosa:active{
+  background-color: #FFD9D9;      /* Fundo azul claro quando pressionado */
+  color: #CE499C; 
+}
+
+.textArea-rosa{
+  border: 1px solid #500040;
+  background-color: #FBFBFB;
+}
+/* //POPUP */
 .popup{
   background-color: #fdfdff;
   width: 50VH;

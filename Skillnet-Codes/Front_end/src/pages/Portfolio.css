@@ -8,7 +8,7 @@
 }
 
 .DivLocalidade {
-     border: solid; 
+     /* border: solid;  */
     display: flex;
     flex-direction: row;
     gap: 1vh;
@@ -30,21 +30,20 @@
     margin-left: -33vh;/* Corrigido: só um margin-left */
     width: 30vh;
     height: 4vh;
-    background-color: #FFD9D9;
-    --color: #CE499C;
+    background-color: #DBDBDB;
     font-family: Mont, inherit;
     display: inline-block;
     line-height: 1.5vh;
     position: relative;
     cursor: pointer;
     overflow: hidden;
-    border: 0.3vh solid var(--color);
+    border: 0.3vh solid #00501b;
     transition: color 0.4s ease-in-out;
     z-index: 1;
     font-size: 2vh;
     border-radius: 2vh;
     font-weight: 600;
-    color: #CE499C;
+    color: #00501b;
     text-align: center;
 }
 
@@ -52,7 +51,7 @@
     content: "";
     position: absolute;
     z-index: -1;
-    background: #CE499C;
+    background: #00501b;
     width: 200%;
     height: 500%;
     top: 100%;
@@ -63,8 +62,8 @@
 }
 
 .buttonOutraTela:hover {
-    color: #FFD9D9;
-    background-color: #FFD9D9;
+    color: #DBDBDB;
+    background-color: #DBDBDB;
 }
 
 .buttonOutraTela:hover:before {
@@ -72,9 +71,9 @@
 }
 
 .buttonOutraTela:active:before {
-    background: #CE499C;
+    background: #00501b;
     transition: background 0s;
-    color: #fbfbfb;
+    color: #DBDBDB;
 }
 
 .Container-um {
@@ -109,21 +108,21 @@
     width: 20vh;
     height: 4vh;
     margin-top: 2vh;
-    background-color: #CE499C;
-    --color: #CE499C;
+    background-color: #00501b;
+    --color: #00501b;
     font-family: Mont, inherit;
     display: inline-block;
     line-height: 1.5vh;
     position: relative;
     cursor: pointer;
     overflow: hidden;
-    border: 0.3vh solid var(--color);
+    border: 0.3vh solid #00501b;
     transition: color 0.4s ease-in-out;
     z-index: 1;
     font-size: 2vh;
     border-radius: 2vh;
     font-weight: 600;
-    color: #FFD9D9;
+    color: #DBDBDB;
     text-align: center;
 }
 
@@ -131,7 +130,7 @@
     content: "";
     position: absolute;
     z-index: -1;
-    background: #FFD9D9;
+    background: #DBDBDB;
     width: 200%;
     height: 500%;
     top: 100%;
@@ -142,8 +141,8 @@
 }
 
 .CompartilharButton:hover {
-    color: #CE499C;
-    background-color: #CE499C;
+    color: #00501b;
+    background-color: #00501b;
 }
 
 .CompartilharButton:hover:before {
@@ -151,9 +150,9 @@
 }
 
 .CompartilharButton:active:before {
-    background: #CE499C;
+    background: #00501b;
     transition: background 0s;
-    color: #fbfbfb;
+    color: #DBDBDB;
 }
 
 .TextContainer {
@@ -208,4 +207,115 @@
     width: 120vh;
     height: 15vh;
     color: #500040;
+}
+
+
+/* BUTTON OUTRA ROSA */
+
+.buttonOutra-rosa{
+    background-color: #FFD9D9;
+    border: 0.3vh solid #CE499C;
+    color: #CE499C;
+}
+
+.buttonOutra-rosa:before{
+    background-color: #CE499C;
+}
+
+.buttonOutra-rosa:hover {
+    color: #FFD9D9;
+    background-color: #FFD9D9;
+}
+
+.buttonOutra-rosa:hover:before {
+    top: -150%;
+}
+
+.buttonOutra-rosa:active:before {
+    background: #CE499C;
+    transition: background 0s;
+    color: #FFD9D9;
+}
+
+
+.buttonCompartilhar-rosa {
+    background-color: #CE499C;
+    --color: #CE499C;
+    border: 0.3vh solid #CE499C;
+    color: #FFD9D9;
+
+}
+
+.buttonCompartilhar-rosa:before {
+    background: #FFD9D9;
+}
+
+.buttonCompartilhar-rosa:hover {
+    color: #CE499C;
+    background-color: #CE499C;
+}
+
+.buttonCompartilhar-rosa:hover:before {
+    top: -150%;
+}
+
+.buttonCompartilhar-rosa:active:before {
+    background: #CE499C;
+    transition: background 0s;
+    color: #FFD9D9;
+}
+
+/* BUTTON OUTRA azul */
+
+.buttonOutra-azul{
+    background-color: #BFE0FF;
+    border: 0.3vh solid #0033FF;
+    color: #0033FF;
+}
+
+.buttonOutra-azul:before{
+    background-color: #0033FF;
+}
+
+.buttonOutra-azul:hover {
+    color: #BFE0FF;
+    background-color: #BFE0FF;
+}
+
+.buttonOutra-azul:hover:before {
+    top: -150%;
+}
+
+.buttonOutra-azul:active:before {
+    background: #0033FF;
+    transition: background 0s;
+    color: #BFE0FF;
+}
+
+
+.buttonCompartilhar-azul {
+    background-color: #0033FF;
+    --color: #0033FF;
+    border: 0.3vh solid #0033FF;
+    color: #BFE0FF;
+
+}
+
+.buttonCompartilhar-azul:before {
+    background: #BFE0FF;
+}
+
+.buttonCompartilhar-azul:hover {
+    color: #0033FF;
+    background-color: #0033FF;
+}
+
+.buttonCompartilhar-azul:hover:before {
+    top: -150%;
+}
+
+.buttonCompartilhar-azul:active:before {
+    background: #0033FF;
+    transition: background 0s;
+    color: #BFE0FF;
 }

@@ -66,7 +66,7 @@ function Portfolio() {
        </div>
     <div className="ContainerButtons">
          <button 
-         className="buttonOutraTela" 
+         className={`buttonOutraTela ${corSelecionada ? `buttonOutra-${corSelecionada}` : ''}`}
          onClick={irParaOutraPagina}>
          Editar 
          </button>
@@ -119,7 +119,7 @@ function Portfolio() {
      </div>
 
   <div className='ButonContainer'>
-  <button className="CompartilharButton">Compartilhar</button>
+  <button className={`CompartilharButton ${corSelecionada ? `buttonCompartilhar-${corSelecionada}` : ''}`}>Compartilhar</button>
   </div>
 
 <div className='TextContainer'>
