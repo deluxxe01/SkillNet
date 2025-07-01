@@ -166,7 +166,7 @@
     margin-bottom: 70px;
   }
   .containerImgCaio{
-    background-image: url('./icons/fotoGato.png');
+    background-image: url('./images/minhaImagem.svg');
     width: 300px;
     height: 300px;
     background-position: center;
@@ -175,6 +175,7 @@
     align-items: end;
     justify-content: space-evenly;
     display: flex;
+    border-radius: 20px;
   }
   .containerImgMaria{
     background-image: url('./icons/fotoGato.png');
@@ -213,6 +214,7 @@
   }
   .h3Equipe{
     color: #0E261E;
+    width:400px;
   }
   .iconSobreNos{
     width: 40px;

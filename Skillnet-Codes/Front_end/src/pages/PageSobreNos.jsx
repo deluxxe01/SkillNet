@@ -16,7 +16,7 @@ function PageSobreNos() {
    </div>
     <div className='containerSobreNos'>
       <div className='containerImgSobrenos'>
-        <img className='imgSobrenos' src="./images/bemsa.png" alt="" />
+        <img className='imgSobrenos' src="./images/mulherSobrenos.png" alt="" />
       </div>
       <div className='containerPaiAbsolute'>
         <div className='containerPaiSobreNos'>
@@ -74,12 +74,12 @@ function PageSobreNos() {
         <div className='containerIntegrantes'>
           <div className='containerCaio'>
             <div className='containerImgCaio'>
-              <img src="./icons/iconGit.png" alt="" className='iconSobreNos' />
-              <img src="./icons/iconLinkdin.png" alt="" className='iconSobreNos' />
+              <a href="https://github.com/caiolorramvalente"><img src="./icons/iconGit.png" alt="" className='iconSobreNos' /></a>
+              <a href="https://www.linkedin.com/in/caio-lorram-valente-52523334b/"><img src="./icons/iconLinkdin.png" alt="" className='iconSobreNos' /></a>
               <img src="./icons/iconInsta.png" alt=""  className='iconSobreNos'/>
               
             </div>
-            <h3 className='h3Equipe'>Responsavél por design e front-end.</h3>
+            <h3 className='h3Equipe'>Oi, meu nome é Caio. Fui responsável pelo desenvolvimento do chatentre freelancer e cliente, além de ter implementado o CRUD de usuários.</h3>
 
           </div>
 
