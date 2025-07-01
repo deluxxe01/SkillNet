@@ -273,7 +273,7 @@ async function UpdateServicos(id) {
                   />
                 </>
               ) : (
-                <p><span className="span_data">{servico.data_inicio_entrega}</span> a <span className="span_data">{servico.data_fim_entrega}</span> dias útis</p>
+                <p><span className="span_data">{servico.data_inicio_entrega}</span> a <span className="span_data">{servico.data_fim_entrega}</span> dias úteis</p>
               )}
             </div>
 
@@ -323,40 +323,3 @@ async function UpdateServicos(id) {
 export default Servico_escolhido
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// export default function TrabalhoEscolhido() {
-//  const { servico_id } = useParams();
-//   const { cadastroServico } = useContext(GlobalContext); // nome certo aqui
-
-//   const servico = cadastroServico.find(s => String(s.servico_id) === String(servico_id));
-
-//   if (!servico) return <p>Serviço não encontrado ou carregando...</p>;
-
-//   return (
-//     <div>
-//       <h1>{servico.titulo}</h1>
-//       <p>{servico.descricao}</p>
-//    
-//        <p>{servico.area}</p>    
-//     </div>
-//   );
-// }
