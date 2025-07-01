@@ -8,7 +8,7 @@
 /* CONTAINER PRINCIPAL */
 .container_page_meu_serviço {
   width: 100%;
-  height: 67vh; /* altura fixa da página */
+  height: 67vh;
   display: flex;
   justify-content: center;
 }
@@ -17,7 +17,7 @@
 .conteiner_meu_serviço {
   border: #1B4D2C solid 3px;
   width: 90%;
-  height: 100%; /* ocupa os 67vh */
+  height: 100%;
   border-radius: 10px;
   padding: 5px;
   display: flex;
@@ -26,8 +26,8 @@
 
 /* LISTA DE SERVIÇOS */
 .meuservico_lista {
-  flex: 1; /* ocupa o restante do container */
-  overflow-y: auto; /* ativa rolagem interna */
+  flex: 1;
+  overflow-y: auto;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -38,7 +38,6 @@
 
 /* CARTÃO DE SERVIÇO */
 .card_meu_servico {
-  border: 2px solid purple;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -55,7 +54,6 @@
 .poster_meu_servico {
   width: 100%;
   height: 200px;
-
   border-top-right-radius: 10px;
   border-top-left-radius: 10px;
 }
@@ -87,13 +85,14 @@
   margin: 5px 10px;
 }
 
+/* MODAL */
 .modal-editar-overlay {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.5); /* fundo escuro */
+  background-color: rgba(0, 0, 0, 0.5);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -166,13 +165,164 @@
     transform: scale(1);
   }
 }
-.bnt_cadastra_servico{
-background-color: #83CF41;
-height: 30px;
-border: none;
-border-radius: 5px;
-color: white;
 
+/* BOTÃO: Cadastrar Serviço */
+.bnt_cadastra_servico {
+  background-color: #83CF41;
+  height: 30px;
+  border: none;
+  border-radius: 5px;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  padding: 0 15px;
+  transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+}
 
+.bnt_cadastra_servico:hover {
+  background-color: #004B22;
+  transform: scale(1.05);
+  box-shadow: 0 0 10px rgba(0, 75, 34, 0.4);
+}
 
+/* BOTÃO: Ver Mais Serviço */
+.bnt_ver_mais_servico {
+  background-color: #83CF41;
+  height: 30px;
+  width: 100%;
+  border: none;
+  border-radius: 5px;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+}
+
+.bnt_ver_mais_servico:hover {
+  background-color: #004B22;
+  transform: scale(1.03);
+  box-shadow: 0 0 10px rgba(0, 75, 34, 0.4);
+  border: 2px solid #83CF41;
+}
+
+/* LINK SEM ESTILO */
+.Link_servico_meu {
+  width: 100%;
+}
+.modal-editar-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* escurece o fundo */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal-editar-conteudo {
+  background-color: #fff;
+  padding: 25px;
+  border-radius: 12px;
+  width: 90%;
+  max-width: 500px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+  animation: modalFadeIn 0.3s ease;
+  font-family: Arial, sans-serif;
+  max-height: 90vh;
+  overflow-y: auto;
+  text-align: center;
+}
+
+.modal-editar-conteudo h3 {
+  margin-bottom: 10px;
+  color: #004B22;
+  font-size: 22px;
+}
+
+.modal-editar-conteudo p {
+  font-size: 16px;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.modal-editar-botoes {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.modal-editar-botoes button {
+  flex: 1;
+  padding: 10px 18px;
+  border: none;
+  border-radius: 8px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.modal-editar-botoes button:hover {
+  transform: scale(1.03);
+}
+
+/* Botão cancelar */
+.modal-editar-botoes button:first-child {
+  background-color: #ccc;
+  color: #333;
+}
+
+.modal-editar-botoes button:first-child:hover {
+  background-color: #aaa;
+}
+
+/* Botão confirmar exclusão */
+.modal-editar-botoes button:last-child {
+  background-color: #b22222;
+  color: white;
+}
+
+.modal-editar-botoes button:last-child:hover {
+  background-color: #8b1a1a;
+}
+
+@keyframes modalFadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}.excluir_servico-bnt {
+  background-color: #b22222; /* Vermelho forte */
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 6px;
+  font-weight: 600;
+  font-family: Mont, sans-serif;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.15s ease, box-shadow 0.3s ease;
+  box-shadow: 0 2px 6px rgba(178, 34, 34, 0.5);
+  user-select: none;
+}
+
+.excluir_servico-bnt:hover {
+  background-color: #8b1a1a; /* Vermelho mais escuro */
+  transform: scale(1.05);
+  box-shadow: 0 4px 10px rgba(139, 26, 26, 0.7);
+}
+
+.excluir_servico-bnt:active {
+  transform: scale(0.95);
+  box-shadow: 0 1px 4px rgba(178, 34, 34, 0.8);
+}
+.area_servico_excluir{
+display: flex;
+justify-content: space-between;
+padding: 5px;
 }

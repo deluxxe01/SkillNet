@@ -79,7 +79,7 @@ function PageSobreNos() {
               <img src="./icons/iconInsta.png" alt=""  className='iconSobreNos'/>
               
             </div>
-            <h3 className='h3Equipe'>Oi, meu nome é Caio. Fui responsável pelo desenvolvimento do chatentre freelancer e cliente, além de ter implementado o CRUD de usuários.</h3>
+            <h3 className='h3Equipe'>Responsável pelo desenvolvimento do chatentre freelancer e cliente, além de ter implementado o CRUD de usuários.</h3>
 
           </div>
 
@@ -98,7 +98,7 @@ function PageSobreNos() {
               <img src="./icons/iconLinkdin.png" alt="" className='iconSobreNos' />
               <img src="./icons/iconInsta.png" alt=""  className='iconSobreNos'/>
             </div>
-            <h3 className='h3Equipe'>Responsavél por design e front-end.</h3>
+            <h3 className='h3Equipe'>Responsavél pela estilização, e crud de portfolio</h3>
           </div>
         </div>
       </div>

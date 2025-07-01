@@ -64,13 +64,13 @@ function PortfolioEditar() {
     verde: 'public/icons/material 4.svg',
     azul: 'public/icons/material 3.svg',
     rosa: 'public/icons/material 2.svg',
-    default: 'public/icons/material 2.svg',
+    default: 'public/icons/material 4.svg',
   }
 
   const imagensFundo = {
     rosa: 'public/images/fundoRosa2 (1).png',
     azul: 'public/images/fundoazul.png',
-    verde: 'public/images/fundoverde.png',
+    verde: 'public/images/fundo2.jpg',
     default: 'public/images/fundoRosa2 (1).png',
   }
 
