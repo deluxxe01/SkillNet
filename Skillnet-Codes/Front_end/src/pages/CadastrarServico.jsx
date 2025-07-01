@@ -1,67 +1,61 @@
-import React, { useContext, useState, useRef, useEffect } from 'react';
+import React, { useContext, useState } from 'react';
 import Header from '../components/Header';
 import './CadastrarServico.css';
 import { GlobalContext } from '../context/Globalcontext';
 import api from "../Services/api";
-
 import { useNavigate } from 'react-router-dom';
+
 function CadastrarServico() {
-  
-  const { cadastroServico, setCadastroServico ,userLogado, setUserLogado,} = useContext(GlobalContext);
+  const { userLogado } = useContext(GlobalContext);
 
   const [inptTituloServico, setInptTituloServico] = useState('');
   const [inptImageServico, setInptImageServico] = useState('');
   const [inptDescricaoServico, setInptDescricaoServico] = useState('');
   const [inptAreaServico, setInptAreaServico] = useState('');
   const [inptFaixapreco, setInptFaixapreco] = useState('');
-  const [inptPrazoEntrega, setInptPrazoEntrega] = useState('');
   const [inptIdioma, setInptIdioma] = useState('');
+  const [inptDataInicio, setInptDataInicio] = useState('');
+  const [inptDataFim, setInptDataFim] = useState('');
+  const [inptSobreFreelancer, setInptSobreFreelancer] = useState('');
   const [mostrarConfirmacao, setMostrarConfirmacao] = useState(false);
 
+  const navigate = useNavigate();
 
+  async function createServicos() {
+    try {
+      await api.post('/servicos', {
+        titulo: inptTituloServico,
+        area: inptAreaServico,
+        descricao: inptDescricaoServico,
+        imagem_capa: inptImageServico,
+        preco_minimo: inptFaixapreco,
+        idioma: inptIdioma,
+        data_inicio_entrega: inptDataInicio,
+        data_fim_entrega: inptDataFim,
+        sobre_freelancer: inptSobreFreelancer,
+        fk_usuario_id: userLogado.id_usuario
+      });
 
-const navigate = useNavigate()
+      // Limpar inputs
+      setInptTituloServico('');
+      setInptDescricaoServico('');
+      setInptAreaServico('');
+      setInptFaixapreco('');
+      setInptIdioma('');
+      setInptImageServico('');
+      setInptDataInicio('');
+      setInptDataFim('');
+      setInptSobreFreelancer('');
 
+      setMostrarConfirmacao(true);
 
-
-async function createServicos() {
-  try {
-    await api.post('/servicos', {
-      titulo: inptTituloServico,
-      area: inptAreaServico,
-      descricao: inptDescricaoServico,
-      imagem_capa: inptImageServico,
-      tempo_entrega: inptPrazoEntrega,
-      preco_minimo: inptFaixapreco,
-      idioma: inptIdioma,
-      fk_usuario_id: userLogado.id_usuario
-    });
-
-    // Limpar inputs
-    setInptTituloServico('');
-    setInptDescricaoServico('');
-    setInptAreaServico('');
-    setInptFaixapreco('');
-    setInptPrazoEntrega('');
-    setInptIdioma('');
-    setInptImageServico('');
-
-    // Mostrar confirmação
-    setMostrarConfirmacao(true);
-  
-  
-setTimeout(()=>{
-
-navigate('/area_servico_pesquisado')
-
-},2000)
-
-
-
-  } catch (error) {
-    console.error("Erro ao criar serviço:", error);
+      setTimeout(() => {
+        navigate('/area_servico_pesquisado');
+      }, 2000);
+    } catch (error) {
+      console.error("Erro ao criar serviço:", error);
+    }
   }
-}
 
   return (
     <div>
@@ -82,7 +76,6 @@ navigate('/area_servico_pesquisado')
                 placeholder='Título do seu serviço'
                 value={inptTituloServico}
                 onChange={(e) => setInptTituloServico(e.target.value)}
-               
               />
             </div>
 
@@ -93,24 +86,41 @@ navigate('/area_servico_pesquisado')
                 placeholder='Escreva detalhadamente sobre seu serviço'
                 value={inptDescricaoServico}
                 onChange={(e) => setInptDescricaoServico(e.target.value)}
-                
               ></textarea>
             </div>
           </div>
 
           <div className='containerInfoServicos'>
-            <div className='divInputsServico'>
-              <label>Tempo de entrega</label>
-              <input
-                type="text"
-                className='inptServicos'
-                placeholder='10-11 dias'
-                value={inptPrazoEntrega}
-                onChange={(e) => setInptPrazoEntrega(e.target.value)}
-                
-              />
-            </div>
+            
+             <div className='div_inputs_tempo_entrega'>
+               
+               <div className='divInputsServico'>
+              <label>Data de início</label>
 
+              <input
+                type="number"
+                className='inptServicosPreco'
+                value={inptDataInicio}
+                onChange={(e) => setInptDataInicio(e.target.value)}
+                placeholder='data incial do serviço'
+                />
+                </div>
+           
+            <div className='divInputsServico'>
+
+              <label>Data de entrega</label>
+              <input
+                type="number"
+                className='inptServicosPreco'
+                value={inptDataFim}
+                onChange={(e) => setInptDataFim(e.target.value)}
+                placeholder='data final para entrega do serviço'
+                />
+                </div>
+         
+            </div>
+            
+            
             <div className='divInputsServico'>
               <label>Imagem (URL)</label>
               <input
@@ -119,7 +129,6 @@ navigate('/area_servico_pesquisado')
                 placeholder='https://exemplo.com/sua-imagem.jpg'
                 value={inptImageServico}
                 onChange={(e) => setInptImageServico(e.target.value)}
-               
               />
             </div>
 
@@ -129,7 +138,6 @@ navigate('/area_servico_pesquisado')
                 className='select_area_servico'
                 value={inptAreaServico}
                 onChange={(e) => setInptAreaServico(e.target.value)}
-                
               >
                 <option value="" disabled>Escolha uma das opções</option>
                 <option value="matador de rato">Matador de rato</option>
@@ -156,11 +164,8 @@ navigate('/area_servico_pesquisado')
                 <option value="coaching de carreira">Coaching de Carreira</option>
                 <option value="ilustração">Ilustração</option>
                 <option value="criação de conteúdo">Criação de Conteúdo</option>
-
               </select>
             </div>
-
-
           </div>
 
           <div className='containerInfoServico2'>
@@ -175,7 +180,6 @@ navigate('/area_servico_pesquisado')
                   placeholder='R$200 - R$1000'
                   value={inptFaixapreco}
                   onChange={(e) => setInptFaixapreco(e.target.value)}
-                  
                 />
               </div>
 
@@ -183,29 +187,42 @@ navigate('/area_servico_pesquisado')
                 <label>Idiomas que o serviço atende</label>
                 <input
                   type="text"
-                  className='inptServicos'
+                  className='inptServicosIdioma'
                   placeholder='espanhol, português, inglês'         
                   value={inptIdioma}
                   onChange={(e) => setInptIdioma(e.target.value)}
-                 
                 />
               </div>
+            </div>
+
+           
+
+            
+
+            <div className='div_Inputs_servico_descricao'>
+              <label>Sobre o freelancer</label>
+              <textarea
+                className='text_sobre_freelancer'
+                placeholder='Fale um pouco sobre você'
+                value={inptSobreFreelancer}
+                onChange={(e) => setInptSobreFreelancer(e.target.value)}
+              ></textarea>
             </div>
           </div>
         </div>
 
         <div className='container_buttons'>
-          <button className='botton_edita_servico'>Editar serviço</button>
+         
           <button className='button_cria_servico' onClick={createServicos}>Criar serviço</button>
           <button className='butonn_cancela_servico'>Cancelar</button>
         </div>
       </div>
- 
+
       {mostrarConfirmacao && (
         <div className="confirmacao-overlay">
           <div className="confirmacao-content">
             <h2>Serviço criado com sucesso!</h2>
-            <button onClick={() => setMostrarConfirmacao(false) }>Fechar</button>
+            <button onClick={() => setMostrarConfirmacao(false)}>Fechar</button>
           </div>
         </div>
       )}

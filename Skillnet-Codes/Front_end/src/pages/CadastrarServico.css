@@ -1,185 +1,186 @@
-
-
-.container_all_inputs{
-  
-
-width: 100%;
-height:70vh;
-justify-content: space-evenly;
-display: flex;
-padding: 5px;
-font-size: 20px;
-font-family: mont;
-font-weight: 600;
+.container_all_inputs {
+  width: 100%;
+  height: 70vh;
+  justify-content: space-evenly;
+  display: flex;
+  padding: 5px;
+  font-size: 20px;
+  font-family: mont;
+  font-weight: 600;
 }
-.containerTituloServico{
-    display: flex;
-    flex-direction: column;
-    height: 100%;
-    justify-content: space-evenly;
-    
-   
+
+.containerTituloServico {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  justify-content: space-evenly;
 }
-.containerServicos{
-    width: 100%;
-    height:fit-content;
+
+.containerServicos {
+  width: 100%;
+  height: fit-content;
   background-image: url(./images/img_backgroud_carinha_verde.svg);
-background-repeat: no-repeat;
-background-position: center;
+  background-repeat: no-repeat;
+  background-position: center;
 }
-.containerInfoServicos{
-    
-    height: 100%;
-    justify-content: space-around;
-    display: flex;
-    flex-direction: column;
 
+.containerInfoServicos {
+  height: 100%;
+  justify-content: space-around;
+  display: flex;
+  flex-direction: column;
 }
-.containerInfoServico2{
-    height: 100%;
-    justify-content: start;
-    display: flex;
-    flex-direction: column;
-   
 
+.containerInfoServico2 {
+  height: 100%;
+  justify-content: start;
+  display: flex;
+  flex-direction: column;
 }
-.inptServicos{
-   width: 200px;
-   width: 350px; 
-   height: 50px;
-   background-color: #ffffff;
-   border: #004B22 solid 2px;
-   border-radius: 5px;
-   font-size: 15px;
-    font-family: mont;
-    font-weight: 500;
 
-
+.inptServicos {
+  width: 350px;
+  height: 50px;
+  background-color: #ffffff;
+  border: #004B22 solid 2px;
+  border-radius: 5px;
+  font-size: 15px;
+  font-family: mont;
+  font-weight: 500;
+  padding: 10px;
+  color: #333;
 }
 
 
-.divInputsServico{
-    display: flex;
-    flex-direction: column;
-    
+ 
 
-}.text_descrição_servico{
-width: 350px;
-height: 270px;
-padding: 10px;
-border-radius: 10px;
-background-color: #ffffff;
-   border: #004B22 solid 2px;
-font-size: 15px;
-font-family: mont;
-font-weight: 500;
+.divInputsServico {
+  display: flex;
+  flex-direction: column;
+}
+
+.text_descrição_servico {
+  width: 350px;
+  height: 270px;
+  padding: 10px;
+  border-radius: 10px;
+  background-color: #ffffff;
+  border: #004B22 solid 2px;
+  font-size: 15px;
+  font-family: mont;
+  font-weight: 500;
+}
+
+.text_sobre_freelancer {
+  width: 350px;
+  height: 200px;
+  padding: 10px;
+  border-radius: 10px;
+  background-color: #ffffff;
+  border: #004B22 solid 2px;
+  font-size: 15px;
+  font-family: mont;
+  font-weight: 500;
+  resize: none;
+}
+
+.inpt_titulo_servico {
+  width: 350px;
+  height: 50px;
+  border-radius: 5px;
+  background-color: #ffffff;
+  border: #004B22 solid 2px;
+  font-size: 15px;
+  font-family: mont;
+  font-weight: 500;
+}
+
+.select_area_servico {
+  width: 350px;
+  height: 50px;
+  border-radius: 5px;
+  margin: 5px;
+  background-color: #ffffff;
+  border: #004B22 solid 2px;
+  font-size: 15px;
+  font-family: mont;
+  font-weight: 500;
+}
+
+.container_preco_idiomas {
+  height: 420px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.div_Inputs_servico_descricao {
+  margin-top: 50px;
+  display: flex;
+  flex-direction: column;
+}
+
+.div_Inputs_servico_titulo {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 10px;
+}
+
+.container_buttons {
+  width: 100%;
+  height: fit-content;
+  display: flex;
+  justify-content: space-evenly;
+  color: white;
 }
 
 
-.inpt_titulo_servico{
-    width: 350px; 
-height: 50px;
-border-radius: 5px;
-background-color: #ffffff;
-   border: #004B22 solid 2px;
-font-size: 15px;
-font-family: mont;
-font-weight: 500;
-}.select_area_servico{
 
-    width: 350px; 
-    height: 50px;
-    border-radius: 5px;
-    margin: 5px;
-    background-color: #ffffff;
-    border: #004B22 solid 2px;
-font-size: 15px;
-font-family: mont;
-font-weight: 500;
+.button_cria_servico {
+  background-color: #004B22;
+  width: 350px;
+  height: 50px;
+  border: none;
+  border-radius: 5px;
+  color: white;
+  font-size: 25px;
+  font-family: mont;
+  font-weight: 550;
 }
 
-.container_preco_idiomas{
-
-
-height: 420px;
-display: flex;
-flex-direction: column;
-justify-content: space-around;
-}.div_Inputs_servico_descricao{
-    margin-top: 50px;
-    display: flex;
-    flex-direction: column;
-}.div_Inputs_servico_titulo{
-
-    display: flex;
-    flex-direction: column;
-  
-margin-bottom: 10PX;
-}.container_buttons{
-    width: 100%;
-height: fit-content;
-display: flex;
-justify-content: space-evenly;
-color: white;
-
+.butonn_cancela_servico {
+  background-color: white;
+  width: 350px;
+  height: 50px;
+  border: #004B22 solid;
+  color: #004B22;
+  border-radius: 5px;
+  font-size: 25px;
+  font-family: mont;
+  font-weight: 550;
 }
 
-.botton_edita_servico{
- background-color: #004B22;
-width: 350px;
-height: 50px;
-color: white;
-border: none;
-border-radius: 5px;
-font-size: 25px;
-font-family: mont;
-font-weight: 550;
+.h1_titulo_servico {
+  font-size: 45px;
+  font-family: mont;
+  font-weight: 700;
+  color: #004B22;
 }
 
-.button_cria_servico{
-    background-color: #004B22;
-    width: 350px;
-    height: 50px;
-    border: none;
-    border-radius: 5px;
-color: white;
-font-size: 25px;
-font-family: mont;
-font-weight: 550;
-}
-.butonn_cancela_servico{
-
-    background-color:white;
-    width: 350px;
-    height: 50px;
-    border: #004B22 solid;
-color: #004B22;
-border-radius: 5px;
-font-size: 25px;
-font-family: mont;
-font-weight: 550;
-}.h1_titulo_servico{
-
-font-size: 45px;
-font-family: mont;
-font-weight:700;
-color:  #004B22 ;
-}.container_h1_titulo_servico{
-
-width: fit-content;
-margin: 10px;
-display: flex;
-flex-direction: column;
-
-align-items: center;
-}.div_linha_verde_cadastra_servico{
-
-    border-bottom:#83CF41 solid 8px ;
-    width: 90%;
-border-radius: 5px;
-align-items: center;
+.container_h1_titulo_servico {
+  width: fit-content;
+  margin: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
+.div_linha_verde_cadastra_servico {
+  border-bottom: #83CF41 solid 8px;
+  width: 90%;
+  border-radius: 5px;
+  align-items: center;
+}
 
 .confirmacao-overlay {
   position: fixed;
@@ -215,4 +216,130 @@ align-items: center;
   border-radius: 8px;
   cursor: pointer;
   font-weight: bold;
+}.div_inputs_tempo_entrega{
+
+display: flex;
+
+
+
+}.inptServicosPreco{
+
+width: 175px;
+  height: 50px;
+  border-radius: 5px;
+  background-color: #ffffff;
+  border: #004B22 solid 2px;
+  font-size: 15px;
+  font-family: mont;
+  font-weight: 500;
+    margin: 3px;
 }
+.inptServicosIdioma{
+
+ width: 350px;
+  height: 50px;
+  background-color: #ffffff;
+  border: #004B22 solid 2px;
+  border-radius: 5px;
+  font-size: 15px;
+  font-family: mont;
+  font-weight: 500;
+  padding: 10px;
+  color: #333;
+
+}.button_cria_servico {
+  --color: #004B22;
+  background-color: white;
+  font-family: Mont, sans-serif;
+  width: 250px;
+  height: 50px;
+  line-height: 50px;
+  position: relative;
+  cursor: pointer;
+  overflow: hidden;
+  border: 2px solid var(--color);
+  transition: color 0.4s ease-in-out;
+  z-index: 1;
+  font-size: 17px;
+  border-radius: 6px;
+  font-weight: 600;
+  color: #004B22;
+  text-align: center;
+}
+
+.button_cria_servico::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  background: #004B22;
+  width: 200%;
+  height: 500%;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  border-radius: 50%;
+  transition: all 0.6s ease-in-out;
+}
+
+.button_cria_servico:hover {
+  color: white;
+}
+
+.button_cria_servico:hover::before {
+  top: -150%;
+}
+
+.button_cria_servico:active::before {
+  background: #6cb62b;
+  transition: background 0s;
+}
+
+/* Botão Cancelar (agora com fundo verde-claro padrão) */
+.butonn_cancela_servico {
+  --color: #83CF41;
+  background-color: #83CF41;
+  font-family: Mont, sans-serif;
+  width: 250px;
+  height: 50px;
+  line-height: 50px;
+  position: relative;
+  cursor: pointer;
+  overflow: hidden;
+  border: 2px solid var(--color);
+  transition: color 0.4s ease-in-out;
+  z-index: 1;
+  font-size: 17px;
+  border-radius: 6px;
+  font-weight: 600;
+  color: #004B22;
+  text-align: center;
+}
+
+.butonn_cancela_servico::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  background: #004B22;
+  width: 200%;
+  height: 500%;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  border-radius: 50%;
+  transition: all 0.6s ease-in-out;
+}
+
+.butonn_cancela_servico:hover {
+  color: var(--color);
+}
+
+.butonn_cancela_servico:hover::before {
+  top: -150%;
+}
+
+.butonn_cancela_servico:active::before {
+  background: #6cb62b;
+  transition: background 0s;
+}
+
+

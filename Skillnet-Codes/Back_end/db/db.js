@@ -129,12 +129,11 @@ async function selectServicos() {
         servicos.fk_usuario_id,
         servicos.area,
         servicos.imagem_capa,
-        servicos.tempo_entrega,
         servicos.preco_minimo,
         servicos.idioma,
-       
-       
-       
+        servicos.data_inicio_entrega,
+        servicos.data_fim_entrega,
+        servicos.sobre_freelancer,
         usuarios.nome AS nome_usuario
       FROM servicos
       LEFT JOIN usuarios ON servicos.fk_usuario_id = usuarios.id_usuario
@@ -160,19 +159,26 @@ async function selectServico(id) {
 async function insertServico(servico) {
   const client = await connect();
   const sql = `
-    INSERT INTO servicos (titulo, descricao, area, imagem_capa, tempo_entrega, preco_minimo, idioma,fk_usuario_id )
-    VALUES ($1, $2, $3, $4, $5, $6, $7,$8)
+    INSERT INTO servicos (
+      titulo, descricao, area, imagem_capa, 
+      preco_minimo, idioma, data_inicio_entrega, 
+      data_fim_entrega, sobre_freelancer, fk_usuario_id
+    ) 
+    VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10)
   `;
   const values = [
     servico.titulo,
     servico.descricao,
     servico.area,
     servico.imagem_capa,
-    servico.tempo_entrega,
     servico.preco_minimo,
     servico.idioma,
-    servico.fk_usuario_id // <- importante
+    servico.data_inicio_entrega,
+    servico.data_fim_entrega,
+    servico.sobre_freelancer,
+    servico.fk_usuario_id
   ];
+
   try {
     await client.query(sql, values);
   } finally {
@@ -188,20 +194,24 @@ async function updateServico(id, servico) {
       descricao = $2,
       area = $3,
       imagem_capa = $4,
-      tempo_entrega = $5,
-      preco_minimo = $6,
-      idioma = $7
-    WHERE servico_id = $8
+      data_inicio_entrega = $5,
+      data_fim_entrega = $6,
+      preco_minimo = $7,
+      idioma = $8,
+      sobre_freelancer = $9
+    WHERE servico_id = $10
   `;
   const values = [
     servico.titulo,
     servico.descricao,
     servico.area,
     servico.imagem_capa,
-    servico.tempo_entrega,
+    servico.data_inicio_entrega,
+    servico.data_fim_entrega,
     servico.preco_minimo,
     servico.idioma,
-    id,
+    servico.sobre_freelancer,
+    id
   ];
   try {
     await client.query(sql, values);

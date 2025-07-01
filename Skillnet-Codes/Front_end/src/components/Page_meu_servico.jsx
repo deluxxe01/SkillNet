@@ -2,12 +2,16 @@ import { useNavigate } from 'react-router-dom';
 import './Page_meu_servico.css';
 import { useContext, useState } from 'react';
 import { GlobalContext } from '../context/Globalcontext';
-
+import { Link } from 'react-router-dom';
 function Page_meu_servico() {
   const { userLogado, cadastroServico } = useContext(GlobalContext);
   const navigate = useNavigate();
 
   const [modalAberto, setModalAberto] = useState(false);
+
+
+
+
 
   const servicosDoUsuario = Array.isArray(cadastroServico)
     ? cadastroServico.filter(s => Number(s.fk_usuario_id) === Number(userLogado.id_usuario))
@@ -22,33 +26,30 @@ function Page_meu_servico() {
 
         <div className="meuservico_lista">
           {servicosDoUsuario.map(servico => (
-            <div key={servico.servico_id} className='card_meu_servico'>
+            <Link
+                 key={servico.servico_id}
+                 to={`/servico/${servico.servico_id}`}
+                 className='Link_servico'
+               >
+           <div  className='card_meu_servico'>
               <img src={servico.imagem_capa || ''} className='poster_meu_servico' />
               <p className='categoria_servico_especifico'>{servico.area}</p>
               <p className='titulo_servico'>{servico.titulo}</p>
               <p>{servico.descricao}</p>
               <p>{servico.preco_minimo} R$</p>
               <button onClick={() => setModalAberto(true)}>Editar serviço</button>
+           
             </div>
+               </Link>
           ))}
         </div>
 
-        <button onClick={() => navigate('/cadastro_servico')}>
-          Cadastrar serviço
+        <button onClick={() => navigate('/cadastro_servico')} className='bnt_cadastra_servico'>
+          Cadastrar serviço!
         </button>
       </div>
 
-    {modalAberto && (
-  <div className="modal-editar-overlay">
-    <div className="modal-editar-conteudo">
-      <h3>Editar Serviço</h3>
-      <p>Aqui você pode colocar os campos ou informações para editar o serviço.</p>
-      <div className="modal-editar-botoes">
-        <button onClick={() => setModalAberto(false)}>Fechar</button>
-      </div>
-    </div>
-  </div>
-)}
+  
     </div>
   );
 }

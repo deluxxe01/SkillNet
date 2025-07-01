@@ -11,13 +11,15 @@ CREATE TABLE IF NOT EXISTS servicos (
     descricao VARCHAR(500),
     area VARCHAR(100),
     imagem_capa VARCHAR(2000),
-    tempo_entrega VARCHAR(50),
     preco_minimo NUMERIC(10, 2) CHECK (preco_minimo >= 0),
     idioma VARCHAR(50),
+    data_inicio_entrega VARCHAR(2),
+    data_fim_entrega VARCHAR(2),
+    sobre_freelancer TEXT,
     fk_usuario_id INT,
-    CONSTRAINT servicos_usuarios FOREIGN KEY (fk_usuario_id) REFERENCES usuarios(id_usuario) ON DELETE CASCADE
+    CONSTRAINT servicos_usuarios FOREIGN KEY (fk_usuario_id) 
+        REFERENCES usuarios(id_usuario) ON DELETE CASCADE
 );
-
 CREATE TABLE IF NOT EXISTS portifolios (
     id_portifolio serial PRIMARY KEY,
     link_insta VARCHAR(255),
